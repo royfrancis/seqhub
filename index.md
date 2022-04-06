@@ -10,5 +10,12 @@ disable_anchors: true
 ## [Bulk RNA-Seq](./documentation/rnaseq.html)  
 RNA-Seq experiment where the source material is usually from tissue.
 
+## [Meta transcriptomics](./documentation/meta-rnaseq.html)  
+RNA-Seq experiments involving multiple species or mixed species.
+
 ## [Single-Cell RNA-Seq](./documentation/scrnaseq.html)  
 RNA-Seq experiment where the source material is single cells. Methods such as 10X chromium, Smart-Seq etc.
+
+## [Spatial RNA-Seq](./documentation/spatial.html)
+RNA-Seq data with spatial information. 10X Visium etc.
+

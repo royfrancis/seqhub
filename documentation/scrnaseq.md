@@ -25,6 +25,7 @@ url="www.nature.com/articles/s41587-020-00744-z"
 %}
 
 ## Experimental design
+
 **Experimental Considerations for Single-Cell RNA Sequencing Approaches**
 
 {% include figure path="https://www.frontiersin.org/files/Articles/391125/fcell-06-00108-HTML/image_m/fcell-06-00108-g001.jpg" caption="Overview of step-wise approach to designing single-cell analysis workflows. RNA integrity number (RIN); Reads per cell (RPC)." %}
@@ -127,6 +128,98 @@ url="https://bioconductor.org/packages/release/bioc/html/SingleR.html"
 
 </p>
 
+## Differential expression
+
+- Comparison of DGE tools for single-cell data
+
+> All of the tools perform well when there is no multimodality or low levels of multimodality. They all also perform better when the sparsity (zero counts) is less. For data with a high level of multimodality, methods that consider the behavior of each individual gene, such as DESeq2, EMDomics, Monocle2, DEsingle, and SigEMD, show better TPRs. If the level of multimodality is low, however, SCDE, MAST, and edgeR can provide higher precision.
+
+> In general, the methods that can capture multimodality (non-parametric methods), perform better than do the model-based methods designed for handling zero counts. However, a model-based method that can model the drop-out events well, can perform better in terms of true positive and false positive. We observed that methods developed specifically for scRNAseq data do not show significantly better performance compared to the methods designed for bulk RNAseq data; and methods that consider behavior of each individual gene (not all genes) in calling DE genes outperform the other tools.
+
+{% include figure path="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12859-019-2599-6/MediaObjects/12859_2019_2599_Fig7_HTML.png?as=webp" caption="Effect of sample size (number of cells) on detecting DE genes. The sample size is in horizontal axis, from 10 to 400 cells in each condition. Effect of sample size on a TPR, b FPR, c accuracy (=(TP + TN)/(TP + FP + TN + FN)), and precision (=TP/(TP + FP)). A threshold of 0.05 is used for FDR or adjusted p-value." %}
+
+{% include citation
+text="Wang et al, 2019"
+tip="Wang, T., Li, B., Nelson, C.E. et al. Comparative analysis of differential gene expression analysis tools for single-cell RNA sequencing data. BMC Bioinformatics 20, 40 (2019). "
+url="https://doi.org/10.1186/s12859-019-2599-6"
+%}
+
+- Differential expression without clustering or grouping
+
+{% include tool
+text="singleCellHaystack"
+url="https://github.com/alexisvdb/singleCellHaystack"
+%}
+
+## Data Integration
+
+- Single-cell data integration challenges
+
+{% include figure path="images/argelaguet-2021-tab1.png" caption="Overview of common data integration methods classified according to their anchor choice." %}
+
+{% include citation
+text="Argelaguet et al, 2021"
+tip="Argelaguet, R., Cuomo, A.S.E., Stegle, O. et al. Computational principles and challenges in single-cell data integration. Nat Biotechnol 39, 1202–1215 (2021)"
+url="https://www.nature.com/articles/s41587-021-00895-7"
+%}
+
+- Comparison of data integration methods
+
+{% include figure path="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig2_HTML.png?as=webp" caption="a, Overview of top and bottom ranked methods by overall score for the human immune cell task. Metrics are divided into batch correction (blue) and bio-conservation (pink) categories. Overall scores are computed using a 40/60 weighted mean of these category scores (see Methods for further visualization details and Supplementary Fig. 2 for the full plot). b,c, Visualization of the four best performers on the human immune cell integration task colored by cell identity (b) and batch annotation (c). The plots show uniform manifold approximation and projection layouts for the unintegrated data (left) and the top four performers (right)." %}
+
+{% include figure path="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig3_HTML.png?as=webp" caption="a, Scatter plot of the mean overall batch correction score against mean overall bio-conservation score for the selected methods on RNA tasks. Error bars indicate the standard error across tasks on which the methods ran. b, The overall scores for the best performing method, preprocessing and output combinations on each task as well as their usability and scalability. Methods that failed to run for a particular task were assigned the unintegrated ranking for that task. An asterisk after the method name (scANVI and scGen) indicates that, in addition, cell identity information was passed to this method. For ComBat and MNN, usability and scalability scores corresponding to the Python implementation of the methods are reported (Scanpy and mnnpy, respectively)." %}
+
+{% include citation
+text="Luecken et al, 2022"
+tip="Luecken, M.D., Büttner, M., Chaichoompu, K. et al. Benchmarking atlas-level data integration in single-cell genomics. Nat Methods 19, 41–50 (2022)"
+url="https://www.nature.com/articles/s41592-021-01336-8"
+%}
+
+## Mapping and Quantification
+
+### CellRanger
+
+- Process chromium data
+- BCL to FASTQ
+- FASTQ to cellxgene counts
+- Feature barcoding
+
+{% include tool
+text="CellRanger"
+url="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger"
+%}
+
+### Kallisto Bustools
+
+- 10x, inDrop and Dropseq
+- Generate cellxgene, cellxtranscript matrix
+- RNA velocity data
+- Feature barcoding
+- QC reports
+
+<p>
+{% include tool
+text="BUSTools"
+url="https://bustools.github.io/"
+%}
+
+{% include citation
+text="Melsted et al, 2021"
+tip="Páll Melsted, A. Sina Booeshaghi, Lauren Liu, Fan Gao, Lambda Lu, Kyung Hoi (Joseph) Min, Eduardo da Veiga Beltrame, Kristján Eldjárn Hjörleifsson, Jase Gehring & Lior Pachter† Modular and efficient pre-processing of single-cell RNA-seq, Nature Biotechnology (2021)."
+url="https://doi.org/10.1038/s41587-021-00870-2"
+%}
+</p>
+
+### Salmon Alevin
+
+- Drop-seq, 10x-Chromium v1/2/3, inDropV2, CELSeq 1/2, Quartz-Seq2, sci-RNA-seq3
+- Generate cellxgene matrix
+
+{% include tool
+text="Alevin"
+url="https://salmon.readthedocs.io/en/latest/alevin.html"
+%}
+
 ## VDJ
 ### TCR review
 
@@ -186,3 +279,43 @@ url="https://github.com/rnabioco/djvdj"
 %}
 
 </p>
+
+## Databases
+
+### Data
+
+- [scRNASeqDB](https://bioinfo.uth.edu/scrnaseqdb/)
+- [Broad SIngleCell portal](https://singlecell.broadinstitute.org/single_cell)
+- [Hemberg Lab collection](https://hemberg-lab.github.io/scRNA.seq.datasets/)
+- [10x datasets](https://www.10xgenomics.com/resources/datasets)
+- [EBI Cell Atlas](https://www.ebi.ac.uk/gxa/sc/home)
+- [recount 2](https://jhubiostatistics.shinyapps.io/recount/)
+- [JingleBells](https://jinglebells.bgu.ac.il/)
+- [CNGB](https://db.cngb.org/cdcp/explore)
+
+### Markers
+
+- [PanglaoDB](https://panglaodb.se/)
+- [CellMarker](http://biocc.hrbmu.edu.cn/CellMarker/browse.jsp)
+
+## Interactive visualisation frameworks
+
+- [ShinyCell](https://github.com/SGDDNB/ShinyCell)
+- [CDCP](https://db.cngb.org/cdcp/)
+- [SingleCellVR](https://singlecellvr.pinellolab.partners.org/)
+
+![](https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png)
+
+{% include citation
+text="Ouyang et al, 2021"
+tip="John F Ouyang, Uma S Kamaraj, Elaine Y Cao, Owen J L Rackham, ShinyCell: simple and sharable visualization of single-cell gene expression data, Bioinformatics, Volume 37, Issue 19, 1 October 2021, Pages 3374–3376"
+url="https://doi.org/10.1093/bioinformatics/btab209"
+%}
+
+![](https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/bin/lqaa052tbl1.jpg)
+
+{% include citation
+text="Cakir et al, 2020"
+tip="Cakir, B., Prete, M., Huang, N., van Dongen, S., Pir, P., & Kiselev, V. Y. (2020). Comparison of visualization tools for single-cell RNAseq data. NAR genomics and bioinformatics, 2(3)"
+url="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/"
+%}
