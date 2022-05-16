@@ -32,8 +32,6 @@ url="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6096346"
 %}
 </p>
 
-</br>
-
 ## Experimental design
 
 **Are technical replicates needed for RNA-Seq analyses?**
@@ -64,7 +62,7 @@ tip="Zhao, Shilin, et al. RnaSeqSampleSize: real data based sample size estimati
 url="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2191-5"
 %}
 
-RNASeqPower based spreadsheet ([Google Sheet](https://docs.google.com/spreadsheets/d/14npBsshTUlqt4toiUv2vWGfcrXwh5wSwKPx9vSf4I_M/edit?usp=sharing)) and [Shiny App](https://rshiny.nbis.se/shiny-server-apps/shiny-rnaseq-power/).
+RNASeqPower based spreadsheet ([Google Sheet](https://docs.google.com/spreadsheets/d/14npBsshTUlqt4toiUv2vWGfcrXwh5wSwKPx9vSf4I_M/edit?usp=sharing)) and [Shiny App](https://rnaseq-power.serve.scilifelab.se/).
 
 {% include citation
 text="Hart et al, 2013"
@@ -83,8 +81,6 @@ text="Liu et al, 2014"
 tip="Liu, Y., Zhou, J., & White, K. P. (2014). RNA-seq differential expression studies: more sequence or more replication?. Bioinformatics, 30(3), 301-304"
 url="https://pubmed.ncbi.nlm.nih.gov/24319002"
 %}
-
-</br>
 
 ## RNA extraction
 
@@ -110,11 +106,9 @@ tip="Kim, Young-Kook, et al. Short structured RNAs with low GC content are selec
 url="https://www.cell.com/molecular-cell/fulltext/S1097-2765(12)00481-9"
 %}
 
-</br>
-
 ## Library prep
 
-> As many as 1751 genes in Gencode Release 19 were identified to be differentially expressed when comparing stranded and non-stranded RNA-seq whole blood samples. Antisense and pseudogenes were significantly enriched in differential expression analyses. Because stranded RNA-seq retains strand information of a read, we can resolve read ambiguity in overlapping genes transcribed from opposite strands, which provides a more accurate quantification of gene expression levels compared with traditional non-stranded RNA-seq. 
+> As many as 1751 genes in Gencode Release 19 were identified to be differentially expressed when comparing stranded and non-stranded RNA-seq whole blood samples. Antisense and pseudogenes were significantly enriched in differential expression analyses. Because stranded RNA-seq retains strand information of a read, we can resolve read ambiguity in overlapping genes transcribed from opposite strands, which provides a more accurate quantification of gene expression levels compared with traditional non-stranded RNA-seq.
 >
 > Stranded RNA-seq provides a more accurate estimate of transcript expression compared with non-stranded RNA-seq, and is therefore the recommended RNA-seq approach for future mRNA-seq studies.
 
@@ -129,8 +123,6 @@ text="Levin et al, 2010"
 tip="Levin, Joshua Z., et al. Comprehensive comparative analysis of strand-specific RNA sequencing methods. Nature methods 7.9 (2010): 709"
 url="https://www.nature.com/articles/nmeth.1491"
 %}
-
-</br>
 
 ## Sequencing
 
@@ -158,8 +150,6 @@ text="Comparison of PE and SE for RNA-Seq, SciLifeLab"
 url="https://ngisweden.scilifelab.se/file/1540-1_Comparison_of_PE_and_SE_for_RNA-seq.pdf"
 %}
 </p>
-
-</br>
 
 ## De novo assembly
 
@@ -199,8 +189,6 @@ url="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5357343/"
 %}
 </p>
 
-</br>
-
 ## Aligners
 
 {% include citation
@@ -208,8 +196,6 @@ text="Baruzzo et al, 2017"
 tip="Baruzzo, Giacomo, et al. Simulation-based comprehensive benchmarking of RNA-seq aligners. Nature methods 14.2 (2017): 135"
 url="https://www.nature.com/articles/nmeth.4106"
 %}
-
-</br>
 
 ## Normalisation
 
@@ -258,8 +244,6 @@ tip="Zhao, S., Ye, Z., & Stanton, R. (2020). Misuse of RPKM or TPM normalization
 url="https://rnajournal.cshlp.org/content/early/2020/04/13/rna.074922.120"
 %}
 
-</br>
-
 ## Batch effect
 
 {% include citation
@@ -273,8 +257,6 @@ text="Manimaran et al, 2016"
 tip="Manimaran, Solaiappan, et al. BatchQC: interactive software for evaluating sample and batch effects in genomic data. Bioinformatics 32.24 (2016): 3836-3838"
 url="https://academic.oup.com/bioinformatics/article/32/24/3836/2525651"
 %}
-
-</br>
 
 ## Differential gene expression
 
@@ -322,8 +304,6 @@ url="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC4937821/"
 %}
 </p>
 
-</br>
-
 ## Other
 
 {% include citation
@@ -332,16 +312,12 @@ tip="Teng, Mingxiang, et al. A benchmark for RNA-seq quantification pipelines. G
 url="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-016-0940-1"
 %}
 
-</br>
-
 ## Reference & File formats
 
 - Illumina [read quality scores](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf)  
 - Illumina read name [format](http://support.illumina.com/content/dam/illumina-support/help/BaseSpaceHelp_v2/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FASTQFiles.htm)  
 - GTF [format](https://www.ensembl.org/info/website/upload/gff.html)]  
 - SAM file [format](http://www.htslib.org/doc/sam.html)]  
-
-</br>
 
 ## Software
 
@@ -374,6 +350,18 @@ Tools to assess post-alignment quality, ie; after mapping of reads to a referenc
 - {% include tool text="HTSeq" url="https://github.com/simon-anders/htseq" %}
 - {% include tool text="RSEM" url="https://deweylab.github.io/RSEM/" %}
 
+### Pipelines
+#### Nextflow nf-core rnaseq
+
+- Bulk RNA-Seq, SMART-Seq
+- QC, trimming, UMI demultiplexing, mapping, quantification
+- cellxgene matrix
+
+{% include tool
+text="nf-core rnaseq"
+url="https://nf-co.re/rnaseq/3.7/usage"
+%}
+
 ### Genome browsers
 
 Interactive exploration of BAM files, ie; reads aligned to a reference.
@@ -392,11 +380,17 @@ Interactive exploration of BAM files, ie; reads aligned to a reference.
 
 - Convert gene IDs {% include tool text="gProfiler" url="https://biit.cs.ut.ee/gprofiler/convert" %}
 - OSA/ORA Online {% include tool text="Enrichr" url="https://maayanlab.cloud/Enrichr/" %}
+- OSA/ORA Online {% include tool text="GOrilla" url="http://cbl-gorilla.cs.technion.ac.il" %}
+- OSA/ORA Online {% include tool text="Panther" url="http://www.pantherdb.org/about.jsp" %}
 - ORA/GSEA/NTA Online {% include tool text="Webgestalt" url="http://www.webgestalt.org" %}
+- ORA/GSEA Online {% include tool text="DAVID" url="https://david.ncifcrf.gov" %}
+- KEGG pathways {% include tool text="KEGG" url="https://www.genome.jp/kegg/" %}
+- Functional annotation through orthology ({% include tool text="eggNOGmapper" url="http://eggnog-mapper.embl.de/"})
 - ORA/GSEA in R {% include tool text="clusterProfiler" url="https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html" %}
 - Standalone software {% include tool text="ErmineJ" url="https://erminej.msl.ubc.ca/" %}
 - Plot genes on Kegg pathways in R {% include tool text="pathview" url="https://bioconductor.org/packages/release/bioc/html/pathview.html" %}
 - Cytoscape plugin {% include tool text="ClueGO" url="http://apps.cytoscape.org/apps/cluego" %}
+- Semantic reduction of terms ({% include tool text="Revigo" url="http://revigo.irb.hr" %})
 
 ### GUI
 
