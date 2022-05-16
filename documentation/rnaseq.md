@@ -385,12 +385,12 @@ Interactive exploration of BAM files, ie; reads aligned to a reference.
 - ORA/GSEA/NTA Online {% include tool text="Webgestalt" url="http://www.webgestalt.org" %}
 - ORA/GSEA Online {% include tool text="DAVID" url="https://david.ncifcrf.gov" %}
 - KEGG pathways {% include tool text="KEGG" url="https://www.genome.jp/kegg/" %}
-- Functional annotation through orthology ({% include tool text="eggNOGmapper" url="http://eggnog-mapper.embl.de/"})
+- Functional annotation through orthology {% include tool text="eggNOGmapper" url="http://eggnog-mapper.embl.de/" %}
 - ORA/GSEA in R {% include tool text="clusterProfiler" url="https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html" %}
 - Standalone software {% include tool text="ErmineJ" url="https://erminej.msl.ubc.ca/" %}
 - Plot genes on Kegg pathways in R {% include tool text="pathview" url="https://bioconductor.org/packages/release/bioc/html/pathview.html" %}
 - Cytoscape plugin {% include tool text="ClueGO" url="http://apps.cytoscape.org/apps/cluego" %}
-- Semantic reduction of terms ({% include tool text="Revigo" url="http://revigo.irb.hr" %})
+- Semantic reduction of terms {% include tool text="Revigo" url="http://revigo.irb.hr" %}
 
 ### GUI
 
