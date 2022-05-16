@@ -96,6 +96,72 @@ text="SatijaLab Cost Per Cell Calculator"
 url="https://satijalab.org/costpercell/"
 %}
 
+## Mapping and Quantification
+
+### CellRanger
+
+- Process chromium data
+- BCL to FASTQ
+- FASTQ to cellxgene counts
+- Feature barcoding
+
+{% include tool
+text="CellRanger"
+url="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger"
+%}
+
+### Kallisto Bustools
+
+- 10x, inDrop and Dropseq
+- Generate cellxgene, cellxtranscript matrix
+- RNA velocity data
+- Feature barcoding
+- QC reports
+
+<p>
+{% include tool
+text="BUSTools"
+url="https://bustools.github.io/"
+%}
+
+{% include citation
+text="Melsted et al, 2021"
+tip="Páll Melsted, A. Sina Booeshaghi, Lauren Liu, Fan Gao, Lambda Lu, Kyung Hoi (Joseph) Min, Eduardo da Veiga Beltrame, Kristján Eldjárn Hjörleifsson, Jase Gehring & Lior Pachter† Modular and efficient pre-processing of single-cell RNA-seq, Nature Biotechnology (2021)."
+url="https://doi.org/10.1038/s41587-021-00870-2"
+%}
+</p>
+
+### Salmon Alevin
+
+- Drop-seq, 10x-Chromium v1/2/3, inDropV2, CELSeq 1/2, Quartz-Seq2, sci-RNA-seq3
+- Generate cellxgene matrix
+
+{% include tool
+text="Alevin"
+url="https://salmon.readthedocs.io/en/latest/alevin.html"
+%}
+
+### Nextflow nf-core rnaseq
+
+- Bulk RNA-Seq, SMART-Seq
+- QC, trimming, UMI demultiplexing, mapping, quantification
+- cellxgene matrix
+
+{% include tool
+text="nf-core rnaseq"
+url="https://nf-co.re/rnaseq/3.7/usage"
+%}
+
+## Doublet detection
+
+{% include figure path="https://ars.els-cdn.com/content/image/1-s2.0-S2405471220304592-gr5.jpg" caption="Summary of doublet detection tools." %}
+
+{% include citation
+text="Xi et al, 2021"
+tip="Xi, N. M., & Li, J. J. (2021). Benchmarking computational doublet-detection methods for single-cell RNA sequencing data. Cell systems, 12(2), 176-194."
+url="https://www.sciencedirect.com/science/article/pii/S2405471220304592"
+%}
+
 ## Cell type identification
 
 Identification of cell types can be completely automated (by comparing to reference data/databases) or semi-automated (reference data + marker genes).
@@ -175,51 +241,6 @@ tip="Luecken, M.D., Büttner, M., Chaichoompu, K. et al. Benchmarking atlas-leve
 url="https://www.nature.com/articles/s41592-021-01336-8"
 %}
 
-## Mapping and Quantification
-
-### CellRanger
-
-- Process chromium data
-- BCL to FASTQ
-- FASTQ to cellxgene counts
-- Feature barcoding
-
-{% include tool
-text="CellRanger"
-url="https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger"
-%}
-
-### Kallisto Bustools
-
-- 10x, inDrop and Dropseq
-- Generate cellxgene, cellxtranscript matrix
-- RNA velocity data
-- Feature barcoding
-- QC reports
-
-<p>
-{% include tool
-text="BUSTools"
-url="https://bustools.github.io/"
-%}
-
-{% include citation
-text="Melsted et al, 2021"
-tip="Páll Melsted, A. Sina Booeshaghi, Lauren Liu, Fan Gao, Lambda Lu, Kyung Hoi (Joseph) Min, Eduardo da Veiga Beltrame, Kristján Eldjárn Hjörleifsson, Jase Gehring & Lior Pachter† Modular and efficient pre-processing of single-cell RNA-seq, Nature Biotechnology (2021)."
-url="https://doi.org/10.1038/s41587-021-00870-2"
-%}
-</p>
-
-### Salmon Alevin
-
-- Drop-seq, 10x-Chromium v1/2/3, inDropV2, CELSeq 1/2, Quartz-Seq2, sci-RNA-seq3
-- Generate cellxgene matrix
-
-{% include tool
-text="Alevin"
-url="https://salmon.readthedocs.io/en/latest/alevin.html"
-%}
-
 ## VDJ
 ### TCR review
 
@@ -292,6 +313,7 @@ url="https://github.com/rnabioco/djvdj"
 - [recount 2](https://jhubiostatistics.shinyapps.io/recount/)
 - [JingleBells](https://jinglebells.bgu.ac.il/)
 - [CNGB](https://db.cngb.org/cdcp/explore)
+- [R TENxVisiumData](https://bioconductor.org/packages/release/data/experiment/vignettes/TENxVisiumData/inst/doc/vignette.html)
 
 ### Markers
 
@@ -319,3 +341,9 @@ text="Cakir et al, 2020"
 tip="Cakir, B., Prete, M., Huang, N., van Dongen, S., Pir, P., & Kiselev, V. Y. (2020). Comparison of visualization tools for single-cell RNAseq data. NAR genomics and bioinformatics, 2(3)"
 url="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/"
 %}
+
+## Learning
+
+- [HBC Training](https://hbctraining.github.io/scRNA-seq_online/schedule/)
+- [NBIS workshop](https://nbisweden.github.io/workshop-scRNAseq)
+- [Seurat tutorials](https://satijalab.org/seurat/index.html)
