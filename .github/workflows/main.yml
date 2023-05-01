@@ -9,19 +9,19 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions: 
+      contents: write
     steps:
-      - name: Check out
+      - name: Check out repo
         uses: actions/checkout@v3
-      - name: Setup Quarto
+      - name: Setup quarto
         uses: quarto-dev/quarto-actions/setup@v2
       - run: |
           quarto --version
-      - name: Render Quarto Project
-        uses: quarto-dev/quarto-actions/render@v2
-
-      - name: Publish to GitHub Pages
+      - name: Render and publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          render: true
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
