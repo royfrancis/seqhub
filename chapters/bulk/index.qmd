@@ -1,0 +1,266 @@
+---
+title: Bulk RNA-Seq
+description: Guide and links related to bulk RNA-Seq experiments and analyses.
+---
+
+## Overview {#bulk-overview}
+
+**What is the general workflow, steps, tools used and best practices for bulk rna-seq analysis?**
+
+![A generic roadmap for RNA-seq computational analyses.](https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig1_HTML.gif)
+
+The major analysis steps are listed above the lines for pre-analysis, core analysis and advanced analysis. The key analysis issues for each step that are listed below the lines are discussed in the text. a Preprocessing includes experimental design, sequencing design, and quality control steps. b Core analyses include transcriptome profiling, differential gene expression, and functional profiling. c Advanced analysis includes visualization, other RNA-seq technologies, and data integration. Abbreviations: ChIP-seq Chromatin immunoprecipitation sequencing, eQTL Expression quantitative loci, FPKM Fragments per kilobase of exon model per million mapped reads, GSEA Gene set enrichment analysis, PCA Principal component analysis, RPKM Reads per kilobase of exon model per million reads, sQTL Splicing quantitative trait loci, TF Transcription factor, TPM Transcripts per million.
+
+![Read mapping and transcript identification strategies.](https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig2_HTML.gif)
+
+Three basic strategies for regular RNA-seq analysis. a An annotated genome is available and reads are mapped to the genome with a gapped mapper. Next (novel) transcript discovery and quantification can proceed with or without an annotation file. Novel transcripts are then functionally annotated. b If no novel transcript discovery is needed, reads can be mapped to the reference transcriptome using an ungapped aligner. Transcript identification and quantification can occur simultaneously. c When no genome is available, reads need to be assembled first into contigs or transcripts. For quantification, reads are mapped back to the novel reference transcriptome and further analysis proceeds as in (b) followed by the functional annotation of the novel transcripts as in (a). Representative software that can be used at each analysis step are indicated in bold text. Abbreviations: GFF General Feature Format, GTF gene transfer format, RSEM RNA-Seq by Expectation Maximization.
+
+@conesa2016survey
+@koch2018beginner
+
+## Experimental design {#bulk-exp-design}
+
+**Are technical replicates needed for RNA-Seq analyses?**
+
+> We find that the Illumina sequencing data are highly replicable, with relatively little technical variation, and thus, for many purposes, it may suffice to sequence each mRNA sample only once.
+
+@marioni2008rna
+
+**How many biological replicates are needed in an RNA-seq experiment?**
+
+![](assets/schurch-2016-3.png)
+
+@schurch2016many
+
+Number of replicates can be calculated more precisely using power analysis. `RnaSeqSampleSize` is an R package for power analysis and sample size estimation for RNA-Seq experiment.  
+
+@zhao2018rnaseqsamplesize
+
+RNASeqPower based spreadsheet ([Google Sheet](https://docs.google.com/spreadsheets/d/14npBsshTUlqt4toiUv2vWGfcrXwh5wSwKPx9vSf4I_M/edit?usp=sharing)) and [Shiny App](https://rnaseq-power.serve.scilifelab.se/).
+
+@hart2013calculating
+
+**More sequencing depth or more biological replicates?**
+
+![(a) Increase in biological replication significantly increases the number of DE genes identified. Numbers of sequencing reads have a diminishing return after 10 M reads. Line thickness indicates depth of replication, with 2 replicates the darkest and 7 replicates the lightest. The lines are smoothed averages for each replication level, with the shaded regions corresponding to the 95% confidence intervals. (b) Power of detecting DE genes increases with both sequencing depth and biological replication. Similar to the trends in (a), increases in the power showed diminishing returns after 10 M reads. (c) ROC curves for three biological replicates. Sequencing deeper than 10 M reads did not significantly improve statistical power and precision for detecting DE genes. (d) The CV of logFC for the top 100 DE genes. The CV of the logFC estimates decreased significantly as we added more biological replicates, whereas adding sequencing depth after 10 M reads had much less effect.](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/3904521/bin/btt688f1p.jpg)
+
+![(a–c) The CV of logCPM for high expression level genes (a), medium expression level genes (b) and low expression level genes (c) (see Section 2 for definition). High/medium expression level genes have low CV for expression level estimates. Adding sequencing depth did not have significant effect on accuracy of estimation, whereas adding biological replicates improved accuracy significantly. For low expression level genes, both adding sequencing depth and adding biological replication level improved expression level estimation accuracy. (d) Number of DE genes plotted against the total estimated sequencing cost. If higher numbers of DE genes are needed, increased biological replication should be used.](https://www.ncbi.nlm.nih.gov/pmc/articles/instance/3904521/bin/btt688f2p.jpg)
+
+@liu2014rna
+
+## RNA extraction {#bulk-ext}
+
+**Impact of RNA degradation on transcript quantification**
+
+> We observed widespread effects of RNA quality on measurements of gene expression levels, as well as a slight but significant loss of library complexity in more degraded samples.
+>
+> While standard normalizations failed to account for the effects of degradation, we found that by explicitly controlling for the effects of RIN using a linear model framework we can correct for the majority of these effects. We conclude that in instances in which RIN and the effect of interest are not associated, this approach can help recover biologically meaningful signals in data from degraded RNA samples.
+
+![A) PCA plot of the 15 samples included in the study based on data from 29,156 genes with at least one mapped read in a single individual. Different colors identify different time-points, while each shape indicates a particular individual in the data set. B) Spearman correlation plot of the 15 samples in the study. PCA, principal component analysis.](https://media.springernature.com/full/springer-static/image/art%3A10.1186%2F1741-7007-12-42/MediaObjects/12915_2014_Article_776_Fig1_HTML.jpg)
+
+@gallego2014rna
+
+> Our current analyses indicate that structured small RNAs with low GC content are recovered inefficiently when a small number of cells is used for RNA isolation with TRIzol. We further find that, in addition to miRNAs, some pre-miRNAs, small interfering RNA (siRNA) duplexes, and transfer RNAs (tRNAs) are also extracted inefficiently under these conditions, reducing their representation in the pool of recovered RNAs.
+
+@kim2012short
+
+## Library prep {#bulk-lib-prep}
+
+> As many as 1751 genes in Gencode Release 19 were identified to be differentially expressed when comparing stranded and non-stranded RNA-seq whole blood samples. Antisense and pseudogenes were significantly enriched in differential expression analyses. Because stranded RNA-seq retains strand information of a read, we can resolve read ambiguity in overlapping genes transcribed from opposite strands, which provides a more accurate quantification of gene expression levels compared with traditional non-stranded RNA-seq.
+>
+> Stranded RNA-seq provides a more accurate estimate of transcript expression compared with non-stranded RNA-seq, and is therefore the recommended RNA-seq approach for future mRNA-seq studies.
+
+@zhao2015comparison
+
+@levin2010comprehensive
+
+## Sequencing {#bulk-seq}
+
+@chhangawala2015impact
+
+@corley2017differentially
+
+@liu2014rna
+
+## De novo assembly {#bulk-de-novo}
+
+@hsieh2019effect
+
+@wang2017comprehensive
+
+## PCR and deduplication {#bulk-pcr}
+
+@fu2018elimination
+
+@parekh2016impact
+
+@klepikova2017effect
+
+## Mapping {#bulk-mapping}
+
+@baruzzo2017simulation
+
+## Normalisation {#bulk-norm}
+
+![Comparison of normalization methods for real data. (A) Boxplots of log2(counts + 1) for all conditions and replicates in the M. musculus data, by normalization method. (B) Boxplots of intra-group variance for one of the conditions (labeled ‘B’ in the corresponding data found in Supplementary Data) in the M. musculus data, by normalization method. (C) Analysis of housekeeping genes for the H. sapiens data. (D) Consensus dendrogram of differential analysis results, using the DESeq Bioconductor package, for all normalization methods across the four datasets under consideration.](assets/dilles-2013-2.png)
+
+@dillies2013comprehensive
+
+![One highly expressed gene. An experiment is performed with conditions A and B to compare expression for the three genes (1, 2 and 3). (A) Gene 3 is 2-fold up-regulated under condition B, while the other genes are not DE; the quantity of mRNA/cell (in bp) is the same for genes 1 and 2, but is twice as high for gene 3 under condition B. (B) Because of the change in expression of gene 3, the shares of mRNA in the cell are different between conditions. Under condition A, each gene gets one-third, whereas under condition B, gene 3 gets half while the other two get one-fourth. (C) Differences in shares of mRNA are reflected in the shares of reads. Each sample has the same total number of reads, but the distribution is different between the conditions, matching the distribution of mRNA in (B). (D) When no normalization is performed, there are apparent differences in read counts for all three genes. Total count normalization produces the exact same result as no normalization at all, as the total read count for each sample is the same. In truth, there is no difference in expression for genes 1 and 2, and the relative count for gene 3 should be higher than found by no normalization or total count normalization. Correct normalization, therefore, makes the read counts of the non-DE genes equivalent, which also makes the relative expression of gene 3 correct. (E) No normalization and total count normalization fail to equilibrate the read counts of the non-DE genes, resulting in each gene appearing DE, and the truly DE gene (gene 3) having the wrong fold change. Correct normalization reveals no difference in expression for the non-DE genes and the correct fold change for gene 3.](assets/evans-2018-1.png)
+
+![Global shift in expression. There are two genes, and an experiment is performed to compare expression between condition A and condition B. (A) There is global up-regulation under condition B versus condition A, with both genes having twice the expression under condition B. Within each condition, the two genes produce the same amount of mRNA/cell (measured in bp). (B) In the RNA-Seq experiment, the same number of molecules are sequenced from each of the two samples. Proportionally, the mRNA composition is the same under each condition, and so the composition of molecules sequenced is also the same. Within each condition, the two genes produce the same amount of mRNA (in bp) but gene 2 is four-fifth the length of gene 1, so must produce five-fourth the number of molecules that gene 1 does. (C) Sequenced reads are aligned to the reference genome and mapped to each gene. The distribution of reads is the same in each sample, but by chance the sample for condition A happens to have more reads in total. (D) Normalization is performed, which removes the differences in read count from technical variability, so the read count for each gene is the same across conditions. (E) Because the normalized read counts are the same, the observed fold change for each gene is 1, indicating no differential expression. However, genes are really twice as expressed under condition B and so in truth we should see half the expression when comparing A with B.](assets/evans-2018-2.png)
+
+@evans2018selecting
+
+### Use of RPKM & TPM
+
+Issues with RPKM and suggestion for use of TPM.
+
+@wagner2012measurement
+
+> Below is a suggested workflow to follow in order to compare RPKM  or TPM values across samples.
+>1. Make sure both samples are sequenced using the same protocol in terms of strandedness. If not, samples cannot be compared.
+>2. Make sure both samples use the same RNA isolation approach   (polyA+ selection vs ribosomal RNA depletion). If not, they should not be compared.
+>3. Check the fraction of the ribosomal, mitochondrial and globin RNAs, and the top highly expressed  transcripts  and  see  whether  such  RNAs  constitute a very large part of the sequenced reads in a   sample, and thus decrease the sequencing 'real estate' available for the remaining genes in that sample. If the calculated fractions in two samples differ significantly, do not compare RPKM or TPM values directly. TPM should never be used for quantitative comparisons across samples when the total RNA contents and its distributions are very  different. However, under appropriate circumstances,  TPM can be still useful for qualitative comparison such as PCA and clustering analysis.    
+
+@zhao2020misuse
+
+## Batch effect {#bulk-batch-effect}
+
+@liu2016evaluation
+
+@manimaran2016batchqc
+
+## Differential gene expression {#bulk-dge}
+
+**Which DE tool should you use?**
+
+![](assets/schurch-2016-1.png)
+
+![](assets/schurch-2016-2.png)
+
+@schurch2016many
+
+@seyednasrollah2015comparison
+
+### Modelling in R
+
+> If variable is a factor, then the two models with and without the intercept term are equivalent, but if variable is a covariate (continuous) the then two models are fundamentally different.
+
+> In general, we suggest the inclusion of an intercept term for modelling explanatory variables that are covariates (continuous) since it provides a more flexible fit to the data points.
+
+@law2020guide
+
+@soneson2020exploremodelmatrix
+
+@law2016rna
+
+## Other
+
+A benchmark for quantification pipelines
+
+@teng2016benchmark
+
+## Reference & File formats
+
+- Illumina [read quality scores](https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf)
+- Illumina read name [format](http://support.illumina.com/content/dam/illumina-support/help/BaseSpaceHelp_v2/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FASTQFiles.htm)
+- GTF [format](https://www.ensembl.org/info/website/upload/gff.html)
+- SAM file [format](http://www.htslib.org/doc/sam.html)
+
+## Software
+
+### Reads and general QC
+
+- [{{< fa toolbox >}} FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+- [{{< fa toolbox >}} MultiQC](https://multiqc.info/)
+
+### Aligners (Mapper)
+
+- [{{< fa toolbox >}} STAR](https://github.com/alexdobin/STAR)
+- [{{< fa toolbox >}} hisat2](http://daehwankimlab.github.io/hisat2/)
+
+### Pseudoaligners
+
+- [{{< fa toolbox >}} Kallisto](https://pachterlab.github.io/kallisto/)
+- [{{< fa toolbox >}} Salmon](https://combine-lab.github.io/salmon/)
+
+### Aligned QC
+
+Tools to assess post-alignment quality, ie; after mapping of reads to a reference.
+
+- [{{< fa toolbox >}} QoRTs](https://hartleys.github.io/QoRTs/)
+- [{{< fa toolbox >}} RSeQC](http://rseqc.sourceforge.net/)
+- [{{< fa toolbox >}} Qualimap](http://qualimap.bioinfo.cipf.es/)
+
+### Quantification
+
+- [{{< fa toolbox >}} featureCounts](http://bioinf.wehi.edu.au/featureCounts/)
+- [{{< fa toolbox >}} HTSeq](https://github.com/simon-anders/htseq)
+- [{{< fa toolbox >}} RSEM](https://deweylab.github.io/RSEM/)
+
+### Pipelines
+#### Nextflow nf-core rnaseq
+
+- Bulk RNA-Seq, SMART-Seq
+- QC, trimming, UMI demultiplexing, mapping, quantification
+- cellxgene matrix
+- [{{< fa toolbox >}} nf-core rnaseq](https://nf-co.re/rnaseq/3.9/usage)
+
+### Genome browsers
+
+Interactive exploration of BAM files, ie; reads aligned to a reference.
+
+- [{{< fa toolbox >}} IGV](http://software.broadinstitute.org/software/igv/)
+- [{{< fa toolbox >}} UCSC Genome browser](https://genome.ucsc.edu/)
+- [{{< fa toolbox >}} SeqMonk](https://www.bioinformatics.babraham.ac.uk/projects/seqmonk/)
+
+### Batch correction
+
+- [{{< fa toolbox >}} SVA](http://bioconductor.org/packages/release/bioc/html/sva.html)
+- [{{< fa toolbox >}} PVCA](https://bioconductor.org/packages/release/bioc/html/pvca.html)
+- [{{< fa toolbox >}} BatchQC](http://bioconductor.org/packages/release/bioc/html/BatchQC.html)
+
+### GSA/GSEA
+
+- Convert gene IDs [{{< fa toolbox >}} gProfiler](https://biit.cs.ut.ee/gprofiler/convert)
+- OSA/ORA Online [{{< fa toolbox >}} Enrichr](https://maayanlab.cloud/Enrichr/)
+- OSA/ORA Online [{{< fa toolbox >}} GOrilla](http://cbl-gorilla.cs.technion.ac.il)
+- OSA/ORA Online [{{< fa toolbox >}} Panther](http://www.pantherdb.org/about.jsp)
+- ORA/GSEA/NTA Online [{{< fa toolbox >}} Webgestalt](http://www.webgestalt.org)
+- ORA/GSEA Online [{{< fa toolbox >}} DAVID](https://david.ncifcrf.gov)
+- KEGG pathways [{{< fa toolbox >}} KEGG](https://www.genome.jp/kegg/)
+- Functional annotation through orthology [{{< fa toolbox >}} eggNOGmapper](http://eggnog-mapper.embl.de/)
+- ORA/GSEA in R [{{< fa toolbox >}} clusterProfiler](https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html)
+- Standalone software [{{< fa toolbox >}} ErmineJ](https://erminej.msl.ubc.ca/)
+- Plot genes on Kegg pathways in R [{{< fa toolbox >}} Pathview](https://bioconductor.org/packages/release/bioc/html/pathview.html)
+- Cytoscape plugin [{{< fa toolbox >}} ClueGO](http://apps.cytoscape.org/apps/cluego)
+- Semantic reduction of terms [{{< fa toolbox >}} ReviGO](http://revigo.irb.hr)
+
+### GUI
+
+Graphical User Interfaces for analysis of RNA-Seq data.
+
+- [{{< fa toolbox >}} Galaxy](https://usegalaxy.org/)
+- [{{< fa toolbox >}} SeqMonk](https://www.bioinformatics.babraham.ac.uk/projects/seqmonk/)
+- [{{< fa toolbox >}} Qiagen CLC Genomics workbench](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-visualization/qiagen-clc-genomics-workbench/)
+- [{{< fa toolbox >}} Geneious](https://www.geneious.com/)
+
+## Courses, Workshops & Tutorials
+
+- University of Cambridge [workshop](https://bioinformatics-core-shared-training.github.io/RNAseq-R/)
+- Bioconductor RNA-Seq workflow in R [rnaseqGene](https://bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html)
+- Griffith Lab [RNA-Seq tutorial](https://github.com/griffithlab/rnaseq_tutorial)
+
+## Other
+
+**Estimating storage requirements for FASTQ files**
+
+> - One .fastq file for Single-End sequencing
+>   - .fastq MB = Number of million reads x (60 + 2 x read length in bp)
+> - Paired-End sequencing produces 2 fastq files
+>   - .fastq MB = Number of million reads x (60 + 2 x read length in bp) x 2
+> - It is recommended to store .fastq files in a compressed format (ex: .gz), which makes the file approximately 4 times smaller.
+
+@elixirbelgium2022
+

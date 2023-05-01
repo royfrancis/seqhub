@@ -1,0 +1,33 @@
+---
+title: Home
+description: "A high level guide and knowledgebase for RNA-Seq experiments and analyses."
+format:
+  html:
+    number-sections: false
+    toc: true
+    css: "assets/css/background.css"
+    lightbox: 
+      match: false
+---
+
+
+
+### [Bulk RNA-Seq](chapters/bulk/index.html)  
+Traditional RNA-Seq experiment from tissue material.
+
+### [Single-Cell RNA-Seq](chapters/sc/index.html)  
+RNA-Seq experiment where the source material is single cells. Methods such as 10X chromium, Smart-Seq etc.
+
+### [Spatial RNA-Seq](chapters/spatial/index.html)
+RNA-Seq experiment with spatial information. 10X Visium etc.
+
+### [Meta transcriptomics](chapters/spatial/index.html)  
+RNA-Seq experiments involving multiple / mixed species.
+
+::: {.coverbg}
+
+::: small
+Updated: <?lua.date?> at <?lua.time?>.
+:::
+
+:::

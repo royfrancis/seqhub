@@ -1,0 +1,211 @@
+---
+title: Single-cell RNA-Seq
+description: Guide and links related to single-cell RNA-Seq experiments and analyses.
+---
+
+## Overview {#sc-overview}
+
+**Current best practices in scRNA-Seq**
+
+@luecken2019current
+
+**What information should be included in an scRNA-Seq publication?**
+
+@fullgrabe2020guidelines
+
+## Experimental design {#sc-exp-design}
+
+**Experimental Considerations for Single-Cell RNA Sequencing Approaches**
+
+![Overview of step-wise approach to designing single-cell analysis workflows. RNA integrity number (RIN); Reads per cell (RPC).](https://www.frontiersin.org/files/Articles/391125/fcell-06-00108-HTML/image_m/fcell-06-00108-g001.jpg)
+
+@nguyen2018experimental
+
+**How many reads are needed per cell? Sequencing depth?**
+
+> Given a fixed budget, sequencing as many cells as possible at approximately one read per cell per gene is optimal, both theoretically and experimentally.
+
+@zhang2020determining
+
+### Batch design, number of cells
+
+**Avoid technical biases.**
+
+![Experimental design examples. In the confounded design, cells are isolated from each sample onto separate plates, processed at potentially different times and the two groups (indicated by different colors) are sequenced on separate lanes of the sequencer. In the balanced design on the right, all samples are evenly distributed across all stages of the experiment, thus reducing the sources of technical variation in the experiment.](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/bfg/17/4/10.1093_bfgp_elx035/1/elx035f2.jpeg)
+
+**Deciding appropriate cell numbers**
+
+![Estimate of cells required for experiments with various parameters. (A) The plot shows the log10(#Cells) required to capture at least 50 cell types based on the parameters on the X- and Y-axes. (B) The plot shows the log10(#Cells) required to capture the number of cells on the Y-axis if the population consists of 20 cell types.](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/bfg/17/4/10.1093_bfgp_elx035/1/elx035f3.jpeg)
+
+@baran2018experimental
+
+- [{{< fa toolbox >}} SatijaLab Cells Calculator](https://satijalab.org/howmanycells/)
+- [{{< fa toolbox >}} powsimR (R)](https://github.com/bvieth/powsimR)
+
+### Sequencing depth
+
+> While 250 000 reads per cell are sufficient for accuracy, 1 million reads per cell were a good target for saturated gene detection.
+
+@svensson2017power
+
+- [{{< fa toolbox >}} Compare 10X QC reports](https://10xqc.com/)
+- SatijaLab [{{< fa toolbox >}} Cost Per Cell Calculator](https://satijalab.org/costpercell/)
+
+## Mapping and Quantification
+
+### CellRanger
+
+- Process chromium data
+- BCL to FASTQ
+- FASTQ to cellxgene counts
+- Feature barcoding
+
+- [{{< fa toolbox >}} CellRanger](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)
+
+### Kallisto Bustools
+
+- 10x, inDrop and Dropseq
+- Generate cellxgene, cellxtranscript matrix
+- RNA velocity data
+- Feature barcoding
+- QC reports
+
+- [{{< fa toolbox >}} BUSTools](https://bustools.github.io/)
+
+@melsted2019modular
+
+### Salmon Alevin
+
+- Drop-seq, 10x-Chromium v1/2/3, inDropV2, CELSeq 1/2, Quartz-Seq2, sci-RNA-seq3
+- Generate cellxgene matrix
+- [{{< fa toolbox >}} Alevin](https://salmon.readthedocs.io/en/latest/alevin.html)
+
+### Nextflow nf-core rnaseq
+
+- Bulk RNA-Seq, SMART-Seq
+- QC, trimming, UMI demultiplexing, mapping, quantification
+- cellxgene matrix
+- [{{< fa toolbox >}} nf-core scrnaseq](https://nf-co.re/scrnaseq)
+
+## Doublet detection
+
+![Summary of doublet detection tools.](https://ars.els-cdn.com/content/image/1-s2.0-S2405471220304592-gr5.jpg)
+
+@xi2021benchmarking
+
+## Cell type identification
+
+Identification of cell types can be completely automated (by comparing to reference data/databases) or semi-automated (reference data + marker genes).
+
+![Summary of performance of the automatic cell-type identification methods. Bar graphs of the automatic cell-type identification methods with six evaluation criteria indicated. For each evaluation criteria, the length of the bars shows the performance of the automatic method: poor, median or good. The automatic methods are sorted based on the mean performance of the evaluation criteria. No bar: not evaluated.](https://ars.els-cdn.com/content/image/1-s2.0-S2001037021004499-gr5_lrg.jpg)
+
+@xie2021automatic
+
+@sun2022comprehensive
+
+- [{{< fa toolbox >}} SCINA](https://github.com/jcao89757/SCINA)
+- [{{< fa toolbox >}} SingleR](https://bioconductor.org/packages/release/bioc/html/SingleR.html)
+
+## Differential expression
+
+- Comparison of DGE tools for single-cell data
+
+> All of the tools perform well when there is no multimodality or low levels of multimodality. They all also perform better when the sparsity (zero counts) is less. For data with a high level of multimodality, methods that consider the behavior of each individual gene, such as DESeq2, EMDomics, Monocle2, DEsingle, and SigEMD, show better TPRs. If the level of multimodality is low, however, SCDE, MAST, and edgeR can provide higher precision.
+
+> In general, the methods that can capture multimodality (non-parametric methods), perform better than do the model-based methods designed for handling zero counts. However, a model-based method that can model the drop-out events well, can perform better in terms of true positive and false positive. We observed that methods developed specifically for scRNAseq data do not show significantly better performance compared to the methods designed for bulk RNAseq data; and methods that consider behavior of each individual gene (not all genes) in calling DE genes outperform the other tools.
+
+![Effect of sample size (number of cells) on detecting DE genes. The sample size is in horizontal axis, from 10 to 400 cells in each condition. Effect of sample size on a TPR, b FPR, c accuracy (=(TP + TN)/(TP + FP + TN + FN)), and precision (=TP/(TP + FP)). A threshold of 0.05 is used for FDR or adjusted p-value.](https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12859-019-2599-6/MediaObjects/12859_2019_2599_Fig7_HTML.png)
+
+@wang2019comparative
+
+- Differential expression without clustering or grouping
+- [{{< fa toolbox >}} singleCellHaystack](https://github.com/alexisvdb/singleCellHaystack)
+
+## Data Integration
+
+- Single-cell data integration challenges
+
+![Overview of common data integration methods classified according to their anchor choice.](assets/argelaguet-2021-tab1.png)
+
+@argelaguet2021computational
+
+- Comparison of data integration methods
+
+![a, Overview of top and bottom ranked methods by overall score for the human immune cell task. Metrics are divided into batch correction (blue) and bio-conservation (pink) categories. Overall scores are computed using a 40/60 weighted mean of these category scores (see Methods for further visualization details and Supplementary Fig. 2 for the full plot). b,c, Visualization of the four best performers on the human immune cell integration task colored by cell identity (b) and batch annotation (c). The plots show uniform manifold approximation and projection layouts for the unintegrated data (left) and the top four performers (right).](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig2_HTML.png?as=webp)
+
+![a, Scatter plot of the mean overall batch correction score against mean overall bio-conservation score for the selected methods on RNA tasks. Error bars indicate the standard error across tasks on which the methods ran. b, The overall scores for the best performing method, preprocessing and output combinations on each task as well as their usability and scalability. Methods that failed to run for a particular task were assigned the unintegrated ranking for that task. An asterisk after the method name (scANVI and scGen) indicates that, in addition, cell identity information was passed to this method. For ComBat and MNN, usability and scalability scores corresponding to the Python implementation of the methods are reported (Scanpy and mnnpy, respectively).](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig3_HTML.png?as=webp)
+
+@luecken2022benchmarking
+
+## VDJ
+### TCR review
+
+- Human T cells develop in the thymus and they acquire the ability to recognize foreign antigens and provide protection against many different pathogens.
+- This functional flexibility is guaranteed by the expression of highly polymorphic surface receptors called T cell receptors (TCRs).
+- TCR is composed of two different protein chains. The vast majority of human T cells express TCRs composed of α (alpha) and β (beta) chains.
+- The genes encoding alpha (TCRA) and beta (TCRAB) chains are composed of multiple non-contiguous gene segments which include variable (V), diversity (D), and joining (J) segments for TCRB gene and variable (V) and joining (J) for TCRA gene.
+- The enormous diversity of T cell repertoires is generated by random combinations of germ line gene segments (combinatorial diversity) and by random addition or deletion at the junction site of the segments that have been joined (junctional diversity).
+- The sequence encoded by the V(D)J junction is called complementarity determining region 3 or CDR3. This sequence has the highest variability in both alpha and beta chains and determines the ability of a T cell to recognize an antigen.
+- The total number of possible combination is estimated to exceed 10e18.
+- The diversity of naïve T cells is the T cell repertoire
+- Exposure to an antigen drives a rapid clonal expansion of cells carrying identical TCRs to generate a population of “effector cells.”
+- After antigen clearance, a reduced number of these cells remain in the blood as “memory cells.”
+
+![](https://www.frontiersin.org/files/Articles/384005/fimmu-09-01638-HTML/image_m/fimmu-09-01638-g001.jpg)
+
+@de2018single
+
+### Tools
+
+Tools related to VDJ analyses.
+
+- [{{< fa toolbox >}} Enclone (10X, Shell)](https://10xgenomics.github.io/enclone/)
+- [{{< fa toolbox >}} vdjtools (Java)](https://github.com/mikessh/vdjtools)
+- [{{< fa toolbox >}} conga (Python)](https://github.com/phbradley/conga)
+- [{{< fa toolbox >}} SONAR (Python)](https://github.com/scharch/SONAR)
+- [{{< fa toolbox >}} scRepertoire (R)](https://github.com/ncborcherding/scRepertoire)
+- [{{< fa toolbox >}} djvdj (R)](https://github.com/rnabioco/djvdj)
+
+## Databases
+
+### Data
+
+- [scRNASeqDB](https://bioinfo.uth.edu/scrnaseqdb/)
+- [Broad SIngleCell portal](https://singlecell.broadinstitute.org/single_cell)
+- [Hemberg Lab collection](https://hemberg-lab.github.io/scRNA.seq.datasets/)
+- [10x datasets](https://www.10xgenomics.com/resources/datasets)
+- [EBI Cell Atlas](https://www.ebi.ac.uk/gxa/sc/home)
+- [recount 2](https://jhubiostatistics.shinyapps.io/recount/)
+- [JingleBells](https://jinglebells.bgu.ac.il/)
+- [CNGB](https://db.cngb.org/cdcp/explore)
+- [R TENxVisiumData](https://bioconductor.org/packages/release/data/experiment/vignettes/TENxVisiumData/inst/doc/vignette.html)
+
+### Markers
+
+- [PanglaoDB](https://panglaodb.se/)
+- [CellMarker](http://biocc.hrbmu.edu.cn/CellMarker/browse.jsp)
+
+## Interactive visualisation frameworks
+
+- [ShinyCell](https://github.com/SGDDNB/ShinyCell)
+- [CDCP](https://db.cngb.org/cdcp/)
+- [SingleCellVR](https://singlecellvr.pinellolab.partners.org/)
+
+![](https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png)
+
+@ouyang2021shinycell
+
+![](https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/bin/lqaa052tbl1.jpg)
+
+@cakir2020comparison
+
+## Learning
+
+- [HBC Training](https://hbctraining.github.io/scRNA-seq_online/schedule/)
+- [NBIS workshop](https://nbisweden.github.io/workshop-scRNAseq)
+- [Seurat tutorials](https://satijalab.org/seurat/index.html)
+
+## References
+
+::: {#refs-sc}
+:::

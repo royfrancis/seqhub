@@ -1,0 +1,60 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "RSKB"
+  page-navigation: true
+  favicon: assets/favicon.png
+  site-url: https://royfrancis.github.io/rskb
+  repo-url: https://github.com/royfrancis/rskb
+  repo-branch: main
+  repo-actions: [edit, issue]
+  page-footer:
+    border: false
+    left: "<?lua.year?> Roy Francis"
+    right: "Published with [Quarto](https://quarto.org/) v<?quarto.version?>"
+  chapters:
+    - index.qmd
+    - chapters/bulk/index.qmd
+    - chapters/sc/index.qmd
+    - chapters/spatial/index.qmd
+    - chapters/meta/index.qmd
+
+bibliography: references.bib
+csl: apa.csl
+
+format:
+  html:
+    include-in-header: "assets/fonts/head.html"
+    theme:
+      - pulse
+      - assets/css/styles.scss
+    section-numbering: true
+    title-block-banner: true
+    toc: true
+    smooth-scroll: true
+    lightbox: 
+      match: auto
+  epub:
+    cover-image: assets/cover.png
+
+crossref:
+  fig-title: "**Fig**"
+  tbl-title: "**Tab**"
+  title-delim: "**: **"
+
+knitr:
+  opts_chunk:
+    results: hold
+
+execute:
+  eval: true
+  echo: true
+  warning: false
+  message: false
+  freeze: false
+
+filters:
+  - assets/custom.lua
+  - lightbox

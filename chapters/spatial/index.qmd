@@ -1,9 +1,6 @@
 ---
 title: Spatial RNA-Seq
 description: Guide and links related to spatial transcriptomics technologies and analyses.
-layout: page
-show_in_menu: true
-disable_anchors: false
 ---
 
 ## Overview
@@ -14,23 +11,11 @@ There are three major resolution scales in ST data:
 - single-cell
 - sub-cellular
 
-{% include citation
-text="Walker et al, 2022"
-tip="Walker, B. L., Cang, Z., Ren, H., Bourgain-Chang, E., & Nie, Q. (2022). Deciphering tissue structure and function using spatial transcriptomics. Communications biology, 5(1), 220."
-url="https://www.nature.com/articles/s42003-022-03175-5"
-%}
+@walker2022deciphering
 
-{% include citation
-text="Yue et al, 2023"
-tip="Yue, L., Liu, F., Hu, J., Yang, P., Wang, Y., Dong, J., ... & Wang, S. (2023). A guidebook of spatial transcriptomic technologies, data resources and analysis approaches. Computational and Structural Biotechnology Journal."
-url="https://www.sciencedirect.com/science/article/pii/S2001037023000156"
-%}
+@yue2023guidebook
 
-{% include citation
-text="Moses et al, 2022"
-tip="Moses, L., & Pachter, L. (2022). Museum of spatial transcriptomics. Nature Methods, 19(5), 534-546."
-url="https://www.nature.com/articles/s41592-022-01409-2"
-%}
+@moses2022museum
 
 ## Techniques
 ### 10X Visium
@@ -91,9 +76,7 @@ also referred to as cell-cell communications (CCC), with fewer
 false positives than similar analysis with scRNA-seq data.
 
 - SpaOTsc
-- 
 
 ## Datasets
 
 - R package [TENxVisiumData](https://bioconductor.org/packages/release/data/experiment/vignettes/TENxVisiumData/inst/doc/vignette.html)
-
