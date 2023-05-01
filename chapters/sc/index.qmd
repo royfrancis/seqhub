@@ -31,11 +31,11 @@ description: Guide and links related to single-cell RNA-Seq experiments and anal
 
 **Avoid technical biases.**
 
-![Experimental design examples. In the confounded design, cells are isolated from each sample onto separate plates, processed at potentially different times and the two groups (indicated by different colors) are sequenced on separate lanes of the sequencer. In the balanced design on the right, all samples are evenly distributed across all stages of the experiment, thus reducing the sources of technical variation in the experiment.](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/bfg/17/4/10.1093_bfgp_elx035/1/elx035f2.jpeg)
+![Experimental design examples. In the confounded design, cells are isolated from each sample onto separate plates, processed at potentially different times and the two groups (indicated by different colors) are sequenced on separate lanes of the sequencer. In the balanced design on the right, all samples are evenly distributed across all stages of the experiment, thus reducing the sources of technical variation in the experiment.](assets/baran-2018-1.jpg)
 
 **Deciding appropriate cell numbers**
 
-![Estimate of cells required for experiments with various parameters. (A) The plot shows the log10(#Cells) required to capture at least 50 cell types based on the parameters on the X- and Y-axes. (B) The plot shows the log10(#Cells) required to capture the number of cells on the Y-axis if the population consists of 20 cell types.](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/bfg/17/4/10.1093_bfgp_elx035/1/elx035f3.jpeg)
+![Estimate of cells required for experiments with various parameters. (A) The plot shows the log10(#Cells) required to capture at least 50 cell types based on the parameters on the X- and Y-axes. (B) The plot shows the log10(#Cells) required to capture the number of cells on the Y-axis if the population consists of 20 cell types.](assets/baran-2018-2.jpg)
 
 @baran2018experimental
 
@@ -204,8 +204,3 @@ Tools related to VDJ analyses.
 - [HBC Training](https://hbctraining.github.io/scRNA-seq_online/schedule/)
 - [NBIS workshop](https://nbisweden.github.io/workshop-scRNAseq)
 - [Seurat tutorials](https://satijalab.org/seurat/index.html)
-
-## References
-
-::: {#refs-sc}
-:::

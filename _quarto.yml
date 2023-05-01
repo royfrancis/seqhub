@@ -20,6 +20,7 @@ book:
     - chapters/sc/index.qmd
     - chapters/spatial/index.qmd
     - chapters/meta/index.qmd
+    - chapters/references.qmd
 
 bibliography: references.bib
 csl: apa.csl
