@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Guide and links related to bulk RNA-Seq experiments and analyses.">
+
+<title>RSKB - 2&nbsp; Bulk RNA-Seq</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../chapters/sc/index.html" rel="next">
+<link href="../../index.html" rel="prev">
+<link href="../../assets/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&amp;family=Nunito:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/bulk/index.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Bulk RNA-Seq</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Bulk RNA-Seq</span></h1>
+                  <div>
+        <div class="description">
+          Guide and links related to bulk RNA-Seq experiments and analyses.
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">RSKB</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/royfrancis/rskb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Home</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/bulk/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Bulk RNA-Seq</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Single-cell RNA-Seq</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/spatial/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Spatial RNA-Seq</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/meta/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Meta Transcriptomics</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#bulk-overview" id="toc-bulk-overview" class="nav-link active" data-scroll-target="#bulk-overview"><span class="header-section-number">2.1</span> Overview</a></li>
+  <li><a href="#bulk-exp-design" id="toc-bulk-exp-design" class="nav-link" data-scroll-target="#bulk-exp-design"><span class="header-section-number">2.2</span> Experimental design</a></li>
+  <li><a href="#bulk-ext" id="toc-bulk-ext" class="nav-link" data-scroll-target="#bulk-ext"><span class="header-section-number">2.3</span> RNA extraction</a></li>
+  <li><a href="#bulk-lib-prep" id="toc-bulk-lib-prep" class="nav-link" data-scroll-target="#bulk-lib-prep"><span class="header-section-number">2.4</span> Library prep</a></li>
+  <li><a href="#bulk-seq" id="toc-bulk-seq" class="nav-link" data-scroll-target="#bulk-seq"><span class="header-section-number">2.5</span> Sequencing</a></li>
+  <li><a href="#bulk-de-novo" id="toc-bulk-de-novo" class="nav-link" data-scroll-target="#bulk-de-novo"><span class="header-section-number">2.6</span> De novo assembly</a></li>
+  <li><a href="#bulk-pcr" id="toc-bulk-pcr" class="nav-link" data-scroll-target="#bulk-pcr"><span class="header-section-number">2.7</span> PCR and deduplication</a></li>
+  <li><a href="#bulk-mapping" id="toc-bulk-mapping" class="nav-link" data-scroll-target="#bulk-mapping"><span class="header-section-number">2.8</span> Mapping</a></li>
+  <li><a href="#bulk-norm" id="toc-bulk-norm" class="nav-link" data-scroll-target="#bulk-norm"><span class="header-section-number">2.9</span> Normalisation</a>
+  <ul class="collapse">
+  <li><a href="#use-of-rpkm-tpm" id="toc-use-of-rpkm-tpm" class="nav-link" data-scroll-target="#use-of-rpkm-tpm"><span class="header-section-number">2.9.1</span> Use of RPKM &amp; TPM</a></li>
+  </ul></li>
+  <li><a href="#bulk-batch-effect" id="toc-bulk-batch-effect" class="nav-link" data-scroll-target="#bulk-batch-effect"><span class="header-section-number">2.10</span> Batch effect</a></li>
+  <li><a href="#bulk-dge" id="toc-bulk-dge" class="nav-link" data-scroll-target="#bulk-dge"><span class="header-section-number">2.11</span> Differential gene expression</a>
+  <ul class="collapse">
+  <li><a href="#modelling-in-r" id="toc-modelling-in-r" class="nav-link" data-scroll-target="#modelling-in-r"><span class="header-section-number">2.11.1</span> Modelling in R</a></li>
+  </ul></li>
+  <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other"><span class="header-section-number">2.12</span> Other</a></li>
+  <li><a href="#reference-file-formats" id="toc-reference-file-formats" class="nav-link" data-scroll-target="#reference-file-formats"><span class="header-section-number">2.13</span> Reference &amp; File formats</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software"><span class="header-section-number">2.14</span> Software</a>
+  <ul class="collapse">
+  <li><a href="#reads-and-general-qc" id="toc-reads-and-general-qc" class="nav-link" data-scroll-target="#reads-and-general-qc"><span class="header-section-number">2.14.1</span> Reads and general QC</a></li>
+  <li><a href="#aligners-mapper" id="toc-aligners-mapper" class="nav-link" data-scroll-target="#aligners-mapper"><span class="header-section-number">2.14.2</span> Aligners (Mapper)</a></li>
+  <li><a href="#pseudoaligners" id="toc-pseudoaligners" class="nav-link" data-scroll-target="#pseudoaligners"><span class="header-section-number">2.14.3</span> Pseudoaligners</a></li>
+  <li><a href="#aligned-qc" id="toc-aligned-qc" class="nav-link" data-scroll-target="#aligned-qc"><span class="header-section-number">2.14.4</span> Aligned QC</a></li>
+  <li><a href="#quantification" id="toc-quantification" class="nav-link" data-scroll-target="#quantification"><span class="header-section-number">2.14.5</span> Quantification</a></li>
+  <li><a href="#pipelines" id="toc-pipelines" class="nav-link" data-scroll-target="#pipelines"><span class="header-section-number">2.14.6</span> Pipelines</a></li>
+  <li><a href="#genome-browsers" id="toc-genome-browsers" class="nav-link" data-scroll-target="#genome-browsers"><span class="header-section-number">2.14.7</span> Genome browsers</a></li>
+  <li><a href="#batch-correction" id="toc-batch-correction" class="nav-link" data-scroll-target="#batch-correction"><span class="header-section-number">2.14.8</span> Batch correction</a></li>
+  <li><a href="#gsagsea" id="toc-gsagsea" class="nav-link" data-scroll-target="#gsagsea"><span class="header-section-number">2.14.9</span> GSA/GSEA</a></li>
+  <li><a href="#gui" id="toc-gui" class="nav-link" data-scroll-target="#gui"><span class="header-section-number">2.14.10</span> GUI</a></li>
+  </ul></li>
+  <li><a href="#courses-workshops-tutorials" id="toc-courses-workshops-tutorials" class="nav-link" data-scroll-target="#courses-workshops-tutorials"><span class="header-section-number">2.15</span> Courses, Workshops &amp; Tutorials</a></li>
+  <li><a href="#other-1" id="toc-other-1" class="nav-link" data-scroll-target="#other-1"><span class="header-section-number">2.16</span> Other</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/royfrancis/rskb/edit/main/chapters/bulk/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="bulk-overview" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="bulk-overview"><span class="header-section-number">2.1</span> Overview</h2>
+<p><strong>What is the general workflow, steps, tools used and best practices for bulk rna-seq analysis?</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig1_HTML.gif" class="lightbox" title="A generic roadmap for RNA-seq computational analyses." data-gallery="quarto-lightbox-gallery-1"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig1_HTML.gif" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">A generic roadmap for RNA-seq computational analyses.</figcaption>
+</figure>
+</div>
+<p>The major analysis steps are listed above the lines for pre-analysis, core analysis and advanced analysis. The key analysis issues for each step that are listed below the lines are discussed in the text. a Preprocessing includes experimental design, sequencing design, and quality control steps. b Core analyses include transcriptome profiling, differential gene expression, and functional profiling. c Advanced analysis includes visualization, other RNA-seq technologies, and data integration. Abbreviations: ChIP-seq Chromatin immunoprecipitation sequencing, eQTL Expression quantitative loci, FPKM Fragments per kilobase of exon model per million mapped reads, GSEA Gene set enrichment analysis, PCA Principal component analysis, RPKM Reads per kilobase of exon model per million reads, sQTL Splicing quantitative trait loci, TF Transcription factor, TPM Transcripts per million.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig2_HTML.gif" class="lightbox" title="Read mapping and transcript identification strategies." data-gallery="quarto-lightbox-gallery-2"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig2_HTML.gif" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Read mapping and transcript identification strategies.</figcaption>
+</figure>
+</div>
+<p>Three basic strategies for regular RNA-seq analysis. a An annotated genome is available and reads are mapped to the genome with a gapped mapper. Next (novel) transcript discovery and quantification can proceed with or without an annotation file. Novel transcripts are then functionally annotated. b If no novel transcript discovery is needed, reads can be mapped to the reference transcriptome using an ungapped aligner. Transcript identification and quantification can occur simultaneously. c When no genome is available, reads need to be assembled first into contigs or transcripts. For quantification, reads are mapped back to the novel reference transcriptome and further analysis proceeds as in (b) followed by the functional annotation of the novel transcripts as in (a). Representative software that can be used at each analysis step are indicated in bold text. Abbreviations: GFF General Feature Format, GTF gene transfer format, RSEM RNA-Seq by Expectation Maximization.</p>
+<p><span class="citation" data-cites="conesa2016survey">Conesa et al. (<a href="../sc/index.html#ref-conesa2016survey" role="doc-biblioref">2016</a>)</span> <span class="citation" data-cites="koch2018beginner">Koch et al. (<a href="../sc/index.html#ref-koch2018beginner" role="doc-biblioref">2018</a>)</span></p>
+</section>
+<section id="bulk-exp-design" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="bulk-exp-design"><span class="header-section-number">2.2</span> Experimental design</h2>
+<p><strong>Are technical replicates needed for RNA-Seq analyses?</strong></p>
+<blockquote class="blockquote">
+<p>We find that the Illumina sequencing data are highly replicable, with relatively little technical variation, and thus, for many purposes, it may suffice to sequence each mRNA sample only once.</p>
+</blockquote>
+<p><span class="citation" data-cites="marioni2008rna">Marioni et al. (<a href="../sc/index.html#ref-marioni2008rna" role="doc-biblioref">2008</a>)</span></p>
+<p><strong>How many biological replicates are needed in an RNA-seq experiment?</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/schurch-2016-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="assets/schurch-2016-3.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p><span class="citation" data-cites="schurch2016many">Schurch et al. (<a href="../sc/index.html#ref-schurch2016many" role="doc-biblioref">2016</a>)</span></p>
+<p>Number of replicates can be calculated more precisely using power analysis. <code>RnaSeqSampleSize</code> is an R package for power analysis and sample size estimation for RNA-Seq experiment.</p>
+<p><span class="citation" data-cites="zhao2018rnaseqsamplesize">Zhao et al. (<a href="../sc/index.html#ref-zhao2018rnaseqsamplesize" role="doc-biblioref">2018</a>)</span></p>
+<p>RNASeqPower based spreadsheet (<a href="https://docs.google.com/spreadsheets/d/14npBsshTUlqt4toiUv2vWGfcrXwh5wSwKPx9vSf4I_M/edit?usp=sharing">Google Sheet</a>) and <a href="https://rnaseq-power.serve.scilifelab.se/">Shiny App</a>.</p>
+<p><span class="citation" data-cites="hart2013calculating">Hart et al. (<a href="../sc/index.html#ref-hart2013calculating" role="doc-biblioref">2013</a>)</span></p>
+<p><strong>More sequencing depth or more biological replicates?</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/instance/3904521/bin/btt688f1p.jpg" class="lightbox" title="(a) Increase in biological replication significantly increases the number of DE genes identified. Numbers of sequencing reads have a diminishing return after 10 M reads. Line thickness indicates depth of replication, with 2 replicates the darkest and 7 replicates the lightest. The lines are smoothed averages for each replication level, with the shaded regions corresponding to the 95% confidence intervals. (b) Power of detecting DE genes increases with both sequencing depth and biological replication. Similar to the trends in (a), increases in the power showed diminishing returns after 10 M reads. (c) ROC curves for three biological replicates. Sequencing deeper than 10 M reads did not significantly improve statistical power and precision for detecting DE genes. (d) The CV of logFC for the top 100 DE genes. The CV of the logFC estimates decreased significantly as we added more biological replicates, whereas adding sequencing depth after 10 M reads had much less effect." data-gallery="quarto-lightbox-gallery-4"><img src="https://www.ncbi.nlm.nih.gov/pmc/articles/instance/3904521/bin/btt688f1p.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">(a) Increase in biological replication significantly increases the number of DE genes identified. Numbers of sequencing reads have a diminishing return after 10 M reads. Line thickness indicates depth of replication, with 2 replicates the darkest and 7 replicates the lightest. The lines are smoothed averages for each replication level, with the shaded regions corresponding to the 95% confidence intervals. (b) Power of detecting DE genes increases with both sequencing depth and biological replication. Similar to the trends in (a), increases in the power showed diminishing returns after 10 M reads. (c) ROC curves for three biological replicates. Sequencing deeper than 10 M reads did not significantly improve statistical power and precision for detecting DE genes. (d) The CV of logFC for the top 100 DE genes. The CV of the logFC estimates decreased significantly as we added more biological replicates, whereas adding sequencing depth after 10 M reads had much less effect.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/instance/3904521/bin/btt688f2p.jpg" class="lightbox" title="(a–c) The CV of logCPM for high expression level genes (a), medium expression level genes (b) and low expression level genes (c) (see Section 2 for definition). High/medium expression level genes have low CV for expression level estimates. Adding sequencing depth did not have significant effect on accuracy of estimation, whereas adding biological replicates improved accuracy significantly. For low expression level genes, both adding sequencing depth and adding biological replication level improved expression level estimation accuracy. (d) Number of DE genes plotted against the total estimated sequencing cost. If higher numbers of DE genes are needed, increased biological replication should be used." data-gallery="quarto-lightbox-gallery-5"><img src="https://www.ncbi.nlm.nih.gov/pmc/articles/instance/3904521/bin/btt688f2p.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">(a–c) The CV of logCPM for high expression level genes (a), medium expression level genes (b) and low expression level genes (c) (see Section 2 for definition). High/medium expression level genes have low CV for expression level estimates. Adding sequencing depth did not have significant effect on accuracy of estimation, whereas adding biological replicates improved accuracy significantly. For low expression level genes, both adding sequencing depth and adding biological replication level improved expression level estimation accuracy. (d) Number of DE genes plotted against the total estimated sequencing cost. If higher numbers of DE genes are needed, increased biological replication should be used.</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="liu2014rna">Y. Liu et al. (<a href="../sc/index.html#ref-liu2014rna" role="doc-biblioref">2014</a>)</span></p>
+</section>
+<section id="bulk-ext" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="bulk-ext"><span class="header-section-number">2.3</span> RNA extraction</h2>
+<p><strong>Impact of RNA degradation on transcript quantification</strong></p>
+<blockquote class="blockquote">
+<p>We observed widespread effects of RNA quality on measurements of gene expression levels, as well as a slight but significant loss of library complexity in more degraded samples.</p>
+<p>While standard normalizations failed to account for the effects of degradation, we found that by explicitly controlling for the effects of RIN using a linear model framework we can correct for the majority of these effects. We conclude that in instances in which RIN and the effect of interest are not associated, this approach can help recover biologically meaningful signals in data from degraded RNA samples.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2F1741-7007-12-42/MediaObjects/12915_2014_Article_776_Fig1_HTML.jpg" class="lightbox" title="A) PCA plot of the 15 samples included in the study based on data from 29,156 genes with at least one mapped read in a single individual. Different colors identify different time-points, while each shape indicates a particular individual in the data set. B) Spearman correlation plot of the 15 samples in the study. PCA, principal component analysis." data-gallery="quarto-lightbox-gallery-6"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2F1741-7007-12-42/MediaObjects/12915_2014_Article_776_Fig1_HTML.jpg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">A) PCA plot of the 15 samples included in the study based on data from 29,156 genes with at least one mapped read in a single individual. Different colors identify different time-points, while each shape indicates a particular individual in the data set. B) Spearman correlation plot of the 15 samples in the study. PCA, principal component analysis.</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="gallego2014rna">Gallego Romero et al. (<a href="../sc/index.html#ref-gallego2014rna" role="doc-biblioref">2014</a>)</span></p>
+<blockquote class="blockquote">
+<p>Our current analyses indicate that structured small RNAs with low GC content are recovered inefficiently when a small number of cells is used for RNA isolation with TRIzol. We further find that, in addition to miRNAs, some pre-miRNAs, small interfering RNA (siRNA) duplexes, and transfer RNAs (tRNAs) are also extracted inefficiently under these conditions, reducing their representation in the pool of recovered RNAs.</p>
+</blockquote>
+<p><span class="citation" data-cites="kim2012short">Kim et al. (<a href="../sc/index.html#ref-kim2012short" role="doc-biblioref">2012</a>)</span></p>
+</section>
+<section id="bulk-lib-prep" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="bulk-lib-prep"><span class="header-section-number">2.4</span> Library prep</h2>
+<blockquote class="blockquote">
+<p>As many as 1751 genes in Gencode Release 19 were identified to be differentially expressed when comparing stranded and non-stranded RNA-seq whole blood samples. Antisense and pseudogenes were significantly enriched in differential expression analyses. Because stranded RNA-seq retains strand information of a read, we can resolve read ambiguity in overlapping genes transcribed from opposite strands, which provides a more accurate quantification of gene expression levels compared with traditional non-stranded RNA-seq.</p>
+<p>Stranded RNA-seq provides a more accurate estimate of transcript expression compared with non-stranded RNA-seq, and is therefore the recommended RNA-seq approach for future mRNA-seq studies.</p>
+</blockquote>
+<p><span class="citation" data-cites="zhao2015comparison">Zhao et al. (<a href="../sc/index.html#ref-zhao2015comparison" role="doc-biblioref">2015</a>)</span></p>
+<p><span class="citation" data-cites="levin2010comprehensive">Levin et al. (<a href="../sc/index.html#ref-levin2010comprehensive" role="doc-biblioref">2010</a>)</span></p>
+</section>
+<section id="bulk-seq" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="bulk-seq"><span class="header-section-number">2.5</span> Sequencing</h2>
+<p><span class="citation" data-cites="chhangawala2015impact">Chhangawala et al. (<a href="../sc/index.html#ref-chhangawala2015impact" role="doc-biblioref">2015</a>)</span></p>
+<p><span class="citation" data-cites="corley2017differentially">Corley et al. (<a href="../sc/index.html#ref-corley2017differentially" role="doc-biblioref">2017</a>)</span></p>
+<p><span class="citation" data-cites="liu2014rna">Y. Liu et al. (<a href="../sc/index.html#ref-liu2014rna" role="doc-biblioref">2014</a>)</span></p>
+</section>
+<section id="bulk-de-novo" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="bulk-de-novo"><span class="header-section-number">2.6</span> De novo assembly</h2>
+<p><span class="citation" data-cites="hsieh2019effect">Hsieh et al. (<a href="../sc/index.html#ref-hsieh2019effect" role="doc-biblioref">2019</a>)</span></p>
+<p><span class="citation" data-cites="wang2017comprehensive">Wang &amp; Gribskov (<a href="../sc/index.html#ref-wang2017comprehensive" role="doc-biblioref">2017</a>)</span></p>
+</section>
+<section id="bulk-pcr" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="bulk-pcr"><span class="header-section-number">2.7</span> PCR and deduplication</h2>
+<p><span class="citation" data-cites="fu2018elimination">Fu et al. (<a href="../sc/index.html#ref-fu2018elimination" role="doc-biblioref">2018</a>)</span></p>
+<p><span class="citation" data-cites="parekh2016impact">Parekh et al. (<a href="../sc/index.html#ref-parekh2016impact" role="doc-biblioref">2016</a>)</span></p>
+<p><span class="citation" data-cites="klepikova2017effect">Klepikova et al. (<a href="../sc/index.html#ref-klepikova2017effect" role="doc-biblioref">2017</a>)</span></p>
+</section>
+<section id="bulk-mapping" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="bulk-mapping"><span class="header-section-number">2.8</span> Mapping</h2>
+<p><span class="citation" data-cites="baruzzo2017simulation">Baruzzo et al. (<a href="../sc/index.html#ref-baruzzo2017simulation" role="doc-biblioref">2017</a>)</span></p>
+</section>
+<section id="bulk-norm" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="bulk-norm"><span class="header-section-number">2.9</span> Normalisation</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/dilles-2013-2.png" class="lightbox" title="Comparison of normalization methods for real data. (A) Boxplots of log2(counts + 1) for all conditions and replicates in the M. musculus data, by normalization method. (B) Boxplots of intra-group variance for one of the conditions (labeled ‘B’ in the corresponding data found in Supplementary Data) in the M. musculus data, by normalization method. (C) Analysis of housekeeping genes for the H. sapiens data. (D) Consensus dendrogram of differential analysis results, using the DESeq Bioconductor package, for all normalization methods across the four datasets under consideration." data-gallery="quarto-lightbox-gallery-7"><img src="assets/dilles-2013-2.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Comparison of normalization methods for real data. (A) Boxplots of log2(counts + 1) for all conditions and replicates in the M. musculus data, by normalization method. (B) Boxplots of intra-group variance for one of the conditions (labeled ‘B’ in the corresponding data found in Supplementary Data) in the M. musculus data, by normalization method. (C) Analysis of housekeeping genes for the H. sapiens data. (D) Consensus dendrogram of differential analysis results, using the DESeq Bioconductor package, for all normalization methods across the four datasets under consideration.</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="dillies2013comprehensive">Dillies et al. (<a href="../sc/index.html#ref-dillies2013comprehensive" role="doc-biblioref">2013</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/evans-2018-1.png" class="lightbox" title="One highly expressed gene. An experiment is performed with conditions A and B to compare expression for the three genes (1, 2 and 3). (A) Gene 3 is 2-fold up-regulated under condition B, while the other genes are not DE; the quantity of mRNA/cell (in bp) is the same for genes 1 and 2, but is twice as high for gene 3 under condition B. (B) Because of the change in expression of gene 3, the shares of mRNA in the cell are different between conditions. Under condition A, each gene gets one-third, whereas under condition B, gene 3 gets half while the other two get one-fourth. (C) Differences in shares of mRNA are reflected in the shares of reads. Each sample has the same total number of reads, but the distribution is different between the conditions, matching the distribution of mRNA in (B). (D) When no normalization is performed, there are apparent differences in read counts for all three genes. Total count normalization produces the exact same result as no normalization at all, as the total read count for each sample is the same. In truth, there is no difference in expression for genes 1 and 2, and the relative count for gene 3 should be higher than found by no normalization or total count normalization. Correct normalization, therefore, makes the read counts of the non-DE genes equivalent, which also makes the relative expression of gene 3 correct. (E) No normalization and total count normalization fail to equilibrate the read counts of the non-DE genes, resulting in each gene appearing DE, and the truly DE gene (gene 3) having the wrong fold change. Correct normalization reveals no difference in expression for the non-DE genes and the correct fold change for gene 3." data-gallery="quarto-lightbox-gallery-8"><img src="assets/evans-2018-1.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">One highly expressed gene. An experiment is performed with conditions A and B to compare expression for the three genes (1, 2 and 3). (A) Gene 3 is 2-fold up-regulated under condition B, while the other genes are not DE; the quantity of mRNA/cell (in bp) is the same for genes 1 and 2, but is twice as high for gene 3 under condition B. (B) Because of the change in expression of gene 3, the shares of mRNA in the cell are different between conditions. Under condition A, each gene gets one-third, whereas under condition B, gene 3 gets half while the other two get one-fourth. (C) Differences in shares of mRNA are reflected in the shares of reads. Each sample has the same total number of reads, but the distribution is different between the conditions, matching the distribution of mRNA in (B). (D) When no normalization is performed, there are apparent differences in read counts for all three genes. Total count normalization produces the exact same result as no normalization at all, as the total read count for each sample is the same. In truth, there is no difference in expression for genes 1 and 2, and the relative count for gene 3 should be higher than found by no normalization or total count normalization. Correct normalization, therefore, makes the read counts of the non-DE genes equivalent, which also makes the relative expression of gene 3 correct. (E) No normalization and total count normalization fail to equilibrate the read counts of the non-DE genes, resulting in each gene appearing DE, and the truly DE gene (gene 3) having the wrong fold change. Correct normalization reveals no difference in expression for the non-DE genes and the correct fold change for gene 3.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/evans-2018-2.png" class="lightbox" title="Global shift in expression. There are two genes, and an experiment is performed to compare expression between condition A and condition B. (A) There is global up-regulation under condition B versus condition A, with both genes having twice the expression under condition B. Within each condition, the two genes produce the same amount of mRNA/cell (measured in bp). (B) In the RNA-Seq experiment, the same number of molecules are sequenced from each of the two samples. Proportionally, the mRNA composition is the same under each condition, and so the composition of molecules sequenced is also the same. Within each condition, the two genes produce the same amount of mRNA (in bp) but gene 2 is four-fifth the length of gene 1, so must produce five-fourth the number of molecules that gene 1 does. (C) Sequenced reads are aligned to the reference genome and mapped to each gene. The distribution of reads is the same in each sample, but by chance the sample for condition A happens to have more reads in total. (D) Normalization is performed, which removes the differences in read count from technical variability, so the read count for each gene is the same across conditions. (E) Because the normalized read counts are the same, the observed fold change for each gene is 1, indicating no differential expression. However, genes are really twice as expressed under condition B and so in truth we should see half the expression when comparing A with B." data-gallery="quarto-lightbox-gallery-9"><img src="assets/evans-2018-2.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Global shift in expression. There are two genes, and an experiment is performed to compare expression between condition A and condition B. (A) There is global up-regulation under condition B versus condition A, with both genes having twice the expression under condition B. Within each condition, the two genes produce the same amount of mRNA/cell (measured in bp). (B) In the RNA-Seq experiment, the same number of molecules are sequenced from each of the two samples. Proportionally, the mRNA composition is the same under each condition, and so the composition of molecules sequenced is also the same. Within each condition, the two genes produce the same amount of mRNA (in bp) but gene 2 is four-fifth the length of gene 1, so must produce five-fourth the number of molecules that gene 1 does. (C) Sequenced reads are aligned to the reference genome and mapped to each gene. The distribution of reads is the same in each sample, but by chance the sample for condition A happens to have more reads in total. (D) Normalization is performed, which removes the differences in read count from technical variability, so the read count for each gene is the same across conditions. (E) Because the normalized read counts are the same, the observed fold change for each gene is 1, indicating no differential expression. However, genes are really twice as expressed under condition B and so in truth we should see half the expression when comparing A with B.</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="evans2018selecting">Evans et al. (<a href="../sc/index.html#ref-evans2018selecting" role="doc-biblioref">2018</a>)</span></p>
+<section id="use-of-rpkm-tpm" class="level3" data-number="2.9.1">
+<h3 data-number="2.9.1" class="anchored" data-anchor-id="use-of-rpkm-tpm"><span class="header-section-number">2.9.1</span> Use of RPKM &amp; TPM</h3>
+<p>Issues with RPKM and suggestion for use of TPM.</p>
+<p><span class="citation" data-cites="wagner2012measurement">Wagner et al. (<a href="../sc/index.html#ref-wagner2012measurement" role="doc-biblioref">2012</a>)</span></p>
+<blockquote class="blockquote">
+<p>Below is a suggested workflow to follow in order to compare RPKM or TPM values across samples. 1. Make sure both samples are sequenced using the same protocol in terms of strandedness. If not, samples cannot be compared. 2. Make sure both samples use the same RNA isolation approach (polyA+ selection vs ribosomal RNA depletion). If not, they should not be compared. 3. Check the fraction of the ribosomal, mitochondrial and globin RNAs, and the top highly expressed transcripts and see whether such RNAs constitute a very large part of the sequenced reads in a sample, and thus decrease the sequencing ‘real estate’ available for the remaining genes in that sample. If the calculated fractions in two samples differ significantly, do not compare RPKM or TPM values directly. TPM should never be used for quantitative comparisons across samples when the total RNA contents and its distributions are very different. However, under appropriate circumstances, TPM can be still useful for qualitative comparison such as PCA and clustering analysis.</p>
+</blockquote>
+<p><span class="citation" data-cites="zhao2020misuse">Zhao et al. (<a href="../sc/index.html#ref-zhao2020misuse" role="doc-biblioref">2020</a>)</span></p>
+</section>
+</section>
+<section id="bulk-batch-effect" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="bulk-batch-effect"><span class="header-section-number">2.10</span> Batch effect</h2>
+<p><span class="citation" data-cites="liu2016evaluation">Q. Liu &amp; Markatou (<a href="../sc/index.html#ref-liu2016evaluation" role="doc-biblioref">2016</a>)</span></p>
+<p><span class="citation" data-cites="manimaran2016batchqc">Manimaran et al. (<a href="../sc/index.html#ref-manimaran2016batchqc" role="doc-biblioref">2016</a>)</span></p>
+</section>
+<section id="bulk-dge" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="bulk-dge"><span class="header-section-number">2.11</span> Differential gene expression</h2>
+<p><strong>Which DE tool should you use?</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/schurch-2016-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="assets/schurch-2016-1.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/schurch-2016-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="assets/schurch-2016-2.png" class="img-fluid figure-img"></a></p>
+</figure>
+</div>
+<p><span class="citation" data-cites="schurch2016many">Schurch et al. (<a href="../sc/index.html#ref-schurch2016many" role="doc-biblioref">2016</a>)</span></p>
+<p><span class="citation" data-cites="seyednasrollah2015comparison">Seyednasrollah et al. (<a href="../sc/index.html#ref-seyednasrollah2015comparison" role="doc-biblioref">2015</a>)</span></p>
+<section id="modelling-in-r" class="level3" data-number="2.11.1">
+<h3 data-number="2.11.1" class="anchored" data-anchor-id="modelling-in-r"><span class="header-section-number">2.11.1</span> Modelling in R</h3>
+<blockquote class="blockquote">
+<p>If variable is a factor, then the two models with and without the intercept term are equivalent, but if variable is a covariate (continuous) the then two models are fundamentally different.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>In general, we suggest the inclusion of an intercept term for modelling explanatory variables that are covariates (continuous) since it provides a more flexible fit to the data points.</p>
+</blockquote>
+<p><span class="citation" data-cites="law2020guide">Law et al. (<a href="../sc/index.html#ref-law2020guide" role="doc-biblioref">2020</a>)</span></p>
+<p><span class="citation" data-cites="soneson2020exploremodelmatrix">Soneson et al. (<a href="../sc/index.html#ref-soneson2020exploremodelmatrix" role="doc-biblioref">2020</a>)</span></p>
+<p><span class="citation" data-cites="law2016rna">Law et al. (<a href="../sc/index.html#ref-law2016rna" role="doc-biblioref">2016</a>)</span></p>
+</section>
+</section>
+<section id="other" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="other"><span class="header-section-number">2.12</span> Other</h2>
+<p>A benchmark for quantification pipelines</p>
+<p><span class="citation" data-cites="teng2016benchmark">Teng et al. (<a href="../sc/index.html#ref-teng2016benchmark" role="doc-biblioref">2016</a>)</span></p>
+</section>
+<section id="reference-file-formats" class="level2" data-number="2.13">
+<h2 data-number="2.13" class="anchored" data-anchor-id="reference-file-formats"><span class="header-section-number">2.13</span> Reference &amp; File formats</h2>
+<ul>
+<li>Illumina <a href="https://www.illumina.com/documents/products/technotes/technote_Q-Scores.pdf">read quality scores</a></li>
+<li>Illumina read name <a href="http://support.illumina.com/content/dam/illumina-support/help/BaseSpaceHelp_v2/Content/Vault/Informatics/Sequencing_Analysis/BS/swSEQ_mBS_FASTQFiles.htm">format</a></li>
+<li>GTF <a href="https://www.ensembl.org/info/website/upload/gff.html">format</a></li>
+<li>SAM file <a href="http://www.htslib.org/doc/sam.html">format</a></li>
+</ul>
+</section>
+<section id="software" class="level2" data-number="2.14">
+<h2 data-number="2.14" class="anchored" data-anchor-id="software"><span class="header-section-number">2.14</span> Software</h2>
+<section id="reads-and-general-qc" class="level3" data-number="2.14.1">
+<h3 data-number="2.14.1" class="anchored" data-anchor-id="reads-and-general-qc"><span class="header-section-number">2.14.1</span> Reads and general QC</h3>
+<ul>
+<li><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> FastQC</a></li>
+<li><a href="https://multiqc.info/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> MultiQC</a></li>
+</ul>
+</section>
+<section id="aligners-mapper" class="level3" data-number="2.14.2">
+<h3 data-number="2.14.2" class="anchored" data-anchor-id="aligners-mapper"><span class="header-section-number">2.14.2</span> Aligners (Mapper)</h3>
+<ul>
+<li><a href="https://github.com/alexdobin/STAR"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> STAR</a></li>
+<li><a href="http://daehwankimlab.github.io/hisat2/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> hisat2</a></li>
+</ul>
+</section>
+<section id="pseudoaligners" class="level3" data-number="2.14.3">
+<h3 data-number="2.14.3" class="anchored" data-anchor-id="pseudoaligners"><span class="header-section-number">2.14.3</span> Pseudoaligners</h3>
+<ul>
+<li><a href="https://pachterlab.github.io/kallisto/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Kallisto</a></li>
+<li><a href="https://combine-lab.github.io/salmon/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Salmon</a></li>
+</ul>
+</section>
+<section id="aligned-qc" class="level3" data-number="2.14.4">
+<h3 data-number="2.14.4" class="anchored" data-anchor-id="aligned-qc"><span class="header-section-number">2.14.4</span> Aligned QC</h3>
+<p>Tools to assess post-alignment quality, ie; after mapping of reads to a reference.</p>
+<ul>
+<li><a href="https://hartleys.github.io/QoRTs/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> QoRTs</a></li>
+<li><a href="http://rseqc.sourceforge.net/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> RSeQC</a></li>
+<li><a href="http://qualimap.bioinfo.cipf.es/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Qualimap</a></li>
+</ul>
+</section>
+<section id="quantification" class="level3" data-number="2.14.5">
+<h3 data-number="2.14.5" class="anchored" data-anchor-id="quantification"><span class="header-section-number">2.14.5</span> Quantification</h3>
+<ul>
+<li><a href="http://bioinf.wehi.edu.au/featureCounts/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> featureCounts</a></li>
+<li><a href="https://github.com/simon-anders/htseq"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> HTSeq</a></li>
+<li><a href="https://deweylab.github.io/RSEM/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> RSEM</a></li>
+</ul>
+</section>
+<section id="pipelines" class="level3" data-number="2.14.6">
+<h3 data-number="2.14.6" class="anchored" data-anchor-id="pipelines"><span class="header-section-number">2.14.6</span> Pipelines</h3>
+<section id="nextflow-nf-core-rnaseq" class="level4" data-number="2.14.6.1">
+<h4 data-number="2.14.6.1" class="anchored" data-anchor-id="nextflow-nf-core-rnaseq"><span class="header-section-number">2.14.6.1</span> Nextflow nf-core rnaseq</h4>
+<ul>
+<li>Bulk RNA-Seq, SMART-Seq</li>
+<li>QC, trimming, UMI demultiplexing, mapping, quantification</li>
+<li>cellxgene matrix</li>
+<li><a href="https://nf-co.re/rnaseq/3.9/usage"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> nf-core rnaseq</a></li>
+</ul>
+</section>
+</section>
+<section id="genome-browsers" class="level3" data-number="2.14.7">
+<h3 data-number="2.14.7" class="anchored" data-anchor-id="genome-browsers"><span class="header-section-number">2.14.7</span> Genome browsers</h3>
+<p>Interactive exploration of BAM files, ie; reads aligned to a reference.</p>
+<ul>
+<li><a href="http://software.broadinstitute.org/software/igv/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> IGV</a></li>
+<li><a href="https://genome.ucsc.edu/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> UCSC Genome browser</a></li>
+<li><a href="https://www.bioinformatics.babraham.ac.uk/projects/seqmonk/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SeqMonk</a></li>
+</ul>
+</section>
+<section id="batch-correction" class="level3" data-number="2.14.8">
+<h3 data-number="2.14.8" class="anchored" data-anchor-id="batch-correction"><span class="header-section-number">2.14.8</span> Batch correction</h3>
+<ul>
+<li><a href="http://bioconductor.org/packages/release/bioc/html/sva.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SVA</a></li>
+<li><a href="https://bioconductor.org/packages/release/bioc/html/pvca.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> PVCA</a></li>
+<li><a href="http://bioconductor.org/packages/release/bioc/html/BatchQC.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> BatchQC</a></li>
+</ul>
+</section>
+<section id="gsagsea" class="level3" data-number="2.14.9">
+<h3 data-number="2.14.9" class="anchored" data-anchor-id="gsagsea"><span class="header-section-number">2.14.9</span> GSA/GSEA</h3>
+<ul>
+<li>Convert gene IDs <a href="https://biit.cs.ut.ee/gprofiler/convert"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> gProfiler</a></li>
+<li>OSA/ORA Online <a href="https://maayanlab.cloud/Enrichr/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Enrichr</a></li>
+<li>OSA/ORA Online <a href="http://cbl-gorilla.cs.technion.ac.il"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> GOrilla</a></li>
+<li>OSA/ORA Online <a href="http://www.pantherdb.org/about.jsp"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Panther</a></li>
+<li>ORA/GSEA/NTA Online <a href="http://www.webgestalt.org"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Webgestalt</a></li>
+<li>ORA/GSEA Online <a href="https://david.ncifcrf.gov"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> DAVID</a></li>
+<li>KEGG pathways <a href="https://www.genome.jp/kegg/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> KEGG</a></li>
+<li>Functional annotation through orthology <a href="http://eggnog-mapper.embl.de/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> eggNOGmapper</a></li>
+<li>ORA/GSEA in R <a href="https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> clusterProfiler</a></li>
+<li>Standalone software <a href="https://erminej.msl.ubc.ca/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> ErmineJ</a></li>
+<li>Plot genes on Kegg pathways in R <a href="https://bioconductor.org/packages/release/bioc/html/pathview.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Pathview</a></li>
+<li>Cytoscape plugin <a href="http://apps.cytoscape.org/apps/cluego"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> ClueGO</a></li>
+<li>Semantic reduction of terms <a href="http://revigo.irb.hr"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> ReviGO</a></li>
+</ul>
+</section>
+<section id="gui" class="level3" data-number="2.14.10">
+<h3 data-number="2.14.10" class="anchored" data-anchor-id="gui"><span class="header-section-number">2.14.10</span> GUI</h3>
+<p>Graphical User Interfaces for analysis of RNA-Seq data.</p>
+<ul>
+<li><a href="https://usegalaxy.org/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Galaxy</a></li>
+<li><a href="https://www.bioinformatics.babraham.ac.uk/projects/seqmonk/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SeqMonk</a></li>
+<li><a href="https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/analysis-and-visualization/qiagen-clc-genomics-workbench/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Qiagen CLC Genomics workbench</a></li>
+<li><a href="https://www.geneious.com/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Geneious</a></li>
+</ul>
+</section>
+</section>
+<section id="courses-workshops-tutorials" class="level2" data-number="2.15">
+<h2 data-number="2.15" class="anchored" data-anchor-id="courses-workshops-tutorials"><span class="header-section-number">2.15</span> Courses, Workshops &amp; Tutorials</h2>
+<ul>
+<li>University of Cambridge <a href="https://bioinformatics-core-shared-training.github.io/RNAseq-R/">workshop</a></li>
+<li>Bioconductor RNA-Seq workflow in R <a href="https://bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html">rnaseqGene</a></li>
+<li>Griffith Lab <a href="https://github.com/griffithlab/rnaseq_tutorial">RNA-Seq tutorial</a></li>
+</ul>
+</section>
+<section id="other-1" class="level2" data-number="2.16">
+<h2 data-number="2.16" class="anchored" data-anchor-id="other-1"><span class="header-section-number">2.16</span> Other</h2>
+<p><strong>Estimating storage requirements for FASTQ files</strong></p>
+<blockquote class="blockquote">
+<ul>
+<li>One .fastq file for Single-End sequencing
+<ul>
+<li>.fastq MB = Number of million reads x (60 + 2 x read length in bp)</li>
+</ul></li>
+<li>Paired-End sequencing produces 2 fastq files
+<ul>
+<li>.fastq MB = Number of million reads x (60 + 2 x read length in bp) x 2</li>
+</ul></li>
+<li>It is recommended to store .fastq files in a compressed format (ex: .gz), which makes the file approximately 4 times smaller.</li>
+</ul>
+</blockquote>
+<p><span class="citation" data-cites="elixirbelgium2022">Belgium (<a href="../sc/index.html#ref-elixirbelgium2022" role="doc-biblioref">2022</a>)</span></p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-baruzzo2017simulation" class="csl-entry" role="listitem">
+Baruzzo, G., Hayer, K. E., Kim, E. J., Di Camillo, B., FitzGerald, G. A., &amp; Grant, G. R. (2017). Simulation-based comprehensive benchmarking of RNA-seq aligners. <em>Nature Methods</em>, <em>14</em>(2), 135–139.
+</div>
+<div id="ref-elixirbelgium2022" class="csl-entry" role="listitem">
+Belgium, E. (2022). <em>Data volume</em>. <a href="https://rdm.elixir-belgium.org/data_volume.html">https://rdm.elixir-belgium.org/data_volume.html</a>
+</div>
+<div id="ref-chhangawala2015impact" class="csl-entry" role="listitem">
+Chhangawala, S., Rudy, G., Mason, C. E., &amp; Rosenfeld, J. A. (2015). The impact of read length on quantification of differentially expressed genes and splice junction detection. <em>Genome Biology</em>, <em>16</em>(1), 1–10.
+</div>
+<div id="ref-conesa2016survey" class="csl-entry" role="listitem">
+Conesa, A., Madrigal, P., Tarazona, S., Gomez-Cabrero, D., Cervera, A., McPherson, A., Szcześniak, M. W., Gaffney, D. J., Elo, L. L., Zhang, X., et al. (2016). A survey of best practices for RNA-seq data analysis. <em>Genome Biology</em>, <em>17</em>(1), 1–19.
+</div>
+<div id="ref-corley2017differentially" class="csl-entry" role="listitem">
+Corley, S. M., MacKenzie, K. L., Beverdam, A., Roddam, L. F., &amp; Wilkins, M. R. (2017). Differentially expressed genes from RNA-seq and functional enrichment results are affected by the choice of single-end versus paired-end reads and stranded versus non-stranded protocols. <em>BMC Genomics</em>, <em>18</em>(1), 1–13.
+</div>
+<div id="ref-dillies2013comprehensive" class="csl-entry" role="listitem">
+Dillies, M.-A., Rau, A., Aubert, J., Hennequet-Antier, C., Jeanmougin, M., Servant, N., Keime, C., Marot, G., Castel, D., Estelle, J., et al. (2013). A comprehensive evaluation of normalization methods for illumina high-throughput RNA sequencing data analysis. <em>Briefings in Bioinformatics</em>, <em>14</em>(6), 671–683.
+</div>
+<div id="ref-evans2018selecting" class="csl-entry" role="listitem">
+Evans, C., Hardin, J., &amp; Stoebel, D. M. (2018). Selecting between-sample RNA-seq normalization methods from the perspective of their assumptions. <em>Briefings in Bioinformatics</em>, <em>19</em>(5), 776–792.
+</div>
+<div id="ref-fu2018elimination" class="csl-entry" role="listitem">
+Fu, Y., Wu, P.-H., Beane, T., Zamore, P. D., &amp; Weng, Z. (2018). Elimination of PCR duplicates in RNA-seq and small RNA-seq using unique molecular identifiers. <em>Bmc Genomics</em>, <em>19</em>, 1–14.
+</div>
+<div id="ref-gallego2014rna" class="csl-entry" role="listitem">
+Gallego Romero, I., Pai, A. A., Tung, J., &amp; Gilad, Y. (2014). RNA-seq: Impact of RNA degradation on transcript quantification. <em>BMC Biology</em>, <em>12</em>(1), 1–13.
+</div>
+<div id="ref-hart2013calculating" class="csl-entry" role="listitem">
+Hart, S. N., Therneau, T. M., Zhang, Y., Poland, G. A., &amp; Kocher, J.-P. (2013). Calculating sample size estimates for RNA sequencing data. <em>Journal of Computational Biology</em>, <em>20</em>(12), 970–978.
+</div>
+<div id="ref-hsieh2019effect" class="csl-entry" role="listitem">
+Hsieh, P.-H., Oyang, Y.-J., &amp; Chen, C.-Y. (2019). Effect of de novo transcriptome assembly on transcript quantification. <em>Scientific Reports</em>, <em>9</em>(1), 8304.
+</div>
+<div id="ref-kim2012short" class="csl-entry" role="listitem">
+Kim, Y.-K., Yeo, J., Kim, B., Ha, M., &amp; Kim, V. N. (2012). Short structured RNAs with low GC content are selectively lost during extraction from a small number of cells. <em>Molecular Cell</em>, <em>46</em>(6), 893–895.
+</div>
+<div id="ref-klepikova2017effect" class="csl-entry" role="listitem">
+Klepikova, A. V., Kasianov, A. S., Chesnokov, M. S., Lazarevich, N. L., Penin, A. A., &amp; Logacheva, M. (2017). Effect of method of deduplication on estimation of differential gene expression using RNA-seq. <em>PeerJ</em>, <em>5</em>, e3091.
+</div>
+<div id="ref-koch2018beginner" class="csl-entry" role="listitem">
+Koch, C. M., Chiu, S. F., Akbarpour, M., Bharat, A., Ridge, K. M., Bartom, E. T., &amp; Winter, D. R. (2018). A beginner’s guide to analysis of RNA sequencing data. <em>American Journal of Respiratory Cell and Molecular Biology</em>, <em>59</em>(2), 145–157.
+</div>
+<div id="ref-law2016rna" class="csl-entry" role="listitem">
+Law, C. W., Alhamdoosh, M., Su, S., Smyth, G. K., &amp; Ritchie, M. E. (2016). RNA-seq analysis is easy as 1-2-3 with limma, glimma and edgeR. <em>F1000Research</em>, <em>5</em>.
+</div>
+<div id="ref-law2020guide" class="csl-entry" role="listitem">
+Law, C. W., Zeglinski, K., Dong, X., Alhamdoosh, M., Smyth, G. K., &amp; Ritchie, M. E. (2020). A guide to creating design matrices for gene expression experiments. <em>F1000Research</em>, <em>9</em>.
+</div>
+<div id="ref-levin2010comprehensive" class="csl-entry" role="listitem">
+Levin, J. Z., Yassour, M., Adiconis, X., Nusbaum, C., Thompson, D. A., Friedman, N., Gnirke, A., &amp; Regev, A. (2010). Comprehensive comparative analysis of strand-specific RNA sequencing methods. <em>Nature Methods</em>, <em>7</em>(9), 709–715.
+</div>
+<div id="ref-liu2016evaluation" class="csl-entry" role="listitem">
+Liu, Q., &amp; Markatou, M. (2016). Evaluation of methods in removing batch effects on RNA-seq data. <em>Infect Dis Transl Med</em>, <em>2</em>(1), 3–9.
+</div>
+<div id="ref-liu2014rna" class="csl-entry" role="listitem">
+Liu, Y., Zhou, J., &amp; White, K. P. (2014). RNA-seq differential expression studies: More sequence or more replication? <em>Bioinformatics</em>, <em>30</em>(3), 301–304.
+</div>
+<div id="ref-manimaran2016batchqc" class="csl-entry" role="listitem">
+Manimaran, S., Selby, H. M., Okrah, K., Ruberman, C., Leek, J. T., Quackenbush, J., Haibe-Kains, B., Bravo, H. C., &amp; Johnson, W. E. (2016). BatchQC: Interactive software for evaluating sample and batch effects in genomic data. <em>Bioinformatics</em>, <em>32</em>(24), 3836–3838.
+</div>
+<div id="ref-marioni2008rna" class="csl-entry" role="listitem">
+Marioni, J. C., Mason, C. E., Mane, S. M., Stephens, M., &amp; Gilad, Y. (2008). RNA-seq: An assessment of technical reproducibility and comparison with gene expression arrays. <em>Genome Research</em>, <em>18</em>(9), 1509–1517.
+</div>
+<div id="ref-parekh2016impact" class="csl-entry" role="listitem">
+Parekh, S., Ziegenhain, C., Vieth, B., Enard, W., &amp; Hellmann, I. (2016). The impact of amplification on differential expression analyses by RNA-seq. <em>Scientific Reports</em>, <em>6</em>(1), 25533.
+</div>
+<div id="ref-schurch2016many" class="csl-entry" role="listitem">
+Schurch, N. J., Schofield, P., Gierliński, M., Cole, C., Sherstnev, A., Singh, V., Wrobel, N., Gharbi, K., Simpson, G. G., Owen-Hughes, T., et al. (2016). How many biological replicates are needed in an RNA-seq experiment and which differential expression tool should you use? <em>Rna</em>, <em>22</em>(6), 839–851.
+</div>
+<div id="ref-seyednasrollah2015comparison" class="csl-entry" role="listitem">
+Seyednasrollah, F., Laiho, A., &amp; Elo, L. L. (2015). Comparison of software packages for detecting differential expression in RNA-seq studies. <em>Briefings in Bioinformatics</em>, <em>16</em>(1), 59–70.
+</div>
+<div id="ref-soneson2020exploremodelmatrix" class="csl-entry" role="listitem">
+Soneson, C., Marini, F., Geier, F., Love, M. I., &amp; Stadler, M. B. (2020). ExploreModelMatrix: Interactive exploration for improved understanding of design matrices and linear models in r. <em>F1000Research</em>, <em>9</em>(512), 512.
+</div>
+<div id="ref-teng2016benchmark" class="csl-entry" role="listitem">
+Teng, M., Love, M. I., Davis, C. A., Djebali, S., Dobin, A., Graveley, B. R., Li, S., Mason, C. E., Olson, S., Pervouchine, D., et al. (2016). A benchmark for RNA-seq quantification pipelines. <em>Genome Biology</em>, <em>17</em>(1), 1–12.
+</div>
+<div id="ref-wagner2012measurement" class="csl-entry" role="listitem">
+Wagner, G. P., Kin, K., &amp; Lynch, V. J. (2012). Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples. <em>Theory in Biosciences</em>, <em>131</em>, 281–285.
+</div>
+<div id="ref-wang2017comprehensive" class="csl-entry" role="listitem">
+Wang, S., &amp; Gribskov, M. (2017). Comprehensive evaluation of de novo transcriptome assembly programs and their effects on differential gene expression analysis. <em>Bioinformatics</em>, <em>33</em>(3), 327–333.
+</div>
+<div id="ref-zhao2018rnaseqsamplesize" class="csl-entry" role="listitem">
+Zhao, S., Li, C.-I., Guo, Y., Sheng, Q., &amp; Shyr, Y. (2018). RnaSeqSampleSize: Real data based sample size estimation for RNA sequencing. <em>BMC Bioinformatics</em>, <em>19</em>(1), 1–8.
+</div>
+<div id="ref-zhao2020misuse" class="csl-entry" role="listitem">
+Zhao, S., Ye, Z., &amp; Stanton, R. (2020). Misuse of RPKM or TPM normalization when comparing across samples and sequencing protocols. <em>Rna</em>, <em>26</em>(8), 903–909.
+</div>
+<div id="ref-zhao2015comparison" class="csl-entry" role="listitem">
+Zhao, S., Zhang, Y., Gordon, W., Quan, J., Xi, H., Du, S., Schack, D. von, &amp; Zhang, B. (2015). Comparison of stranded and non-stranded RNA-seq transcriptome profiling and investigation of gene overlap. <em>BMC Genomics</em>, <em>16</em>(1), 1–14.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Home</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../chapters/sc/index.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Single-cell RNA-Seq</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">2023 Roy Francis</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Published with <a href="https://quarto.org/">Quarto</a> v1.3.340</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true,"closeEffect":"zoom"});</script>
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
