@@ -15,8 +15,7 @@ The major analysis steps are listed above the lines for pre-analysis, core analy
 
 Three basic strategies for regular RNA-seq analysis. a An annotated genome is available and reads are mapped to the genome with a gapped mapper. Next (novel) transcript discovery and quantification can proceed with or without an annotation file. Novel transcripts are then functionally annotated. b If no novel transcript discovery is needed, reads can be mapped to the reference transcriptome using an ungapped aligner. Transcript identification and quantification can occur simultaneously. c When no genome is available, reads need to be assembled first into contigs or transcripts. For quantification, reads are mapped back to the novel reference transcriptome and further analysis proceeds as in (b) followed by the functional annotation of the novel transcripts as in (a). Representative software that can be used at each analysis step are indicated in bold text. Abbreviations: GFF General Feature Format, GTF gene transfer format, RSEM RNA-Seq by Expectation Maximization.
 
-@conesa2016survey
-@koch2018beginner
+@conesa2016survey, @koch2018beginner
 
 ## Experimental design {#bulk-exp-design}
 
@@ -70,31 +69,19 @@ RNASeqPower based spreadsheet ([Google Sheet](https://docs.google.com/spreadshee
 >
 > Stranded RNA-seq provides a more accurate estimate of transcript expression compared with non-stranded RNA-seq, and is therefore the recommended RNA-seq approach for future mRNA-seq studies.
 
-@zhao2015comparison
-
-@levin2010comprehensive
+@zhao2015comparison, @levin2010comprehensive
 
 ## Sequencing {#bulk-seq}
 
-@chhangawala2015impact
-
-@corley2017differentially
-
-@liu2014rna
+@chhangawala2015impact, @corley2017differentially, @liu2014rna
 
 ## De novo assembly {#bulk-de-novo}
 
-@hsieh2019effect
-
-@wang2017comprehensive
+@hsieh2019effect, @wang2017comprehensive
 
 ## PCR and deduplication {#bulk-pcr}
 
-@fu2018elimination
-
-@parekh2016impact
-
-@klepikova2017effect
+@fu2018elimination, @parekh2016impact, @klepikova2017effect
 
 ## Mapping {#bulk-mapping}
 
@@ -127,9 +114,7 @@ Issues with RPKM and suggestion for use of TPM.
 
 ## Batch effect {#bulk-batch-effect}
 
-@liu2016evaluation
-
-@manimaran2016batchqc
+@liu2016evaluation, @manimaran2016batchqc
 
 ## Differential gene expression {#bulk-dge}
 
@@ -139,9 +124,7 @@ Issues with RPKM and suggestion for use of TPM.
 
 ![](assets/schurch-2016-2.png)
 
-@schurch2016many
-
-@seyednasrollah2015comparison
+@schurch2016many, @seyednasrollah2015comparison
 
 ### Modelling in R
 
@@ -149,11 +132,7 @@ Issues with RPKM and suggestion for use of TPM.
 
 > In general, we suggest the inclusion of an intercept term for modelling explanatory variables that are covariates (continuous) since it provides a more flexible fit to the data points.
 
-@law2020guide
-
-@soneson2020exploremodelmatrix
-
-@law2016rna
+@law2020guide, @soneson2020exploremodelmatrix, @law2016rna
 
 ## Other
 
@@ -263,4 +242,3 @@ Graphical User Interfaces for analysis of RNA-Seq data.
 > - It is recommended to store .fastq files in a compressed format (ex: .gz), which makes the file approximately 4 times smaller.
 
 @elixirbelgium2022
-

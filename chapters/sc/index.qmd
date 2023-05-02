@@ -99,9 +99,7 @@ Identification of cell types can be completely automated (by comparing to refere
 
 ![Summary of performance of the automatic cell-type identification methods. Bar graphs of the automatic cell-type identification methods with six evaluation criteria indicated. For each evaluation criteria, the length of the bars shows the performance of the automatic method: poor, median or good. The automatic methods are sorted based on the mean performance of the evaluation criteria. No bar: not evaluated.](https://ars.els-cdn.com/content/image/1-s2.0-S2001037021004499-gr5_lrg.jpg)
 
-@xie2021automatic
-
-@sun2022comprehensive
+@xie2021automatic, @sun2022comprehensive
 
 - [{{< fa toolbox >}} SCINA](https://github.com/jcao89757/SCINA)
 - [{{< fa toolbox >}} SingleR](https://bioconductor.org/packages/release/bioc/html/SingleR.html)
@@ -126,6 +124,10 @@ Identification of cell types can be completely automated (by comparing to refere
 - Single-cell data integration challenges
 
 ![Overview of common data integration methods classified according to their anchor choice.](assets/argelaguet-2021-tab1.png)
+
+![a–c, Depending on the anchor choice, three types of data integration strategies can be considered: horizontal integration with features as the anchors (a), vertical integration with cells as the anchors (b) and diagonal integration with no anchors in high-dimensional space (c). The left column shows the data modalities extracted, while the right column illustrates the resulting data matrices to be integrated, depending on the anchor choice.](assets/argelaguet-2021-1.png)
+
+![Mosaic integration. a, Overview of an experimental design where different data modalities (each block in the rows) are profiled in different subsets of cells (each block in the columns). Transparent matrices denote missing information. b, Resulting data matrices after applying a mosaic integration approach aimed at imputing missing data modalities.](assets/argelaguet-2021-2.png)
 
 @argelaguet2021computational
 
