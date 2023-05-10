@@ -16,14 +16,22 @@ book:
     right: "Published with [Quarto](https://quarto.org/) v<?quarto.version?>"
   chapters:
     - index.qmd
-    - chapters/bulk/index.qmd
-    - chapters/sc/index.qmd
-    - chapters/spatial/index.qmd
-    - chapters/meta/index.qmd
-    - chapters/references.qmd
+    - part: "**Bulk RNASeq**"
+      chapters:
+        - chapters/bulk/index.qmd
+    - part: "**Single Cell RNASeq**"
+      chapters:
+        - chapters/sc/index.qmd
+        - chapters/spatial/index.qmd
+        - chapters/vdj/index.qmd
+    - part: "**Meta Transcriptomics**"
+      chapters:
+        - chapters/meta/index.qmd
 
 bibliography: references.bib
 csl: apa.csl
+#reference-section-title: References
+#citeproc: false
 
 format:
   html:
@@ -59,3 +67,4 @@ execute:
 filters:
   - assets/custom.lua
   - lightbox
+

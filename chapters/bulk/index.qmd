@@ -1,5 +1,5 @@
 ---
-title: Bulk RNA-Seq
+title: Bulk expression
 description: Guide and links related to bulk RNA-Seq experiments and analyses.
 ---
 
@@ -242,3 +242,6 @@ Graphical User Interfaces for analysis of RNA-Seq data.
 > - It is recommended to store .fastq files in a compressed format (ex: .gz), which makes the file approximately 4 times smaller.
 
 @elixirbelgium2022
+
+
+## References {.unnumbered}

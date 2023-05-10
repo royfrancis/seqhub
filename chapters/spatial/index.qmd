@@ -1,5 +1,5 @@
 ---
-title: Spatial RNA-Seq
+title: Spatial
 description: Guide and links related to spatial transcriptomics technologies and analyses.
 ---
 
@@ -76,3 +76,5 @@ false positives than similar analysis with scRNA-seq data.
 ## Datasets
 
 - R package [TENxVisiumData](https://bioconductor.org/packages/release/data/experiment/vignettes/TENxVisiumData/inst/doc/vignette.html)
+
+## References {.unnumbered}

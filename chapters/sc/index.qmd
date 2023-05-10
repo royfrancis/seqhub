@@ -1,5 +1,5 @@
 ---
-title: Single-cell RNA-Seq
+title: Gene expression
 description: Guide and links related to single-cell RNA-Seq experiments and analyses.
 ---
 
@@ -7,7 +7,41 @@ description: Guide and links related to single-cell RNA-Seq experiments and anal
 
 **Current best practices in scRNA-Seq**
 
+- Perform QC by finding outlier peaks in the number of genes, the count depth and the fraction of mitochondrial reads. Consider these covariates jointly instead of separately.
+- Be as permissive of QC thresholding as possible, and revisit QC if downstream clustering cannot be interpreted.
+- If the distribution of QC covariates differ between samples, QC thresholds should be determined separately for each sample to account for sample quality differences
+- We recommend scran for normalization of non-full-length datasets. An alternative is to evaluate normalization approaches via scone especially for plate-based datasets. Full-length scRNA-seq protocols can be corrected for gene length using bulk methods.
+- There is no consensus on scaling genes to 0 mean and unit variance. We prefer not to scale gene expression.
+- Normalized data should be log(x+1)-transformed for use with downstream analysis methods that assume data are normally distributed.
+- Regress out biological covariates only for trajectory inference and if other biological processes of interest are not masked by the regressed out biological covariate.
+- Regress out technical and biological covariates jointly rather than serially.
+- Plate-based dataset pre-processing may require regressing out counts, normalization via non-linear normalization methods or downsampling.
+- We recommend performing batch correction via ComBat when cell type and state compositions between batches are consistent
+- Data integration and batch correction should be performed by different methods. Data integration tools may over-correct simple batch effects.
+- Users should be cautious of signals found only after expression recovery. Exploratory analysis may be best performed without this step.
+- We recommend selecting between 1,000 and 5,000 highly variable genes depending on dataset complexity.
+- Feature selection methods that use gene expression means and variances cannot be used when gene expression values have been normalized to zero mean and unit variance, or when residuals from model fitting are used as normalized expression values. Thus, one must consider what pre-processing to perform before selecting HVGs.
+- Dimensionality reduction methods should be considered separately for summarization and visualization.
+- We recommend UMAP for exploratory visualization; PCA for general purpose summarization; and diffusion maps as an alternative to PCA for trajectory inference summarization.
+- PAGA with UMAP is a suitable alternative to visualize particularly complex datasets.
+- Use measured data for statistical testing, corrected data for visual comparison of data and reduced data for other downstream analysis based on finding the underlying biological data manifold.
+- We recommend clustering by Louvain community detection on a single-cell KNN graph.
+- Clustering does not have to be performed at a single resolution. Subclustering particular cell clusters is a valid approach to focus on more detailed substructures in a dataset.
+- Do not use marker gene P-values to validate a cell-identity cluster, especially when the detected marker genes do not help to annotate the community. P-values may be inflated.
+- Note that marker genes for the same cell-identity cluster may differ between datasets purely due to dataset cell type and state compositions.
+- If relevant reference atlases exist, we recommend using automated cluster annotation combined with data-derived marker-gene-based manual annotation to annotate clusters.
+- Consider that statistical tests over changes in the proportion of a cell-identity cluster between samples are dependent on one another.
+- Inferred trajectories do not have to represent a biological process. Further sources of evidence should be collected to interpret a trajectory.
+- DE testing should not be performed on corrected data (denoised, batch corrected, etc.), but instead on measured data with technical covariates included in the model.
+- Users should not rely on DE testing tools to correct models with confounded covariates. Model specification should be performed carefully ensuring a full-rank design matrix.
+- We recommend using MAST or limma for DE testing.
+- Users should be wary of uncertainty in the inferred regulatory relationships. Modules of genes that are enriched for regulatory relationships will be more reliable than individual edges.
+
 @luecken2019current
+
+**Best practices for single-cell analysis across modalities**
+
+@heumos2023best
 
 **What information should be included in an scRNA-Seq publication?**
 
@@ -139,35 +173,6 @@ Identification of cell types can be completely automated (by comparing to refere
 
 @luecken2022benchmarking
 
-## VDJ
-### TCR review
-
-- Human T cells develop in the thymus and they acquire the ability to recognize foreign antigens and provide protection against many different pathogens.
-- This functional flexibility is guaranteed by the expression of highly polymorphic surface receptors called T cell receptors (TCRs).
-- TCR is composed of two different protein chains. The vast majority of human T cells express TCRs composed of α (alpha) and β (beta) chains.
-- The genes encoding alpha (TCRA) and beta (TCRAB) chains are composed of multiple non-contiguous gene segments which include variable (V), diversity (D), and joining (J) segments for TCRB gene and variable (V) and joining (J) for TCRA gene.
-- The enormous diversity of T cell repertoires is generated by random combinations of germ line gene segments (combinatorial diversity) and by random addition or deletion at the junction site of the segments that have been joined (junctional diversity).
-- The sequence encoded by the V(D)J junction is called complementarity determining region 3 or CDR3. This sequence has the highest variability in both alpha and beta chains and determines the ability of a T cell to recognize an antigen.
-- The total number of possible combination is estimated to exceed 10e18.
-- The diversity of naïve T cells is the T cell repertoire
-- Exposure to an antigen drives a rapid clonal expansion of cells carrying identical TCRs to generate a population of “effector cells.”
-- After antigen clearance, a reduced number of these cells remain in the blood as “memory cells.”
-
-![](https://www.frontiersin.org/files/Articles/384005/fimmu-09-01638-HTML/image_m/fimmu-09-01638-g001.jpg)
-
-@de2018single
-
-### Tools
-
-Tools related to VDJ analyses.
-
-- [{{< fa toolbox >}} Enclone (10X, Shell)](https://10xgenomics.github.io/enclone/)
-- [{{< fa toolbox >}} vdjtools (Java)](https://github.com/mikessh/vdjtools)
-- [{{< fa toolbox >}} conga (Python)](https://github.com/phbradley/conga)
-- [{{< fa toolbox >}} SONAR (Python)](https://github.com/scharch/SONAR)
-- [{{< fa toolbox >}} scRepertoire (R)](https://github.com/ncborcherding/scRepertoire)
-- [{{< fa toolbox >}} djvdj (R)](https://github.com/rnabioco/djvdj)
-
 ## Databases
 
 ### Data
@@ -206,3 +211,5 @@ Tools related to VDJ analyses.
 - [HBC Training](https://hbctraining.github.io/scRNA-seq_online/schedule/)
 - [NBIS workshop](https://nbisweden.github.io/workshop-scRNAseq)
 - [Seurat tutorials](https://satijalab.org/seurat/index.html)
+
+## References {.unnumbered}
