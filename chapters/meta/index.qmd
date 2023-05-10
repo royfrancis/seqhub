@@ -1,5 +1,5 @@
 ---
-title: Meta Transcriptomics
+title: Meta transcriptomics
 description: Guide and links related to meta-transcriptomic analyses.
 ---
 
@@ -11,10 +11,10 @@ description: Guide and links related to meta-transcriptomic analyses.
 
 ## Tools
 
-- Taxonomic classification system [{{< fa toolbox >}} Kraken 2](https://ccb.jhu.edu/software/kraken2/)
-- Filtering, mapping and OTU picking [{{< fa toolbox >}} SortMeRNA](https://bioinfo.lifl.fr/RNA/sortmerna/)
-- Compare sequence similarity between datasets [{{< fa toolbox >}} SourMash](https://sourmash.readthedocs.io/en/latest/)
-- Taxonomy quantitation / Community profiling [{{< fa toolbox >}} MetaPhlAn 2](https://huttenhower.sph.harvard.edu/metaphlan2/)
-- Functional quantitation [{{< fa toolbox >}} HUMAnN 2](https://huttenhower.sph.harvard.edu/humann2/)
+- [{{< fa toolbox >}} Kraken 2](https://ccb.jhu.edu/software/kraken2/) Taxonomic classification system 
+- [{{< fa toolbox >}} SortMeRNA](https://bioinfo.lifl.fr/RNA/sortmerna/) Filtering, mapping and OTU picking 
+- [{{< fa toolbox >}} SourMash](https://sourmash.readthedocs.io/en/latest/) Compare sequence similarity between datasets 
+- [{{< fa toolbox >}} MetaPhlAn 2](https://huttenhower.sph.harvard.edu/metaphlan2/) Taxonomy quantitation / Community profiling 
+- [{{< fa toolbox >}} HUMAnN 2](https://huttenhower.sph.harvard.edu/humann2/) Functional quantitation 
 
 ## References {.unnumbered}
