@@ -1,0 +1,322 @@
+---
+title: Immune profiling
+description: AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling
+---
+
+## Immunity overview
+
+### Innate vs Adaptive immunity
+
+- Innate (Physical, Phagocytes, Dendritic cells, NK cells, ILCs, 0-12 hours)
+- Adaptive immunity (Begins ~3 days or more)
+
+![Just as resistance to disease can be innate (inborn) or acquired, the mechanisms mediating it can be correspondingly divided into innate (left) and adaptive (right), each composed of both cellular (lower half) and humoral elements (i.e. free in serum or body fluids; upper half). Adaptive mechanisms, more recently evolved, perform many of their functions by interacting with the older innate ones.](https://www.creative-diagnostics.com/upload/image/Innate%20and%20adaptive%20immune%20mechanisms.png){#fig-innate-adaptive}
+
+![Innate and adaptive immunity time line. The mechanisms of innate immunity provide the initial defense against infections. Adaptive immune responses develop later and require the activation of lymphocytes. The kinetics of the innate and adaptive immune responses are approximations and may vary in different infections.](https://www.creative-diagnostics.com/upload/image/innate%20and%20adaptive%20immunity2.png){#fig-innate-adaptive-time}
+
+[Source](https://www.creative-diagnostics.com/innate-and-adaptive-immunity.htm)
+
+### Adaptive immunity
+
+- Humoral immunity (B cells, antibodies)
+- Cell mediated immunity (CD4 Helper T cells, CD8 Cytotoxic T cells, Macrophages)
+
+![The figure shows an adaptive immune response to the first and second encounter with the SARS-CoV-2 antigen (spike protein). Following the first encounter, various antigens go through the process of phagocytosis and decomposition inside the antigen-presenting cells (APCs). APCs fragment the antigen into smaller peptides, which they present on their surface mediated by surface receptors called major histocompatibility complex class II (MHC-II) molecules. The antigens are then presented to several types of cells in the host, among which we emphasize CD4+ T helper cells (also B and CD8+ cells). B cells which differentiate into plasma cells, secrete antibodies that inhibit the entry of the viral particle into the healthy cells. The activation of T helper cells by APC causes them to differentiate into different subtypes with specific functions mediated by cytokine secretion and cell-to-cell contact. Th2-differentiated T helper cells help humoral responses mature by providing a second signal to B cells, mostly through IL-4 secretion and CD40/CD40L interaction. Some CD4+ cells also become T follicular helper cells (Tfh), which govern the important interactions in the germinal centers important for the maturation of memory B cells and long-lived high-affinity antibody-producing plasma cells. Another subset of CD4+ T cells differentiates into a pool of memory T helper cells. Th1 T helper cells play a crucial role in cellular response formation. They pivot the MHC-I activation of CD8+ cells (CTL, cytotoxic T lymphocytes) by interacting with APC’s simultaneously. Activated CTLs then act by causing apoptosis (by Fasl ligand–FasL binding) of the host cells that are infected with the SARS-CoV-2. Some CTLs differentiate into memory cytotoxic T cells, which have the role of fast restoration of the CTL response with secondary antigen contacts. A similar mechanism of destruction occurs when NK cells interact with the virally infected cell. They contain granules with IFNγ and TNFα in their cytoplasm, which, when secreted, cause programmed cell death. As well, the mechanism of activation of NK cells does not occur through MHC molecules is important because MHC is not always present on the virally infected cells.](https://www.frontiersin.org/files/Articles/848582/fimmu-13-848582-HTML/image_m/fimmu-13-848582-g001.jpg){#fig-innate-adaptive}
+
+@primorac2022adaptive
+
+::: {#fig-cells-immune layout-ncol=2}
+
+![](assets/kavathas-2019.png)
+
+![](assets/kavathas-2019-2.png)
+
+Cells of the immune system.
+:::
+
+@Kavathas2019, @LEWIS201919
+
+## Immune cells
+### B cell development
+
+::: {#fig-cells-immune-b-cell-devel layout-ncol="2"}
+![](assets/janeway-1994-b-cells.jpg)
+
+![](assets/morgan-2022-b-cell-development.jpg)
+
+B cell development.
+:::
+
+- The aim is to generate diverse antigen receptors, eliminate self reactives, promote foreign reactives to mature B cells
+- Starts in the bone marrow as HSC followed by CLP (Common lymphoid progenitor)
+- Early pro B cell → Heavy chain random DJ rearrangement
+  - If it succeeds on both chromosomes, this cell becomes Late pro B cell
+- Late pro B cell →V and DJ rearrangement
+  - If it succeeds on both chromosomes, this cell becomes Large pre B cell
+- Large pre B cell →Heavy chain peptide is synthesized, pairs with surrogate light chains
+  - On successful pairing, this cell proliferates
+  - The same heavy chain can pair with many other light chains.
+- Small pre B cell →Undergoes light chain rearrangement
+  - kappa rearrangement on one chr
+  - kappa rearrangement on second chr
+  - If kappa didn’t work then
+  - delta rearrangement on one chr
+  - delta rearrangement on second chr
+  - When light chain pairs successfully with heavy chain→Immature B cell
+- Immature B cell
+  - VDJ recombination is complete
+  - Functional BCR receptor as IgM -> Mature naive B cell
+  - BCRs can bind to diverse ligands such as peptides, lips, carbohydrates etc
+- Mature naive B cell
+  - The heavy chain mRNA undergoes alternative splicing which changes the transmembrane region to either create IgM or IgD but with same variable region
+- Naive B cells interact with antigen in the lymph nodes. When the antigen has crosslinked with BCR, the cell is activated. An activated B cell massively proliferates called clonal expansion. All clonally expanded cells have the same antigen specificity but undergoes somatic hypermutation (affinity maturation). SHM may increase antigen affinity than the original activated parent B cell.
+- Affinity matured B cells differentiate into plasma cells. Plasma cells are antibody secreting B cells. The first antibody produced is IgM. T cell independent differentiation only produces IgM antibodies and also does not produce memory B cells.
+- T cell mediated B cell maturation. B cells interact with T cells in the lymph node enabling Ig class switching. ie; change in heavy chain.
+
+Source: Kuby immunology
+
+@MORGAN2022210
+
+### T cell development
+
+::: {#fig-cells-immune-t-cell-devel layout-ncol="2"}
+![](assets/janeway-1994-t-cells.jpg)
+
+![](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fnri1257/MediaObjects/41577_2004_Article_BFnri1257_Fig1_HTML.jpg)
+
+T cell development.
+:::
+
+- TCR has two chain: alpha and beta chains. TCRs only bind to peptides and self MHC.
+- In bone marrow, HSC →CLP which migrates to thymus
+- Thymus is divided into peripheral cortex and central medulla. Most T cell development happens in the cortex.
+- In the thymus, the CLP starts off as double negative T cell
+- Double negative T cells: T cells with germline DNA that are negative for CD4 and CD8
+  - Early double-negative thymocyte: D-J beta chain rearrangement, first try on 1st loci, else second loci
+  - Late double-negative thymocyte: V-DJ beta chain rearrangement, first try on 1st loci, else second loci
+  - CD3 receptor is expressed on cell surface
+- Double-positive T cells:
+  - Expresses both CD4 and CD8 receptors.
+  - Alpha chain rearrangement. V-J rearrangement at loci 1, else loci n.
+  - Alpha and beta chains are exposed on cell surface and cell undergo selection
+    - Cells that have too strong or too weak self affinity are discarded
+    - Cells that recognise self MHC with moderate strength -> CD4+
+    - Cells that recognize self MHC with weak strength -> CD8+
+- Single-positive: Naive CD4 or CD8 T cells
+- Memory CD4 or CD8 T cells
+- Effector CD4 or CD8 T cells
+
+Source: Kuby immunology
+
+@de2018single
+
+## VDJ recombination
+
+V(D)J recombination is the mechanism of somatic recombination that occurs only in developing lymphocytes during the early stages of T and B cell maturation. It results in the highly diverse repertoire of antibodies/immunoglobulins and T cell receptors (TCRs) found in B cells and T cells, respectively. The process is a defining feature of the adaptive immune system.
+
+V(D)J recombination in mammals occurs in the primary lymphoid organs (bone marrow for B cells and thymus for T cells) and in a nearly random fashion rearranges variable (V), joining (J), and in some cases, diversity (D) gene segments. The process ultimately results in novel amino acid sequences in the antigen-binding regions of immunoglobulins and TCRs that allow for the recognition of antigens from nearly all pathogens including bacteria, viruses, parasites, and worms as well as "altered self cells" as seen in cancer.
+
+Germline organisation of the Ig locus
+
+- Ig proteins consists of two identical heavy and light chains
+  - H chain locus is located on Chr 14
+- The light chains can be kappa or lamba
+  - Kappa chain locus on Chr 2
+  - Lamba chain locus on Chr 22
+
+#### BCR review
+
+- BCR consist of two heavy and 2 light chains. Heavy chain has 1 V domains and 4-5 C domains. Light chain contains 1 C and 1 V domain.
+- CDR in V domains makes contact with antigen
+- Following antigen stimulation, B cells secrete immunoglobulins that bear the same antigen binding site as the BCR
+
+#### TCR review
+
+- Human T cells develop in the thymus and they acquire the ability to recognize foreign antigens and provide protection against many different pathogens.
+- This functional flexibility is guaranteed by the expression of highly polymorphic surface receptors called T cell receptors (TCRs).
+- TCR is composed of two different protein chains. The vast majority of human T cells express TCRs composed of α (alpha) and β (beta) chains.
+- The genes encoding alpha (TCRA) and beta (TCRB) chains are composed of multiple non-contiguous gene segments which include variable (V), diversity (D), and joining (J) segments for TCRB gene and variable (V) and joining (J) for TCRA gene.
+- The enormous diversity of T cell repertoires is generated by random combinations of germ line gene segments (combinatorial diversity) and by random addition or deletion at the junction site of the segments that have been joined (junctional diversity).
+- The sequence encoded by the V(D)J junction is called complementarity determining region 3 or CDR3. This sequence has the highest variability in both alpha and beta chains and determines the ability of a T cell to recognize an antigen.
+- The total number of possible combination is estimated to exceed 10\^18.
+- The diversity of naïve T cells is the T cell repertoire
+- Exposure to an antigen drives a rapid clonal expansion of cells carrying identical TCRs to generate a population of "effector cells."
+- After antigen clearance, a reduced number of these cells remain in the blood as "memory cells."
+
+![Somatic V(D)J arrangement in the alpha and beta chains. (A) Genomic organization and somatic recombination of TCRB and TCRA loci. Antigen repertoire diversity is guaranteed by a recombination step that progressively rearranges V, D, and J segments for T cell receptor (TCR) beta chains and V and J segments for TCR alpha chains. This variability (combinatorial diversity) is further increased by addition or deletion of nucleotides at the junction sites (junctional diversity). (B) Productive arrangements of beta and alpha transcripts. (C) Organization of TCR. TCR is composed by two subunits TCR alpha and TCR beta each organized in a constant region and a variable region responsible for antigen recognition.](https://www.frontiersin.org/files/Articles/384005/fimmu-09-01638-HTML/image_m/fimmu-09-01638-g001.jpg){#fig-vdj-}
+
+![Differences between BCR and TCR receptors.](assets/bcrvtcr.png){#fig-tcrvsbcr width=50%}
+
+## Antibodies
+
+![Structure of an antibody](assets/kuby-antibody.jpg){#fig-antibody}
+
+- Antibodies are secreted by plasma B cells
+- Consist of 2 identical heavy and 2 identical light chains
+  - Light chain is either kappa or lamda. There are 4 subtypes of lamda with lamda 1 as most common.
+  - Heavy chain is either mju, gamma, alpha, delta or epsilon
+    - Heavy chain defines the isotype (IgG, IgA etc)
+- Each chain has a variable domain and constant domain
+  - Light chain has 50% variable and 50% constant domain
+  - Heavy chain has 25% variable and 75% constant domain
+  - The variable domain is called the paratope that interact with epitopes on antigen
+    - The variable region has 3 CDR (complementarity determining) regions that are hypervariable. CDR3 is the most variable.
+    - Peritope?
+- The CDR region of heavy chain is composed of V,D,J genes
+- The CDR region of light chain is composed of V,J genes
+- Antibody isotypes (classes) are defined by the heavy chain: IgG, IgD, IgE, IgA (dimer), IgM (pentamer)
+- Types of antibodies (further work)
+
+Source: Kuby immunology
+
+- Chap 6: The organisation and expression of lymphocyte recepter genes
+- Chap 8: T-cell development
+- Chap 9: B-cell development
+- Chap 10: T-cell activation, helper subset differentiation and memory
+- Chap 11: B-cell activation, differentiation and memory generation
+- Chap 12: Effector responses: antibody and cell-mediated immunity
+
+## AIRR
+### Experimental design
+
+- In addition to V(D)J recombination, random nuclotides are inserted at the VDJ junctions. B cells further change itself by introducing random mutations called somatic hypermutation.
+- Source of B and T cells should be carefully considered
+  - Usually PBMCs or specific cell types
+- Consider DNA vs RNA from cells
+  - DNA does not give isotype information due to lack of splicing
+  - Plasma cells have more RNA than naive cells, so if mixed together, plasma cells may be overrepresented.
+- Assignment of clones
+  - Assignment of B cells to it's progenitor B cells is called clonotype family assignment. Clonal lineage is determined based on TCR/BCR sequence. Sequences are grouped by VDJ and CDR length followed by calculating the hamming distance between them.
+  - All cells that are derieved from a naive B cell are grouped as clonotypes
+  - Hamming distance cut-offs based on V and J sequences
+  - Optionally CDR3 length is also taken into account
+  - Other kmer based clustering methods are used
+- Sampling depth and replicates
+  - Expect low clonal overlap between subsequent sampling from same individual
+  - Saturation curves (Species accumulation curve) to estimate sampling depth
+  - Deeper sequencing helps to discover more clones
+    - Sequence 5-10X reads relative to the number of cells sampled
+  - Ensure reliability with biological replicates
+- Results can vary between sequencing protocols
+- UMIs help to resolve PCR duplicates and sequencing errors.
+  - UMIs can be used for error correction and estimating sample contamination.
+  - Low sequencing depth will result in very few UMIs per read
+  - With UMIs, sequence 100X or more reads relative to the number of cells sampled
+- D region reconstruction is unreliable
+- A single B cell line should have only one V gene
+- Bulk AIRR loses information on VH-VL pairing
+
+AIRR-Seq experiment guide and best practices @eugster2022airr, Antibody repertoire challenges and high throughput sequencing @georgiou2014promise, Bioinformatic analysis of adaptive immune repertoires @greiff2015bioinformatic, Ecosystem of machine learning analysis of adaptive immune repertoires @pavlovic2021immuneml, Benchmarking of VDJ methods. @barennes2021benchmarking, @breden2017reproducibility, @vander2018airr
+
+### Diversity analyses
+
+- Compare immune repertoire diversity
+  - One of the aims of AIRR analyses is to quantify and compare diversity of immune repertoires
+  - Repertoires are not comparable based on frequency because Ab sequences do not overlap
+  - Diversity indices solve this problem by mapping frequency to a new coordinate system (Renyi entropy)
+    - Many different diversity indices: Species richness, Shannon entropy, Simpson's index, Berger-Parker index
+    - Single diversity indices are insufficient to capture sequence frequency space
+    - Renyi entropy is difficult to interpret biologically
+    - Hill diversity?
+    - Diversity profiles better than indices?
+- Public clones are clonotypes shared between samples
+  - Are certain clones emerging by chance or by antigen interaction?
+  - IGOR: Inference and generation of repertoires
+  - Predicting TCR public clones by modelling VDJ recombination
+- How similar are sequences within a repertoire?
+  - network analysis based on distance matrix (levenstein distance)
+  - If undergoing immune response, repertoire follows power law (few nodes many connections)
+    - naive repertoires follow exponential distribution
+
+### Lineage tracing
+
+- Phylogenetics and lineage tracing
+- Infer antibody evolution in response to antigen
+- Detect selection on B cell lineage
+- Quantify dynamics of affinity maturation
+- Reconstruct evolution of broadly neutralizing antibodies
+- Comparison of tree topologies is challenging
+
+Tracing antibody repertoire evolution by phylogeny @yermanos2018tracing, Using B cell recepter lineage to predict affinity @ralph2020using, Phylogenetic analysis of migration, differentiation and class switching in B cells @hoehn2022phylogenetic
+
+## Tutorials
+### Videos
+
+Youtube channels [AIRR Community](https://www.youtube.com/@AIRRCommunity) and [The Antibody Society](https://www.youtube.com/@antibodysociety) are good sources of information.
+
+- [{{< fa brands youtube >}} AIRR-Seq best practices](https://www.youtube.com/watch?v=ExOCDX1HLA4)
+- [{{< fa brands youtube >}} Reconstruction and analysis of B cell lineage trees from single cell data using Immcantation](https://www.youtube.com/watch?v=C0wnju8REvw)
+- [{{< fa brands youtube >}} Practical AIRR analysis](https://www.youtube.com/watch?v=s4WvdS47CD4)
+- [{{< fa brands youtube >}} AIRR framework](https://www.youtube.com/watch?v=NG1o0GayQNk)
+
+## Tools
+
+Tools related to VDJ analyses.
+
+[[Collection of VDJ analyses tools](https://github.com/slowkow/awesome-vdj)]{.large}
+
+Overview of methods for TCR repertoire analysis @rosati2017overview
+Benchmarking of BCR reconstruction from single-cell tools @andreani2022benchmarking
+Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequences @smakaj2020benchmarking
+
+**General**
+
+- [{{< fa toolbox >}} Enclone (10X, Shell)](https://10xgenomics.github.io/enclone/) SHM-aware clonotyping, phylogenetic/lineage analysis, multiple sequence alignment
+- [{{< fa toolbox >}} Immcantation (Shell)](https://immcantation.readthedocs.io/en/stable/) QC, UMI processing, clonal clustering, germline reconstruction, lineage topology, repertoire diversity, mutation profiling
+- [{{< fa toolbox >}} airrflow](https://nf-co.re/airrflow/3.1.0) nf-core nextflow airr pipeline using Immcantation
+
+![AIRR nextflow pipeline using Immcantation](https://raw.githubusercontent.com/nf-core/airrflow/3.1.0//docs/images/airrflow_workflow_overview.png){#fig-airrflow}
+
+- [{{< fa toolbox >}} ImmuneML (Shell/GUI)](https://immuneml.uio.no/) Ecosystem for machine learning analysis of adaptive immune receptor repertoires (@pavlovic2021immuneml)
+
+**Reads to VDJ data**
+
+- [{{< fa toolbox >}} CellRanger (Shell)](https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/vdj)
+- [{{< fa toolbox >}} changeo (Shell)](https://bitbucket.org/kleinstein/changeo/src/master/) Processing the output of V(D)J alignment tools, assigning clonal clusters to immunoglobulin (Ig) sequences, and reconstructing germline sequences (Part of immcantation)
+- [{{< fa toolbox >}} MIXCR (Shell)](https://github.com/milaboratory/mixcr) Start from any read data
+
+![MIXCR workflow](assets/mixcr-workflow.png){#fig-mixcr}
+
+- [{{< fa toolbox >}} TRUST4 (Shell)](https://github.com/liulab-dfci/TRUST4) TCR and BCR assembly from RNA-seq data
+
+**Downstream analyses**
+
+- [{{< fa toolbox >}} vdjtools (Java)](https://github.com/mikessh/vdjtools)
+- [{{< fa toolbox >}} conga (Python)](https://github.com/phbradley/conga)
+- [{{< fa toolbox >}} SONAR (Python)](https://github.com/scharch/SONAR)
+- [{{< fa toolbox >}} scRepertoire (R)](https://github.com/ncborcherding/scRepertoire) 10X VDJ cellranger input
+- [{{< fa toolbox >}} djvdj (R)](https://github.com/rnabioco/djvdj)  10X VDJ cellranger input
+- [{{< fa toolbox >}} immunarch (R)](https://immunarch.com/) 10X, MIXCR input
+- [{{< fa toolbox >}} scirpy (Python)](https://scirpy.scverse.org/en/latest/)
+- [{{< fa toolbox >}} alakazam (R)](https://alakazam.readthedocs.io/en/stable/) Repertoire analysis on output from pRESTO and ChangeO (Part of Immcantation)
+- [{{< fa toolbox >}} dowser (R)](https://dowser.readthedocs.io/en/stable/) Phylogenetic analysis of B cells (Part of Immcantation)
+- [{{< fa toolbox >}} melange (R)](https://github.com/rahuldhodapkar/melange) Read MIXCR, Annovar, RSEM data into Seurat
+
+### Immunarch
+
+- Exploratory data analyses
+  - Number of clones per sample, filter low quality clones/samples?
+  - Distribution of CDR3 lengths by sample (nucleotide or AA)
+  - Distribution of abundances
+  - Downsample data to make it comparable. only downsample on datasets with sufficient depth
+  - Public clonotype analysis
+    - Estimate similarity of samples using number of shared clonotypes
+    - Number of shared clonotypes (best for downsampled data)
+    - Jaccard index
+    - Morisita-Horn index
+    - Visualised using heatmaps
+- Clonality analyses
+  - Estimate and compare differences in abundances of clonotypes between samples
+  - Compare proportions of the most and least abundant clonotypes
+  - Relative abundance
+- Diversity analyses
+  - Compare diversity of clonotypes in and between samples
+  - Rarefaction (models, extrapolates data)  
+
+[{{< fa brands youtube >}} AIRR analyses using immunarch](https://www.youtube.com/watch?v=s4WvdS47CD4)
+
+## Databases
+
+- [vdjbase](https://vdjbase.org/) Database of adaptive immune receptor genes, genotypes and haplotypes
+
+## References {.unnumbered}
