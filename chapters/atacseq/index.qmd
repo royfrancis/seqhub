@@ -1,0 +1,22 @@
+---
+title: ATAC-Seq
+description: Quantifying chromatin accessibility
+---
+
+## Overview {#atacseq-overview}
+
+![](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41596-022-00692-9/MediaObjects/41596_2022_692_Fig1_HTML.png?as=webp)
+
+ATAC-seq provides a simple and scalable way to assay the regions of the genome that are bound by TFs, and to compare how these landscapes change between particular contexts or perturbations. This is accomplished using in vitro transposition of sequencing adapters into native chromatin. Each unique transposition event, termed an ‘insertion’, marks a location in the genome where a Tn5 transposase dimer is able to access DNA and perform a cut-and-paste reaction. The transposase simultaneously fragments the DNA and inserts sequence handles that are then used for amplification during library preparation.
+
+@grandi2022chromatin, @yan2020reads
+
+Our benchmarking results highlight SnapATAC, cisTopic, and Cusanovich2018 as the top performing scATAC-seq data analysis methods to perform clustering across all datasets and different metrics. Methods that preserve information at the peak level (cisTopic, Cusanovich2018, Scasat) or bin level (SnapATAC) generally outperform those that summarize accessible chromatin regions at the motif/k-mer level (chromVAR, BROCKMAN, SCRAT) or over the gene body (Cicero, Gene Scoring). In addition, methods that implement a dimensionality reduction step (BROCKMAN, cisTopic, Cusanovich2018, Scasat, SnapATAC) generally show advantages over the other methods without this important step. SnapATAC is the most scalable method; it was the only method capable of processing more than 80,000 cells. Cusanovich2018 is the method that best balances analysis performance and running time.
+
+@chen2019assessment
+
+[{{< fa brands youtube >}} scATAC-Seq analysis in R](https://www.youtube.com/watch?v=e2396GKFMRY)
+
+[{{< fa toolbox >}} Signac](https://stuartlab.org/signac/index.html)
+
+@stuart2021single

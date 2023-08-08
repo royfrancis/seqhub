@@ -13,19 +13,22 @@ format:
 ## Home {.unnumbered}
 
 #### [Bulk RNA-seq](chapters/bulk/index.html)  
-Traditional RNA-Seq experiment from tissue material.
+Gene expression from bulk tissue material.
 
 #### [Single-cell RNA-seq](chapters/sc/index.html)  
-RNA-Seq experiment where the source material is single cells. Methods such as 10X chromium, Smart-Seq etc.
+Gene expression from single cells. 10X chromium, Smart-seq etc.
 
-#### [Single-cell VDJ](chapters/vdj/index.html)  
-Single cell VDJ analyses
+#### [Immunoprofiling](chapters/immune/index.html)  
+AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling.
 
 #### [Spatial RNA-seq](chapters/spatial/index.html)
-RNA-Seq experiment with spatial information. 10X Visium etc.
+Gene expression with spatial information. 10X Visium etc.
+
+#### [ATAC-Seq](chapters/atacseq/index.html)  
+Genome wide chromatin accessibility.
 
 #### [Meta transcriptomics](chapters/spatial/index.html)  
-RNA-Seq experiments involving multiple / mixed species.
+Gene expression from multiple/mixed populations or species.
 
 ::: {.coverbg}
 
