@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://royfrancis.github.io/rskb/index.html</loc>
-    <lastmod>2023-05-10T16:43:46.703Z</lastmod>
+    <lastmod>2023-08-08T11:40:24.997Z</lastmod>
   </url>
   <url>
     <loc>https://royfrancis.github.io/rskb/chapters/bulk/index.html</loc>
-    <lastmod>2023-05-10T16:43:46.731Z</lastmod>
+    <lastmod>2023-08-08T11:40:25.021Z</lastmod>
   </url>
   <url>
     <loc>https://royfrancis.github.io/rskb/chapters/sc/index.html</loc>
-    <lastmod>2023-05-10T16:43:46.755Z</lastmod>
+    <lastmod>2023-08-08T11:40:25.045Z</lastmod>
   </url>
   <url>
     <loc>https://royfrancis.github.io/rskb/chapters/spatial/index.html</loc>
-    <lastmod>2023-05-10T16:43:46.763Z</lastmod>
+    <lastmod>2023-08-08T11:40:25.053Z</lastmod>
   </url>
   <url>
-    <loc>https://royfrancis.github.io/rskb/chapters/vdj/index.html</loc>
-    <lastmod>2023-05-10T16:43:46.775Z</lastmod>
+    <loc>https://royfrancis.github.io/rskb/chapters/immune/index.html</loc>
+    <lastmod>2023-08-08T11:40:25.081Z</lastmod>
+  </url>
+  <url>
+    <loc>https://royfrancis.github.io/rskb/chapters/atacseq/index.html</loc>
+    <lastmod>2023-08-08T11:40:25.089Z</lastmod>
   </url>
   <url>
     <loc>https://royfrancis.github.io/rskb/chapters/meta/index.html</loc>
-    <lastmod>2023-05-10T16:43:46.783Z</lastmod>
+    <lastmod>2023-08-08T11:40:25.097Z</lastmod>
   </url>
   <url>
     <loc>https://royfrancis.github.io/rskb/RSKB.epub</loc>
-    <lastmod>2023-05-10T16:43:46.555Z</lastmod>
+    <lastmod>2023-08-08T11:40:24.813Z</lastmod>
   </url>
 </urlset>

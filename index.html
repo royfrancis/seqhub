@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="A high level guide and knowledgebase for RNA-Seq experiments and analyses.">
+<meta name="description" content="A knowledgebase for RNA-Seq experiments and analyses.">
 
 <title>RSKB</title>
 <style>
@@ -58,7 +58,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
@@ -82,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -91,11 +92,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
+    <div class="quarto-title column-page-right">
       <h1 class="title">RSKB</h1>
                   <div>
         <div class="description">
-          A high level guide and knowledgebase for RNA-Seq experiments and analyses.
+          A knowledgebase for RNA-Seq experiments and analyses.
         </div>
       </div>
                 </div>
@@ -110,14 +111,14 @@ ul.task-list li input[type="checkbox"] {
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">RSKB</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/royfrancis/rskb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/royfrancis/rskb" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -146,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/bulk/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bulk expression</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bulk gene expression</span></span></a>
   </div>
 </li>
       </ul>
@@ -174,8 +175,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./chapters/vdj/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">VDJ</span></span></a>
+  <a href="./chapters/immune/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Immune profiling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapters/atacseq/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ATAC-Seq</span></span></a>
   </div>
 </li>
       </ul>
@@ -192,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./chapters/meta/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Meta Transcriptomics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Meta transcriptomics</span></span></a>
   </div>
 </li>
       </ul>
@@ -202,46 +209,44 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#home" id="toc-home" class="nav-link active" data-scroll-target="#home">Home</a></li>
-  </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/royfrancis/rskb/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
-    </div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
 
 
 
 
-<section id="home" class="level1 unnumbered">
-<h1 class="unnumbered">Home</h1>
+<section id="home" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="home">Home</h2>
 <section id="bulk-rna-seq" class="level4">
-<h4 class="anchored" data-anchor-id="bulk-rna-seq"><a href="chapters/bulk/index.html">Bulk RNA-Seq</a></h4>
-<p>Traditional RNA-Seq experiment from tissue material.</p>
+<h4 class="anchored" data-anchor-id="bulk-rna-seq"><a href="chapters/bulk/index.html">Bulk RNA-seq</a></h4>
+<p>Gene expression from bulk tissue material.</p>
 </section>
 <section id="single-cell-rna-seq" class="level4">
-<h4 class="anchored" data-anchor-id="single-cell-rna-seq"><a href="chapters/sc/index.html">Single-Cell RNA-Seq</a></h4>
-<p>RNA-Seq experiment where the source material is single cells. Methods such as 10X chromium, Smart-Seq etc.</p>
+<h4 class="anchored" data-anchor-id="single-cell-rna-seq"><a href="chapters/sc/index.html">Single-cell RNA-seq</a></h4>
+<p>Gene expression from single cells. 10X chromium, Smart-seq etc.</p>
 </section>
-<section id="single-cell-vdj" class="level4">
-<h4 class="anchored" data-anchor-id="single-cell-vdj"><a href="chapters/vdj/index.html">Single-Cell VDJ</a></h4>
-<p>Single cell VDJ analyses</p>
+<section id="immunoprofiling" class="level4">
+<h4 class="anchored" data-anchor-id="immunoprofiling"><a href="chapters/immune/index.html">Immunoprofiling</a></h4>
+<p>AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling.</p>
 </section>
 <section id="spatial-rna-seq" class="level4">
-<h4 class="anchored" data-anchor-id="spatial-rna-seq"><a href="chapters/spatial/index.html">Spatial RNA-Seq</a></h4>
-<p>RNA-Seq experiment with spatial information. 10X Visium etc.</p>
+<h4 class="anchored" data-anchor-id="spatial-rna-seq"><a href="chapters/spatial/index.html">Spatial RNA-seq</a></h4>
+<p>Gene expression with spatial information. 10X Visium etc.</p>
+</section>
+<section id="atac-seq" class="level4">
+<h4 class="anchored" data-anchor-id="atac-seq"><a href="chapters/atacseq/index.html">ATAC-Seq</a></h4>
+<p>Genome wide chromatin accessibility.</p>
 </section>
 <section id="meta-transcriptomics" class="level4">
 <h4 class="anchored" data-anchor-id="meta-transcriptomics"><a href="chapters/spatial/index.html">Meta transcriptomics</a></h4>
-<p>RNA-Seq experiments involving multiple / mixed species.</p>
+<p>Gene expression from multiple/mixed populations or species.</p>
 <div class="coverbg">
-<div class="small">
-<p>Updated: 10-05-2023 at 16:43:28.</p>
+
 </div>
+<hr>
+<div class="small">
+<p>Updated: 08-08-2023 at 11:40:02.</p>
 </div>
 
 
@@ -482,12 +487,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
       <a href="./chapters/bulk/index.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bulk expression</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bulk gene expression</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -497,8 +502,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">2023 Roy Francis</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
-    <div class="nav-footer-right">Published with <a href="https://quarto.org/">Quarto</a> v1.3.340</div>
+    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/royfrancis/rskb/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action">Report an issue</a></p></div></div></div>
+    <div class="nav-footer-right">Published with <a href="https://quarto.org/">Quarto</a> v1.3.450</div>
   </div>
 </footer>
 

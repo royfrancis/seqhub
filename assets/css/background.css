@@ -2,6 +2,7 @@
   background-image: url("../cover.png");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position-x: right;
   padding-top: 20rem;
   margin-top: -10rem;
 }
