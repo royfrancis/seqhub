@@ -1,6 +1,6 @@
 ---
-title: Bulk expression
-description: Guide and links related to bulk RNA-Seq experiments and analyses.
+title: Bulk gene expression
+description: Bulk RNA-Seq experiments and analyses.
 ---
 
 ## Overview {#bulk-overview}

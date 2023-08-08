@@ -1,6 +1,6 @@
 ---
 title: Gene expression
-description: Guide and links related to single-cell RNA-Seq experiments and analyses.
+description: Single-cell RNA-Seq experiments and analyses
 ---
 
 ## Overview {#sc-overview}

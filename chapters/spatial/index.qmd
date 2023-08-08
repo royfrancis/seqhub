@@ -1,6 +1,6 @@
 ---
 title: Spatial
-description: Guide and links related to spatial transcriptomics technologies and analyses.
+description: Gene expression with spatial information
 ---
 
 ## Overview
