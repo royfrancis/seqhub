@@ -12,8 +12,8 @@ book:
   repo-actions: [edit, issue]
   page-footer:
     border: false
-    left: "{{< current_year >}} Roy Francis"
-    right: "Published with [Quarto](https://quarto.org/) v{{< quarto_version >}}"
+    left: "{{< meta current_year >}} Roy Francis"
+    right: "Published with [Quarto](https://quarto.org/) v{{< meta quarto_version >}}"
   chapters:
     - index.qmd
     - part: "**Bulk RNASeq**"
@@ -44,8 +44,6 @@ format:
     title-block-banner: true
     toc: true
     smooth-scroll: true
-    lightbox: 
-      match: auto
   epub:
     cover-image: assets/cover.png
 
@@ -67,5 +65,4 @@ execute:
 
 filters:
   - assets/custom.lua
-  - lightbox
 

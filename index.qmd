@@ -6,8 +6,6 @@ format:
     number-sections: false
     toc: false
     css: "assets/css/background.css"
-    lightbox: 
-      match: false
 ---
 
 ## Home {.unnumbered}
@@ -37,5 +35,5 @@ Gene expression from multiple/mixed populations or species.
 ---
 
 ::: small
-Updated: {{< current_date >}} at {{< current_time >}}.
+Updated: {{< meta current_date >}} at {{< meta current_time >}}.
 :::
