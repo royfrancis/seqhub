@@ -18,8 +18,8 @@ Gene expression from bulk tissue material.
 #### [Single-cell RNA-seq](chapters/sc/index.html)  
 Gene expression from single cells. 10X chromium, Smart-seq etc.
 
-#### [Single-cell immune profiling](chapters/immune/index.html)  
-Single cell adaptive immune profiling, AIRR-Seq, VDJ etc.
+#### [Immunoprofiling](chapters/immune/index.html)  
+AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling.
 
 #### [Spatial RNA-seq](chapters/spatial/index.html)
 Gene expression with spatial information. 10X Visium etc.

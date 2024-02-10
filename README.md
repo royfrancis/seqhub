@@ -2,7 +2,7 @@
 
 [![ci_badge](https://github.com/royfrancis/rskb/workflows/deploy/badge.svg)](https://github.com/royfrancis/rskb/actions?workflow=deploy)
 
-A high level guide and collection of links related to bulk and single-cell RNA-Seq experiments.
+A high level guide and collection of links related to RNA-Seq experiments and data analyses.
 
 https://royfrancis.github.io/rskb
 
@@ -15,13 +15,14 @@ git clone https://github.com/royfrancis/rskb.git
 ```
 
 2. Add content / make changes
-3. Render and preview changes
+3. Preview documents
 
 ```
-quarto preview
+quarto preview document.qmd
 ```
 
-4. Commit changes and push. Only push source materials.
+4. Commit changes and push. 
+:bangbang: Only push source materials. Do NOT push rendered HTML files.
 5. The contents are rendered automatically
 
-**Note:** If you do not have push access, fork to your repo, clone locally, make changes, push and send a pull request.
+**Note:** If you do not have push access, fork, clone locally, make changes, push and send a pull request.
