@@ -12,8 +12,8 @@ book:
   repo-actions: [edit, issue]
   page-footer:
     border: false
-    left: "<?lua.year?> Roy Francis"
-    right: "Published with [Quarto](https://quarto.org/) v<?quarto.version?>"
+    left: "{{< current_year >}} Roy Francis"
+    right: "Published with [Quarto](https://quarto.org/) v{{< quarto_version >}}"
   chapters:
     - index.qmd
     - part: "**Bulk RNASeq**"
@@ -23,7 +23,8 @@ book:
       chapters:
         - chapters/sc/index.qmd
         - chapters/spatial/index.qmd
-        - chapters/vdj/index.qmd
+        - chapters/immune/index.qmd
+        - chapters/atacseq/index.qmd
     - part: "**Meta Transcriptomics**"
       chapters:
         - chapters/meta/index.qmd

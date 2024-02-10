@@ -1,6 +1,6 @@
 ---
 title: Meta transcriptomics
-description: Guide and links related to meta-transcriptomic analyses.
+description: Gene expression from populations, multiple mixed individuals or species
 ---
 
 ## Overview

@@ -1,6 +1,6 @@
 ---
 title: Gene expression
-description: Guide and links related to single-cell RNA-Seq experiments and analyses.
+description: Single-cell RNA-Seq experiments and analyses
 ---
 
 ## Overview {#sc-overview}
@@ -173,9 +173,35 @@ Identification of cell types can be completely automated (by comparing to refere
 
 @luecken2022benchmarking
 
+![Qualitative evaluation of 14 batch-effect correction methods using UMAP visualization for dataset 9 of human cell atlas. The 14 methods are organized into two panels, with the top panel showing UMAP plots of raw data, Seurat 2, Seurat 3, Harmony, fastMNN, MNN Correct, ComBat, and limma outputs, while the bottom panel shows the UMAP plots of scGen, Scanorama, MMD-ResNet, ZINB-WaVE, scMerge, LIGER, and BBKNN outputs. Cells are colored by batch.](https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-019-1850-9/MediaObjects/13059_2019_1850_Fig18_HTML.png?as=webp)
+
+> We tested 14 state-of-the-art batch correction algorithms designed to handle single-cell transcriptomic data. We found that each batch-effect removal method has its advantages and limitations, with no clearly superior method. Based on our results, we found LIGER, Harmony, and Seurat 3 to be the top batch mixing methods. Harmony performed well on datasets with common cell types, and also different technologies. The comparatively low runtime of Harmony also makes it suitable for initial data exploration of large datasets. Likewise, LIGER performed well, especially on datasets with non-identical cell types. The main drawback of LIGER is its longer runtime than Harmony, though it is acceptable for its performance. Seurat 3 is also able to handle large datasets, however with 20–50% longer runtime than LIGER. Due to its good batch mixing results with multiple batches, it is also recommended for such scenarios. To improve recovery of DEGs in batch-corrected data, we recommend scMerge for batch correction.
+
+@tran2020benchmark
+
+## Trajectory
+
+::: {#fig-sc-trajectory-comparison layout-ncol="2"}
+
+![](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-019-0071-9/MediaObjects/41587_2019_71_Fig2_HTML.png?as=webp)
+
+![](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-019-0071-9/MediaObjects/41587_2019_71_Fig3_HTML.png?as=webp)
+
+Comparison of Trajectory inference methods.
+
+:::
+
+@saelens2019comparison
+
+- [{{< fa toolbox >}} Tempora](https://github.com/BaderLab/Tempora) Trajectory inference for time-series data
+
+## RNA velocity
+
 ## Databases
 
 ### Data
+
+Single-cell data repositiories.
 
 - [scRNASeqDB](https://bioinfo.uth.edu/scrnaseqdb/)
 - [Broad SIngleCell portal](https://singlecell.broadinstitute.org/single_cell)
@@ -189,14 +215,18 @@ Identification of cell types can be completely automated (by comparing to refere
 
 ### Markers
 
+Curated list of marker genes by organism, tissue and cell type.
+
 - [PanglaoDB](https://panglaodb.se/)
 - [CellMarker](http://biocc.hrbmu.edu.cn/CellMarker/browse.jsp)
 
 ## Interactive visualisation frameworks
 
-- [ShinyCell](https://github.com/SGDDNB/ShinyCell)
-- [CDCP](https://db.cngb.org/cdcp/)
-- [SingleCellVR](https://singlecellvr.pinellolab.partners.org/)
+- [{{< fa toolbox >}} ShinyCell](https://github.com/SGDDNB/ShinyCell)(R Shiny)
+- [{{< fa toolbox >}} Cerebro](https://github.com/romanhaa/Cerebro)(R Shiny)
+- [{{< fa toolbox >}} Vitessce](http://vitessce.io/)(R, Python)
+- [{{< fa toolbox >}} CDCP](https://db.cngb.org/cdcp/)
+- [{{< fa toolbox >}} SingleCellVR](https://singlecellvr.pinellolab.partners.org/)
 
 ![](https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png)
 
