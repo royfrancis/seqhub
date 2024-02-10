@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -62,9 +63,6 @@ div.csl-indent {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -73,7 +71,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -82,6 +86,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -98,15 +103,15 @@ div.csl-indent {
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/bulk/index.html"><strong>Bulk RNASeq</strong></a></li><li class="breadcrumb-item"><a href="../../chapters/bulk/index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bulk gene expression</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/bulk/index.html"><strong>Bulk RNASeq</strong></a></li><li class="breadcrumb-item"><a href="../../chapters/bulk/index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bulk gene expression</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -114,7 +119,7 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/bulk/index.html"><strong>Bulk RNASeq</strong></a></li><li class="breadcrumb-item"><a href="../../chapters/bulk/index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bulk gene expression</span></a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bulk gene expression</span></h1>
@@ -137,12 +142,12 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">RSKB</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/royfrancis/rskb" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/royfrancis/rskb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -231,7 +236,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -274,10 +279,11 @@ div.csl-indent {
   <li><a href="#other-1" id="toc-other-1" class="nav-link" data-scroll-target="#other-1"><span class="header-section-number">1.16</span> Other</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/royfrancis/rskb/edit/main/chapters/bulk/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/royfrancis/rskb/edit/main/chapters/bulk/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -287,15 +293,15 @@ div.csl-indent {
 <p><strong>What is the general workflow, steps, tools used and best practices for bulk rna-seq analysis?</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig1_HTML.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="A generic roadmap for RNA-seq computational analyses."><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig1_HTML.gif" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">A generic roadmap for RNA-seq computational analyses.</figcaption>
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig1_HTML.gif" class="img-fluid figure-img"></p>
+<figcaption>A generic roadmap for RNA-seq computational analyses.</figcaption>
 </figure>
 </div>
 <p>The major analysis steps are listed above the lines for pre-analysis, core analysis and advanced analysis. The key analysis issues for each step that are listed below the lines are discussed in the text. a Preprocessing includes experimental design, sequencing design, and quality control steps. b Core analyses include transcriptome profiling, differential gene expression, and functional profiling. c Advanced analysis includes visualization, other RNA-seq technologies, and data integration. Abbreviations: ChIP-seq Chromatin immunoprecipitation sequencing, eQTL Expression quantitative loci, FPKM Fragments per kilobase of exon model per million mapped reads, GSEA Gene set enrichment analysis, PCA Principal component analysis, RPKM Reads per kilobase of exon model per million reads, sQTL Splicing quantitative trait loci, TF Transcription factor, TPM Transcripts per million.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig2_HTML.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Read mapping and transcript identification strategies."><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig2_HTML.gif" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Read mapping and transcript identification strategies.</figcaption>
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-016-0881-8/MediaObjects/13059_2016_881_Fig2_HTML.gif" class="img-fluid figure-img"></p>
+<figcaption>Read mapping and transcript identification strategies.</figcaption>
 </figure>
 </div>
 <p>Three basic strategies for regular RNA-seq analysis. a An annotated genome is available and reads are mapped to the genome with a gapped mapper. Next (novel) transcript discovery and quantification can proceed with or without an annotation file. Novel transcripts are then functionally annotated. b If no novel transcript discovery is needed, reads can be mapped to the reference transcriptome using an ungapped aligner. Transcript identification and quantification can occur simultaneously. c When no genome is available, reads need to be assembled first into contigs or transcripts. For quantification, reads are mapped back to the novel reference transcriptome and further analysis proceeds as in (b) followed by the functional annotation of the novel transcripts as in (a). Representative software that can be used at each analysis step are indicated in bold text. Abbreviations: GFF General Feature Format, GTF gene transfer format, RSEM RNA-Seq by Expectation Maximization.</p>
@@ -309,11 +315,7 @@ div.csl-indent {
 </blockquote>
 <p><span class="citation" data-cites="marioni2008rna">Marioni et al. (<a href="#ref-marioni2008rna" role="doc-biblioref">2008</a>)</span></p>
 <p><strong>How many biological replicates are needed in an RNA-seq experiment?</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/schurch-2016-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="assets/schurch-2016-3.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><img src="assets/schurch-2016-3.png" class="img-fluid"></p>
 <p><span class="citation" data-cites="schurch2016many">Schurch et al. (<a href="#ref-schurch2016many" role="doc-biblioref">2016</a>)</span></p>
 <p>Number of replicates can be calculated more precisely using power analysis. <code>RnaSeqSampleSize</code> is an R package for power analysis and sample size estimation for RNA-Seq experiment.</p>
 <p><span class="citation" data-cites="zhao2018rnaseqsamplesize">Zhao et al. (<a href="#ref-zhao2018rnaseqsamplesize" role="doc-biblioref">2018</a>)</span></p>
@@ -322,14 +324,14 @@ div.csl-indent {
 <p><strong>More sequencing depth or more biological replicates?</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/lui-2014-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="(a) Increase in biological replication significantly increases the number of DE genes identified. Numbers of sequencing reads have a diminishing return after 10 M reads. Line thickness indicates depth of replication, with 2 replicates the darkest and 7 replicates the lightest. The lines are smoothed averages for each replication level, with the shaded regions corresponding to the 95% confidence intervals. (b) Power of detecting DE genes increases with both sequencing depth and biological replication. Similar to the trends in (a), increases in the power showed diminishing returns after 10 M reads. (c) ROC curves for three biological replicates. Sequencing deeper than 10 M reads did not significantly improve statistical power and precision for detecting DE genes. (d) The CV of logFC for the top 100 DE genes. The CV of the logFC estimates decreased significantly as we added more biological replicates, whereas adding sequencing depth after 10 M reads had much less effect."><img src="assets/lui-2014-1.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">(a) Increase in biological replication significantly increases the number of DE genes identified. Numbers of sequencing reads have a diminishing return after 10 M reads. Line thickness indicates depth of replication, with 2 replicates the darkest and 7 replicates the lightest. The lines are smoothed averages for each replication level, with the shaded regions corresponding to the 95% confidence intervals. (b) Power of detecting DE genes increases with both sequencing depth and biological replication. Similar to the trends in (a), increases in the power showed diminishing returns after 10 M reads. (c) ROC curves for three biological replicates. Sequencing deeper than 10 M reads did not significantly improve statistical power and precision for detecting DE genes. (d) The CV of logFC for the top 100 DE genes. The CV of the logFC estimates decreased significantly as we added more biological replicates, whereas adding sequencing depth after 10 M reads had much less effect.</figcaption>
+<p><img src="assets/lui-2014-1.png" class="img-fluid figure-img"></p>
+<figcaption>(a) Increase in biological replication significantly increases the number of DE genes identified. Numbers of sequencing reads have a diminishing return after 10 M reads. Line thickness indicates depth of replication, with 2 replicates the darkest and 7 replicates the lightest. The lines are smoothed averages for each replication level, with the shaded regions corresponding to the 95% confidence intervals. (b) Power of detecting DE genes increases with both sequencing depth and biological replication. Similar to the trends in (a), increases in the power showed diminishing returns after 10 M reads. (c) ROC curves for three biological replicates. Sequencing deeper than 10 M reads did not significantly improve statistical power and precision for detecting DE genes. (d) The CV of logFC for the top 100 DE genes. The CV of the logFC estimates decreased significantly as we added more biological replicates, whereas adding sequencing depth after 10 M reads had much less effect.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/lui-2014-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="(a–c) The CV of logCPM for high expression level genes (a), medium expression level genes (b) and low expression level genes (c) (see Section 2 for definition). High/medium expression level genes have low CV for expression level estimates. Adding sequencing depth did not have significant effect on accuracy of estimation, whereas adding biological replicates improved accuracy significantly. For low expression level genes, both adding sequencing depth and adding biological replication level improved expression level estimation accuracy. (d) Number of DE genes plotted against the total estimated sequencing cost. If higher numbers of DE genes are needed, increased biological replication should be used."><img src="assets/lui-2014-2.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">(a–c) The CV of logCPM for high expression level genes (a), medium expression level genes (b) and low expression level genes (c) (see Section 2 for definition). High/medium expression level genes have low CV for expression level estimates. Adding sequencing depth did not have significant effect on accuracy of estimation, whereas adding biological replicates improved accuracy significantly. For low expression level genes, both adding sequencing depth and adding biological replication level improved expression level estimation accuracy. (d) Number of DE genes plotted against the total estimated sequencing cost. If higher numbers of DE genes are needed, increased biological replication should be used.</figcaption>
+<p><img src="assets/lui-2014-2.png" class="img-fluid figure-img"></p>
+<figcaption>(a–c) The CV of logCPM for high expression level genes (a), medium expression level genes (b) and low expression level genes (c) (see Section 2 for definition). High/medium expression level genes have low CV for expression level estimates. Adding sequencing depth did not have significant effect on accuracy of estimation, whereas adding biological replicates improved accuracy significantly. For low expression level genes, both adding sequencing depth and adding biological replication level improved expression level estimation accuracy. (d) Number of DE genes plotted against the total estimated sequencing cost. If higher numbers of DE genes are needed, increased biological replication should be used.</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="liu2014rna">Y. Liu et al. (<a href="#ref-liu2014rna" role="doc-biblioref">2014</a>)</span></p>
@@ -343,8 +345,8 @@ div.csl-indent {
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2F1741-7007-12-42/MediaObjects/12915_2014_Article_776_Fig1_HTML.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="A) PCA plot of the 15 samples included in the study based on data from 29,156 genes with at least one mapped read in a single individual. Different colors identify different time-points, while each shape indicates a particular individual in the data set. B) Spearman correlation plot of the 15 samples in the study. PCA, principal component analysis."><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2F1741-7007-12-42/MediaObjects/12915_2014_Article_776_Fig1_HTML.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">A) PCA plot of the 15 samples included in the study based on data from 29,156 genes with at least one mapped read in a single individual. Different colors identify different time-points, while each shape indicates a particular individual in the data set. B) Spearman correlation plot of the 15 samples in the study. PCA, principal component analysis.</figcaption>
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2F1741-7007-12-42/MediaObjects/12915_2014_Article_776_Fig1_HTML.jpg" class="img-fluid figure-img"></p>
+<figcaption>A) PCA plot of the 15 samples included in the study based on data from 29,156 genes with at least one mapped read in a single individual. Different colors identify different time-points, while each shape indicates a particular individual in the data set. B) Spearman correlation plot of the 15 samples in the study. PCA, principal component analysis.</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="gallego2014rna">Gallego Romero et al. (<a href="#ref-gallego2014rna" role="doc-biblioref">2014</a>)</span></p>
@@ -381,21 +383,21 @@ div.csl-indent {
 <h2 data-number="1.9" class="anchored" data-anchor-id="bulk-norm"><span class="header-section-number">1.9</span> Normalisation</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/dilles-2013-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Comparison of normalization methods for real data. (A) Boxplots of log2(counts + 1) for all conditions and replicates in the M. musculus data, by normalization method. (B) Boxplots of intra-group variance for one of the conditions (labeled ‘B’ in the corresponding data found in Supplementary Data) in the M. musculus data, by normalization method. (C) Analysis of housekeeping genes for the H. sapiens data. (D) Consensus dendrogram of differential analysis results, using the DESeq Bioconductor package, for all normalization methods across the four datasets under consideration."><img src="assets/dilles-2013-2.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Comparison of normalization methods for real data. (A) Boxplots of log2(counts + 1) for all conditions and replicates in the M. musculus data, by normalization method. (B) Boxplots of intra-group variance for one of the conditions (labeled ‘B’ in the corresponding data found in Supplementary Data) in the M. musculus data, by normalization method. (C) Analysis of housekeeping genes for the H. sapiens data. (D) Consensus dendrogram of differential analysis results, using the DESeq Bioconductor package, for all normalization methods across the four datasets under consideration.</figcaption>
+<p><img src="assets/dilles-2013-2.png" class="img-fluid figure-img"></p>
+<figcaption>Comparison of normalization methods for real data. (A) Boxplots of log2(counts + 1) for all conditions and replicates in the M. musculus data, by normalization method. (B) Boxplots of intra-group variance for one of the conditions (labeled ‘B’ in the corresponding data found in Supplementary Data) in the M. musculus data, by normalization method. (C) Analysis of housekeeping genes for the H. sapiens data. (D) Consensus dendrogram of differential analysis results, using the DESeq Bioconductor package, for all normalization methods across the four datasets under consideration.</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="dillies2013comprehensive">Dillies et al. (<a href="#ref-dillies2013comprehensive" role="doc-biblioref">2013</a>)</span></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/evans-2018-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="One highly expressed gene. An experiment is performed with conditions A and B to compare expression for the three genes (1, 2 and 3). (A) Gene 3 is 2-fold up-regulated under condition B, while the other genes are not DE; the quantity of mRNA/cell (in bp) is the same for genes 1 and 2, but is twice as high for gene 3 under condition B. (B) Because of the change in expression of gene 3, the shares of mRNA in the cell are different between conditions. Under condition A, each gene gets one-third, whereas under condition B, gene 3 gets half while the other two get one-fourth. (C) Differences in shares of mRNA are reflected in the shares of reads. Each sample has the same total number of reads, but the distribution is different between the conditions, matching the distribution of mRNA in (B). (D) When no normalization is performed, there are apparent differences in read counts for all three genes. Total count normalization produces the exact same result as no normalization at all, as the total read count for each sample is the same. In truth, there is no difference in expression for genes 1 and 2, and the relative count for gene 3 should be higher than found by no normalization or total count normalization. Correct normalization, therefore, makes the read counts of the non-DE genes equivalent, which also makes the relative expression of gene 3 correct. (E) No normalization and total count normalization fail to equilibrate the read counts of the non-DE genes, resulting in each gene appearing DE, and the truly DE gene (gene 3) having the wrong fold change. Correct normalization reveals no difference in expression for the non-DE genes and the correct fold change for gene 3."><img src="assets/evans-2018-1.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">One highly expressed gene. An experiment is performed with conditions A and B to compare expression for the three genes (1, 2 and 3). (A) Gene 3 is 2-fold up-regulated under condition B, while the other genes are not DE; the quantity of mRNA/cell (in bp) is the same for genes 1 and 2, but is twice as high for gene 3 under condition B. (B) Because of the change in expression of gene 3, the shares of mRNA in the cell are different between conditions. Under condition A, each gene gets one-third, whereas under condition B, gene 3 gets half while the other two get one-fourth. (C) Differences in shares of mRNA are reflected in the shares of reads. Each sample has the same total number of reads, but the distribution is different between the conditions, matching the distribution of mRNA in (B). (D) When no normalization is performed, there are apparent differences in read counts for all three genes. Total count normalization produces the exact same result as no normalization at all, as the total read count for each sample is the same. In truth, there is no difference in expression for genes 1 and 2, and the relative count for gene 3 should be higher than found by no normalization or total count normalization. Correct normalization, therefore, makes the read counts of the non-DE genes equivalent, which also makes the relative expression of gene 3 correct. (E) No normalization and total count normalization fail to equilibrate the read counts of the non-DE genes, resulting in each gene appearing DE, and the truly DE gene (gene 3) having the wrong fold change. Correct normalization reveals no difference in expression for the non-DE genes and the correct fold change for gene 3.</figcaption>
+<p><img src="assets/evans-2018-1.png" class="img-fluid figure-img"></p>
+<figcaption>One highly expressed gene. An experiment is performed with conditions A and B to compare expression for the three genes (1, 2 and 3). (A) Gene 3 is 2-fold up-regulated under condition B, while the other genes are not DE; the quantity of mRNA/cell (in bp) is the same for genes 1 and 2, but is twice as high for gene 3 under condition B. (B) Because of the change in expression of gene 3, the shares of mRNA in the cell are different between conditions. Under condition A, each gene gets one-third, whereas under condition B, gene 3 gets half while the other two get one-fourth. (C) Differences in shares of mRNA are reflected in the shares of reads. Each sample has the same total number of reads, but the distribution is different between the conditions, matching the distribution of mRNA in (B). (D) When no normalization is performed, there are apparent differences in read counts for all three genes. Total count normalization produces the exact same result as no normalization at all, as the total read count for each sample is the same. In truth, there is no difference in expression for genes 1 and 2, and the relative count for gene 3 should be higher than found by no normalization or total count normalization. Correct normalization, therefore, makes the read counts of the non-DE genes equivalent, which also makes the relative expression of gene 3 correct. (E) No normalization and total count normalization fail to equilibrate the read counts of the non-DE genes, resulting in each gene appearing DE, and the truly DE gene (gene 3) having the wrong fold change. Correct normalization reveals no difference in expression for the non-DE genes and the correct fold change for gene 3.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/evans-2018-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Global shift in expression. There are two genes, and an experiment is performed to compare expression between condition A and condition B. (A) There is global up-regulation under condition B versus condition A, with both genes having twice the expression under condition B. Within each condition, the two genes produce the same amount of mRNA/cell (measured in bp). (B) In the RNA-Seq experiment, the same number of molecules are sequenced from each of the two samples. Proportionally, the mRNA composition is the same under each condition, and so the composition of molecules sequenced is also the same. Within each condition, the two genes produce the same amount of mRNA (in bp) but gene 2 is four-fifth the length of gene 1, so must produce five-fourth the number of molecules that gene 1 does. (C) Sequenced reads are aligned to the reference genome and mapped to each gene. The distribution of reads is the same in each sample, but by chance the sample for condition A happens to have more reads in total. (D) Normalization is performed, which removes the differences in read count from technical variability, so the read count for each gene is the same across conditions. (E) Because the normalized read counts are the same, the observed fold change for each gene is 1, indicating no differential expression. However, genes are really twice as expressed under condition B and so in truth we should see half the expression when comparing A with B."><img src="assets/evans-2018-2.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Global shift in expression. There are two genes, and an experiment is performed to compare expression between condition A and condition B. (A) There is global up-regulation under condition B versus condition A, with both genes having twice the expression under condition B. Within each condition, the two genes produce the same amount of mRNA/cell (measured in bp). (B) In the RNA-Seq experiment, the same number of molecules are sequenced from each of the two samples. Proportionally, the mRNA composition is the same under each condition, and so the composition of molecules sequenced is also the same. Within each condition, the two genes produce the same amount of mRNA (in bp) but gene 2 is four-fifth the length of gene 1, so must produce five-fourth the number of molecules that gene 1 does. (C) Sequenced reads are aligned to the reference genome and mapped to each gene. The distribution of reads is the same in each sample, but by chance the sample for condition A happens to have more reads in total. (D) Normalization is performed, which removes the differences in read count from technical variability, so the read count for each gene is the same across conditions. (E) Because the normalized read counts are the same, the observed fold change for each gene is 1, indicating no differential expression. However, genes are really twice as expressed under condition B and so in truth we should see half the expression when comparing A with B.</figcaption>
+<p><img src="assets/evans-2018-2.png" class="img-fluid figure-img"></p>
+<figcaption>Global shift in expression. There are two genes, and an experiment is performed to compare expression between condition A and condition B. (A) There is global up-regulation under condition B versus condition A, with both genes having twice the expression under condition B. Within each condition, the two genes produce the same amount of mRNA/cell (measured in bp). (B) In the RNA-Seq experiment, the same number of molecules are sequenced from each of the two samples. Proportionally, the mRNA composition is the same under each condition, and so the composition of molecules sequenced is also the same. Within each condition, the two genes produce the same amount of mRNA (in bp) but gene 2 is four-fifth the length of gene 1, so must produce five-fourth the number of molecules that gene 1 does. (C) Sequenced reads are aligned to the reference genome and mapped to each gene. The distribution of reads is the same in each sample, but by chance the sample for condition A happens to have more reads in total. (D) Normalization is performed, which removes the differences in read count from technical variability, so the read count for each gene is the same across conditions. (E) Because the normalized read counts are the same, the observed fold change for each gene is 1, indicating no differential expression. However, genes are really twice as expressed under condition B and so in truth we should see half the expression when comparing A with B.</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="evans2018selecting">Evans et al. (<a href="#ref-evans2018selecting" role="doc-biblioref">2018</a>)</span></p>
@@ -416,16 +418,8 @@ div.csl-indent {
 <section id="bulk-dge" class="level2" data-number="1.11">
 <h2 data-number="1.11" class="anchored" data-anchor-id="bulk-dge"><span class="header-section-number">1.11</span> Differential gene expression</h2>
 <p><strong>Which DE tool should you use?</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/schurch-2016-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="assets/schurch-2016-1.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="assets/schurch-2016-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="assets/schurch-2016-2.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><img src="assets/schurch-2016-1.png" class="img-fluid"></p>
+<p><img src="assets/schurch-2016-2.png" class="img-fluid"></p>
 <p><span class="citation" data-cites="schurch2016many">Schurch et al. (<a href="#ref-schurch2016many" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="seyednasrollah2015comparison">Seyednasrollah et al. (<a href="#ref-seyednasrollah2015comparison" role="doc-biblioref">2015</a>)</span></p>
 <section id="modelling-in-r" class="level3" data-number="1.11.1">
 <h3 data-number="1.11.1" class="anchored" data-anchor-id="modelling-in-r"><span class="header-section-number">1.11.1</span> Modelling in R</h3>
@@ -580,7 +574,7 @@ div.csl-indent {
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-baruzzo2017simulation" class="csl-entry" role="listitem">
 Baruzzo, G., Hayer, K. E., Kim, E. J., Di Camillo, B., FitzGerald, G. A., &amp; Grant, G. R. (2017). Simulation-based comprehensive benchmarking of RNA-seq aligners. <em>Nature Methods</em>, <em>14</em>(2), 135–139.
 </div>
@@ -757,10 +751,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -770,8 +763,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -784,6 +786,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -827,6 +948,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -852,6 +974,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -913,12 +1061,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../index.html" class="pagination-link">
+      <a href="../../index.html" class="pagination-link  aria-label=" home"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/sc/index.html" class="pagination-link">
+      <a href="../../chapters/sc/index.html" class="pagination-link" aria-label="<span class='chapter-number'>2</span>&nbsp; <span class='chapter-title'>Gene expression</span>">
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Gene expression</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -926,14 +1074,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">2023 Roy Francis</div>   
+    <div class="nav-footer-left">
+<p>2024 Roy Francis</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
-    <div class="nav-footer-right">Published with <a href="https://quarto.org/">Quarto</a> v1.3.450</div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/royfrancis/rskb/edit/main/chapters/bulk/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Published with <a href="https://quarto.org/">Quarto</a> v1.4.549
+</p>
+</div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":true,"selector":".lightbox"});</script>
+
 
 
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,6 +25,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -62,9 +63,6 @@ div.csl-indent {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -73,7 +71,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -82,6 +86,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -98,15 +103,15 @@ div.csl-indent {
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/sc/index.html"><strong>Single Cell RNASeq</strong></a></li><li class="breadcrumb-item"><a href="../../chapters/sc/index.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Gene expression</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/sc/index.html"><strong>Single Cell RNASeq</strong></a></li><li class="breadcrumb-item"><a href="../../chapters/sc/index.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Gene expression</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -114,7 +119,7 @@ div.csl-indent {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/sc/index.html"><strong>Single Cell RNASeq</strong></a></li><li class="breadcrumb-item"><a href="../../chapters/sc/index.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Gene expression</span></a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Gene expression</span></h1>
@@ -137,12 +142,12 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">RSKB</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/royfrancis/rskb" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/royfrancis/rskb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -231,7 +236,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -255,19 +260,22 @@ div.csl-indent {
   <li><a href="#cell-type-identification" id="toc-cell-type-identification" class="nav-link" data-scroll-target="#cell-type-identification"><span class="header-section-number">2.5</span> Cell type identification</a></li>
   <li><a href="#differential-expression" id="toc-differential-expression" class="nav-link" data-scroll-target="#differential-expression"><span class="header-section-number">2.6</span> Differential expression</a></li>
   <li><a href="#data-integration" id="toc-data-integration" class="nav-link" data-scroll-target="#data-integration"><span class="header-section-number">2.7</span> Data Integration</a></li>
-  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="header-section-number">2.8</span> Databases</a>
+  <li><a href="#trajectory" id="toc-trajectory" class="nav-link" data-scroll-target="#trajectory"><span class="header-section-number">2.8</span> Trajectory</a></li>
+  <li><a href="#rna-velocity" id="toc-rna-velocity" class="nav-link" data-scroll-target="#rna-velocity"><span class="header-section-number">2.9</span> RNA velocity</a></li>
+  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="header-section-number">2.10</span> Databases</a>
   <ul class="collapse">
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2.8.1</span> Data</a></li>
-  <li><a href="#markers" id="toc-markers" class="nav-link" data-scroll-target="#markers"><span class="header-section-number">2.8.2</span> Markers</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2.10.1</span> Data</a></li>
+  <li><a href="#markers" id="toc-markers" class="nav-link" data-scroll-target="#markers"><span class="header-section-number">2.10.2</span> Markers</a></li>
   </ul></li>
-  <li><a href="#interactive-visualisation-frameworks" id="toc-interactive-visualisation-frameworks" class="nav-link" data-scroll-target="#interactive-visualisation-frameworks"><span class="header-section-number">2.9</span> Interactive visualisation frameworks</a></li>
-  <li><a href="#learning" id="toc-learning" class="nav-link" data-scroll-target="#learning"><span class="header-section-number">2.10</span> Learning</a></li>
+  <li><a href="#interactive-visualisation-frameworks" id="toc-interactive-visualisation-frameworks" class="nav-link" data-scroll-target="#interactive-visualisation-frameworks"><span class="header-section-number">2.11</span> Interactive visualisation frameworks</a></li>
+  <li><a href="#learning" id="toc-learning" class="nav-link" data-scroll-target="#learning"><span class="header-section-number">2.12</span> Learning</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/royfrancis/rskb/edit/main/chapters/sc/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/royfrancis/rskb/edit/main/chapters/sc/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
+
 
 
 
@@ -317,8 +325,8 @@ div.csl-indent {
 <p><strong>Experimental Considerations for Single-Cell RNA Sequencing Approaches</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.frontiersin.org/files/Articles/391125/fcell-06-00108-HTML/image_m/fcell-06-00108-g001.jpg" class="lightbox" title="Overview of step-wise approach to designing single-cell analysis workflows. RNA integrity number (RIN); Reads per cell (RPC)." data-gallery="quarto-lightbox-gallery-1"><img src="https://www.frontiersin.org/files/Articles/391125/fcell-06-00108-HTML/image_m/fcell-06-00108-g001.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Overview of step-wise approach to designing single-cell analysis workflows. RNA integrity number (RIN); Reads per cell (RPC).</figcaption>
+<p><img src="https://www.frontiersin.org/files/Articles/391125/fcell-06-00108-HTML/image_m/fcell-06-00108-g001.jpg" class="img-fluid figure-img"></p>
+<figcaption>Overview of step-wise approach to designing single-cell analysis workflows. RNA integrity number (RIN); Reads per cell (RPC).</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="nguyen2018experimental">Nguyen et al. (<a href="#ref-nguyen2018experimental" role="doc-biblioref">2018</a>)</span></p>
@@ -332,15 +340,15 @@ div.csl-indent {
 <p><strong>Avoid technical biases.</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/baran-2018-1.jpg" class="lightbox" title="Experimental design examples. In the confounded design, cells are isolated from each sample onto separate plates, processed at potentially different times and the two groups (indicated by different colors) are sequenced on separate lanes of the sequencer. In the balanced design on the right, all samples are evenly distributed across all stages of the experiment, thus reducing the sources of technical variation in the experiment." data-gallery="quarto-lightbox-gallery-2"><img src="assets/baran-2018-1.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Experimental design examples. In the confounded design, cells are isolated from each sample onto separate plates, processed at potentially different times and the two groups (indicated by different colors) are sequenced on separate lanes of the sequencer. In the balanced design on the right, all samples are evenly distributed across all stages of the experiment, thus reducing the sources of technical variation in the experiment.</figcaption>
+<p><img src="assets/baran-2018-1.jpg" class="img-fluid figure-img"></p>
+<figcaption>Experimental design examples. In the confounded design, cells are isolated from each sample onto separate plates, processed at potentially different times and the two groups (indicated by different colors) are sequenced on separate lanes of the sequencer. In the balanced design on the right, all samples are evenly distributed across all stages of the experiment, thus reducing the sources of technical variation in the experiment.</figcaption>
 </figure>
 </div>
 <p><strong>Deciding appropriate cell numbers</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/baran-2018-2.jpg" class="lightbox" title="Estimate of cells required for experiments with various parameters. (A) The plot shows the log10(#Cells) required to capture at least 50 cell types based on the parameters on the X- and Y-axes. (B) The plot shows the log10(#Cells) required to capture the number of cells on the Y-axis if the population consists of 20 cell types." data-gallery="quarto-lightbox-gallery-3"><img src="assets/baran-2018-2.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Estimate of cells required for experiments with various parameters. (A) The plot shows the log10(#Cells) required to capture at least 50 cell types based on the parameters on the X- and Y-axes. (B) The plot shows the log10(#Cells) required to capture the number of cells on the Y-axis if the population consists of 20 cell types.</figcaption>
+<p><img src="assets/baran-2018-2.jpg" class="img-fluid figure-img"></p>
+<figcaption>Estimate of cells required for experiments with various parameters. (A) The plot shows the log10(#Cells) required to capture at least 50 cell types based on the parameters on the X- and Y-axes. (B) The plot shows the log10(#Cells) required to capture the number of cells on the Y-axis if the population consists of 20 cell types.</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="baran2018experimental">Baran-Gale et al. (<a href="#ref-baran2018experimental" role="doc-biblioref">2018</a>)</span></p>
@@ -407,8 +415,8 @@ div.csl-indent {
 <h2 data-number="2.4" class="anchored" data-anchor-id="doublet-detection"><span class="header-section-number">2.4</span> Doublet detection</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://ars.els-cdn.com/content/image/1-s2.0-S2405471220304592-gr5.jpg" class="lightbox" title="Summary of doublet detection tools." data-gallery="quarto-lightbox-gallery-4"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S2405471220304592-gr5.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Summary of doublet detection tools.</figcaption>
+<p><img src="https://ars.els-cdn.com/content/image/1-s2.0-S2405471220304592-gr5.jpg" class="img-fluid figure-img"></p>
+<figcaption>Summary of doublet detection tools.</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="xi2021benchmarking">Xi &amp; Li (<a href="#ref-xi2021benchmarking" role="doc-biblioref">2021</a>)</span></p>
@@ -418,8 +426,8 @@ div.csl-indent {
 <p>Identification of cell types can be completely automated (by comparing to reference data/databases) or semi-automated (reference data + marker genes).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://ars.els-cdn.com/content/image/1-s2.0-S2001037021004499-gr5_lrg.jpg" class="lightbox" title="Summary of performance of the automatic cell-type identification methods. Bar graphs of the automatic cell-type identification methods with six evaluation criteria indicated. For each evaluation criteria, the length of the bars shows the performance of the automatic method: poor, median or good. The automatic methods are sorted based on the mean performance of the evaluation criteria. No bar: not evaluated." data-gallery="quarto-lightbox-gallery-5"><img src="https://ars.els-cdn.com/content/image/1-s2.0-S2001037021004499-gr5_lrg.jpg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Summary of performance of the automatic cell-type identification methods. Bar graphs of the automatic cell-type identification methods with six evaluation criteria indicated. For each evaluation criteria, the length of the bars shows the performance of the automatic method: poor, median or good. The automatic methods are sorted based on the mean performance of the evaluation criteria. No bar: not evaluated.</figcaption>
+<p><img src="https://ars.els-cdn.com/content/image/1-s2.0-S2001037021004499-gr5_lrg.jpg" class="img-fluid figure-img"></p>
+<figcaption>Summary of performance of the automatic cell-type identification methods. Bar graphs of the automatic cell-type identification methods with six evaluation criteria indicated. For each evaluation criteria, the length of the bars shows the performance of the automatic method: poor, median or good. The automatic methods are sorted based on the mean performance of the evaluation criteria. No bar: not evaluated.</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="xie2021automatic">Xie et al. (<a href="#ref-xie2021automatic" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="sun2022comprehensive">Sun et al. (<a href="#ref-sun2022comprehensive" role="doc-biblioref">2022</a>)</span></p>
@@ -441,8 +449,8 @@ div.csl-indent {
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12859-019-2599-6/MediaObjects/12859_2019_2599_Fig7_HTML.png" class="lightbox" title="Effect of sample size (number of cells) on detecting DE genes. The sample size is in horizontal axis, from 10 to 400 cells in each condition. Effect of sample size on a TPR, b FPR, c accuracy (=(TP + TN)/(TP + FP + TN + FN)), and precision (=TP/(TP + FP)). A threshold of 0.05 is used for FDR or adjusted p-value." data-gallery="quarto-lightbox-gallery-6"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12859-019-2599-6/MediaObjects/12859_2019_2599_Fig7_HTML.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Effect of sample size (number of cells) on detecting DE genes. The sample size is in horizontal axis, from 10 to 400 cells in each condition. Effect of sample size on a TPR, b FPR, c accuracy (=(TP + TN)/(TP + FP + TN + FN)), and precision (=TP/(TP + FP)). A threshold of 0.05 is used for FDR or adjusted p-value.</figcaption>
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12859-019-2599-6/MediaObjects/12859_2019_2599_Fig7_HTML.png" class="img-fluid figure-img"></p>
+<figcaption>Effect of sample size (number of cells) on detecting DE genes. The sample size is in horizontal axis, from 10 to 400 cells in each condition. Effect of sample size on a TPR, b FPR, c accuracy (=(TP + TN)/(TP + FP + TN + FN)), and precision (=TP/(TP + FP)). A threshold of 0.05 is used for FDR or adjusted p-value.</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="wang2019comparative">Wang et al. (<a href="#ref-wang2019comparative" role="doc-biblioref">2019</a>)</span></p>
@@ -458,20 +466,20 @@ div.csl-indent {
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/argelaguet-2021-tab1.png" class="lightbox" title="Overview of common data integration methods classified according to their anchor choice." data-gallery="quarto-lightbox-gallery-7"><img src="assets/argelaguet-2021-tab1.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Overview of common data integration methods classified according to their anchor choice.</figcaption>
+<p><img src="assets/argelaguet-2021-tab1.png" class="img-fluid figure-img"></p>
+<figcaption>Overview of common data integration methods classified according to their anchor choice.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/argelaguet-2021-1.png" class="lightbox" title="a–c, Depending on the anchor choice, three types of data integration strategies can be considered: horizontal integration with features as the anchors (a), vertical integration with cells as the anchors (b) and diagonal integration with no anchors in high-dimensional space (c). The left column shows the data modalities extracted, while the right column illustrates the resulting data matrices to be integrated, depending on the anchor choice." data-gallery="quarto-lightbox-gallery-8"><img src="assets/argelaguet-2021-1.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">a–c, Depending on the anchor choice, three types of data integration strategies can be considered: horizontal integration with features as the anchors (a), vertical integration with cells as the anchors (b) and diagonal integration with no anchors in high-dimensional space (c). The left column shows the data modalities extracted, while the right column illustrates the resulting data matrices to be integrated, depending on the anchor choice.</figcaption>
+<p><img src="assets/argelaguet-2021-1.png" class="img-fluid figure-img"></p>
+<figcaption>a–c, Depending on the anchor choice, three types of data integration strategies can be considered: horizontal integration with features as the anchors (a), vertical integration with cells as the anchors (b) and diagonal integration with no anchors in high-dimensional space (c). The left column shows the data modalities extracted, while the right column illustrates the resulting data matrices to be integrated, depending on the anchor choice.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/argelaguet-2021-2.png" class="lightbox" title="Mosaic integration. a, Overview of an experimental design where different data modalities (each block in the rows) are profiled in different subsets of cells (each block in the columns). Transparent matrices denote missing information. b, Resulting data matrices after applying a mosaic integration approach aimed at imputing missing data modalities." data-gallery="quarto-lightbox-gallery-9"><img src="assets/argelaguet-2021-2.png" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Mosaic integration. a, Overview of an experimental design where different data modalities (each block in the rows) are profiled in different subsets of cells (each block in the columns). Transparent matrices denote missing information. b, Resulting data matrices after applying a mosaic integration approach aimed at imputing missing data modalities.</figcaption>
+<p><img src="assets/argelaguet-2021-2.png" class="img-fluid figure-img"></p>
+<figcaption>Mosaic integration. a, Overview of an experimental design where different data modalities (each block in the rows) are profiled in different subsets of cells (each block in the columns). Transparent matrices denote missing information. b, Resulting data matrices after applying a mosaic integration approach aimed at imputing missing data modalities.</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="argelaguet2021computational">Argelaguet et al. (<a href="#ref-argelaguet2021computational" role="doc-biblioref">2021</a>)</span></p>
@@ -480,22 +488,60 @@ div.csl-indent {
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig2_HTML.png?as=webp" class="lightbox" title="a, Overview of top and bottom ranked methods by overall score for the human immune cell task. Metrics are divided into batch correction (blue) and bio-conservation (pink) categories. Overall scores are computed using a 40/60 weighted mean of these category scores (see Methods for further visualization details and Supplementary Fig. 2 for the full plot). b,c, Visualization of the four best performers on the human immune cell integration task colored by cell identity (b) and batch annotation (c). The plots show uniform manifold approximation and projection layouts for the unintegrated data (left) and the top four performers (right)." data-gallery="quarto-lightbox-gallery-10"><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig2_HTML.png?as=webp" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">a, Overview of top and bottom ranked methods by overall score for the human immune cell task. Metrics are divided into batch correction (blue) and bio-conservation (pink) categories. Overall scores are computed using a 40/60 weighted mean of these category scores (see Methods for further visualization details and Supplementary Fig. 2 for the full plot). b,c, Visualization of the four best performers on the human immune cell integration task colored by cell identity (b) and batch annotation (c). The plots show uniform manifold approximation and projection layouts for the unintegrated data (left) and the top four performers (right).</figcaption>
+<p><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig2_HTML.png?as=webp" class="img-fluid figure-img"></p>
+<figcaption>a, Overview of top and bottom ranked methods by overall score for the human immune cell task. Metrics are divided into batch correction (blue) and bio-conservation (pink) categories. Overall scores are computed using a 40/60 weighted mean of these category scores (see Methods for further visualization details and Supplementary Fig. 2 for the full plot). b,c, Visualization of the four best performers on the human immune cell integration task colored by cell identity (b) and batch annotation (c). The plots show uniform manifold approximation and projection layouts for the unintegrated data (left) and the top four performers (right).</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig3_HTML.png?as=webp" class="lightbox" title="a, Scatter plot of the mean overall batch correction score against mean overall bio-conservation score for the selected methods on RNA tasks. Error bars indicate the standard error across tasks on which the methods ran. b, The overall scores for the best performing method, preprocessing and output combinations on each task as well as their usability and scalability. Methods that failed to run for a particular task were assigned the unintegrated ranking for that task. An asterisk after the method name (scANVI and scGen) indicates that, in addition, cell identity information was passed to this method. For ComBat and MNN, usability and scalability scores corresponding to the Python implementation of the methods are reported (Scanpy and mnnpy, respectively)." data-gallery="quarto-lightbox-gallery-11"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig3_HTML.png?as=webp" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">a, Scatter plot of the mean overall batch correction score against mean overall bio-conservation score for the selected methods on RNA tasks. Error bars indicate the standard error across tasks on which the methods ran. b, The overall scores for the best performing method, preprocessing and output combinations on each task as well as their usability and scalability. Methods that failed to run for a particular task were assigned the unintegrated ranking for that task. An asterisk after the method name (scANVI and scGen) indicates that, in addition, cell identity information was passed to this method. For ComBat and MNN, usability and scalability scores corresponding to the Python implementation of the methods are reported (Scanpy and mnnpy, respectively).</figcaption>
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig3_HTML.png?as=webp" class="img-fluid figure-img"></p>
+<figcaption>a, Scatter plot of the mean overall batch correction score against mean overall bio-conservation score for the selected methods on RNA tasks. Error bars indicate the standard error across tasks on which the methods ran. b, The overall scores for the best performing method, preprocessing and output combinations on each task as well as their usability and scalability. Methods that failed to run for a particular task were assigned the unintegrated ranking for that task. An asterisk after the method name (scANVI and scGen) indicates that, in addition, cell identity information was passed to this method. For ComBat and MNN, usability and scalability scores corresponding to the Python implementation of the methods are reported (Scanpy and mnnpy, respectively).</figcaption>
 </figure>
 </div>
 <p><span class="citation" data-cites="luecken2022benchmarking">Luecken et al. (<a href="#ref-luecken2022benchmarking" role="doc-biblioref">2022</a>)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs13059-019-1850-9/MediaObjects/13059_2019_1850_Fig18_HTML.png?as=webp" class="img-fluid figure-img"></p>
+<figcaption>Qualitative evaluation of 14 batch-effect correction methods using UMAP visualization for dataset 9 of human cell atlas. The 14 methods are organized into two panels, with the top panel showing UMAP plots of raw data, Seurat 2, Seurat 3, Harmony, fastMNN, MNN Correct, ComBat, and limma outputs, while the bottom panel shows the UMAP plots of scGen, Scanorama, MMD-ResNet, ZINB-WaVE, scMerge, LIGER, and BBKNN outputs. Cells are colored by batch.</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>We tested 14 state-of-the-art batch correction algorithms designed to handle single-cell transcriptomic data. We found that each batch-effect removal method has its advantages and limitations, with no clearly superior method. Based on our results, we found LIGER, Harmony, and Seurat 3 to be the top batch mixing methods. Harmony performed well on datasets with common cell types, and also different technologies. The comparatively low runtime of Harmony also makes it suitable for initial data exploration of large datasets. Likewise, LIGER performed well, especially on datasets with non-identical cell types. The main drawback of LIGER is its longer runtime than Harmony, though it is acceptable for its performance. Seurat 3 is also able to handle large datasets, however with 20–50% longer runtime than LIGER. Due to its good batch mixing results with multiple batches, it is also recommended for such scenarios. To improve recovery of DEGs in batch-corrected data, we recommend scMerge for batch correction.</p>
+</blockquote>
+<p><span class="citation" data-cites="tran2020benchmark">Tran et al. (<a href="#ref-tran2020benchmark" role="doc-biblioref">2020</a>)</span></p>
 </section>
-<section id="databases" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="databases"><span class="header-section-number">2.8</span> Databases</h2>
-<section id="data" class="level3" data-number="2.8.1">
-<h3 data-number="2.8.1" class="anchored" data-anchor-id="data"><span class="header-section-number">2.8.1</span> Data</h3>
+<section id="trajectory" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="trajectory"><span class="header-section-number">2.8</span> Trajectory</h2>
+<div id="fig-sc-trajectory-comparison" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sc-trajectory-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-019-0071-9/MediaObjects/41587_2019_71_Fig2_HTML.png?as=webp" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41587-019-0071-9/MediaObjects/41587_2019_71_Fig3_HTML.png?as=webp" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sc-trajectory-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;2.1<strong>: </strong> Comparison of Trajectory inference methods.
+</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="saelens2019comparison">Saelens et al. (<a href="#ref-saelens2019comparison" role="doc-biblioref">2019</a>)</span></p>
+<ul>
+<li><a href="https://github.com/BaderLab/Tempora"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Tempora</a> Trajectory inference for time-series data</li>
+</ul>
+</section>
+<section id="rna-velocity" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="rna-velocity"><span class="header-section-number">2.9</span> RNA velocity</h2>
+</section>
+<section id="databases" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="databases"><span class="header-section-number">2.10</span> Databases</h2>
+<section id="data" class="level3" data-number="2.10.1">
+<h3 data-number="2.10.1" class="anchored" data-anchor-id="data"><span class="header-section-number">2.10.1</span> Data</h3>
+<p>Single-cell data repositiories.</p>
 <ul>
 <li><a href="https://bioinfo.uth.edu/scrnaseqdb/">scRNASeqDB</a></li>
 <li><a href="https://singlecell.broadinstitute.org/single_cell">Broad SIngleCell portal</a></li>
@@ -508,36 +554,31 @@ div.csl-indent {
 <li><a href="https://bioconductor.org/packages/release/data/experiment/vignettes/TENxVisiumData/inst/doc/vignette.html">R TENxVisiumData</a></li>
 </ul>
 </section>
-<section id="markers" class="level3" data-number="2.8.2">
-<h3 data-number="2.8.2" class="anchored" data-anchor-id="markers"><span class="header-section-number">2.8.2</span> Markers</h3>
+<section id="markers" class="level3" data-number="2.10.2">
+<h3 data-number="2.10.2" class="anchored" data-anchor-id="markers"><span class="header-section-number">2.10.2</span> Markers</h3>
+<p>Curated list of marker genes by organism, tissue and cell type.</p>
 <ul>
 <li><a href="https://panglaodb.se/">PanglaoDB</a></li>
 <li><a href="http://biocc.hrbmu.edu.cn/CellMarker/browse.jsp">CellMarker</a></li>
 </ul>
 </section>
 </section>
-<section id="interactive-visualisation-frameworks" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="interactive-visualisation-frameworks"><span class="header-section-number">2.9</span> Interactive visualisation frameworks</h2>
+<section id="interactive-visualisation-frameworks" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="interactive-visualisation-frameworks"><span class="header-section-number">2.11</span> Interactive visualisation frameworks</h2>
 <ul>
-<li><a href="https://github.com/SGDDNB/ShinyCell">ShinyCell</a></li>
-<li><a href="https://db.cngb.org/cdcp/">CDCP</a></li>
-<li><a href="https://singlecellvr.pinellolab.partners.org/">SingleCellVR</a></li>
+<li><a href="https://github.com/SGDDNB/ShinyCell"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> ShinyCell</a>(R Shiny)</li>
+<li><a href="https://github.com/romanhaa/Cerebro"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Cerebro</a>(R Shiny)</li>
+<li><a href="http://vitessce.io/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Vitessce</a>(R, Python)</li>
+<li><a href="https://db.cngb.org/cdcp/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> CDCP</a></li>
+<li><a href="https://singlecellvr.pinellolab.partners.org/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SingleCellVR</a></li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><img src="https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png" class="img-fluid"></p>
 <p><span class="citation" data-cites="ouyang2021shinycell">Ouyang et al. (<a href="#ref-ouyang2021shinycell" role="doc-biblioref">2021</a>)</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/bin/lqaa052tbl1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/bin/lqaa052tbl1.jpg" class="img-fluid figure-img"></a></p>
-</figure>
-</div>
+<p><img src="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/bin/lqaa052tbl1.jpg" class="img-fluid"></p>
 <p><span class="citation" data-cites="cakir2020comparison">Cakir et al. (<a href="#ref-cakir2020comparison" role="doc-biblioref">2020</a>)</span></p>
 </section>
-<section id="learning" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="learning"><span class="header-section-number">2.10</span> Learning</h2>
+<section id="learning" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="learning"><span class="header-section-number">2.12</span> Learning</h2>
 <ul>
 <li><a href="https://hbctraining.github.io/scRNA-seq_online/schedule/">HBC Training</a></li>
 <li><a href="https://nbisweden.github.io/workshop-scRNAseq">NBIS workshop</a></li>
@@ -548,7 +589,7 @@ div.csl-indent {
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-argelaguet2021computational" class="csl-entry" role="listitem">
 Argelaguet, R., Cuomo, A. S., Stegle, O., &amp; Marioni, J. C. (2021). Computational principles and challenges in single-cell data integration. <em>Nature Biotechnology</em>, <em>39</em>(10), 1202–1215.
 </div>
@@ -579,11 +620,17 @@ Nguyen, Q. H., Pervolarakis, N., Nee, K., &amp; Kessenbrock, K. (2018). Experime
 <div id="ref-ouyang2021shinycell" class="csl-entry" role="listitem">
 Ouyang, J. F., Kamaraj, U. S., Cao, E. Y., &amp; Rackham, O. J. (2021). ShinyCell: Simple and sharable visualization of single-cell gene expression data. <em>Bioinformatics</em>, <em>37</em>(19), 3374–3376.
 </div>
+<div id="ref-saelens2019comparison" class="csl-entry" role="listitem">
+Saelens, W., Cannoodt, R., Todorov, H., &amp; Saeys, Y. (2019). A comparison of single-cell trajectory inference methods. <em>Nature Biotechnology</em>, <em>37</em>(5), 547–554.
+</div>
 <div id="ref-sun2022comprehensive" class="csl-entry" role="listitem">
 Sun, X., Lin, X., Li, Z., &amp; Wu, H. (2022). A comprehensive comparison of supervised and unsupervised methods for cell type identification in single-cell RNA-seq. <em>Briefings in Bioinformatics</em>, <em>23</em>(2), bbab567.
 </div>
 <div id="ref-svensson2017power" class="csl-entry" role="listitem">
 Svensson, V., Natarajan, K. N., Ly, L.-H., Miragaia, R. J., Labalette, C., Macaulay, I. C., Cvejic, A., &amp; Teichmann, S. A. (2017). Power analysis of single-cell RNA-sequencing experiments. <em>Nature Methods</em>, <em>14</em>(4), 381–387.
+</div>
+<div id="ref-tran2020benchmark" class="csl-entry" role="listitem">
+Tran, H. T. N., Ang, K. S., Chevrier, M., Zhang, X., Lee, N. Y. S., Goh, M., &amp; Chen, J. (2020). A benchmark of batch-effect correction methods for single-cell RNA sequencing data. <em>Genome Biology</em>, <em>21</em>, 1–32.
 </div>
 <div id="ref-wang2019comparative" class="csl-entry" role="listitem">
 Wang, T., Li, B., Nelson, C. E., &amp; Nabavi, S. (2019). Comparative analysis of differential gene expression analysis tools for single-cell RNA sequencing data. <em>BMC Bioinformatics</em>, <em>20</em>(1), 1–16.
@@ -680,10 +727,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -693,8 +739,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -707,6 +762,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -750,6 +924,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -775,6 +950,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -836,12 +1037,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../chapters/bulk/index.html" class="pagination-link">
+      <a href="../../chapters/bulk/index.html" class="pagination-link  aria-label=" &lt;span="" gene="" expression&lt;="" span&gt;"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bulk gene expression</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../chapters/spatial/index.html" class="pagination-link">
+      <a href="../../chapters/spatial/index.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Spatial</span>">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Spatial</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -849,14 +1050,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">2023 Roy Francis</div>   
+    <div class="nav-footer-left">
+<p>2024 Roy Francis</p>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
-    </div>
-    <div class="nav-footer-right">Published with <a href="https://quarto.org/">Quarto</a> v1.3.450</div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/royfrancis/rskb/edit/main/chapters/sc/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Published with <a href="https://quarto.org/">Quarto</a> v1.4.549
+</p>
+</div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":true});</script>
+
 
 
 
