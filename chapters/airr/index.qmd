@@ -1,5 +1,5 @@
 ---
-title: Immune profiling
+title: AIRR-Seq
 description: AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling
 ---
 
