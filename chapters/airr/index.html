@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling">
+
+<title>RSKB - 4&nbsp; AIRR-Seq</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../chapters/atacseq/index.html" rel="next">
+<link href="../../chapters/spatial/index.html" rel="prev">
+<link href="../../assets/favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&amp;family=Nunito:ital,wght@0,400;0,600;1,400;1,600&amp;display=swap" rel="stylesheet">
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/sc/index.html"><strong>Single Cell RNASeq</strong></a></li><li class="breadcrumb-item"><a href="../../chapters/airr/index.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">AIRR-Seq</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../chapters/sc/index.html"><strong>Single Cell RNASeq</strong></a></li><li class="breadcrumb-item"><a href="../../chapters/airr/index.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">AIRR-Seq</span></a></li></ol></nav>
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">AIRR-Seq</span></h1>
+                  <div>
+        <div class="description">
+          AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">RSKB</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/royfrancis/rskb" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text"><strong>Bulk RNASeq</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/bulk/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Bulk gene expression</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text"><strong>Single Cell RNASeq</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/sc/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Gene expression</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/spatial/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Spatial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/airr/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">AIRR-Seq</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/atacseq/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ATAC-Seq</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text"><strong>Meta Transcriptomics</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../chapters/meta/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Meta transcriptomics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#immunity-overview" id="toc-immunity-overview" class="nav-link active" data-scroll-target="#immunity-overview"><span class="header-section-number">4.1</span> Immunity overview</a>
+  <ul class="collapse">
+  <li><a href="#innate-vs-adaptive-immunity" id="toc-innate-vs-adaptive-immunity" class="nav-link" data-scroll-target="#innate-vs-adaptive-immunity"><span class="header-section-number">4.1.1</span> Innate vs Adaptive immunity</a></li>
+  <li><a href="#adaptive-immunity" id="toc-adaptive-immunity" class="nav-link" data-scroll-target="#adaptive-immunity"><span class="header-section-number">4.1.2</span> Adaptive immunity</a></li>
+  </ul></li>
+  <li><a href="#immune-cells" id="toc-immune-cells" class="nav-link" data-scroll-target="#immune-cells"><span class="header-section-number">4.2</span> Immune cells</a>
+  <ul class="collapse">
+  <li><a href="#b-cell-development" id="toc-b-cell-development" class="nav-link" data-scroll-target="#b-cell-development"><span class="header-section-number">4.2.1</span> B cell development</a></li>
+  <li><a href="#t-cell-development" id="toc-t-cell-development" class="nav-link" data-scroll-target="#t-cell-development"><span class="header-section-number">4.2.2</span> T cell development</a></li>
+  </ul></li>
+  <li><a href="#vdj-recombination" id="toc-vdj-recombination" class="nav-link" data-scroll-target="#vdj-recombination"><span class="header-section-number">4.3</span> VDJ recombination</a></li>
+  <li><a href="#antibodies" id="toc-antibodies" class="nav-link" data-scroll-target="#antibodies"><span class="header-section-number">4.4</span> Antibodies</a></li>
+  <li><a href="#airr" id="toc-airr" class="nav-link" data-scroll-target="#airr"><span class="header-section-number">4.5</span> AIRR</a>
+  <ul class="collapse">
+  <li><a href="#experimental-design" id="toc-experimental-design" class="nav-link" data-scroll-target="#experimental-design"><span class="header-section-number">4.5.1</span> Experimental design</a></li>
+  <li><a href="#diversity-analyses" id="toc-diversity-analyses" class="nav-link" data-scroll-target="#diversity-analyses"><span class="header-section-number">4.5.2</span> Diversity analyses</a></li>
+  <li><a href="#lineage-tracing" id="toc-lineage-tracing" class="nav-link" data-scroll-target="#lineage-tracing"><span class="header-section-number">4.5.3</span> Lineage tracing</a></li>
+  </ul></li>
+  <li><a href="#tutorials" id="toc-tutorials" class="nav-link" data-scroll-target="#tutorials"><span class="header-section-number">4.6</span> Tutorials</a>
+  <ul class="collapse">
+  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos"><span class="header-section-number">4.6.1</span> Videos</a></li>
+  </ul></li>
+  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools"><span class="header-section-number">4.7</span> Tools</a>
+  <ul class="collapse">
+  <li><a href="#immunarch" id="toc-immunarch" class="nav-link" data-scroll-target="#immunarch"><span class="header-section-number">4.7.1</span> Immunarch</a></li>
+  </ul></li>
+  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="header-section-number">4.8</span> Databases</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/royfrancis/rskb/edit/main/chapters/airr/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="immunity-overview" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="immunity-overview"><span class="header-section-number">4.1</span> Immunity overview</h2>
+<section id="innate-vs-adaptive-immunity" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="innate-vs-adaptive-immunity"><span class="header-section-number">4.1.1</span> Innate vs Adaptive immunity</h3>
+<ul>
+<li>Innate (Physical, Phagocytes, Dendritic cells, NK cells, ILCs, 0-12 hours)</li>
+<li>Adaptive immunity (Begins ~3 days or more)</li>
+</ul>
+<div id="fig-innate-adaptive" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-innate-adaptive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://www.creative-diagnostics.com/upload/image/Innate%20and%20adaptive%20immune%20mechanisms.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-innate-adaptive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.1<strong>: </strong> Just as resistance to disease can be innate (inborn) or acquired, the mechanisms mediating it can be correspondingly divided into innate (left) and adaptive (right), each composed of both cellular (lower half) and humoral elements (i.e.&nbsp;free in serum or body fluids; upper half). Adaptive mechanisms, more recently evolved, perform many of their functions by interacting with the older innate ones.
+</figcaption>
+</figure>
+</div>
+<div id="fig-innate-adaptive-time" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-innate-adaptive-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://www.creative-diagnostics.com/upload/image/innate%20and%20adaptive%20immunity2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-innate-adaptive-time-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.2<strong>: </strong> Innate and adaptive immunity time line. The mechanisms of innate immunity provide the initial defense against infections. Adaptive immune responses develop later and require the activation of lymphocytes. The kinetics of the innate and adaptive immune responses are approximations and may vary in different infections.
+</figcaption>
+</figure>
+</div>
+<p><a href="https://www.creative-diagnostics.com/innate-and-adaptive-immunity.htm">Source</a></p>
+</section>
+<section id="adaptive-immunity" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="adaptive-immunity"><span class="header-section-number">4.1.2</span> Adaptive immunity</h3>
+<ul>
+<li>Humoral immunity (B cells, antibodies)</li>
+<li>Cell mediated immunity (CD4 Helper T cells, CD8 Cytotoxic T cells, Macrophages)</li>
+</ul>
+<div id="fig-innate-adaptive" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-innate-adaptive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://www.frontiersin.org/files/Articles/848582/fimmu-13-848582-HTML/image_m/fimmu-13-848582-g001.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-innate-adaptive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.3<strong>: </strong> The figure shows an adaptive immune response to the first and second encounter with the SARS-CoV-2 antigen (spike protein). Following the first encounter, various antigens go through the process of phagocytosis and decomposition inside the antigen-presenting cells (APCs). APCs fragment the antigen into smaller peptides, which they present on their surface mediated by surface receptors called major histocompatibility complex class II (MHC-II) molecules. The antigens are then presented to several types of cells in the host, among which we emphasize CD4+ T helper cells (also B and CD8+ cells). B cells which differentiate into plasma cells, secrete antibodies that inhibit the entry of the viral particle into the healthy cells. The activation of T helper cells by APC causes them to differentiate into different subtypes with specific functions mediated by cytokine secretion and cell-to-cell contact. Th2-differentiated T helper cells help humoral responses mature by providing a second signal to B cells, mostly through IL-4 secretion and CD40/CD40L interaction. Some CD4+ cells also become T follicular helper cells (Tfh), which govern the important interactions in the germinal centers important for the maturation of memory B cells and long-lived high-affinity antibody-producing plasma cells. Another subset of CD4+ T cells differentiates into a pool of memory T helper cells. Th1 T helper cells play a crucial role in cellular response formation. They pivot the MHC-I activation of CD8+ cells (CTL, cytotoxic T lymphocytes) by interacting with APC’s simultaneously. Activated CTLs then act by causing apoptosis (by Fasl ligand–FasL binding) of the host cells that are infected with the SARS-CoV-2. Some CTLs differentiate into memory cytotoxic T cells, which have the role of fast restoration of the CTL response with secondary antigen contacts. A similar mechanism of destruction occurs when NK cells interact with the virally infected cell. They contain granules with IFNγ and TNFα in their cytoplasm, which, when secreted, cause programmed cell death. As well, the mechanism of activation of NK cells does not occur through MHC molecules is important because MHC is not always present on the virally infected cells.
+</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="primorac2022adaptive">Primorac et al. (<a href="#ref-primorac2022adaptive" role="doc-biblioref">2022</a>)</span></p>
+<div id="fig-cells-immune" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cells-immune-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="assets/kavathas-2019.png" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="assets/kavathas-2019-2.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cells-immune-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.4<strong>: </strong> Cells of the immune system.
+</figcaption>
+</figure>
+</div>
+<p><span class="citation" data-cites="Kavathas2019">Kavathas et al. (<a href="#ref-Kavathas2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="LEWIS201919">Lewis &amp; Blutt (<a href="#ref-LEWIS201919" role="doc-biblioref">2019</a>)</span></p>
+</section>
+</section>
+<section id="immune-cells" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="immune-cells"><span class="header-section-number">4.2</span> Immune cells</h2>
+<section id="b-cell-development" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="b-cell-development"><span class="header-section-number">4.2.1</span> B cell development</h3>
+<div id="fig-cells-immune-b-cell-devel" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cells-immune-b-cell-devel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="assets/janeway-1994-b-cells.jpg" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="assets/morgan-2022-b-cell-development.jpg" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cells-immune-b-cell-devel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.5<strong>: </strong> B cell development.
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>The aim is to generate diverse antigen receptors, eliminate self reactives, promote foreign reactives to mature B cells</li>
+<li>Starts in the bone marrow as HSC followed by CLP (Common lymphoid progenitor)</li>
+<li>Early pro B cell → Heavy chain random DJ rearrangement
+<ul>
+<li>If it succeeds on both chromosomes, this cell becomes Late pro B cell</li>
+</ul></li>
+<li>Late pro B cell →V and DJ rearrangement
+<ul>
+<li>If it succeeds on both chromosomes, this cell becomes Large pre B cell</li>
+</ul></li>
+<li>Large pre B cell →Heavy chain peptide is synthesized, pairs with surrogate light chains
+<ul>
+<li>On successful pairing, this cell proliferates</li>
+<li>The same heavy chain can pair with many other light chains.</li>
+</ul></li>
+<li>Small pre B cell →Undergoes light chain rearrangement
+<ul>
+<li>kappa rearrangement on one chr</li>
+<li>kappa rearrangement on second chr</li>
+<li>If kappa didn’t work then</li>
+<li>delta rearrangement on one chr</li>
+<li>delta rearrangement on second chr</li>
+<li>When light chain pairs successfully with heavy chain→Immature B cell</li>
+</ul></li>
+<li>Immature B cell
+<ul>
+<li>VDJ recombination is complete</li>
+<li>Functional BCR receptor as IgM -&gt; Mature naive B cell</li>
+<li>BCRs can bind to diverse ligands such as peptides, lips, carbohydrates etc</li>
+</ul></li>
+<li>Mature naive B cell
+<ul>
+<li>The heavy chain mRNA undergoes alternative splicing which changes the transmembrane region to either create IgM or IgD but with same variable region</li>
+</ul></li>
+<li>Naive B cells interact with antigen in the lymph nodes. When the antigen has crosslinked with BCR, the cell is activated. An activated B cell massively proliferates called clonal expansion. All clonally expanded cells have the same antigen specificity but undergoes somatic hypermutation (affinity maturation). SHM may increase antigen affinity than the original activated parent B cell.</li>
+<li>Affinity matured B cells differentiate into plasma cells. Plasma cells are antibody secreting B cells. The first antibody produced is IgM. T cell independent differentiation only produces IgM antibodies and also does not produce memory B cells.</li>
+<li>T cell mediated B cell maturation. B cells interact with T cells in the lymph node enabling Ig class switching. ie; change in heavy chain.</li>
+</ul>
+<p>Source: Kuby immunology</p>
+<p><span class="citation" data-cites="MORGAN2022210">Morgan &amp; Tergaonkar (<a href="#ref-MORGAN2022210" role="doc-biblioref">2022</a>)</span></p>
+</section>
+<section id="t-cell-development" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="t-cell-development"><span class="header-section-number">4.2.2</span> T cell development</h3>
+<div id="fig-cells-immune-t-cell-devel" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cells-immune-t-cell-devel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="assets/janeway-1994-t-cells.jpg" class="img-fluid figure-img"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fnri1257/MediaObjects/41577_2004_Article_BFnri1257_Fig1_HTML.jpg" class="img-fluid figure-img"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cells-immune-t-cell-devel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.6<strong>: </strong> T cell development.
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>TCR has two chain: alpha and beta chains. TCRs only bind to peptides and self MHC.</li>
+<li>In bone marrow, HSC →CLP which migrates to thymus</li>
+<li>Thymus is divided into peripheral cortex and central medulla. Most T cell development happens in the cortex.</li>
+<li>In the thymus, the CLP starts off as double negative T cell</li>
+<li>Double negative T cells: T cells with germline DNA that are negative for CD4 and CD8
+<ul>
+<li>Early double-negative thymocyte: D-J beta chain rearrangement, first try on 1st loci, else second loci</li>
+<li>Late double-negative thymocyte: V-DJ beta chain rearrangement, first try on 1st loci, else second loci</li>
+<li>CD3 receptor is expressed on cell surface</li>
+</ul></li>
+<li>Double-positive T cells:
+<ul>
+<li>Expresses both CD4 and CD8 receptors.</li>
+<li>Alpha chain rearrangement. V-J rearrangement at loci 1, else loci n.</li>
+<li>Alpha and beta chains are exposed on cell surface and cell undergo selection
+<ul>
+<li>Cells that have too strong or too weak self affinity are discarded</li>
+<li>Cells that recognise self MHC with moderate strength -&gt; CD4+</li>
+<li>Cells that recognize self MHC with weak strength -&gt; CD8+</li>
+</ul></li>
+</ul></li>
+<li>Single-positive: Naive CD4 or CD8 T cells</li>
+<li>Memory CD4 or CD8 T cells</li>
+<li>Effector CD4 or CD8 T cells</li>
+</ul>
+<p>Source: Kuby immunology</p>
+<p><span class="citation" data-cites="de2018single">De Simone et al. (<a href="#ref-de2018single" role="doc-biblioref">2018</a>)</span></p>
+</section>
+</section>
+<section id="vdj-recombination" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="vdj-recombination"><span class="header-section-number">4.3</span> VDJ recombination</h2>
+<div id="fig-vdj" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vdj-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="assets/vdj.png" class="img-fluid figure-img" data-group="vdj"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="assets/joshi-2014.gif" class="img-fluid figure-img" data-group="vdj"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="assets/antigen-receptor-loci.jpg" class="img-fluid figure-img" data-group="vdj"></p>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vdj-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.7<strong>: </strong> Structure of VDJ locus and corresponding region on an antibody. Image references: <a href="https://bsse.ethz.ch/lsi/research/systems-immunology.html">1</a>, <a href="hhttps://doi.org/10.1128/microbiolspec.aid-0017-2014">2</a>, <a href="https://digitalworldbiology.com/blog/immunoprofiling-how-it-works">3</a>
+</figcaption>
+</figure>
+</div>
+<p>V(D)J recombination is the mechanism of somatic recombination that occurs only in developing lymphocytes during the early stages of T and B cell maturation. It results in the highly diverse repertoire of antibodies/immunoglobulins and T cell receptors (TCRs) found in B cells and T cells, respectively. The process is a defining feature of the adaptive immune system.</p>
+<p>V(D)J recombination in mammals occurs in the primary lymphoid organs (bone marrow for B cells and thymus for T cells) and in a nearly random fashion rearranges variable (V), joining (J), and in some cases, diversity (D) gene segments. The process ultimately results in novel amino acid sequences in the antigen-binding regions of immunoglobulins and TCRs that allow for the recognition of antigens from nearly all pathogens including bacteria, viruses, parasites, and worms as well as “altered self cells” as seen in cancer.</p>
+<p>Germline organisation of the Ig locus</p>
+<ul>
+<li>Ig proteins consists of two identical heavy and light chains
+<ul>
+<li>H chain locus is located on Chr 14</li>
+</ul></li>
+<li>The light chains can be kappa or lamba
+<ul>
+<li>Kappa chain locus on Chr 2</li>
+<li>Lamba chain locus on Chr 22</li>
+</ul></li>
+</ul>
+<section id="bcr-review" class="level4" data-number="4.3.0.1">
+<h4 data-number="4.3.0.1" class="anchored" data-anchor-id="bcr-review"><span class="header-section-number">4.3.0.1</span> BCR review</h4>
+<ul>
+<li>BCR consist of two heavy and 2 light chains. Heavy chain has 1 V domains and 4-5 C domains. Light chain contains 1 C and 1 V domain.</li>
+<li>CDR in V domains makes contact with antigen</li>
+<li>Following antigen stimulation, B cells secrete immunoglobulins that bear the same antigen binding site as the BCR</li>
+</ul>
+</section>
+<section id="tcr-review" class="level4" data-number="4.3.0.2">
+<h4 data-number="4.3.0.2" class="anchored" data-anchor-id="tcr-review"><span class="header-section-number">4.3.0.2</span> TCR review</h4>
+<ul>
+<li>Human T cells develop in the thymus and they acquire the ability to recognize foreign antigens and provide protection against many different pathogens.</li>
+<li>This functional flexibility is guaranteed by the expression of highly polymorphic surface receptors called T cell receptors (TCRs).</li>
+<li>TCR is composed of two different protein chains. The vast majority of human T cells express TCRs composed of α (alpha) and β (beta) chains.</li>
+<li>The genes encoding alpha (TCRA) and beta (TCRB) chains are composed of multiple non-contiguous gene segments which include variable (V), diversity (D), and joining (J) segments for TCRB gene and variable (V) and joining (J) for TCRA gene.</li>
+<li>The enormous diversity of T cell repertoires is generated by random combinations of germ line gene segments (combinatorial diversity) and by random addition or deletion at the junction site of the segments that have been joined (junctional diversity).</li>
+<li>The sequence encoded by the V(D)J junction is called complementarity determining region 3 or CDR3. This sequence has the highest variability in both alpha and beta chains and determines the ability of a T cell to recognize an antigen.</li>
+<li>The total number of possible combination is estimated to exceed 10^18.</li>
+<li>The diversity of naïve T cells is the T cell repertoire</li>
+<li>Exposure to an antigen drives a rapid clonal expansion of cells carrying identical TCRs to generate a population of “effector cells.”</li>
+<li>After antigen clearance, a reduced number of these cells remain in the blood as “memory cells.”</li>
+</ul>
+<div id="fig-vdj-" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-vdj--caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://www.frontiersin.org/files/Articles/384005/fimmu-09-01638-HTML/image_m/fimmu-09-01638-g001.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vdj--caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.8<strong>: </strong> Somatic V(D)J arrangement in the alpha and beta chains. (A) Genomic organization and somatic recombination of TCRB and TCRA loci. Antigen repertoire diversity is guaranteed by a recombination step that progressively rearranges V, D, and J segments for T cell receptor (TCR) beta chains and V and J segments for TCR alpha chains. This variability (combinatorial diversity) is further increased by addition or deletion of nucleotides at the junction sites (junctional diversity). (B) Productive arrangements of beta and alpha transcripts. (C) Organization of TCR. TCR is composed by two subunits TCR alpha and TCR beta each organized in a constant region and a variable region responsible for antigen recognition.
+</figcaption>
+</figure>
+</div>
+<div id="fig-tcrvsbcr" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tcrvsbcr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/bcrvtcr.png" class="img-fluid figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tcrvsbcr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.9<strong>: </strong> Differences between BCR and TCR receptors.
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="antibodies" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="antibodies"><span class="header-section-number">4.4</span> Antibodies</h2>
+<div id="fig-antibody" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-antibody-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/kuby-antibody.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-antibody-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.10<strong>: </strong> Structure of an antibody
+</figcaption>
+</figure>
+</div>
+<ul>
+<li>Antibodies are secreted by plasma B cells</li>
+<li>Consist of 2 identical heavy and 2 identical light chains
+<ul>
+<li>Light chain is either kappa or lamda. There are 4 subtypes of lamda with lamda 1 as most common.</li>
+<li>Heavy chain is either mju, gamma, alpha, delta or epsilon
+<ul>
+<li>Heavy chain defines the isotype (IgG, IgA etc)</li>
+</ul></li>
+</ul></li>
+<li>Each chain has a variable domain and constant domain
+<ul>
+<li>Light chain has 50% variable and 50% constant domain</li>
+<li>Heavy chain has 25% variable and 75% constant domain</li>
+<li>The variable domain is called the paratope that interact with epitopes on antigen
+<ul>
+<li>The variable region has 3 CDR (complementarity determining) regions that are hypervariable. CDR3 is the most variable.</li>
+<li>Peritope?</li>
+</ul></li>
+</ul></li>
+<li>The CDR region of heavy chain is composed of V,D,J genes</li>
+<li>The CDR region of light chain is composed of V,J genes</li>
+<li>Antibody isotypes (classes) are defined by the heavy chain: IgG, IgD, IgE, IgA (dimer), IgM (pentamer)</li>
+<li>Types of antibodies (further work)</li>
+</ul>
+<p>Source: Kuby immunology</p>
+<ul>
+<li>Chap 6: The organisation and expression of lymphocyte recepter genes</li>
+<li>Chap 8: T-cell development</li>
+<li>Chap 9: B-cell development</li>
+<li>Chap 10: T-cell activation, helper subset differentiation and memory</li>
+<li>Chap 11: B-cell activation, differentiation and memory generation</li>
+<li>Chap 12: Effector responses: antibody and cell-mediated immunity</li>
+</ul>
+</section>
+<section id="airr" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="airr"><span class="header-section-number">4.5</span> AIRR</h2>
+<section id="experimental-design" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="experimental-design"><span class="header-section-number">4.5.1</span> Experimental design</h3>
+<ul>
+<li>In addition to V(D)J recombination, random nuclotides are inserted at the VDJ junctions. B cells further change itself by introducing random mutations called somatic hypermutation.</li>
+<li>Source of B and T cells should be carefully considered
+<ul>
+<li>Usually PBMCs or specific cell types</li>
+</ul></li>
+<li>Consider DNA vs RNA from cells
+<ul>
+<li>DNA does not give isotype information due to lack of splicing</li>
+<li>Plasma cells have more RNA than naive cells, so if mixed together, plasma cells may be overrepresented.</li>
+</ul></li>
+<li>Assignment of clones
+<ul>
+<li>Assignment of B cells to it’s progenitor B cells is called clonotype family assignment. Clonal lineage is determined based on TCR/BCR sequence. Sequences are grouped by VDJ and CDR length followed by calculating the hamming distance between them.</li>
+<li>All cells that are derieved from a naive B cell are grouped as clonotypes</li>
+<li>Hamming distance cut-offs based on V and J sequences</li>
+<li>Optionally CDR3 length is also taken into account</li>
+<li>Other kmer based clustering methods are used</li>
+</ul></li>
+<li>Sampling depth and replicates
+<ul>
+<li>Expect low clonal overlap between subsequent sampling from same individual</li>
+<li>Saturation curves (Species accumulation curve) to estimate sampling depth</li>
+<li>Deeper sequencing helps to discover more clones
+<ul>
+<li>Sequence 5-10X reads relative to the number of cells sampled</li>
+</ul></li>
+<li>Ensure reliability with biological replicates</li>
+</ul></li>
+<li>Results can vary between sequencing protocols</li>
+<li>UMIs help to resolve PCR duplicates and sequencing errors.
+<ul>
+<li>UMIs can be used for error correction and estimating sample contamination.</li>
+<li>Low sequencing depth will result in very few UMIs per read</li>
+<li>With UMIs, sequence 100X or more reads relative to the number of cells sampled</li>
+</ul></li>
+<li>D region reconstruction is unreliable</li>
+<li>A single B cell line should have only one V gene</li>
+<li>Bulk AIRR loses information on VH-VL pairing</li>
+</ul>
+<p>AIRR-Seq experiment guide and best practices <span class="citation" data-cites="eugster2022airr">Eugster et al. (<a href="#ref-eugster2022airr" role="doc-biblioref">2022</a>)</span>, Antibody repertoire challenges and high throughput sequencing <span class="citation" data-cites="georgiou2014promise">Georgiou et al. (<a href="#ref-georgiou2014promise" role="doc-biblioref">2014</a>)</span>, Bioinformatic analysis of adaptive immune repertoires <span class="citation" data-cites="greiff2015bioinformatic">Greiff et al. (<a href="#ref-greiff2015bioinformatic" role="doc-biblioref">2015</a>)</span>, Ecosystem of machine learning analysis of adaptive immune repertoires <span class="citation" data-cites="pavlovic2021immuneml">Pavlović et al. (<a href="#ref-pavlovic2021immuneml" role="doc-biblioref">2021</a>)</span>, Benchmarking of VDJ methods. <span class="citation" data-cites="barennes2021benchmarking">Barennes et al. (<a href="#ref-barennes2021benchmarking" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="breden2017reproducibility">Breden et al. (<a href="#ref-breden2017reproducibility" role="doc-biblioref">2017</a>)</span>, <span class="citation" data-cites="vander2018airr">Vander Heiden et al. (<a href="#ref-vander2018airr" role="doc-biblioref">2018</a>)</span></p>
+</section>
+<section id="diversity-analyses" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="diversity-analyses"><span class="header-section-number">4.5.2</span> Diversity analyses</h3>
+<ul>
+<li>Compare immune repertoire diversity
+<ul>
+<li>One of the aims of AIRR analyses is to quantify and compare diversity of immune repertoires</li>
+<li>Repertoires are not comparable based on frequency because Ab sequences do not overlap</li>
+<li>Diversity indices solve this problem by mapping frequency to a new coordinate system (Renyi entropy)
+<ul>
+<li>Many different diversity indices: Species richness, Shannon entropy, Simpson’s index, Berger-Parker index</li>
+<li>Single diversity indices are insufficient to capture sequence frequency space</li>
+<li>Renyi entropy is difficult to interpret biologically</li>
+<li>Hill diversity?</li>
+<li>Diversity profiles better than indices?</li>
+</ul></li>
+</ul></li>
+<li>Public clones are clonotypes shared between samples
+<ul>
+<li>Are certain clones emerging by chance or by antigen interaction?</li>
+<li>IGOR: Inference and generation of repertoires</li>
+<li>Predicting TCR public clones by modelling VDJ recombination</li>
+</ul></li>
+<li>How similar are sequences within a repertoire?
+<ul>
+<li>network analysis based on distance matrix (levenstein distance)</li>
+<li>If undergoing immune response, repertoire follows power law (few nodes many connections)
+<ul>
+<li>naive repertoires follow exponential distribution</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="lineage-tracing" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="lineage-tracing"><span class="header-section-number">4.5.3</span> Lineage tracing</h3>
+<ul>
+<li>Phylogenetics and lineage tracing</li>
+<li>Infer antibody evolution in response to antigen</li>
+<li>Detect selection on B cell lineage</li>
+<li>Quantify dynamics of affinity maturation</li>
+<li>Reconstruct evolution of broadly neutralizing antibodies</li>
+<li>Comparison of tree topologies is challenging</li>
+</ul>
+<p>Tracing antibody repertoire evolution by phylogeny <span class="citation" data-cites="yermanos2018tracing">Yermanos et al. (<a href="#ref-yermanos2018tracing" role="doc-biblioref">2018</a>)</span>, Using B cell recepter lineage to predict affinity <span class="citation" data-cites="ralph2020using">Ralph &amp; Matsen IV (<a href="#ref-ralph2020using" role="doc-biblioref">2020</a>)</span>, Phylogenetic analysis of migration, differentiation and class switching in B cells <span class="citation" data-cites="hoehn2022phylogenetic">Hoehn et al. (<a href="#ref-hoehn2022phylogenetic" role="doc-biblioref">2022</a>)</span></p>
+</section>
+</section>
+<section id="tutorials" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="tutorials"><span class="header-section-number">4.6</span> Tutorials</h2>
+<section id="videos" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="videos"><span class="header-section-number">4.6.1</span> Videos</h3>
+<p>Youtube channels <a href="https://www.youtube.com/@AIRRCommunity">AIRR Community</a> and <a href="https://www.youtube.com/@antibodysociety">The Antibody Society</a> are good sources of information.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ExOCDX1HLA4"><i class="fa-brands fa-youtube" aria-label="youtube"></i> AIRR-Seq best practices</a></li>
+<li><a href="https://www.youtube.com/watch?v=C0wnju8REvw"><i class="fa-brands fa-youtube" aria-label="youtube"></i> Reconstruction and analysis of B cell lineage trees from single cell data using Immcantation</a></li>
+<li><a href="https://www.youtube.com/watch?v=s4WvdS47CD4"><i class="fa-brands fa-youtube" aria-label="youtube"></i> Practical AIRR analysis</a></li>
+<li><a href="https://www.youtube.com/watch?v=NG1o0GayQNk"><i class="fa-brands fa-youtube" aria-label="youtube"></i> AIRR framework</a></li>
+</ul>
+</section>
+</section>
+<section id="tools" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="tools"><span class="header-section-number">4.7</span> Tools</h2>
+<p>Tools related to VDJ analyses.</p>
+<p><span class="large"><a href="https://github.com/slowkow/awesome-vdj">Collection of VDJ analyses tools</a></span></p>
+<p>Overview of methods for TCR repertoire analysis <span class="citation" data-cites="rosati2017overview">Rosati et al. (<a href="#ref-rosati2017overview" role="doc-biblioref">2017</a>)</span> Benchmarking of BCR reconstruction from single-cell tools <span class="citation" data-cites="andreani2022benchmarking">Andreani et al. (<a href="#ref-andreani2022benchmarking" role="doc-biblioref">2022</a>)</span> Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequences <span class="citation" data-cites="smakaj2020benchmarking">Smakaj et al. (<a href="#ref-smakaj2020benchmarking" role="doc-biblioref">2020</a>)</span></p>
+<p><strong>General</strong></p>
+<ul>
+<li><a href="https://10xgenomics.github.io/enclone/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Enclone (10X, Shell)</a> SHM-aware clonotyping, phylogenetic/lineage analysis, multiple sequence alignment</li>
+<li><a href="https://immcantation.readthedocs.io/en/stable/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Immcantation (Shell)</a> QC, UMI processing, clonal clustering, germline reconstruction, lineage topology, repertoire diversity, mutation profiling</li>
+<li><a href="https://nf-co.re/airrflow/3.1.0"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> airrflow</a> nf-core nextflow airr pipeline using Immcantation</li>
+</ul>
+<div id="fig-airrflow" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-airrflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://raw.githubusercontent.com/nf-core/airrflow/3.1.0//docs/images/airrflow_workflow_overview.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-airrflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.11<strong>: </strong> AIRR nextflow pipeline using Immcantation
+</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="https://immuneml.uio.no/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> ImmuneML (Shell/GUI)</a> Ecosystem for machine learning analysis of adaptive immune receptor repertoires (<span class="citation" data-cites="pavlovic2021immuneml">Pavlović et al. (<a href="#ref-pavlovic2021immuneml" role="doc-biblioref">2021</a>)</span>)</li>
+</ul>
+<p><strong>Reads to VDJ data</strong></p>
+<ul>
+<li><a href="https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/vdj"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> CellRanger (Shell)</a></li>
+<li><a href="https://bitbucket.org/kleinstein/changeo/src/master/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> ChangeO (Shell)</a> Processing the output of V(D)J alignment tools, assigning clonal clusters to immunoglobulin (Ig) sequences, and reconstructing germline sequences (Part of immcantation)</li>
+<li><a href="https://github.com/milaboratory/mixcr"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> MixCR (Shell)</a> Start from any read data</li>
+</ul>
+<div id="fig-mixcr" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mixcr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="assets/mixcr-workflow.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mixcr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.12<strong>: </strong> MIXCR workflow
+</figcaption>
+</figure>
+</div>
+<ul>
+<li><a href="https://github.com/liulab-dfci/TRUST4"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> TRUST4 (Shell)</a> TCR and BCR assembly from RNA-seq data</li>
+</ul>
+<p><strong>Downstream analyses</strong></p>
+<ul>
+<li><a href="https://github.com/mikessh/vdjtools"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> vdjtools (Java)</a></li>
+<li><a href="https://github.com/phbradley/conga"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> conga (Python)</a></li>
+<li><a href="https://github.com/scharch/SONAR"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SONAR (Python)</a></li>
+<li><a href="https://github.com/ncborcherding/scRepertoire"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> scRepertoire (R)</a> 10X VDJ cellranger input</li>
+<li><a href="https://github.com/rnabioco/djvdj"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> djvdj (R)</a> 10X VDJ cellranger input</li>
+<li><a href="https://immunarch.com/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> immunarch (R)</a> 10X, MIXCR input</li>
+<li><a href="https://scirpy.scverse.org/en/latest/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> scirpy (Python)</a></li>
+<li><a href="https://alakazam.readthedocs.io/en/stable/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> alakazam (R)</a> Repertoire analysis on output from pRESTO and ChangeO (Part of Immcantation)</li>
+<li><a href="https://dowser.readthedocs.io/en/stable/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> dowser (R)</a> Phylogenetic analysis of B cells (Part of Immcantation)</li>
+<li><a href="https://github.com/rahuldhodapkar/melange"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> melange (R)</a> Read MIXCR, Annovar, RSEM data into Seurat</li>
+</ul>
+<section id="immunarch" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="immunarch"><span class="header-section-number">4.7.1</span> Immunarch</h3>
+<ul>
+<li>Exploratory data analyses
+<ul>
+<li>Number of clones per sample, filter low quality clones/samples?</li>
+<li>Distribution of CDR3 lengths by sample (nucleotide or AA)</li>
+<li>Distribution of abundances</li>
+<li>Downsample data to make it comparable. only downsample on datasets with sufficient depth</li>
+<li>Public clonotype analysis
+<ul>
+<li>Estimate similarity of samples using number of shared clonotypes</li>
+<li>Number of shared clonotypes (best for downsampled data)</li>
+<li>Jaccard index</li>
+<li>Morisita-Horn index</li>
+<li>Visualised using heatmaps</li>
+</ul></li>
+</ul></li>
+<li>Clonality analyses
+<ul>
+<li>Estimate and compare differences in abundances of clonotypes between samples</li>
+<li>Compare proportions of the most and least abundant clonotypes</li>
+<li>Relative abundance</li>
+</ul></li>
+<li>Diversity analyses
+<ul>
+<li>Compare diversity of clonotypes in and between samples</li>
+<li>Rarefaction (models, extrapolates data)</li>
+</ul></li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=s4WvdS47CD4"><i class="fa-brands fa-youtube" aria-label="youtube"></i> AIRR analyses using immunarch</a></p>
+</section>
+</section>
+<section id="databases" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="databases"><span class="header-section-number">4.8</span> Databases</h2>
+<ul>
+<li><a href="https://vdjbase.org/">vdjbase</a> Database of adaptive immune receptor genes, genotypes and haplotypes</li>
+<li><a href="https://ogrdb.airr-community.org/germline_sets/Human">AIRR-C IG reference sets</a> <span class="citation" data-cites="collins2024airr">Collins et al. (<a href="#ref-collins2024airr" role="doc-biblioref">2024</a>)</span></li>
+<li><a href="https://www.imgt.org/">IMGT</a>: Nucleotide sequences for IG &amp; TR, Human HLA sequences etc</li>
+</ul>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-andreani2022benchmarking" class="csl-entry" role="listitem">
+Andreani, T., Slot, L. M., Gabillard, S., Struebing, C., Reimertz, C., Yaligara, V., Bakker, A. M., Olfati-Saber, R., Toes, R. E., Scherer, H. U., et al. (2022). Benchmarking computational methods for b-cell receptor reconstruction from single-cell RNA-seq data. <em>NAR Genomics and Bioinformatics</em>, <em>4</em>(3), lqac049. <a href="https://academic.oup.com/nargab/article/4/3/lqac049/6643029">https://academic.oup.com/nargab/article/4/3/lqac049/6643029</a>
+</div>
+<div id="ref-barennes2021benchmarking" class="csl-entry" role="listitem">
+Barennes, P., Quiniou, V., Shugay, M., Egorov, E. S., Davydov, A. N., Chudakov, D. M., Uddin, I., Ismail, M., Oakes, T., Chain, B., et al. (2021). Benchmarking of t cell receptor repertoire profiling methods reveals large systematic biases. <em>Nature Biotechnology</em>, <em>39</em>(2), 236–245.
+</div>
+<div id="ref-breden2017reproducibility" class="csl-entry" role="listitem">
+Breden, F., Luning Prak, E. T., Peters, B., Rubelt, F., Schramm, C. A., Busse, C. E., Vander Heiden, J. A., Christley, S., Bukhari, S. A. C., Thorogood, A., et al. (2017). Reproducibility and reuse of adaptive immune receptor repertoire data. <em>Frontiers in Immunology</em>, <em>8</em>, 1418.
+</div>
+<div id="ref-collins2024airr" class="csl-entry" role="listitem">
+Collins, A. M., Ohlin, M., Corcoran, M., Heather, J. M., Ralph, D., Law, M., Martı́nez-Barnetche, J., Ye, J., Richardson, E., Gibson, W. S., et al. (2024). AIRR-c IG reference sets: Curated sets of immunoglobulin heavy and light chain germline genes. <em>Frontiers in Immunology</em>, <em>14</em>, 1330153.
+</div>
+<div id="ref-de2018single" class="csl-entry" role="listitem">
+De Simone, M., Rossetti, G., &amp; Pagani, M. (2018). Single cell t cell receptor sequencing: Techniques and future challenges. <em>Frontiers in Immunology</em>, <em>9</em>, 1638.
+</div>
+<div id="ref-eugster2022airr" class="csl-entry" role="listitem">
+Eugster, A., Bostick, M. L., Gupta, N., Mariotti-Ferrandiz, E., Kraus, G., Meng, W., Soto, C., Trück, J., Stervbo, U., Prak, E. T. L., et al. (2022). AIRR community guide to planning and performing AIRR-seq experiments. <em>Methods and Protocols</em>, 261. <a href="https://library.oapen.org/bitstream/handle/20.500.12657/57008/1/978-1-0716-2115-8.pdf">https://library.oapen.org/bitstream/handle/20.500.12657/57008/1/978-1-0716-2115-8.pdf</a>
+</div>
+<div id="ref-georgiou2014promise" class="csl-entry" role="listitem">
+Georgiou, G., Ippolito, G. C., Beausang, J., Busse, C. E., Wardemann, H., &amp; Quake, S. R. (2014). The promise and challenge of high-throughput sequencing of the antibody repertoire. <em>Nature Biotechnology</em>, <em>32</em>(2), 158–168. <a href="https://www.nature.com/articles/nbt.2782">https://www.nature.com/articles/nbt.2782</a>
+</div>
+<div id="ref-greiff2015bioinformatic" class="csl-entry" role="listitem">
+Greiff, V., Miho, E., Menzel, U., &amp; Reddy, S. T. (2015). Bioinformatic and statistical analysis of adaptive immune repertoires. <em>Trends in Immunology</em>, <em>36</em>(11), 738–749. <a href="https://www.cell.com/trends/immunology/fulltext/S1471-4906(15)00223-9">https://www.cell.com/trends/immunology/fulltext/S1471-4906(15)00223-9</a>
+</div>
+<div id="ref-hoehn2022phylogenetic" class="csl-entry" role="listitem">
+Hoehn, K. B., Pybus, O. G., &amp; Kleinstein, S. H. (2022). Phylogenetic analysis of migration, differentiation, and class switching in b cells. <em>PLoS Computational Biology</em>, <em>18</em>(4), e1009885. <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009885">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009885</a>
+</div>
+<div id="ref-Kavathas2019" class="csl-entry" role="listitem">
+Kavathas, P. B., Krause, P. J., &amp; Ruddle, N. H. (2019). Organization and cells of the immune system. In P. J. Krause, P. B. Kavathas, &amp; N. H. Ruddle (Eds.), <em>Immunoepidemiology</em> (pp. 21–38). Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-25553-4_2">https://doi.org/10.1007/978-3-030-25553-4_2</a>
+</div>
+<div id="ref-LEWIS201919" class="csl-entry" role="listitem">
+Lewis, D. E., &amp; Blutt, S. E. (2019). 2 - organization of the immune system. In R. R. Rich, T. A. Fleisher, W. T. Shearer, H. W. Schroeder, A. J. Frew, &amp; C. M. Weyand (Eds.), <em>Clinical immunology (fifth edition)</em> (Fifth Edition, pp. 19–38.e1). Elsevier. <a href="https://doi.org/10.1016/B978-0-7020-6896-6.00002-8">https://doi.org/10.1016/B978-0-7020-6896-6.00002-8</a>
+</div>
+<div id="ref-MORGAN2022210" class="csl-entry" role="listitem">
+Morgan, D., &amp; Tergaonkar, V. (2022). Unraveling b cell trajectories at single cell resolution. <em>Trends in Immunology</em>, <em>43</em>(3), 210–229. <a href="https://doi.org/10.1016/j.it.2022.01.003">https://doi.org/10.1016/j.it.2022.01.003</a>
+</div>
+<div id="ref-pavlovic2021immuneml" class="csl-entry" role="listitem">
+Pavlović, M., Scheffer, L., Motwani, K., Kanduri, C., Kompova, R., Vazov, N., Waagan, K., Bernal, F. L., Costa, A. A., Corrie, B., et al. (2021). The immuneML ecosystem for machine learning analysis of adaptive immune receptor repertoires. <em>Nature Machine Intelligence</em>, <em>3</em>(11), 936–944. <a href="https://www.nature.com/articles/s42256-021-00413-z">https://www.nature.com/articles/s42256-021-00413-z</a>
+</div>
+<div id="ref-primorac2022adaptive" class="csl-entry" role="listitem">
+Primorac, D., Vrdoljak, K., Brlek, P., Pavelić, E., Molnar, V., Matišić, V., Erceg Ivkošić, I., &amp; Parčina, M. (2022). Adaptive immune responses and immunity to SARS-CoV-2. <em>Frontiers in Immunology</em>, <em>13</em>, 2035.
+</div>
+<div id="ref-ralph2020using" class="csl-entry" role="listitem">
+Ralph, D. K., &amp; Matsen IV, F. A. (2020). Using b cell receptor lineage structures to predict affinity. <em>PLOS Computational Biology</em>, <em>16</em>(11), e1008391. <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008391">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008391</a>
+</div>
+<div id="ref-rosati2017overview" class="csl-entry" role="listitem">
+Rosati, E., Dowds, C. M., Liaskou, E., Henriksen, E. K. K., Karlsen, T. H., &amp; Franke, A. (2017). Overview of methodologies for t-cell receptor repertoire analysis. <em>BMC Biotechnology</em>, <em>17</em>(1), 1–16. <a href="https://bmcbiotechnol.biomedcentral.com/articles/10.1186/s12896-017-0379-9">https://bmcbiotechnol.biomedcentral.com/articles/10.1186/s12896-017-0379-9</a>
+</div>
+<div id="ref-smakaj2020benchmarking" class="csl-entry" role="listitem">
+Smakaj, E., Babrak, L., Ohlin, M., Shugay, M., Briney, B., Tosoni, D., Galli, C., Grobelsek, V., D’Angelo, I., Olson, B., et al. (2020). Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequences. <em>Bioinformatics</em>, <em>36</em>(6), 1731–1739. <a href="https://academic.oup.com/bioinformatics/article/36/6/1731/5686386">https://academic.oup.com/bioinformatics/article/36/6/1731/5686386</a>
+</div>
+<div id="ref-vander2018airr" class="csl-entry" role="listitem">
+Vander Heiden, J. A., Marquez, S., Marthandan, N., Bukhari, S. A. C., Busse, C. E., Corrie, B., Hershberg, U., Kleinstein, S. H., Matsen IV, F. A., Ralph, D. K., et al. (2018). AIRR community standardized representations for annotated immune repertoires. <em>Frontiers in Immunology</em>, <em>9</em>, 2206.
+</div>
+<div id="ref-yermanos2018tracing" class="csl-entry" role="listitem">
+Yermanos, A. D., Dounas, A. K., Stadler, T., Oxenius, A., &amp; Reddy, S. T. (2018). Tracing antibody repertoire evolution by systems phylogeny. <em>Frontiers in Immunology</em>, <em>9</em>, 2149. <a href="https://www.frontiersin.org/articles/10.3389/fimmu.2018.02149/full">https://www.frontiersin.org/articles/10.3389/fimmu.2018.02149/full</a>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../chapters/spatial/index.html" class="pagination-link  aria-label=" &lt;span="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Spatial</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../chapters/atacseq/index.html" class="pagination-link" aria-label="<span class='chapter-number'>5</span>&nbsp; <span class='chapter-title'>ATAC-Seq</span>">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">ATAC-Seq</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>2024 Roy Francis</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/royfrancis/rskb/edit/main/chapters/airr/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/royfrancis/rskb/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Published with <a href="https://quarto.org/">Quarto</a> v1.4.549
+</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
