@@ -31,6 +31,7 @@ There are three major resolution scales in ST data:
 - Giotto
 - Squidpy
 - stLearn
+- [Semla](https://ludvigla.github.io/semla/)
 
 ### SVG
 
@@ -76,5 +77,9 @@ false positives than similar analysis with scRNA-seq data.
 ## Datasets
 
 - R package [TENxVisiumData](https://bioconductor.org/packages/release/data/experiment/vignettes/TENxVisiumData/inst/doc/vignette.html)
+
+## Resources
+
+- [OSTA Book](https://lmweber.org/OSTA-book/)
 
 ## References {.unnumbered}
