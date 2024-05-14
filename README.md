@@ -21,8 +21,10 @@ git clone https://github.com/royfrancis/rskb.git
 quarto preview document.qmd
 ```
 
-4. Commit changes and push. 
-:bangbang: Only push source materials. Do NOT push rendered HTML files.
+4. Commit changes and push.  
+
+:warning: Only push source materials. Do NOT push rendered HTML files.  
+
 5. The contents are rendered automatically
 
 **Note:** If you do not have push access, fork, clone locally, make changes, push and send a pull request.
