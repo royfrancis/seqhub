@@ -218,7 +218,7 @@ Source: Kuby immunology
 - A single B cell line should have only one V gene
 - Bulk AIRR loses information on VH-VL pairing
 
-AIRR-Seq experiment guide and best practices @eugster2022airr, Antibody repertoire challenges and high throughput sequencing @georgiou2014promise, Bioinformatic analysis of adaptive immune repertoires @greiff2015bioinformatic, Ecosystem of machine learning analysis of adaptive immune repertoires @pavlovic2021immuneml, Benchmarking of VDJ methods. @barennes2021benchmarking, @breden2017reproducibility, @vander2018airr
+AIRR-Seq experiment guide and best practices @eugster2022airr, Antibody repertoire challenges and high throughput sequencing @georgiou2014promise, Bioinformatic analysis of adaptive immune repertoires @greiff2015bioinformatic, Ecosystem of machine learning analysis of adaptive immune repertoires @pavlovic2021immuneml, BCR AIRR guidelines @yaari2015practical, Benchmarking of VDJ methods. @barennes2021benchmarking, @breden2017reproducibility, @vander2018airr
 
 ### Diversity analyses
 
@@ -323,7 +323,7 @@ Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequ
   - Relative abundance
 - Diversity analyses
   - Compare diversity of clonotypes in and between samples
-  - Rarefaction (models, extrapolates data)  
+  - Rarefaction (models, extrapolates data)
 
 [{{< fa brands youtube >}} AIRR analyses using immunarch](https://www.youtube.com/watch?v=s4WvdS47CD4)
 
