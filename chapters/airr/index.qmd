@@ -303,6 +303,9 @@ Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequ
 - [{{< fa toolbox >}} alakazam (R)](https://alakazam.readthedocs.io/en/stable/) Repertoire analysis on output from pRESTO and ChangeO (Part of Immcantation)
 - [{{< fa toolbox >}} dowser (R)](https://dowser.readthedocs.io/en/stable/) Phylogenetic analysis of B cells (Part of Immcantation)
 - [{{< fa toolbox >}} melange (R)](https://github.com/rahuldhodapkar/melange) Read MIXCR, Annovar, RSEM data into Seurat
+- [{{< fa toolbox >}} Partis (R)](https://github.com/psathyrella/partis) B and T-cell receptor sequence annotation, simulation, clonal family and germline inference, and affinity prediction 
+- [{{< fa toolbox >}} NAIR (R)](https://mlizhangx.github.io/Network-Analysis-for-Repertoire-Sequencing-/articles/NAIR.html) Network Analysis of Immune Repertoire
+- [{{< fa toolbox >}} star-repair (Bash)](https://github.com/almaan/star-repair) Pair heavy and light chains in visium spots
 
 ### Immunarch
 
