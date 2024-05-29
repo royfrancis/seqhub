@@ -227,6 +227,8 @@ Curated list of marker genes by organism, tissue and cell type.
 - [{{< fa toolbox >}} Vitessce](http://vitessce.io/)(R, Python)
 - [{{< fa toolbox >}} CDCP](https://db.cngb.org/cdcp/)
 - [{{< fa toolbox >}} SingleCellVR](https://singlecellvr.pinellolab.partners.org/)
+- [{{< fa toolbox >}} Loupe](https://www.10xgenomics.com/support/software/loupe-browser/latest) 10X Loupe browser for CellRanger/Spaceranger outputs
+- [{{< fa toolbox >}} LoupeR](https://github.com/10XGenomics/loupeR) Seurat to Loupe format. Supports only GEX assay.
 
 ![](https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png)
 
