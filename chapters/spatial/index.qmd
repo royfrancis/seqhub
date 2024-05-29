@@ -14,14 +14,29 @@ There are three major resolution scales in ST data:
 @walker2022deciphering, @yue2023guidebook, @moses2022museum
 
 ## Techniques
-### 10X Visium
+### [10X Visium](https://www.10xgenomics.com/platforms/visium)
 
-- multi-cell resolution
+As of May 2024, there are three assays: Spatial GEX, Spatial GEX + Protein and Spatial GEX HD.
+
+|Assay|Spatial GEX|Spatial GEX+Protein|Spatial GEX HD|
+|---|---|---|---|
+|Scope|Whole transcriptome|Whole transcriptome+31 Proteins|Whole transcriptome|
+|Spatial resolution|multi-cell|multi-cell|single-cell|
+|Tissue|FFPE,Fresh frozen,Fixed frozen|FFPE|FFPE|
+|Species|Various|Human,Mouse|Human,Mouse|
+|Capture area|6.5x6.5mm|6.5x6.5mm|6.5x6.5mm|
+|Total spots|~5K/~14K|~5K/~14K|~11.2M|
+|Spot size|55um circle|55um circle|2um square|
+
+In addition, the Visium slides come in different types depending on the assay and version.
+
+![Visium slide types. From left. Visium GEX V1 slide with 4 capture areas for direct use. Visium GEX V4 with 2 capture areas to be used with CytAssist. Visium GEX V5 with 2 larger capture areas to be used with CytAssist. Visium HD GEX H1 slide with 2 capture areas.](https://cdn.10xgenomics.com/image/upload/v1708031738/software-support/Spatial-GEX/SR-v3.0/SlideDiagrams-SerialNumbers.png)
+
+![Visium HD GEX slide.](https://cdn.10xgenomics.com/image/upload/v1708031738/software-support/Spatial-GEX/SR-v3.0/SlideDefinitions.png)
+
 - [Q&A](https://kb.10xgenomics.com/hc/en-us/categories/360002304851-Visium)
 - [Spatial resolution and capture area](https://kb.10xgenomics.com/hc/en-us/articles/360035487572-What-is-the-spatial-resolution-and-configuration-of-the-capture-area-of-the-Visium-Gene-Expression-Slide-)
-- Capture area: 6.5mm x 6.5mm
-- Total spots: 4992
-- Spot diameter: 55um
+- [Visium glossary](https://www.10xgenomics.com/support/software/space-ranger/latest/getting-started/space-ranger-glossary)
 
 ## Methods/Tools
 
@@ -67,10 +82,8 @@ Identification of spatially variable genes.
 
 ### Cell interaction
 
-Given the relative stability of cellular locations, spatial
-transcriptomics allows us to reveal cell–cell interactions (CCI),
-also referred to as cell-cell communications (CCC), with fewer
-false positives than similar analysis with scRNA-seq data.
+Given the relative stability of cellular locations, spatial transcriptomics allows us to reveal cell–cell interactions (CCI),
+also referred to as cell-cell communications (CCC), with fewer false positives than similar analysis with scRNA-seq data.
 
 - SpaOTsc
 
