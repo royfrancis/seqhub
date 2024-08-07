@@ -125,6 +125,23 @@ description: Single-cell RNA-Seq experiments and analyses
 
 ![Summary of doublet detection tools.](https://ars.els-cdn.com/content/image/1-s2.0-S2405471220304592-gr5.jpg)
 
+The methods include doubletCells, Scrublet, cxds, bcds, hybrid, Solo, DoubletDetection, DoubletFinder, and DoubletDecon. Evaluation was conducted using 16 real scRNA-seq datasets with experimentally annotated doublets and 112 synthetic datasets.
+- **Evaluation Metrics**
+  - Detection Accuracy: Assessed using the area under the precision-recall curve (AUPRC) and the area under the receiver operating characteristic curve (AUROC).
+  - Impact on Downstream Analyses: Effects on differential expression (DE) gene analysis, highly variable gene identification, cell clustering, and cell trajectory inference.
+  - Computational Efficiency: Considered aspects such as speed, scalability, stability, and usability.
+- **Key Findings**
+  - Detection Accuracy: DoubletFinder achieved the highest detection accuracy among the methods.
+  - Downstream Analyses: Removal of doublets generally improved the accuracy of downstream analyses, with varying degrees of improvement depending on the method.
+  - Computational Efficiency: cxds was found to be the most computationally efficient method, particularly excelling in speed and scalability.
+- **Performance Factors**
+  - Doublet Rate: Higher doublet rates improved the accuracy of all methods.
+  - Sequencing Depth: Greater sequencing depth led to better performance.
+  - Number of Cell Types: More cell types generally resulted in better detection accuracy, except for cxds, bcds, and hybrid methods.
+  - Cell-Type Heterogeneity: Higher heterogeneity between cell types improved the detection accuracy for most methods.
+
+Overall Conclusion: DoubletFinder is recommended for its high detection accuracy and significant improvement in downstream analyses, while cxds is highlighted for its computational efficiency.
+
 @xi2021benchmarking
 
 ## Cell type identification
