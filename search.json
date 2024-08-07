@@ -14,7 +14,7 @@
     "href": "index.html#home",
     "title": "RSKB",
     "section": "",
-    "text": "Bulk RNA-seq\nGene expression from bulk tissue material.\n\n\nSingle-cell RNA-seq\nGene expression from single cells. 10X chromium, Smart-seq etc.\n\n\nAIRR-Seq\nAIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling.\n\n\nSpatial RNA-seq\nGene expression with spatial information. 10X Visium etc.\n\n\nATAC-Seq\nGenome wide chromatin accessibility.\n\n\nMeta transcriptomics\nGene expression from multiple/mixed populations or species.\n\n\n\n\n\nUpdated: 29-05-2024 at 16:22:44.",
+    "text": "Bulk RNA-seq\nGene expression from bulk tissue material.\n\n\nSingle-cell RNA-seq\nGene expression from single cells. 10X chromium, Smart-seq etc.\n\n\nAIRR-Seq\nAIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling.\n\n\nSpatial RNA-seq\nGene expression with spatial information. 10X Visium etc.\n\n\nATAC-Seq\nGenome wide chromatin accessibility.\n\n\nMeta transcriptomics\nGene expression from multiple/mixed populations or species.\n\n\n\n\n\nUpdated: 07-08-2024 at 10:00:01.",
     "crumbs": [
       "Home"
     ]
@@ -266,7 +266,7 @@
     "href": "chapters/sc/index.html#doublet-detection",
     "title": "2  Gene expression",
     "section": "2.4 Doublet detection",
-    "text": "2.4 Doublet detection\n\n\n\nSummary of doublet detection tools.\n\n\nXi & Li (2021)",
+    "text": "2.4 Doublet detection\n\n\n\nSummary of doublet detection tools.\n\n\nThe methods include doubletCells, Scrublet, cxds, bcds, hybrid, Solo, DoubletDetection, DoubletFinder, and DoubletDecon. Evaluation was conducted using 16 real scRNA-seq datasets with experimentally annotated doublets and 112 synthetic datasets. - Evaluation Metrics - Detection Accuracy: Assessed using the area under the precision-recall curve (AUPRC) and the area under the receiver operating characteristic curve (AUROC). - Impact on Downstream Analyses: Effects on differential expression (DE) gene analysis, highly variable gene identification, cell clustering, and cell trajectory inference. - Computational Efficiency: Considered aspects such as speed, scalability, stability, and usability. - Key Findings - Detection Accuracy: DoubletFinder achieved the highest detection accuracy among the methods. - Downstream Analyses: Removal of doublets generally improved the accuracy of downstream analyses, with varying degrees of improvement depending on the method. - Computational Efficiency: cxds was found to be the most computationally efficient method, particularly excelling in speed and scalability. - Performance Factors - Doublet Rate: Higher doublet rates improved the accuracy of all methods. - Sequencing Depth: Greater sequencing depth led to better performance. - Number of Cell Types: More cell types generally resulted in better detection accuracy, except for cxds, bcds, and hybrid methods. - Cell-Type Heterogeneity: Higher heterogeneity between cell types improved the detection accuracy for most methods.\nOverall Conclusion: DoubletFinder is recommended for its high detection accuracy and significant improvement in downstream analyses, while cxds is highlighted for its computational efficiency.\nXi & Li (2021)",
     "crumbs": [
       "**Single Cell RNASeq**",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Gene expression</span>"
