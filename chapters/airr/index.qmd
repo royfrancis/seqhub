@@ -10,9 +10,9 @@ description: AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling
 - Innate (Physical, Phagocytes, Dendritic cells, NK cells, ILCs, 0-12 hours)
 - Adaptive immunity (Begins ~3 days or more)
 
-![Just as resistance to disease can be innate (inborn) or acquired, the mechanisms mediating it can be correspondingly divided into innate (left) and adaptive (right), each composed of both cellular (lower half) and humoral elements (i.e. free in serum or body fluids; upper half). Adaptive mechanisms, more recently evolved, perform many of their functions by interacting with the older innate ones.](https://www.creative-diagnostics.com/upload/image/Innate%20and%20adaptive%20immune%20mechanisms.png){#fig-innate-adaptive}
+![Just as resistance to disease can be innate (inborn) or acquired, the mechanisms mediating it can be correspondingly divided into innate (left) and adaptive (right), each composed of both cellular (lower half) and humoral elements (i.e. free in serum or body fluids; upper half). Adaptive mechanisms, more recently evolved, perform many of their functions by interacting with the older innate ones.](assets/innate-adaptive-mechanisms.png){#fig-innate-adaptive}
 
-![Innate and adaptive immunity time line. The mechanisms of innate immunity provide the initial defense against infections. Adaptive immune responses develop later and require the activation of lymphocytes. The kinetics of the innate and adaptive immune responses are approximations and may vary in different infections.](https://www.creative-diagnostics.com/upload/image/innate%20and%20adaptive%20immunity2.png){#fig-innate-adaptive-time}
+![Innate and adaptive immunity time line. The mechanisms of innate immunity provide the initial defense against infections. Adaptive immune responses develop later and require the activation of lymphocytes. The kinetics of the innate and adaptive immune responses are approximations and may vary in different infections.](assets/innate-adaptive-timeline.png){#fig-innate-adaptive-time}
 
 [Source](https://www.creative-diagnostics.com/innate-and-adaptive-immunity.htm)
 
