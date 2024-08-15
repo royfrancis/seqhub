@@ -64,6 +64,9 @@ div.csl-indent {
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -281,7 +284,7 @@ div.csl-indent {
 <h2 data-number="6.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">6.1</span> Overview</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://f1000researchdata.s3.amazonaws.com/manuscripts/55709/4365fde8-b9bc-4578-a575-a35fd378ab5e_figure1.gif" class="img-fluid figure-img"></p>
+<p><a href="https://f1000researchdata.s3.amazonaws.com/manuscripts/55709/4365fde8-b9bc-4578-a575-a35fd378ab5e_figure1.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="ASaiM-MT workflow for metatranscriptomics data."><img src="https://f1000researchdata.s3.amazonaws.com/manuscripts/55709/4365fde8-b9bc-4578-a575-a35fd378ab5e_figure1.gif" class="img-fluid figure-img" alt="ASaiM-MT workflow for metatranscriptomics data."></a></p>
 <figcaption>ASaiM-MT workflow for metatranscriptomics data.</figcaption>
 </figure>
 </div>
@@ -753,6 +756,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

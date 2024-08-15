@@ -63,6 +63,9 @@ div.csl-indent {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -366,13 +369,13 @@ div.csl-indent {
 <p>In addition, the Visium slides come in different types depending on the assay and version.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://cdn.10xgenomics.com/image/upload/v1708031738/software-support/Spatial-GEX/SR-v3.0/SlideDiagrams-SerialNumbers.png" class="img-fluid figure-img"></p>
+<p><a href="https://cdn.10xgenomics.com/image/upload/v1708031738/software-support/Spatial-GEX/SR-v3.0/SlideDiagrams-SerialNumbers.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Visium slide types. From left. Visium GEX V1 slide with 4 capture areas for direct use. Visium GEX V4 with 2 capture areas to be used with CytAssist. Visium GEX V5 with 2 larger capture areas to be used with CytAssist. Visium HD GEX H1 slide with 2 capture areas."><img src="https://cdn.10xgenomics.com/image/upload/v1708031738/software-support/Spatial-GEX/SR-v3.0/SlideDiagrams-SerialNumbers.png" class="img-fluid figure-img" alt="Visium slide types. From left. Visium GEX V1 slide with 4 capture areas for direct use. Visium GEX V4 with 2 capture areas to be used with CytAssist. Visium GEX V5 with 2 larger capture areas to be used with CytAssist. Visium HD GEX H1 slide with 2 capture areas."></a></p>
 <figcaption>Visium slide types. From left. Visium GEX V1 slide with 4 capture areas for direct use. Visium GEX V4 with 2 capture areas to be used with CytAssist. Visium GEX V5 with 2 larger capture areas to be used with CytAssist. Visium HD GEX H1 slide with 2 capture areas.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://cdn.10xgenomics.com/image/upload/v1708031738/software-support/Spatial-GEX/SR-v3.0/SlideDefinitions.png" class="img-fluid figure-img"></p>
+<p><a href="https://cdn.10xgenomics.com/image/upload/v1708031738/software-support/Spatial-GEX/SR-v3.0/SlideDefinitions.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Visium HD GEX slide."><img src="https://cdn.10xgenomics.com/image/upload/v1708031738/software-support/Spatial-GEX/SR-v3.0/SlideDefinitions.png" class="img-fluid figure-img" alt="Visium HD GEX slide."></a></p>
 <figcaption>Visium HD GEX slide.</figcaption>
 </figure>
 </div>
@@ -918,6 +921,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
