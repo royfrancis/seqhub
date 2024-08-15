@@ -5,6 +5,7 @@ format:
     page-layout: full
     number-sections: false
     toc: false
+    date: ""
     css: "assets/css/background.css"
 ---
 

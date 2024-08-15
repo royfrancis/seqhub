@@ -9,7 +9,6 @@ book:
   site-url: https://royfrancis.github.io/rskb
   repo-url: https://github.com/royfrancis/rskb
   repo-branch: main
-  repo-actions: [edit, issue]
   page-footer:
     border: false
     left: "{{< meta current_year >}} Roy Francis"
@@ -42,9 +41,12 @@ format:
       - assets/css/styles.scss
     section-numbering: true
     title-block-banner: true
+    title-block-banner-color: "#f2f3f4"
     toc: true
     smooth-scroll: true
     bread-crumbs: false
+    date: last-modified
+    date-format: DD-MMM-YYYY
   epub:
     cover-image: assets/cover.png
 
