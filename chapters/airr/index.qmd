@@ -189,6 +189,9 @@ Source: Kuby immunology
 - Chap 12: Effector responses: antibody and cell-mediated immunity
 
 ## AIRR
+
+Single cell immune repertoire analysis overview @irac2024single
+
 ### Experimental design
 
 - In addition to V(D)J recombination, random nuclotides are inserted at the VDJ junctions. B cells further change itself by introducing random mutations called somatic hypermutation.
