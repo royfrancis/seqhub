@@ -47,6 +47,7 @@ format:
     bread-crumbs: false
     date: last-modified
     date-format: DD-MMM-YYYY
+    lightbox: auto
   epub:
     cover-image: assets/cover.png
 
