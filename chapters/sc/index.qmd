@@ -65,11 +65,11 @@ description: Single-cell RNA-Seq experiments and analyses
 
 **Avoid technical biases.**
 
-![Experimental design examples. In the confounded design, cells are isolated from each sample onto separate plates, processed at potentially different times and the two groups (indicated by different colors) are sequenced on separate lanes of the sequencer. In the balanced design on the right, all samples are evenly distributed across all stages of the experiment, thus reducing the sources of technical variation in the experiment.](assets/baran-2018-1.jpg)
+![Experimental design examples. In the confounded design, cells are isolated from each sample onto separate plates, processed at potentially different times and the two groups (indicated by different colors) are sequenced on separate lanes of the sequencer. In the balanced design on the right, all samples are evenly distributed across all stages of the experiment, thus reducing the sources of technical variation in the experiment.](assets/baran-2018-1.webp)
 
 **Deciding appropriate cell numbers**
 
-![Estimate of cells required for experiments with various parameters. (A) The plot shows the log10(#Cells) required to capture at least 50 cell types based on the parameters on the X- and Y-axes. (B) The plot shows the log10(#Cells) required to capture the number of cells on the Y-axis if the population consists of 20 cell types.](assets/baran-2018-2.jpg)
+![Estimate of cells required for experiments with various parameters. (A) The plot shows the log10(#Cells) required to capture at least 50 cell types based on the parameters on the X- and Y-axes. (B) The plot shows the log10(#Cells) required to capture the number of cells on the Y-axis if the population consists of 20 cell types.](assets/baran-2018-2.webp)
 
 @baran2018experimental
 
@@ -174,11 +174,11 @@ Identification of cell types can be completely automated (by comparing to refere
 
 - Single-cell data integration challenges
 
-![Overview of common data integration methods classified according to their anchor choice.](assets/argelaguet-2021-tab1.png)
+![Overview of common data integration methods classified according to their anchor choice.](assets/argelaguet-2021-tab1.webp)
 
-![a–c, Depending on the anchor choice, three types of data integration strategies can be considered: horizontal integration with features as the anchors (a), vertical integration with cells as the anchors (b) and diagonal integration with no anchors in high-dimensional space (c). The left column shows the data modalities extracted, while the right column illustrates the resulting data matrices to be integrated, depending on the anchor choice.](assets/argelaguet-2021-1.png)
+![a–c, Depending on the anchor choice, three types of data integration strategies can be considered: horizontal integration with features as the anchors (a), vertical integration with cells as the anchors (b) and diagonal integration with no anchors in high-dimensional space (c). The left column shows the data modalities extracted, while the right column illustrates the resulting data matrices to be integrated, depending on the anchor choice.](assets/argelaguet-2021-1.webp)
 
-![Mosaic integration. a, Overview of an experimental design where different data modalities (each block in the rows) are profiled in different subsets of cells (each block in the columns). Transparent matrices denote missing information. b, Resulting data matrices after applying a mosaic integration approach aimed at imputing missing data modalities.](assets/argelaguet-2021-2.png)
+![Mosaic integration. a, Overview of an experimental design where different data modalities (each block in the rows) are profiled in different subsets of cells (each block in the columns). Transparent matrices denote missing information. b, Resulting data matrices after applying a mosaic integration approach aimed at imputing missing data modalities.](assets/argelaguet-2021-2.webp)
 
 @argelaguet2021computational
 

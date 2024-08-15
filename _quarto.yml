@@ -3,11 +3,11 @@ project:
   output-dir: docs
 
 book:
-  title: "RSKB"
+  title: "SeqHub"
   page-navigation: true
   favicon: assets/favicon.png
-  site-url: https://royfrancis.github.io/rskb
-  repo-url: https://github.com/royfrancis/rskb
+  site-url: https://royfrancis.github.io/seqhub
+  repo-url: https://github.com/royfrancis/seqhub
   repo-branch: main
   page-footer:
     border: false

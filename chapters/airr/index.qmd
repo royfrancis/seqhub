@@ -10,9 +10,9 @@ description: AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling
 - Innate (Physical, Phagocytes, Dendritic cells, NK cells, ILCs, 0-12 hours)
 - Adaptive immunity (Begins ~3 days or more)
 
-![Just as resistance to disease can be innate (inborn) or acquired, the mechanisms mediating it can be correspondingly divided into innate (left) and adaptive (right), each composed of both cellular (lower half) and humoral elements (i.e. free in serum or body fluids; upper half). Adaptive mechanisms, more recently evolved, perform many of their functions by interacting with the older innate ones.](assets/innate-adaptive-mechanisms.png){#fig-innate-adaptive}
+![Just as resistance to disease can be innate (inborn) or acquired, the mechanisms mediating it can be correspondingly divided into innate (left) and adaptive (right), each composed of both cellular (lower half) and humoral elements (i.e. free in serum or body fluids; upper half). Adaptive mechanisms, more recently evolved, perform many of their functions by interacting with the older innate ones.](assets/innate-adaptive-mechanisms.webp){#fig-innate-adaptive}
 
-![Innate and adaptive immunity time line. The mechanisms of innate immunity provide the initial defense against infections. Adaptive immune responses develop later and require the activation of lymphocytes. The kinetics of the innate and adaptive immune responses are approximations and may vary in different infections.](assets/innate-adaptive-timeline.png){#fig-innate-adaptive-time}
+![Innate and adaptive immunity time line. The mechanisms of innate immunity provide the initial defense against infections. Adaptive immune responses develop later and require the activation of lymphocytes. The kinetics of the innate and adaptive immune responses are approximations and may vary in different infections.](assets/innate-adaptive-timeline.webp){#fig-innate-adaptive-time}
 
 [Source](https://www.creative-diagnostics.com/innate-and-adaptive-immunity.htm)
 
@@ -21,15 +21,17 @@ description: AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling
 - Humoral immunity (B cells, antibodies)
 - Cell mediated immunity (CD4 Helper T cells, CD8 Cytotoxic T cells, Macrophages)
 
-![The figure shows an adaptive immune response to the first and second encounter with the SARS-CoV-2 antigen (spike protein). Following the first encounter, various antigens go through the process of phagocytosis and decomposition inside the antigen-presenting cells (APCs). APCs fragment the antigen into smaller peptides, which they present on their surface mediated by surface receptors called major histocompatibility complex class II (MHC-II) molecules. The antigens are then presented to several types of cells in the host, among which we emphasize CD4+ T helper cells (also B and CD8+ cells). B cells which differentiate into plasma cells, secrete antibodies that inhibit the entry of the viral particle into the healthy cells. The activation of T helper cells by APC causes them to differentiate into different subtypes with specific functions mediated by cytokine secretion and cell-to-cell contact. Th2-differentiated T helper cells help humoral responses mature by providing a second signal to B cells, mostly through IL-4 secretion and CD40/CD40L interaction. Some CD4+ cells also become T follicular helper cells (Tfh), which govern the important interactions in the germinal centers important for the maturation of memory B cells and long-lived high-affinity antibody-producing plasma cells. Another subset of CD4+ T cells differentiates into a pool of memory T helper cells. Th1 T helper cells play a crucial role in cellular response formation. They pivot the MHC-I activation of CD8+ cells (CTL, cytotoxic T lymphocytes) by interacting with APC’s simultaneously. Activated CTLs then act by causing apoptosis (by Fasl ligand–FasL binding) of the host cells that are infected with the SARS-CoV-2. Some CTLs differentiate into memory cytotoxic T cells, which have the role of fast restoration of the CTL response with secondary antigen contacts. A similar mechanism of destruction occurs when NK cells interact with the virally infected cell. They contain granules with IFNγ and TNFα in their cytoplasm, which, when secreted, cause programmed cell death. As well, the mechanism of activation of NK cells does not occur through MHC molecules is important because MHC is not always present on the virally infected cells.](https://www.frontiersin.org/files/Articles/848582/fimmu-13-848582-HTML/image_m/fimmu-13-848582-g001.jpg){#fig-innate-adaptive}
+![The figure shows an adaptive immune response to the first and second encounter with the SARS-CoV-2 antigen (spike protein).](https://www.frontiersin.org/files/Articles/848582/fimmu-13-848582-HTML/image_m/fimmu-13-848582-g001.jpg){#fig-innate-adaptive}
+
+Following the first encounter, various antigens go through the process of phagocytosis and decomposition inside the antigen-presenting cells (APCs). APCs fragment the antigen into smaller peptides, which they present on their surface mediated by surface receptors called major histocompatibility complex class II (MHC-II) molecules. The antigens are then presented to several types of cells in the host, among which we emphasize CD4+ T helper cells (also B and CD8+ cells). B cells which differentiate into plasma cells, secrete antibodies that inhibit the entry of the viral particle into the healthy cells. The activation of T helper cells by APC causes them to differentiate into different subtypes with specific functions mediated by cytokine secretion and cell-to-cell contact. Th2-differentiated T helper cells help humoral responses mature by providing a second signal to B cells, mostly through IL-4 secretion and CD40/CD40L interaction. Some CD4+ cells also become T follicular helper cells (Tfh), which govern the important interactions in the germinal centers important for the maturation of memory B cells and long-lived high-affinity antibody-producing plasma cells. Another subset of CD4+ T cells differentiates into a pool of memory T helper cells. Th1 T helper cells play a crucial role in cellular response formation. They pivot the MHC-I activation of CD8+ cells (CTL, cytotoxic T lymphocytes) by interacting with APC’s simultaneously. Activated CTLs then act by causing apoptosis (by Fasl ligand–FasL binding) of the host cells that are infected with the SARS-CoV-2. Some CTLs differentiate into memory cytotoxic T cells, which have the role of fast restoration of the CTL response with secondary antigen contacts. A similar mechanism of destruction occurs when NK cells interact with the virally infected cell. They contain granules with IFNγ and TNFα in their cytoplasm, which, when secreted, cause programmed cell death. As well, the mechanism of activation of NK cells does not occur through MHC molecules is important because MHC is not always present on the virally infected cells.
 
 @primorac2022adaptive
 
 ::: {#fig-cells-immune layout-ncol=2}
 
-![](assets/kavathas-2019.png)
+![](assets/kavathas-2019.webp)
 
-![](assets/kavathas-2019-2.png)
+![](assets/kavathas-2019-2.webp)
 
 Cells of the immune system.
 :::
@@ -40,9 +42,9 @@ Cells of the immune system.
 ### B cell development
 
 ::: {#fig-cells-immune-b-cell-devel layout-ncol="2"}
-![](assets/janeway-1994-b-cells.jpg)
+![](assets/janeway-1994-b-cells.webp)
 
-![](assets/morgan-2022-b-cell-development.jpg)
+![](assets/morgan-2022-b-cell-development.webp)
 
 B cell development.
 :::
@@ -80,7 +82,7 @@ Source: Kuby immunology
 ### T cell development
 
 ::: {#fig-cells-immune-t-cell-devel layout-ncol="2"}
-![](assets/janeway-1994-t-cells.jpg)
+![](assets/janeway-1994-t-cells.webp)
 
 ![](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fnri1257/MediaObjects/41577_2004_Article_BFnri1257_Fig1_HTML.jpg)
 
@@ -114,11 +116,11 @@ Source: Kuby immunology
 
 ::: {#fig-vdj layout-ncol="2"}
 
-![](assets/vdj.png){group="vdj"}
+![](assets/vdj.webp){group="vdj"}
 
-![](assets/joshi-2014.gif){group="vdj"}
+![](assets/joshi-2014.webp){group="vdj"}
 
-![](assets/antigen-receptor-loci.jpg){group="vdj"}
+![](assets/antigen-receptor-loci.webp){group="vdj"}
 
 Structure of VDJ locus and corresponding region on an antibody. Image references: [1](https://bsse.ethz.ch/lsi/research/systems-immunology.html), [2](hhttps://doi.org/10.1128/microbiolspec.aid-0017-2014), [3](https://digitalworldbiology.com/blog/immunoprofiling-how-it-works)
 
@@ -157,11 +159,11 @@ Germline organisation of the Ig locus
 
 ![Somatic V(D)J arrangement in the alpha and beta chains. (A) Genomic organization and somatic recombination of TCRB and TCRA loci. Antigen repertoire diversity is guaranteed by a recombination step that progressively rearranges V, D, and J segments for T cell receptor (TCR) beta chains and V and J segments for TCR alpha chains. This variability (combinatorial diversity) is further increased by addition or deletion of nucleotides at the junction sites (junctional diversity). (B) Productive arrangements of beta and alpha transcripts. (C) Organization of TCR. TCR is composed by two subunits TCR alpha and TCR beta each organized in a constant region and a variable region responsible for antigen recognition.](https://www.frontiersin.org/files/Articles/384005/fimmu-09-01638-HTML/image_m/fimmu-09-01638-g001.jpg){#fig-vdj-}
 
-![Differences between BCR and TCR receptors.](assets/bcrvtcr.png){#fig-tcrvsbcr width=50%}
+![Differences between BCR and TCR receptors.](assets/bcrvtcr.webp){#fig-tcrvsbcr width=50%}
 
 ## Antibodies
 
-![Structure of an antibody](assets/kuby-antibody.jpg){#fig-antibody}
+![Structure of an antibody](assets/kuby-antibody.webp){#fig-antibody}
 
 - Antibodies are secreted by plasma B cells
 - Consist of 2 identical heavy and 2 identical light chains
@@ -290,7 +292,7 @@ Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequ
 - [{{< fa toolbox >}} ChangeO (Shell)](https://bitbucket.org/kleinstein/changeo/src/master/) Processing the output of V(D)J alignment tools, assigning clonal clusters to immunoglobulin (Ig) sequences, and reconstructing germline sequences (Part of immcantation)
 - [{{< fa toolbox >}} MixCR (Shell)](https://github.com/milaboratory/mixcr) Start from any read data
 
-![MIXCR workflow](assets/mixcr-workflow.png){#fig-mixcr}
+![MIXCR workflow](assets/mixcr-workflow.webp){#fig-mixcr}
 
 - [{{< fa toolbox >}} TRUST4 (Shell)](https://github.com/liulab-dfci/TRUST4) TCR and BCR assembly from RNA-seq data
 

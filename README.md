@@ -1,17 +1,17 @@
-# RSKB • RNA-Seq Knowledgebase
+# SeqHub • RNA-Seq Knowledgebase
 
-[![ci_badge](https://github.com/royfrancis/rskb/workflows/deploy/badge.svg)](https://github.com/royfrancis/rskb/actions?workflow=deploy)
+[![ci_badge](https://github.com/royfrancis/seqhub/workflows/deploy/badge.svg)](https://github.com/royfrancis/seqhub/actions?workflow=deploy)
 
 A high level guide and collection of links related to RNA-Seq experiments and data analyses.
 
-https://royfrancis.github.io/rskb
+https://royfrancis.github.io/seqhub
 
 ## Contributing
 
 1. Fork or Clone repo as needed
 
 ```
-git clone https://github.com/royfrancis/rskb.git
+git clone https://github.com/royfrancis/seqhub.git
 ```
 
 2. Add content / make changes
