@@ -20,3 +20,5 @@ Our benchmarking results highlight SnapATAC, cisTopic, and Cusanovich2018 as the
 [{{< fa toolbox >}} Signac](https://stuartlab.org/signac/index.html)
 
 @stuart2021single
+
+## References {.unnumbered}
