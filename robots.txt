@@ -1,1 +1,1 @@
-Sitemap: https://royfrancis.github.io/rskb/sitemap.xml
+Sitemap: https://royfrancis.github.io/seqhub/sitemap.xml
