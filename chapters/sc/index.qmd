@@ -126,6 +126,7 @@ description: Single-cell RNA-Seq experiments and analyses
 ![Summary of doublet detection tools.](https://ars.els-cdn.com/content/image/1-s2.0-S2405471220304592-gr5.jpg)
 
 The methods include doubletCells, Scrublet, cxds, bcds, hybrid, Solo, DoubletDetection, DoubletFinder, and DoubletDecon. Evaluation was conducted using 16 real scRNA-seq datasets with experimentally annotated doublets and 112 synthetic datasets.
+
 - **Evaluation Metrics**
   - Detection Accuracy: Assessed using the area under the precision-recall curve (AUPRC) and the area under the receiver operating characteristic curve (AUROC).
   - Impact on Downstream Analyses: Effects on differential expression (DE) gene analysis, highly variable gene identification, cell clustering, and cell trajectory inference.
@@ -144,7 +145,11 @@ Overall Conclusion: DoubletFinder is recommended for its high detection accuracy
 
 @xi2021benchmarking
 
-## Cell type identification
+## Cell type prediction
+
+![Performance comparison of supervised classifiers for cell identification using different scRNA-seq datasets. Heatmap of the a median F1-scores and b percentage of unlabeled cells across all cell populations per classifier (rows) per dataset (columns). Gray boxes indicate that the corresponding method could not be tested on the corresponding dataset.](assets/abdelaal-2019-1.webp)
+
+@abdelaal2019comparison
 
 Identification of cell types can be completely automated (by comparing to reference data/databases) or semi-automated (reference data + marker genes).
 
@@ -152,8 +157,10 @@ Identification of cell types can be completely automated (by comparing to refere
 
 @xie2021automatic, @sun2022comprehensive
 
-- [{{< fa toolbox >}} SCINA](https://github.com/jcao89757/SCINA)
-- [{{< fa toolbox >}} SingleR](https://bioconductor.org/packages/release/bioc/html/SingleR.html)
+- [{{< fa toolbox >}} SCINA](https://github.com/jcao89757/SCINA) (R)
+- [{{< fa toolbox >}} SingleR](https://bioconductor.org/packages/release/bioc/html/SingleR.html) (R)
+- [{{< fa toolbox >}} scPred](https://github.com/powellgenomicslab/scPred) (R)
+- [{{< fa toolbox >}} celltypist](https://github.com/Teichlab/celltypist) (Python)
 
 ## Differential expression
 
@@ -195,6 +202,12 @@ Identification of cell types can be completely automated (by comparing to refere
 > We tested 14 state-of-the-art batch correction algorithms designed to handle single-cell transcriptomic data. We found that each batch-effect removal method has its advantages and limitations, with no clearly superior method. Based on our results, we found LIGER, Harmony, and Seurat 3 to be the top batch mixing methods. Harmony performed well on datasets with common cell types, and also different technologies. The comparatively low runtime of Harmony also makes it suitable for initial data exploration of large datasets. Likewise, LIGER performed well, especially on datasets with non-identical cell types. The main drawback of LIGER is its longer runtime than Harmony, though it is acceptable for its performance. Seurat 3 is also able to handle large datasets, however with 20–50% longer runtime than LIGER. Due to its good batch mixing results with multiple batches, it is also recommended for such scenarios. To improve recovery of DEGs in batch-corrected data, we recommend scMerge for batch correction.
 
 @tran2020benchmark
+
+- [{{< fa toolbox >}} Seurat](https://satijalab.org/seurat/articles/integration_introduction.html) (R)
+- [{{< fa toolbox >}} Harmony](https://github.com/immunogenomics/harmony) (R)
+- [{{< fa toolbox >}} Liger](https://github.com/welch-lab/liger) (R)
+- [{{< fa toolbox >}} FastMNN](https://github.com/LTLA/batchelor) (R)
+- [{{< fa toolbox >}} Scanorama](https://scanpy.readthedocs.io/en/stable/generated/scanpy.external.pp.scanorama_integrate.html) (Python)
 
 ## Trajectory
 
