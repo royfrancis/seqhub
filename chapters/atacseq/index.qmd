@@ -15,10 +15,35 @@ Our benchmarking results highlight SnapATAC, cisTopic, and Cusanovich2018 as the
 
 @chen2019assessment
 
-[{{< fa brands youtube >}} scATAC-Seq analysis in R](https://www.youtube.com/watch?v=e2396GKFMRY)
+## Feature selection
 
-[{{< fa toolbox >}} Signac](https://stuartlab.org/signac/index.html)
+The performance of various methods for analyzing datasets with different cell structures and sizes is discussed. For simple datasets with distinct cell types, all methods are effective. For datasets with small cell classes or with hierarchical clustering and similar subtypes, SnapATAC and SnapATAC2 are preferred. SnapATAC is not memory-efficient for large datasets (over 20,000 cells); in such cases, SnapATAC2 is better. Signac outperforms ArchR, but ArchR is more memory-efficient. Adding aggregation steps to Signac does not significantly increase time or memory usage. Feature engineering choices like peak versus bins calling do not majorly affect performance, so users can choose based on preference. Recommended latent space dimensions vary by method: 10-30 for SnapATAC/SnapATAC2, 10-50 for Signac/ArchR, and even larger for aggregation methods.
+
+@de2024systematic
+
+## Celltyping
+
+![Performance of label transfer methods on single-cell data from selected mouse and human tissues. (A) Overall metrics considering performance on all scATAC-seq cells.](assets/wang-2022-1.webp)
+
+Here, we evaluated the performance of five scATAC-seq annotation methods on both their classification accuracy and scalability using publicly available single-cell datasets from mouse and human tissues including brain, lung, kidney, PBMC, and BMMC. Using the BMMC data as basis, we further investigated the performance of these methods across different data sizes, mislabeling rates, sequencing depths and the number of cell types unique to scATAC-seq. Bridge integration, which is the only method that requires additional multimodal data and does not need gene activity calculation, was overall the best method and robust to changes in data size, mislabeling rate and sequencing depth. Conos was the most time and memory efficient method but performed the worst in terms of prediction accuracy. scJoint tended to assign cells to similar cell types and performed relatively poorly for complex datasets with deep annotations but performed better for datasets only with major label annotations. The performance of scGCN and Seurat v3 was moderate, but scGCN was the most time-consuming method and had the most similar performance to random classifiers for cell types unique to scATAC-seq.
+
+@wang2022benchmarking
+
+## Tools
+
+![Comparison of toolkits](https://media.springernature.com/full/springer-static/esm/art%3A10.1038%2Fs41588-021-00790-6/MediaObjects/41588_2021_790_Fig5_ESM.jpg) @granja2021archr
+
+- [{{< fa toolbox >}} Signac](https://stuartlab.org/signac/index.html) (R)
+- [{{< fa toolbox >}} ArchR](https://github.com/GreenleafLab/ArchR) (R) @granja2021archr
+- [{{< fa toolbox >}} SnapATAC](https://github.com/r3fang/SnapATAC) (R)
+- [{{< fa toolbox >}} pycisTopic](https://github.com/aertslab/pycisTopic) (Python)
+- [{{< fa toolbox >}} Scasat](https://github.com/ManchesterBioinference/Scasat) (Bash,Python)
 
 @stuart2021single
+
+## Tutorials
+
+- [{{< fa brands youtube >}} scATAC-Seq analysis in R using Signac by Sanbomics](https://www.youtube.com/watch?v=e2396GKFMRY)
+- [{{< fa brands youtube >}} scATAC-Seq analysis in R using Signac by Bioinformagician](https://www.youtube.com/watch?v=yEKZJVjc5DY)
 
 ## References {.unnumbered}
