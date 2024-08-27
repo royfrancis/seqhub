@@ -208,6 +208,8 @@ Identification of cell types can be completely automated (by comparing to refere
 - [{{< fa toolbox >}} Liger](https://github.com/welch-lab/liger) (R)
 - [{{< fa toolbox >}} FastMNN](https://github.com/LTLA/batchelor) (R)
 - [{{< fa toolbox >}} Scanorama](https://scanpy.readthedocs.io/en/stable/generated/scanpy.external.pp.scanorama_integrate.html) (Python)
+- [{{< fa toolbox >}} STACAS](https://github.com/carmonalab/STACAS) (R) @andreatta2024semi
+- [{{< fa toolbox >}} scIntegrationMetrics](https://github.com/carmonalab/scIntegrationMetrics) (R) Metrics to evaluate batch effects and correction @andreatta2024semi
 
 ## Trajectory
 
