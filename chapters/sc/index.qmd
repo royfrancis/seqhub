@@ -187,7 +187,7 @@ Identification of cell types can be completely automated (by comparing to refere
 
 ![Mosaic integration. a, Overview of an experimental design where different data modalities (each block in the rows) are profiled in different subsets of cells (each block in the columns). Transparent matrices denote missing information. b, Resulting data matrices after applying a mosaic integration approach aimed at imputing missing data modalities.](assets/argelaguet-2021-2.webp)
 
-@argelaguet2021computational
+@argelaguet2021computational [{{< fa brands youtube >}} Principles and challenges of data integration by Argelaguet](https://www.youtube.com/watch?v=Kkv7fNgBJUY)
 
 - Comparison of data integration methods
 
@@ -210,6 +210,7 @@ Identification of cell types can be completely automated (by comparing to refere
 - [{{< fa toolbox >}} Scanorama](https://scanpy.readthedocs.io/en/stable/generated/scanpy.external.pp.scanorama_integrate.html) (Python)
 - [{{< fa toolbox >}} STACAS](https://github.com/carmonalab/STACAS) (R) @andreatta2024semi
 - [{{< fa toolbox >}} scIntegrationMetrics](https://github.com/carmonalab/scIntegrationMetrics) (R) Metrics to evaluate batch effects and correction @andreatta2024semi
+- [{{< fa toolbox >}} GLUE](https://github.com/gao-lab/GLUE) (R,Python) Diagonal integration
 
 ## Trajectory
 
@@ -236,7 +237,7 @@ Comparison of Trajectory inference methods.
 Single-cell data repositiories.
 
 - [scRNASeqDB](https://bioinfo.uth.edu/scrnaseqdb/)
-- [Broad SIngleCell portal](https://singlecell.broadinstitute.org/single_cell)
+- [Broad SingleCell portal](https://singlecell.broadinstitute.org/single_cell)
 - [Hemberg Lab collection](https://hemberg-lab.github.io/scRNA.seq.datasets/)
 - [10x datasets](https://www.10xgenomics.com/resources/datasets)
 - [EBI Cell Atlas](https://www.ebi.ac.uk/gxa/sc/home)
@@ -275,5 +276,6 @@ Curated list of marker genes by organism, tissue and cell type.
 - [HBC Training](https://hbctraining.github.io/scRNA-seq_online/schedule/)
 - [NBIS workshop](https://nbisweden.github.io/workshop-scRNAseq)
 - [Seurat tutorials](https://satijalab.org/seurat/index.html)
+- [DoubletFinder using Seurat tutorial](https://rpubs.com/kenneditodd/doublet_finder_example)
 
 ## References {.unnumbered}
