@@ -157,7 +157,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">27-Aug-2024</p>
+        <p class="date">02-Oct-2024</p>
       </div>
     </div>
     
@@ -271,8 +271,9 @@ div.csl-indent {
   <li><a href="#atacseq-overview" id="toc-atacseq-overview" class="nav-link active" data-scroll-target="#atacseq-overview"><span class="header-section-number">5.1</span> Overview</a></li>
   <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection"><span class="header-section-number">5.2</span> Feature selection</a></li>
   <li><a href="#celltyping" id="toc-celltyping" class="nav-link" data-scroll-target="#celltyping"><span class="header-section-number">5.3</span> Celltyping</a></li>
-  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools"><span class="header-section-number">5.4</span> Tools</a></li>
-  <li><a href="#tutorials" id="toc-tutorials" class="nav-link" data-scroll-target="#tutorials"><span class="header-section-number">5.5</span> Tutorials</a></li>
+  <li><a href="#benchmarking-tools" id="toc-benchmarking-tools" class="nav-link" data-scroll-target="#benchmarking-tools"><span class="header-section-number">5.4</span> Benchmarking tools</a></li>
+  <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools"><span class="header-section-number">5.5</span> Tools</a></li>
+  <li><a href="#tutorials" id="toc-tutorials" class="nav-link" data-scroll-target="#tutorials"><span class="header-section-number">5.6</span> Tutorials</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -289,8 +290,75 @@ div.csl-indent {
 <p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41596-022-00692-9/MediaObjects/41596_2022_692_Fig1_HTML.png?as=webp" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41596-022-00692-9/MediaObjects/41596_2022_692_Fig1_HTML.png?as=webp" class="img-fluid"></a></p>
 <p>ATAC-seq provides a simple and scalable way to assay the regions of the genome that are bound by TFs, and to compare how these landscapes change between particular contexts or perturbations. This is accomplished using in vitro transposition of sequencing adapters into native chromatin. Each unique transposition event, termed an ‘insertion’, marks a location in the genome where a Tn5 transposase dimer is able to access DNA and perform a cut-and-paste reaction. The transposase simultaneously fragments the DNA and inserts sequence handles that are then used for amplification during library preparation.</p>
 <p><span class="citation" data-cites="grandi2022chromatin">Grandi et al. (<a href="#ref-grandi2022chromatin" role="doc-biblioref">2022</a>)</span>, <span class="citation" data-cites="yan2020reads">Yan et al. (<a href="#ref-yan2020reads" role="doc-biblioref">2020</a>)</span></p>
-<p>Our benchmarking results highlight SnapATAC, cisTopic, and Cusanovich2018 as the top performing scATAC-seq data analysis methods to perform clustering across all datasets and different metrics. Methods that preserve information at the peak level (cisTopic, Cusanovich2018, Scasat) or bin level (SnapATAC) generally outperform those that summarize accessible chromatin regions at the motif/k-mer level (chromVAR, BROCKMAN, SCRAT) or over the gene body (Cicero, Gene Scoring). In addition, methods that implement a dimensionality reduction step (BROCKMAN, cisTopic, Cusanovich2018, Scasat, SnapATAC) generally show advantages over the other methods without this important step. SnapATAC is the most scalable method; it was the only method capable of processing more than 80,000 cells. Cusanovich2018 is the method that best balances analysis performance and running time.</p>
-<p><span class="citation" data-cites="chen2019assessment">Chen et al. (<a href="#ref-chen2019assessment" role="doc-biblioref">2019</a>)</span></p>
+<ul>
+<li>ATAC-Seq quantifies DNA and can be applied to frozen/fixed tisues where nuclei can be isolated</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs42994-022-00082-5/MediaObjects/42994_2022_82_Fig1_HTML.png?as=webp" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Wet-lab workflow"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs42994-022-00082-5/MediaObjects/42994_2022_82_Fig1_HTML.png?as=webp" class="img-fluid figure-img" alt="Wet-lab workflow"></a></p>
+<figcaption>Wet-lab workflow</figcaption>
+</figure>
+</div>
+<ul>
+<li>Sample-level quality
+<ul>
+<li>Cell viability must exceed 80%</li>
+<li>Accurate assessment of cell number</li>
+</ul></li>
+<li>Library-level quality
+<ul>
+<li>DNA fragment distribution (multiples of 200bp)</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs42994-022-00082-5/MediaObjects/42994_2022_82_Fig2_HTML.png?as=webp" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Data analysis workflow"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs42994-022-00082-5/MediaObjects/42994_2022_82_Fig2_HTML.png?as=webp" class="img-fluid figure-img" alt="Data analysis workflow"></a></p>
+<figcaption>Data analysis workflow</figcaption>
+</figure>
+</div>
+<ul>
+<li>Counts QC
+<ul>
+<li>Unique nuclear fragments (&gt;1000)</li>
+<li>Fraction of transposition events in the peaks (&gt;0.3)</li>
+<li>Transcription start sites (TSS) enrichment score (&gt;5)</li>
+<li>Ratio of mononucleosomal to nucleosome-free fragments</li>
+<li>Apply filters separately for each sample</li>
+</ul></li>
+<li>Generate features (peaks/target regions)
+<ul>
+<li>Various methods exist</li>
+</ul></li>
+<li>Dimensionality reduction</li>
+<li>Cells with similar accessibility profiles are organized into clusters</li>
+<li>There are two approaches to cell identity annotation: the cell type-specific peaks-based method and the scRNA-seq-based method
+<ul>
+<li>Enhancers can be used to accurately annotate cell types as distal cis-regulatory elements specific to particular cell types and states.</li>
+<li>Cell type-specific gene expression is predicted based on their accessibility and used to annotate cells</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs42994-022-00082-5/MediaObjects/42994_2022_82_Fig3_HTML.png?as=webp" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Epigenomic profiling from scATAC-seq data."><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs42994-022-00082-5/MediaObjects/42994_2022_82_Fig3_HTML.png?as=webp" class="img-fluid figure-img" alt="Epigenomic profiling from scATAC-seq data."></a></p>
+<figcaption>Epigenomic profiling from scATAC-seq data.</figcaption>
+</figure>
+</div>
+<ul>
+<li>Cell type-specific chromatin architecture
+<ul>
+<li>Profiling the regulatory elements for each cluster/cell type</li>
+<li>Identifying differentially accessible regions between different clusters/cell types</li>
+<li>Uncovering key factors that contribute to the altered chromatin accessibility</li>
+<li>Linking promoter–enhancer interactions</li>
+</ul></li>
+<li>Three main strategies are used to identify TFs of interest
+<ul>
+<li>Searching for overrepresented motifs in cell type-specific accessible regions</li>
+<li>Comparing motif activity between cell types</li>
+<li>Detecting foot-printing for TF occupancy</li>
+</ul></li>
+</ul>
+<p><span class="citation" data-cites="shi2022fundamental">Shi et al. (<a href="#ref-shi2022fundamental" role="doc-biblioref">2022</a>)</span></p>
 </section>
 <section id="feature-selection" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="feature-selection"><span class="header-section-number">5.2</span> Feature selection</h2>
@@ -301,27 +369,33 @@ div.csl-indent {
 <h2 data-number="5.3" class="anchored" data-anchor-id="celltyping"><span class="header-section-number">5.3</span> Celltyping</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="assets/wang-2022-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Performance of label transfer methods on single-cell data from selected mouse and human tissues. (A) Overall metrics considering performance on all scATAC-seq cells."><img src="assets/wang-2022-1.webp" class="img-fluid figure-img" alt="Performance of label transfer methods on single-cell data from selected mouse and human tissues. (A) Overall metrics considering performance on all scATAC-seq cells."></a></p>
+<p><a href="assets/wang-2022-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Performance of label transfer methods on single-cell data from selected mouse and human tissues. (A) Overall metrics considering performance on all scATAC-seq cells."><img src="assets/wang-2022-1.webp" class="img-fluid figure-img" alt="Performance of label transfer methods on single-cell data from selected mouse and human tissues. (A) Overall metrics considering performance on all scATAC-seq cells."></a></p>
 <figcaption>Performance of label transfer methods on single-cell data from selected mouse and human tissues. (A) Overall metrics considering performance on all scATAC-seq cells.</figcaption>
 </figure>
 </div>
 <p>Here, we evaluated the performance of five scATAC-seq annotation methods on both their classification accuracy and scalability using publicly available single-cell datasets from mouse and human tissues including brain, lung, kidney, PBMC, and BMMC. Using the BMMC data as basis, we further investigated the performance of these methods across different data sizes, mislabeling rates, sequencing depths and the number of cell types unique to scATAC-seq. Bridge integration, which is the only method that requires additional multimodal data and does not need gene activity calculation, was overall the best method and robust to changes in data size, mislabeling rate and sequencing depth. Conos was the most time and memory efficient method but performed the worst in terms of prediction accuracy. scJoint tended to assign cells to similar cell types and performed relatively poorly for complex datasets with deep annotations but performed better for datasets only with major label annotations. The performance of scGCN and Seurat v3 was moderate, but scGCN was the most time-consuming method and had the most similar performance to random classifiers for cell types unique to scATAC-seq.</p>
 <p><span class="citation" data-cites="wang2022benchmarking">Wang et al. (<a href="#ref-wang2022benchmarking" role="doc-biblioref">2022</a>)</span></p>
 </section>
-<section id="tools" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="tools"><span class="header-section-number">5.4</span> Tools</h2>
+<section id="benchmarking-tools" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="benchmarking-tools"><span class="header-section-number">5.4</span> Benchmarking tools</h2>
+<p>Our benchmarking results highlight SnapATAC, cisTopic, and Cusanovich2018 as the top performing scATAC-seq data analysis methods to perform clustering across all datasets and different metrics. Methods that preserve information at the peak level (cisTopic, Cusanovich2018, Scasat) or bin level (SnapATAC) generally outperform those that summarize accessible chromatin regions at the motif/k-mer level (chromVAR, BROCKMAN, SCRAT) or over the gene body (Cicero, Gene Scoring). In addition, methods that implement a dimensionality reduction step (BROCKMAN, cisTopic, Cusanovich2018, Scasat, SnapATAC) generally show advantages over the other methods without this important step. SnapATAC is the most scalable method; it was the only method capable of processing more than 80,000 cells. Cusanovich2018 is the method that best balances analysis performance and running time.</p>
+<p><span class="citation" data-cites="chen2019assessment">Chen et al. (<a href="#ref-chen2019assessment" role="doc-biblioref">2019</a>)</span></p>
+<p>Overall, feature aggregation, SnapATAC, and SnapATAC2 outperform latent semantic indexing-based methods. For datasets with complex cell-type structures, SnapATAC and SnapATAC2 are preferred. With large datasets, SnapATAC2 and ArchR are most scalable.</p>
+<p><span class="citation" data-cites="luo2024benchmarking">Luo et al. (<a href="#ref-luo2024benchmarking" role="doc-biblioref">2024</a>)</span></p>
+</section>
+<section id="tools" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="tools"><span class="header-section-number">5.5</span> Tools</h2>
 <p><img src="https://media.springernature.com/full/springer-static/esm/art%3A10.1038%2Fs41588-021-00790-6/MediaObjects/41588_2021_790_Fig5_ESM.jpg" class="img-fluid" alt="Comparison of toolkits"> <span class="citation" data-cites="granja2021archr">Granja et al. (<a href="#ref-granja2021archr" role="doc-biblioref">2021</a>)</span></p>
 <ul>
-<li><a href="https://stuartlab.org/signac/index.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Signac</a> (R)</li>
+<li><a href="https://stuartlab.org/signac/index.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Signac</a> (R) <span class="citation" data-cites="stuart2021single">Stuart et al. (<a href="#ref-stuart2021single" role="doc-biblioref">2021</a>)</span></li>
 <li><a href="https://github.com/GreenleafLab/ArchR"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> ArchR</a> (R) <span class="citation" data-cites="granja2021archr">Granja et al. (<a href="#ref-granja2021archr" role="doc-biblioref">2021</a>)</span></li>
-<li><a href="https://github.com/r3fang/SnapATAC"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SnapATAC</a> (R)</li>
+<li><a href="https://github.com/r3fang/SnapATAC"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SnapATAC</a> (R) <span class="citation" data-cites="fang2021comprehensive">Fang et al. (<a href="#ref-fang2021comprehensive" role="doc-biblioref">2021</a>)</span></li>
 <li><a href="https://github.com/aertslab/pycisTopic"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> pycisTopic</a> (Python)</li>
 <li><a href="https://github.com/ManchesterBioinference/Scasat"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Scasat</a> (Bash,Python)</li>
 </ul>
-<p><span class="citation" data-cites="stuart2021single">Stuart et al. (<a href="#ref-stuart2021single" role="doc-biblioref">2021</a>)</span></p>
 </section>
-<section id="tutorials" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="tutorials"><span class="header-section-number">5.5</span> Tutorials</h2>
+<section id="tutorials" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="tutorials"><span class="header-section-number">5.6</span> Tutorials</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=e2396GKFMRY"><i class="fa-brands fa-youtube" aria-label="youtube"></i> scATAC-Seq analysis in R using Signac by Sanbomics</a></li>
 <li><a href="https://www.youtube.com/watch?v=yEKZJVjc5DY"><i class="fa-brands fa-youtube" aria-label="youtube"></i> scATAC-Seq analysis in R using Signac by Bioinformagician</a></li>
@@ -338,11 +412,20 @@ Chen, H., Lareau, C., Andreani, T., Vinyard, M. E., Garcia, S. P., Clement, K., 
 <div id="ref-de2024systematic" class="csl-entry" role="listitem">
 De Rop, F. V., Hulselmans, G., Flerin, C., Soler-Vila, P., Rafels, A., Christiaens, V., González-Blas, C. B., Marchese, D., Caratu, G., Poovathingal, S., et al. (2024). Systematic benchmarking of single-cell ATAC-sequencing protocols. <em>Nature Biotechnology</em>, <em>42</em>(6), 916–926. <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-024-03356-x">https://genomebiology.biomedcentral.com/articles/10.1186/s13059-024-03356-x</a>
 </div>
+<div id="ref-fang2021comprehensive" class="csl-entry" role="listitem">
+Fang, R., Preissl, S., Li, Y., Hou, X., Lucero, J., Wang, X., Motamedi, A., Shiau, A. K., Zhou, X., Xie, F., et al. (2021). Comprehensive analysis of single cell ATAC-seq data with SnapATAC. <em>Nature Communications</em>, <em>12</em>(1), 1337. <a href="https://www.nature.com/articles/s41467-021-21583-9">https://www.nature.com/articles/s41467-021-21583-9</a>
+</div>
 <div id="ref-grandi2022chromatin" class="csl-entry" role="listitem">
 Grandi, F. C., Modi, H., Kampman, L., &amp; Corces, M. R. (2022). Chromatin accessibility profiling by ATAC-seq. <em>Nature Protocols</em>, <em>17</em>(6), 1518–1552. <a href="https://www.nature.com/articles/s41596-022-00692-9">https://www.nature.com/articles/s41596-022-00692-9</a>
 </div>
 <div id="ref-granja2021archr" class="csl-entry" role="listitem">
 Granja, J. M., Corces, M. R., Pierce, S. E., Bagdatli, S. T., Choudhry, H., Chang, H. Y., &amp; Greenleaf, W. J. (2021). ArchR is a scalable software package for integrative single-cell chromatin accessibility analysis. <em>Nature Genetics</em>, <em>53</em>(3), 403–411. <a href="https://www.nature.com/articles/s41588-021-00790-6">https://www.nature.com/articles/s41588-021-00790-6</a>
+</div>
+<div id="ref-luo2024benchmarking" class="csl-entry" role="listitem">
+Luo, S., Germain, P.-L., Robinson, M. D., &amp; Meyenn, F. von. (2024). Benchmarking computational methods for single-cell chromatin data analysis. <em>Genome Biology</em>, <em>25</em>(1), 225. <a href="https://link.springer.com/article/10.1186/s13059-024-03356-x">https://link.springer.com/article/10.1186/s13059-024-03356-x</a>
+</div>
+<div id="ref-shi2022fundamental" class="csl-entry" role="listitem">
+Shi, P., Nie, Y., Yang, J., Zhang, W., Tang, Z., &amp; Xu, J. (2022). Fundamental and practical approaches for single-cell ATAC-seq analysis. <em>Abiotech</em>, <em>3</em>(3), 212–223. <a href="https://link.springer.com/article/10.1007/s42994-022-00082-5">https://link.springer.com/article/10.1007/s42994-022-00082-5</a>
 </div>
 <div id="ref-stuart2021single" class="csl-entry" role="listitem">
 Stuart, T., Srivastava, A., Madad, S., Lareau, C. A., &amp; Satija, R. (2021). Single-cell chromatin state analysis with signac. <em>Nature Methods</em>, <em>18</em>(11), 1333–1341. <a href="https://www.nature.com/articles/s41592-021-01282-5">https://www.nature.com/articles/s41592-021-01282-5</a>
@@ -804,7 +887,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
