@@ -11,9 +11,46 @@ ATAC-seq provides a simple and scalable way to assay the regions of the genome t
 
 @grandi2022chromatin, @yan2020reads
 
-Our benchmarking results highlight SnapATAC, cisTopic, and Cusanovich2018 as the top performing scATAC-seq data analysis methods to perform clustering across all datasets and different metrics. Methods that preserve information at the peak level (cisTopic, Cusanovich2018, Scasat) or bin level (SnapATAC) generally outperform those that summarize accessible chromatin regions at the motif/k-mer level (chromVAR, BROCKMAN, SCRAT) or over the gene body (Cicero, Gene Scoring). In addition, methods that implement a dimensionality reduction step (BROCKMAN, cisTopic, Cusanovich2018, Scasat, SnapATAC) generally show advantages over the other methods without this important step. SnapATAC is the most scalable method; it was the only method capable of processing more than 80,000 cells. Cusanovich2018 is the method that best balances analysis performance and running time.
+- ATAC-Seq quantifies DNA and can be applied to frozen/fixed tisues where nuclei can be isolated
 
-@chen2019assessment
+![Wet-lab workflow](https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs42994-022-00082-5/MediaObjects/42994_2022_82_Fig1_HTML.png?as=webp)
+
+- Sample-level quality
+  - Cell viability must exceed 80%
+  - Accurate assessment of cell number
+- Library-level quality
+  - DNA fragment distribution (multiples of 200bp)
+
+![Data analysis workflow](https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs42994-022-00082-5/MediaObjects/42994_2022_82_Fig2_HTML.png?as=webp)
+
+- Counts QC
+  - Unique nuclear fragments (>1000)
+  - Fraction of transposition events in the peaks (>0.3)
+  - Transcription start sites (TSS) enrichment score (>5)
+  - Ratio of mononucleosomal to nucleosome-free fragments
+  - Apply filters separately for each sample
+- Generate features (peaks/target regions)
+  - Various methods exist
+- Dimensionality reduction
+- Cells with similar accessibility profiles are organized into clusters
+- There are two approaches to cell identity annotation: the cell type-specific peaks-based method and the scRNA-seq-based method
+  - Enhancers can be used to accurately annotate cell types as distal cis-regulatory elements specific to particular cell types and states.
+  - Cell type-specific gene expression is predicted based on their accessibility and used to annotate cells
+
+![Epigenomic profiling from scATAC-seq data.](https://media.springernature.com/full/springer-static/image/art%3A10.1007%2Fs42994-022-00082-5/MediaObjects/42994_2022_82_Fig3_HTML.png?as=webp)
+
+- Cell type-specific chromatin architecture
+  - Profiling the regulatory elements for each cluster/cell type
+  - Identifying differentially accessible regions between different clusters/cell types
+  - Uncovering key factors that contribute to the altered chromatin accessibility
+  - Linking promoter–enhancer interactions
+
+- Three main strategies are used to identify TFs of interest
+  - Searching for overrepresented motifs in cell type-specific accessible regions
+  - Comparing motif activity between cell types
+  - Detecting foot-printing for TF occupancy
+
+@shi2022fundamental
 
 ## Feature selection
 
@@ -29,17 +66,25 @@ Here, we evaluated the performance of five scATAC-seq annotation methods on both
 
 @wang2022benchmarking
 
+## Benchmarking tools
+
+Our benchmarking results highlight SnapATAC, cisTopic, and Cusanovich2018 as the top performing scATAC-seq data analysis methods to perform clustering across all datasets and different metrics. Methods that preserve information at the peak level (cisTopic, Cusanovich2018, Scasat) or bin level (SnapATAC) generally outperform those that summarize accessible chromatin regions at the motif/k-mer level (chromVAR, BROCKMAN, SCRAT) or over the gene body (Cicero, Gene Scoring). In addition, methods that implement a dimensionality reduction step (BROCKMAN, cisTopic, Cusanovich2018, Scasat, SnapATAC) generally show advantages over the other methods without this important step. SnapATAC is the most scalable method; it was the only method capable of processing more than 80,000 cells. Cusanovich2018 is the method that best balances analysis performance and running time.
+
+@chen2019assessment
+
+Overall, feature aggregation, SnapATAC, and SnapATAC2 outperform latent semantic indexing-based methods. For datasets with complex cell-type structures, SnapATAC and SnapATAC2 are preferred. With large datasets, SnapATAC2 and ArchR are most scalable.
+
+@luo2024benchmarking
+
 ## Tools
 
 ![Comparison of toolkits](https://media.springernature.com/full/springer-static/esm/art%3A10.1038%2Fs41588-021-00790-6/MediaObjects/41588_2021_790_Fig5_ESM.jpg) @granja2021archr
 
-- [{{< fa toolbox >}} Signac](https://stuartlab.org/signac/index.html) (R)
+- [{{< fa toolbox >}} Signac](https://stuartlab.org/signac/index.html) (R) @stuart2021single
 - [{{< fa toolbox >}} ArchR](https://github.com/GreenleafLab/ArchR) (R) @granja2021archr
-- [{{< fa toolbox >}} SnapATAC](https://github.com/r3fang/SnapATAC) (R)
+- [{{< fa toolbox >}} SnapATAC](https://github.com/r3fang/SnapATAC) (R) @fang2021comprehensive
 - [{{< fa toolbox >}} pycisTopic](https://github.com/aertslab/pycisTopic) (Python)
 - [{{< fa toolbox >}} Scasat](https://github.com/ManchesterBioinference/Scasat) (Bash,Python)
-
-@stuart2021single
 
 ## Tutorials
 
