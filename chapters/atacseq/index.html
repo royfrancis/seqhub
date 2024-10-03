@@ -157,7 +157,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">02-Oct-2024</p>
+        <p class="date">03-Oct-2024</p>
       </div>
     </div>
     
@@ -268,7 +268,11 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#atacseq-overview" id="toc-atacseq-overview" class="nav-link active" data-scroll-target="#atacseq-overview"><span class="header-section-number">5.1</span> Overview</a></li>
+  <li><a href="#atacseq-overview" id="toc-atacseq-overview" class="nav-link active" data-scroll-target="#atacseq-overview"><span class="header-section-number">5.1</span> Overview</a>
+  <ul class="collapse">
+  <li><a href="#bulk-atac-seq" id="toc-bulk-atac-seq" class="nav-link" data-scroll-target="#bulk-atac-seq"><span class="header-section-number">5.1.1</span> Bulk ATAC-Seq</a></li>
+  <li><a href="#single-cell-atac-seq" id="toc-single-cell-atac-seq" class="nav-link" data-scroll-target="#single-cell-atac-seq"><span class="header-section-number">5.1.2</span> Single-cell ATAC-Seq</a></li>
+  </ul></li>
   <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection"><span class="header-section-number">5.2</span> Feature selection</a></li>
   <li><a href="#celltyping" id="toc-celltyping" class="nav-link" data-scroll-target="#celltyping"><span class="header-section-number">5.3</span> Celltyping</a></li>
   <li><a href="#benchmarking-tools" id="toc-benchmarking-tools" class="nav-link" data-scroll-target="#benchmarking-tools"><span class="header-section-number">5.4</span> Benchmarking tools</a></li>
@@ -287,9 +291,14 @@ div.csl-indent {
 
 <section id="atacseq-overview" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="atacseq-overview"><span class="header-section-number">5.1</span> Overview</h2>
+<section id="bulk-atac-seq" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="bulk-atac-seq"><span class="header-section-number">5.1.1</span> Bulk ATAC-Seq</h3>
 <p><a href="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41596-022-00692-9/MediaObjects/41596_2022_692_Fig1_HTML.png?as=webp" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41596-022-00692-9/MediaObjects/41596_2022_692_Fig1_HTML.png?as=webp" class="img-fluid"></a></p>
 <p>ATAC-seq provides a simple and scalable way to assay the regions of the genome that are bound by TFs, and to compare how these landscapes change between particular contexts or perturbations. This is accomplished using in vitro transposition of sequencing adapters into native chromatin. Each unique transposition event, termed an ‘insertion’, marks a location in the genome where a Tn5 transposase dimer is able to access DNA and perform a cut-and-paste reaction. The transposase simultaneously fragments the DNA and inserts sequence handles that are then used for amplification during library preparation.</p>
 <p><span class="citation" data-cites="grandi2022chromatin">Grandi et al. (<a href="#ref-grandi2022chromatin" role="doc-biblioref">2022</a>)</span>, <span class="citation" data-cites="yan2020reads">Yan et al. (<a href="#ref-yan2020reads" role="doc-biblioref">2020</a>)</span></p>
+</section>
+<section id="single-cell-atac-seq" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="single-cell-atac-seq"><span class="header-section-number">5.1.2</span> Single-cell ATAC-Seq</h3>
 <ul>
 <li>ATAC-Seq quantifies DNA and can be applied to frozen/fixed tisues where nuclei can be isolated</li>
 </ul>
@@ -359,6 +368,9 @@ div.csl-indent {
 </ul></li>
 </ul>
 <p><span class="citation" data-cites="shi2022fundamental">Shi et al. (<a href="#ref-shi2022fundamental" role="doc-biblioref">2022</a>)</span></p>
+<p>Single-cell ATAC sequencing analysis: From data preprocessing to hypothesis generation</p>
+<p><span class="citation" data-cites="baek2020single">Baek &amp; Lee (<a href="#ref-baek2020single" role="doc-biblioref">2020</a>)</span></p>
+</section>
 </section>
 <section id="feature-selection" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="feature-selection"><span class="header-section-number">5.2</span> Feature selection</h2>
@@ -406,6 +418,9 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-baek2020single" class="csl-entry" role="listitem">
+Baek, S., &amp; Lee, I. (2020). Single-cell ATAC sequencing analysis: From data preprocessing to hypothesis generation. <em>Computational and Structural Biotechnology Journal</em>, <em>18</em>, 1429–1439. <a href="https://www.sciencedirect.com/science/article/pii/S2001037020303019">https://www.sciencedirect.com/science/article/pii/S2001037020303019</a>
+</div>
 <div id="ref-chen2019assessment" class="csl-entry" role="listitem">
 Chen, H., Lareau, C., Andreani, T., Vinyard, M. E., Garcia, S. P., Clement, K., Andrade-Navarro, M. A., Buenrostro, J. D., &amp; Pinello, L. (2019). Assessment of computational methods for the analysis of single-cell ATAC-seq data. <em>Genome Biology</em>, <em>20</em>(1), 1–25. <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1854-5">https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1854-5</a>
 </div>
@@ -887,7 +902,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
