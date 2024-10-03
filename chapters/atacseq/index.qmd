@@ -5,11 +5,15 @@ description: Quantifying chromatin accessibility
 
 ## Overview {#atacseq-overview}
 
+### Bulk ATAC-Seq
+
 ![](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41596-022-00692-9/MediaObjects/41596_2022_692_Fig1_HTML.png?as=webp)
 
 ATAC-seq provides a simple and scalable way to assay the regions of the genome that are bound by TFs, and to compare how these landscapes change between particular contexts or perturbations. This is accomplished using in vitro transposition of sequencing adapters into native chromatin. Each unique transposition event, termed an ‘insertion’, marks a location in the genome where a Tn5 transposase dimer is able to access DNA and perform a cut-and-paste reaction. The transposase simultaneously fragments the DNA and inserts sequence handles that are then used for amplification during library preparation.
 
 @grandi2022chromatin, @yan2020reads
+
+### Single-cell ATAC-Seq
 
 - ATAC-Seq quantifies DNA and can be applied to frozen/fixed tisues where nuclei can be isolated
 
@@ -51,6 +55,10 @@ ATAC-seq provides a simple and scalable way to assay the regions of the genome t
   - Detecting foot-printing for TF occupancy
 
 @shi2022fundamental
+
+Single-cell ATAC sequencing analysis: From data preprocessing to hypothesis generation
+
+@baek2020single
 
 ## Feature selection
 
