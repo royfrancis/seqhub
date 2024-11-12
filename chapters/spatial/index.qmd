@@ -42,50 +42,47 @@ In addition, the Visium slides come in different types depending on the assay an
 
 ### Frameworks
 
-- Seurat
-- Giotto
-- Squidpy
-- stLearn
-- [Semla](https://ludvigla.github.io/semla/)
+- [{{< fa toolbox >}} Seurat (R)](https://satijalab.org/seurat/)
+- [{{< fa toolbox >}} Giotto (R/Py)](https://rubd.github.io/Giotto_site/)
+- [{{< fa toolbox >}} Squidpy (Py)](https://github.com/scverse/squidpy)
+- [{{< fa toolbox >}} stLearn (Py)](https://stlearn.readthedocs.io/en/latest/)
+- [{{< fa toolbox >}} Semla](https://ludvigla.github.io/semla/)
 
 ### SVG
 
 Identification of spatially variable genes.
 
-- SpatialDE
-- SPARK
-- SOMDE
-- Sepal
-- scGCO
-- SpaGCN
-- SpatialLIBD
-- stLearn
+- {{< fa toolbox >}} SpatialDE
+- {{< fa toolbox >}} SPARK
+- {{< fa toolbox >}} SOMDE
+- {{< fa toolbox >}} Sepal
+- {{< fa toolbox >}} scGCO
+- {{< fa toolbox >}} SpaGCN
+- {{< fa toolbox >}} SpatialLIBD
+- {{< fa toolbox >}} stLearn
 
 ### Spatial deconvolution
 
-- STdeconvolve
+- [{{< fa toolbox >}} STdeconvolve (R)](https://github.com/JEFworks-Lab/STdeconvolve)
   - Reference-free
-  - https://github.com/JEFworks-Lab/STdeconvolve
 
-- SpaceXR
+- [{{< fa toolbox >}} RCTD SpaceXR (R)](https://github.com/dmcable/spacexr)
   - Needs reference
   - Runs into error
-  - https://github.com/dmcable/spacexr
 
-- SPOTlight
+- [{{< fa toolbox >}} SPOTlight (R)](https://github.com/MarcElosua/SPOTlight)
   - Uses reference
-  - https://github.com/MarcElosua/SPOTlight
 
-- SpatialDWLS
-- RCTD
-- DSTG
+- [{{< fa toolbox >}} Giotto SpatialDWLS (R)](https://github.com/drieslab/Giotto)
+- [{{< fa toolbox >}} DSTG (Py)](https://github.com/Su-informatics-lab/DSTG)
+- [{{< fa toolbox >}} SpatialDDLS (R)](https://github.com/diegommcc/SpatialDDLS)
 
 ### Cell interaction
 
 Given the relative stability of cellular locations, spatial transcriptomics allows us to reveal cell–cell interactions (CCI),
 also referred to as cell-cell communications (CCC), with fewer false positives than similar analysis with scRNA-seq data.
 
-- SpaOTsc
+- {{< fa toolbox >}} SpaOTsc
 
 ## Datasets
 
