@@ -27,13 +27,15 @@ Following the first encounter, various antigens go through the process of phagoc
 
 @primorac2022adaptive
 
+![Detailed lineage tree showing development of various blood cells. Image source: [Beckman Coulter](https://media.beckmancoulter.com/-/media/diagnostics/products/hematology/dxh-900/docs/pdfs/hematology-cell-development-poster-glb-po-86520-en.pdf?rev=36ed01a997c94effbe7edccc6bd4b708).](assets/haematology.webp){#fig-blood-cell-lineage}
+
 ::: {#fig-cells-immune layout-ncol=2}
 
 ![](assets/kavathas-2019.webp)
 
 ![](assets/kavathas-2019-2.webp)
 
-Cells of the immune system.
+Cells of the immune system showing a simplified lineage.
 :::
 
 @Kavathas2019, @LEWIS201919
@@ -122,7 +124,7 @@ Source: Kuby immunology
 
 ![](assets/antigen-receptor-loci.webp){group="vdj"}
 
-Structure of VDJ locus and corresponding region on an antibody. Image references: [1](https://bsse.ethz.ch/lsi/research/systems-immunology.html), [2](hhttps://doi.org/10.1128/microbiolspec.aid-0017-2014), [3](https://digitalworldbiology.com/blog/immunoprofiling-how-it-works)
+Fig 1 and 2 shows BCR/antibody structure and the V(D)J locus. Fig 3 shows the genomic structure of BCR and TCR chains. Image references: [1](https://bsse.ethz.ch/lsi/research/systems-immunology.html), [2](hhttps://doi.org/10.1128/microbiolspec.aid-0017-2014), [3](https://digitalworldbiology.com/blog/immunoprofiling-how-it-works)
 
 :::
 
