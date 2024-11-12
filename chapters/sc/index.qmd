@@ -228,6 +228,28 @@ Comparison of Trajectory inference methods.
 
 - [{{< fa toolbox >}} Tempora](https://github.com/BaderLab/Tempora) Trajectory inference for time-series data
 
+## Metacells
+
+![](https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/0950e5e3-eaf9-4448-9016-290de5c5ecc9/assets/graphic/44320_2024_45_fig1_html.png)
+
+Metacells are defined as a partition of single-cell data into disjoint homogeneous groups of highly similar cells followed by aggregation of their profiles (Fig. 1). This concept relies on the assumption that most of the variability within metacells corresponds to technical noise and not to biologically relevant heterogeneity. As such, metacells aim at removing some of the noise while preserving the biological information of the single-cell data and improving interpretability.
+
+@bilous2024building
+
+- [{{< fa toolbox >}} metacell](https://tanaylab.github.io/metacell/index.html) (R) 
+- [{{< fa toolbox >}} metacells](https://github.com/tanaylab/metacells/tree/master) (Python)
+- [{{< fa toolbox >}} SuperCell](https://github.com/GfellerLab/SuperCell) (R)
+- [{{< fa toolbox >}} SEACells](https://github.com/dpeerlab/SEACells) (Python)
+- [{{< fa toolbox >}} MATK: Meta Cell Analysis Toolkit](https://github.com/GfellerLab/MetacellAnalysisToolkit) (Bash)
+
+Gfeller Lab [tutorial](https://gfellerlab.github.io/MetacellAnalysisTutorial/index.html)
+
+## Cell communication
+
+Cell-cell communication and interaction.
+
+Review of tools @almet2021landscape
+
 ## RNA velocity
 
 ## Databases
