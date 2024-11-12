@@ -154,12 +154,6 @@ div.csl-indent {
   <div class="quarto-title-meta">
 
       
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">03-Oct-2024</p>
-      </div>
-    </div>
     
       
     </div>
@@ -286,14 +280,16 @@ div.csl-indent {
   <li><a href="#differential-expression" id="toc-differential-expression" class="nav-link" data-scroll-target="#differential-expression"><span class="header-section-number">2.6</span> Differential expression</a></li>
   <li><a href="#data-integration" id="toc-data-integration" class="nav-link" data-scroll-target="#data-integration"><span class="header-section-number">2.7</span> Data Integration</a></li>
   <li><a href="#trajectory" id="toc-trajectory" class="nav-link" data-scroll-target="#trajectory"><span class="header-section-number">2.8</span> Trajectory</a></li>
-  <li><a href="#rna-velocity" id="toc-rna-velocity" class="nav-link" data-scroll-target="#rna-velocity"><span class="header-section-number">2.9</span> RNA velocity</a></li>
-  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="header-section-number">2.10</span> Databases</a>
+  <li><a href="#metacells" id="toc-metacells" class="nav-link" data-scroll-target="#metacells"><span class="header-section-number">2.9</span> Metacells</a></li>
+  <li><a href="#cell-communication" id="toc-cell-communication" class="nav-link" data-scroll-target="#cell-communication"><span class="header-section-number">2.10</span> Cell communication</a></li>
+  <li><a href="#rna-velocity" id="toc-rna-velocity" class="nav-link" data-scroll-target="#rna-velocity"><span class="header-section-number">2.11</span> RNA velocity</a></li>
+  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="header-section-number">2.12</span> Databases</a>
   <ul class="collapse">
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2.10.1</span> Data</a></li>
-  <li><a href="#markers" id="toc-markers" class="nav-link" data-scroll-target="#markers"><span class="header-section-number">2.10.2</span> Markers</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2.12.1</span> Data</a></li>
+  <li><a href="#markers" id="toc-markers" class="nav-link" data-scroll-target="#markers"><span class="header-section-number">2.12.2</span> Markers</a></li>
   </ul></li>
-  <li><a href="#interactive-visualisation-frameworks" id="toc-interactive-visualisation-frameworks" class="nav-link" data-scroll-target="#interactive-visualisation-frameworks"><span class="header-section-number">2.11</span> Interactive visualisation frameworks</a></li>
-  <li><a href="#learning" id="toc-learning" class="nav-link" data-scroll-target="#learning"><span class="header-section-number">2.12</span> Learning</a></li>
+  <li><a href="#interactive-visualisation-frameworks" id="toc-interactive-visualisation-frameworks" class="nav-link" data-scroll-target="#interactive-visualisation-frameworks"><span class="header-section-number">2.13</span> Interactive visualisation frameworks</a></li>
+  <li><a href="#learning" id="toc-learning" class="nav-link" data-scroll-target="#learning"><span class="header-section-number">2.14</span> Learning</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -601,13 +597,32 @@ div.csl-indent {
 <li><a href="https://github.com/BaderLab/Tempora"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Tempora</a> Trajectory inference for time-series data</li>
 </ul>
 </section>
-<section id="rna-velocity" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="rna-velocity"><span class="header-section-number">2.9</span> RNA velocity</h2>
+<section id="metacells" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="metacells"><span class="header-section-number">2.9</span> Metacells</h2>
+<p><a href="https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/0950e5e3-eaf9-4448-9016-290de5c5ecc9/assets/graphic/44320_2024_45_fig1_html.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/0950e5e3-eaf9-4448-9016-290de5c5ecc9/assets/graphic/44320_2024_45_fig1_html.png" class="img-fluid"></a></p>
+<p>Metacells are defined as a partition of single-cell data into disjoint homogeneous groups of highly similar cells followed by aggregation of their profiles (Fig. 1). This concept relies on the assumption that most of the variability within metacells corresponds to technical noise and not to biologically relevant heterogeneity. As such, metacells aim at removing some of the noise while preserving the biological information of the single-cell data and improving interpretability.</p>
+<p><span class="citation" data-cites="bilous2024building">Bilous et al. (<a href="#ref-bilous2024building" role="doc-biblioref">2024</a>)</span></p>
+<ul>
+<li><a href="https://tanaylab.github.io/metacell/index.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> metacell</a> (R)</li>
+<li><a href="https://github.com/tanaylab/metacells/tree/master"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> metacells</a> (Python)</li>
+<li><a href="https://github.com/GfellerLab/SuperCell"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SuperCell</a> (R)</li>
+<li><a href="https://github.com/dpeerlab/SEACells"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SEACells</a> (Python)</li>
+<li><a href="https://github.com/GfellerLab/MetacellAnalysisToolkit"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> MATK: Meta Cell Analysis Toolkit</a> (Bash)</li>
+</ul>
+<p>Gfeller Lab <a href="https://gfellerlab.github.io/MetacellAnalysisTutorial/index.html">tutorial</a></p>
 </section>
-<section id="databases" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="databases"><span class="header-section-number">2.10</span> Databases</h2>
-<section id="data" class="level3" data-number="2.10.1">
-<h3 data-number="2.10.1" class="anchored" data-anchor-id="data"><span class="header-section-number">2.10.1</span> Data</h3>
+<section id="cell-communication" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="cell-communication"><span class="header-section-number">2.10</span> Cell communication</h2>
+<p>Cell-cell communication and interaction.</p>
+<p>Review of tools <span class="citation" data-cites="almet2021landscape">Almet et al. (<a href="#ref-almet2021landscape" role="doc-biblioref">2021</a>)</span></p>
+</section>
+<section id="rna-velocity" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="rna-velocity"><span class="header-section-number">2.11</span> RNA velocity</h2>
+</section>
+<section id="databases" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="databases"><span class="header-section-number">2.12</span> Databases</h2>
+<section id="data" class="level3" data-number="2.12.1">
+<h3 data-number="2.12.1" class="anchored" data-anchor-id="data"><span class="header-section-number">2.12.1</span> Data</h3>
 <p>Single-cell data repositiories.</p>
 <ul>
 <li><a href="https://bioinfo.uth.edu/scrnaseqdb/">scRNASeqDB</a></li>
@@ -621,8 +636,8 @@ div.csl-indent {
 <li><a href="https://bioconductor.org/packages/release/data/experiment/vignettes/TENxVisiumData/inst/doc/vignette.html">R TENxVisiumData</a></li>
 </ul>
 </section>
-<section id="markers" class="level3" data-number="2.10.2">
-<h3 data-number="2.10.2" class="anchored" data-anchor-id="markers"><span class="header-section-number">2.10.2</span> Markers</h3>
+<section id="markers" class="level3" data-number="2.12.2">
+<h3 data-number="2.12.2" class="anchored" data-anchor-id="markers"><span class="header-section-number">2.12.2</span> Markers</h3>
 <p>Curated list of marker genes by organism, tissue and cell type.</p>
 <ul>
 <li><a href="https://panglaodb.se/">PanglaoDB</a></li>
@@ -630,8 +645,8 @@ div.csl-indent {
 </ul>
 </section>
 </section>
-<section id="interactive-visualisation-frameworks" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="interactive-visualisation-frameworks"><span class="header-section-number">2.11</span> Interactive visualisation frameworks</h2>
+<section id="interactive-visualisation-frameworks" class="level2" data-number="2.13">
+<h2 data-number="2.13" class="anchored" data-anchor-id="interactive-visualisation-frameworks"><span class="header-section-number">2.13</span> Interactive visualisation frameworks</h2>
 <ul>
 <li><a href="https://github.com/SGDDNB/ShinyCell"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> ShinyCell</a>(R Shiny)</li>
 <li><a href="https://github.com/romanhaa/Cerebro"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Cerebro</a>(R Shiny)</li>
@@ -641,13 +656,13 @@ div.csl-indent {
 <li><a href="https://www.10xgenomics.com/support/software/loupe-browser/latest"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Loupe</a> 10X Loupe browser for CellRanger/Spaceranger outputs</li>
 <li><a href="https://github.com/10XGenomics/loupeR"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> LoupeR</a> Seurat to Loupe format. Supports only GEX assay.</li>
 </ul>
-<p><a href="https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png" class="img-fluid"></a></p>
+<p><a href="https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="https://github.com/SGDDNB/ShinyCell/raw/master/images/comparison.png" class="img-fluid"></a></p>
 <p><span class="citation" data-cites="ouyang2021shinycell">Ouyang et al. (<a href="#ref-ouyang2021shinycell" role="doc-biblioref">2021</a>)</span></p>
-<p><a href="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/bin/lqaa052tbl1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/bin/lqaa052tbl1.jpg" class="img-fluid"></a></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/bin/lqaa052tbl1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/bin/lqaa052tbl1.jpg" class="img-fluid"></a></p>
 <p><span class="citation" data-cites="cakir2020comparison">Cakir et al. (<a href="#ref-cakir2020comparison" role="doc-biblioref">2020</a>)</span></p>
 </section>
-<section id="learning" class="level2" data-number="2.12">
-<h2 data-number="2.12" class="anchored" data-anchor-id="learning"><span class="header-section-number">2.12</span> Learning</h2>
+<section id="learning" class="level2" data-number="2.14">
+<h2 data-number="2.14" class="anchored" data-anchor-id="learning"><span class="header-section-number">2.14</span> Learning</h2>
 <ul>
 <li><a href="https://hbctraining.github.io/scRNA-seq_online/schedule/">HBC Training</a></li>
 <li><a href="https://nbisweden.github.io/workshop-scRNAseq">NBIS workshop</a></li>
@@ -663,6 +678,9 @@ div.csl-indent {
 <div id="ref-abdelaal2019comparison" class="csl-entry" role="listitem">
 Abdelaal, T., Michielsen, L., Cats, D., Hoogduin, D., Mei, H., Reinders, M. J., &amp; Mahfouz, A. (2019). A comparison of automatic cell identification methods for single-cell RNA sequencing data. <em>Genome Biology</em>, <em>20</em>, 1–19. <a href="https://link.springer.com/article/10.1186/s13059-019-1795-z">https://link.springer.com/article/10.1186/s13059-019-1795-z</a>
 </div>
+<div id="ref-almet2021landscape" class="csl-entry" role="listitem">
+Almet, A. A., Cang, Z., Jin, S., &amp; Nie, Q. (2021). The landscape of cell–cell communication through single-cell transcriptomics. <em>Current Opinion in Systems Biology</em>, <em>26</em>, 12–23. <a href="https://www.sciencedirect.com/science/article/pii/S2452310021000081">https://www.sciencedirect.com/science/article/pii/S2452310021000081</a>
+</div>
 <div id="ref-andreatta2024semi" class="csl-entry" role="listitem">
 Andreatta, M., Hérault, L., Gueguen, P., Gfeller, D., Berenstein, A. J., &amp; Carmona, S. J. (2024). Semi-supervised integration of single-cell transcriptomics data. <em>Nature Communications</em>, <em>15</em>(1), 872. <a href="https://www.nature.com/articles/s41467-024-45240-z">https://www.nature.com/articles/s41467-024-45240-z</a>
 </div>
@@ -671,6 +689,9 @@ Argelaguet, R., Cuomo, A. S., Stegle, O., &amp; Marioni, J. C. (2021). Computati
 </div>
 <div id="ref-baran2018experimental" class="csl-entry" role="listitem">
 Baran-Gale, J., Chandra, T., &amp; Kirschner, K. (2018). Experimental design for single-cell RNA sequencing. <em>Briefings in Functional Genomics</em>, <em>17</em>(4), 233–239.
+</div>
+<div id="ref-bilous2024building" class="csl-entry" role="listitem">
+Bilous, M., Hérault, L., Gabriel, A. A., Teleman, M., &amp; Gfeller, D. (2024). Building and analyzing metacells in single-cell genomics data. <em>Molecular Systems Biology</em>, 1–23. <a href="https://doi.org/10.1038/s44320-024-00045-6">https://doi.org/10.1038/s44320-024-00045-6</a>
 </div>
 <div id="ref-cakir2020comparison" class="csl-entry" role="listitem">
 Cakir, B., Prete, M., Huang, N., Van Dongen, S., Pir, P., &amp; Kiselev, V. Y. (2020). Comparison of visualization tools for single-cell RNAseq data. <em>NAR Genomics and Bioinformatics</em>, <em>2</em>(3), lqaa052.
@@ -1171,7 +1192,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
