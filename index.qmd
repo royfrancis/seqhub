@@ -1,5 +1,5 @@
 ---
-description: "A knowledgebase for RNA-Seq experiments and analyses."
+description: "A knowledgebase for RNA-Seq experiments and analyses"
 format:
   html:
     page-layout: full
