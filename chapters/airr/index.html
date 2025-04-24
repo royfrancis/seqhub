@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,10 +59,10 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-39489dca9ddd9247a1c53ef4381789db.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-8e48e98f8fe796fa821c11eda57d2af4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -286,7 +286,9 @@ div.csl-indent {
   </ul></li>
   <li><a href="#tools" id="toc-tools" class="nav-link" data-scroll-target="#tools"><span class="header-section-number">4.7</span> Tools</a>
   <ul class="collapse">
-  <li><a href="#immunarch" id="toc-immunarch" class="nav-link" data-scroll-target="#immunarch"><span class="header-section-number">4.7.1</span> Immunarch</a></li>
+  <li><a href="#general" id="toc-general" class="nav-link" data-scroll-target="#general"><span class="header-section-number">4.7.1</span> General</a></li>
+  <li><a href="#reads-to-vdj-data" id="toc-reads-to-vdj-data" class="nav-link" data-scroll-target="#reads-to-vdj-data"><span class="header-section-number">4.7.2</span> Reads to VDJ data</a></li>
+  <li><a href="#downstream-analyses" id="toc-downstream-analyses" class="nav-link" data-scroll-target="#downstream-analyses"><span class="header-section-number">4.7.3</span> Downstream analyses</a></li>
   </ul></li>
   <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="header-section-number">4.8</span> Databases</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
@@ -729,7 +731,8 @@ div.csl-indent {
 <p>Tools related to VDJ analyses.</p>
 <p><span class="large"><a href="https://github.com/slowkow/awesome-vdj">Collection of VDJ analyses tools</a></span></p>
 <p>Overview of methods for TCR repertoire analysis <span class="citation" data-cites="rosati2017overview">Rosati et al. (<a href="#ref-rosati2017overview" role="doc-biblioref">2017</a>)</span> Benchmarking of BCR reconstruction from single-cell tools <span class="citation" data-cites="andreani2022benchmarking">Andreani et al. (<a href="#ref-andreani2022benchmarking" role="doc-biblioref">2022</a>)</span> Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequences <span class="citation" data-cites="smakaj2020benchmarking">Smakaj et al. (<a href="#ref-smakaj2020benchmarking" role="doc-biblioref">2020</a>)</span></p>
-<p><strong>General</strong></p>
+<section id="general" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="general"><span class="header-section-number">4.7.1</span> General</h3>
 <ul>
 <li><a href="https://10xgenomics.github.io/enclone/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Enclone (10X, Shell)</a> SHM-aware clonotyping, phylogenetic/lineage analysis, multiple sequence alignment</li>
 <li><a href="https://immcantation.readthedocs.io/en/stable/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Immcantation (Shell)</a> QC, UMI processing, clonal clustering, germline reconstruction, lineage topology, repertoire diversity, mutation profiling</li>
@@ -748,7 +751,9 @@ div.csl-indent {
 <ul>
 <li><a href="https://immuneml.uio.no/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> ImmuneML (Shell/GUI)</a> Ecosystem for machine learning analysis of adaptive immune receptor repertoires (<span class="citation" data-cites="pavlovic2021immuneml">Pavlović et al. (<a href="#ref-pavlovic2021immuneml" role="doc-biblioref">2021</a>)</span>)</li>
 </ul>
-<p><strong>Reads to VDJ data</strong></p>
+</section>
+<section id="reads-to-vdj-data" class="level3" data-number="4.7.2">
+<h3 data-number="4.7.2" class="anchored" data-anchor-id="reads-to-vdj-data"><span class="header-section-number">4.7.2</span> Reads to VDJ data</h3>
 <ul>
 <li><a href="https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/vdj"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> CellRanger (Shell)</a></li>
 <li><a href="https://bitbucket.org/kleinstein/changeo/src/master/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> ChangeO (Shell)</a> Processing the output of V(D)J alignment tools, assigning clonal clusters to immunoglobulin (Ig) sequences, and reconstructing germline sequences (Part of immcantation)</li>
@@ -766,8 +771,62 @@ div.csl-indent {
 </div>
 <ul>
 <li><a href="https://github.com/liulab-dfci/TRUST4"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> TRUST4 (Shell)</a> TCR and BCR assembly from RNA-seq data</li>
+<li><a href="https://github.com/psathyrella/partis"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Partis (Shell)</a> HMM-based framework for B- and T-cell receptor sequence annotation, simulation, clonal family and germline inference, and affinity prediction.</li>
 </ul>
-<p><strong>Downstream analyses</strong></p>
+<section id="clonal-family-inference" class="level4" data-number="4.7.2.1">
+<h4 data-number="4.7.2.1" class="anchored" data-anchor-id="clonal-family-inference"><span class="header-section-number">4.7.2.1</span> Clonal family inference</h4>
+<div id="fig-voss2024" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-voss2024-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b70a/11160721/57f203368251/nihpp-2024.05.29.596491v1-f0001.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="A) Development of B-cell receptors and their sequences. In mature naive B cells, during VDJ-recombination N and P nucleotides are added in between the junctions leading to more junctional diversity. Interaction with antigen causes it to proliferate into more clones undergoing somatic hypermutations. B) Overview of the methods and their requirements. We used two types of methods: methods dependent on a reference genome and methods independent of a reference genome. For the independent method, mPTP, we first build a phylogenetic tree of all sequences with RAxML-NG. mPTP then fits two Poisson Processes, one for speciation and one for coalescence, to the data and groups the clones accordingly. The reference-genome-dependent methods first align the sequences to a reference genome to find the used V and J genes. This alignment is either done by the methods themselves (MiXCR) or done through IMGT. MiXCR delimits the clones by the CDR3 region, accounting for PCR and sequencing errors. Change-O delimits the clones by a common V and J gene and an identical CDR3 region. SCOPer uses the common V and J groups provided by Change-O. The hierarchical method then further groups by 85% junction region similarity. The spectral method calculates an adaptive threshold for junction region similarity."><img src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b70a/11160721/57f203368251/nihpp-2024.05.29.596491v1-f0001.jpg" class="img-fluid figure-img"></a></p>
+<figcaption>A) Development of B-cell receptors and their sequences. In mature naive B cells, during VDJ-recombination N and P nucleotides are added in between the junctions leading to more junctional diversity. Interaction with antigen causes it to proliferate into more clones undergoing somatic hypermutations. B) Overview of the methods and their requirements. We used two types of methods: methods dependent on a reference genome and methods independent of a reference genome. For the independent method, mPTP, we first build a phylogenetic tree of all sequences with RAxML-NG. mPTP then fits two Poisson Processes, one for speciation and one for coalescence, to the data and groups the clones accordingly. The reference-genome-dependent methods first align the sequences to a reference genome to find the used V and J genes. This alignment is either done by the methods themselves (MiXCR) or done through IMGT. MiXCR delimits the clones by the CDR3 region, accounting for PCR and sequencing errors. Change-O delimits the clones by a common V and J gene and an identical CDR3 region. SCOPer uses the common V and J groups provided by Change-O. The hierarchical method then further groups by 85% junction region similarity. The spectral method calculates an adaptive threshold for junction region similarity.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="assets/voss2024-tools.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Comparison of tools and features."><img src="assets/voss2024-tools.webp" class="img-fluid figure-img"></a></p>
+<figcaption>Comparison of tools and features.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b70a/11160721/495ccec4d9c0/nihpp-2024.05.29.596491v1-f0002.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="Number of Clonal Families (log scale) discerned by the different tools."><img src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b70a/11160721/495ccec4d9c0/nihpp-2024.05.29.596491v1-f0002.jpg" class="img-fluid figure-img"></a></p>
+<figcaption>Number of Clonal Families (log scale) discerned by the different tools.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-voss2024-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<strong>Fig</strong>&nbsp;4.14<strong>: </strong> Figures from the article.
+</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>Our comparative analysis of four state-of-the-art tools revealed SCOPer-H as the optimal choice for delimiting B-cell clones in organisms with reliable reference genomes, such as humans and mice. SCOPer-H effectively accounts for both VDJ-recombination and somatic hypermutation (SHM) utilizing a reference genome, making it well-suited for model organisms.</p>
+</blockquote>
+<p><span class="citation" data-cites="voss2024evaluating">Voss et al. (<a href="#ref-voss2024evaluating" role="doc-biblioref">2024</a>)</span></p>
+<ul>
+<li>Most CF reconstruction methods perform comparably, with SCOPer (A7, A8) producing distinctly fewer but larger CFs due to its specific similarity measure.</li>
+<li>Simple methods like A4 (setting a relative similarity threshold) perform as well as more complex ones like A9 (partis). Simple methods like A4 (setting a relative similarity threshold) perform as well as more complex ones like A9 (partis).</li>
+<li>Change-O (A6) seems to perform little better compared to the other methods and is always in agreement with the ground truth.</li>
+<li>Approaches A1 (unique junction sequences) and A2 (subclones) surprisingly align closely with other methods in experimental data but not in simulations.</li>
+<li>The alignment-free method (A10) tends to overestimate the number of CFs, particularly noted in single cell datasets.</li>
+<li>Change-O (A6) generally aligns with ground truth but does not surpass other methods in LC (light chain) concordance analysis.</li>
+</ul>
+<p><span class="citation" data-cites="balashova2024systematic">Balashova et al. (<a href="#ref-balashova2024systematic" role="doc-biblioref">2024</a>)</span></p>
+</section>
+</section>
+<section id="downstream-analyses" class="level3" data-number="4.7.3">
+<h3 data-number="4.7.3" class="anchored" data-anchor-id="downstream-analyses"><span class="header-section-number">4.7.3</span> Downstream analyses</h3>
 <ul>
 <li><a href="https://github.com/mikessh/vdjtools"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> vdjtools (Java)</a></li>
 <li><a href="https://github.com/phbradley/conga"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> conga (Python)</a></li>
@@ -783,8 +842,8 @@ div.csl-indent {
 <li><a href="https://mlizhangx.github.io/Network-Analysis-for-Repertoire-Sequencing-/articles/NAIR.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> NAIR (R)</a> Network Analysis of Immune Repertoire</li>
 <li><a href="https://github.com/almaan/star-repair"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> star-repair (Bash)</a> Pair heavy and light chains in visium spots</li>
 </ul>
-<section id="immunarch" class="level3" data-number="4.7.1">
-<h3 data-number="4.7.1" class="anchored" data-anchor-id="immunarch"><span class="header-section-number">4.7.1</span> Immunarch</h3>
+<section id="immunarch" class="level4" data-number="4.7.3.1">
+<h4 data-number="4.7.3.1" class="anchored" data-anchor-id="immunarch"><span class="header-section-number">4.7.3.1</span> Immunarch</h4>
 <ul>
 <li>Exploratory data analyses
 <ul>
@@ -816,6 +875,7 @@ div.csl-indent {
 <p><a href="https://www.youtube.com/watch?v=s4WvdS47CD4"><i class="fa-brands fa-youtube" aria-label="youtube"></i> AIRR analyses using immunarch</a></p>
 </section>
 </section>
+</section>
 <section id="databases" class="level2" data-number="4.8">
 <h2 data-number="4.8" class="anchored" data-anchor-id="databases"><span class="header-section-number">4.8</span> Databases</h2>
 <ul>
@@ -831,6 +891,9 @@ div.csl-indent {
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
 <div id="ref-andreani2022benchmarking" class="csl-entry" role="listitem">
 Andreani, T., Slot, L. M., Gabillard, S., Struebing, C., Reimertz, C., Yaligara, V., Bakker, A. M., Olfati-Saber, R., Toes, R. E., Scherer, H. U., et al. (2022). Benchmarking computational methods for b-cell receptor reconstruction from single-cell RNA-seq data. <em>NAR Genomics and Bioinformatics</em>, <em>4</em>(3), lqac049. <a href="https://academic.oup.com/nargab/article/4/3/lqac049/6643029">https://academic.oup.com/nargab/article/4/3/lqac049/6643029</a>
+</div>
+<div id="ref-balashova2024systematic" class="csl-entry" role="listitem">
+Balashova, D., Schaik, B. D. van, Stratigopoulou, M., Guikema, J. E., Caniels, T. G., Claireaux, M., Gils, M. J. van, Musters, A., Anang, D. C., Vries, N. de, et al. (2024). Systematic evaluation of b-cell clonal family inference approaches. <em>BMC Immunology</em>, <em>25</em>(1), 13. <a href="https://bmcimmunol.biomedcentral.com/articles/10.1186/s12865-024-00600-8">https://bmcimmunol.biomedcentral.com/articles/10.1186/s12865-024-00600-8</a>
 </div>
 <div id="ref-barennes2021benchmarking" class="csl-entry" role="listitem">
 Barennes, P., Quiniou, V., Shugay, M., Egorov, E. S., Davydov, A. N., Chudakov, D. M., Uddin, I., Ismail, M., Oakes, T., Chain, B., et al. (2021). Benchmarking of t cell receptor repertoire profiling methods reveals large systematic biases. <em>Nature Biotechnology</em>, <em>39</em>(2), 236–245. <a href="https://www.nature.com/articles/s41587-020-0656-3">https://www.nature.com/articles/s41587-020-0656-3</a>
@@ -885,6 +948,9 @@ Smakaj, E., Babrak, L., Ohlin, M., Shugay, M., Briney, B., Tosoni, D., Galli, C.
 </div>
 <div id="ref-vander2018airr" class="csl-entry" role="listitem">
 Vander Heiden, J. A., Marquez, S., Marthandan, N., Bukhari, S. A. C., Busse, C. E., Corrie, B., Hershberg, U., Kleinstein, S. H., Matsen IV, F. A., Ralph, D. K., et al. (2018). AIRR community standardized representations for annotated immune repertoires. <em>Frontiers in Immunology</em>, <em>9</em>, 2206. <a href="https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2018.02206/full">https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2018.02206/full</a>
+</div>
+<div id="ref-voss2024evaluating" class="csl-entry" role="listitem">
+Voss, K., Kaur, K. M., Banerjee, R., Breden, F., &amp; Pennell, M. (2024). Evaluating methods for b-cell clonal family assignment. <em>bioRxiv</em>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11160721/">https://pmc.ncbi.nlm.nih.gov/articles/PMC11160721/</a>
 </div>
 <div id="ref-yaari2015practical" class="csl-entry" role="listitem">
 Yaari, G., &amp; Kleinstein, S. H. (2015). Practical guidelines for b-cell receptor repertoire sequencing analysis. <em>Genome Medicine</em>, <em>7</em>, 1–14. <a href="https://link.springer.com/article/10.1186/s13073-015-0243-2">https://link.springer.com/article/10.1186/s13073-015-0243-2</a>
@@ -978,8 +1044,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1090,7 +1154,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1332,18 +1395,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>2024 Roy Francis</p>
+<p>2025 Roy Francis</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Published with <a href="https://quarto.org/">Quarto</a> v1.5.56
+<p>Published with <a href="https://quarto.org/">Quarto</a> v1.6.43
 </p>
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

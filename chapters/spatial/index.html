@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,10 +59,10 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-39489dca9ddd9247a1c53ef4381789db.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-8e48e98f8fe796fa821c11eda57d2af4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -425,8 +425,9 @@ div.csl-indent {
 <li>Uses reference</li>
 </ul></li>
 <li><a href="https://github.com/drieslab/Giotto"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Giotto SpatialDWLS (R)</a></li>
-<li><a href="https://github.com/Su-informatics-lab/DSTG"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> DSTG (Py)</a></li>
 <li><a href="https://github.com/diegommcc/SpatialDDLS"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SpatialDDLS (R)</a></li>
+<li><a href="https://github.com/Su-informatics-lab/DSTG"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> DSTG (Py)</a></li>
+<li><a href="https://github.com/broadinstitute/Tangram"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Tangram (Py)</a></li>
 </ul>
 </section>
 <section id="cell-interaction" class="level3" data-number="3.3.4">
@@ -447,6 +448,7 @@ div.csl-indent {
 <h2 data-number="3.5" class="anchored" data-anchor-id="resources"><span class="header-section-number">3.5</span> Resources</h2>
 <ul>
 <li><a href="https://lmweber.org/OSTA-book/">OSTA Book</a></li>
+<li><a href="https://elixir-europe-training.github.io/ELIXIR-SCO-spatial-omics/schedule.html">Elixir Spatial Omics Data Analysis Workshop</a></li>
 </ul>
 </section>
 <section id="references" class="level2 unnumbered">
@@ -549,8 +551,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -661,7 +661,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -903,18 +902,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>2024 Roy Francis</p>
+<p>2025 Roy Francis</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Published with <a href="https://quarto.org/">Quarto</a> v1.5.56
+<p>Published with <a href="https://quarto.org/">Quarto</a> v1.6.43
 </p>
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
