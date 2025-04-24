@@ -74,6 +74,17 @@ Here, we evaluated the performance of five scATAC-seq annotation methods on both
 
 @wang2022benchmarking
 
+## Differentially accessible regions
+
+@gontarz2020comparison
+
+- Best practices for scATAC-Seq
+  - Wilcoxon rank-sum test was the most widely used for DA
+  - Statistical methods that aggregated individual cells to form ‘pseudobulks’ generally yielded better DA results mainly due to reduced false discovery rates
+  - Single-cell focused DA analysis methods often produced false discoveries, especially noticeable in data without biological differences
+
+@teo2024best
+
 ## Benchmarking tools
 
 Our benchmarking results highlight SnapATAC, cisTopic, and Cusanovich2018 as the top performing scATAC-seq data analysis methods to perform clustering across all datasets and different metrics. Methods that preserve information at the peak level (cisTopic, Cusanovich2018, Scasat) or bin level (SnapATAC) generally outperform those that summarize accessible chromatin regions at the motif/k-mer level (chromVAR, BROCKMAN, SCRAT) or over the gene body (Cicero, Gene Scoring). In addition, methods that implement a dimensionality reduction step (BROCKMAN, cisTopic, Cusanovich2018, Scasat, SnapATAC) generally show advantages over the other methods without this important step. SnapATAC is the most scalable method; it was the only method capable of processing more than 80,000 cells. Cusanovich2018 is the method that best balances analysis performance and running time.
