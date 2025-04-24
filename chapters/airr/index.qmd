@@ -278,7 +278,7 @@ Overview of methods for TCR repertoire analysis @rosati2017overview
 Benchmarking of BCR reconstruction from single-cell tools @andreani2022benchmarking
 Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequences @smakaj2020benchmarking
 
-**General**
+### General
 
 - [{{< fa toolbox >}} Enclone (10X, Shell)](https://10xgenomics.github.io/enclone/) SHM-aware clonotyping, phylogenetic/lineage analysis, multiple sequence alignment
 - [{{< fa toolbox >}} Immcantation (Shell)](https://immcantation.readthedocs.io/en/stable/) QC, UMI processing, clonal clustering, germline reconstruction, lineage topology, repertoire diversity, mutation profiling
@@ -288,7 +288,7 @@ Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequ
 
 - [{{< fa toolbox >}} ImmuneML (Shell/GUI)](https://immuneml.uio.no/) Ecosystem for machine learning analysis of adaptive immune receptor repertoires (@pavlovic2021immuneml)
 
-**Reads to VDJ data**
+### Reads to VDJ data
 
 - [{{< fa toolbox >}} CellRanger (Shell)](https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/vdj)
 - [{{< fa toolbox >}} ChangeO (Shell)](https://bitbucket.org/kleinstein/changeo/src/master/) Processing the output of V(D)J alignment tools, assigning clonal clusters to immunoglobulin (Ig) sequences, and reconstructing germline sequences (Part of immcantation)
@@ -297,8 +297,36 @@ Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequ
 ![MIXCR workflow](assets/mixcr-workflow.webp){#fig-mixcr}
 
 - [{{< fa toolbox >}} TRUST4 (Shell)](https://github.com/liulab-dfci/TRUST4) TCR and BCR assembly from RNA-seq data
+- [{{< fa toolbox >}} Partis (Shell)](https://github.com/psathyrella/partis) HMM-based framework for B- and T-cell receptor sequence annotation, simulation, clonal family and germline inference, and affinity prediction.
 
-**Downstream analyses**
+#### Clonal family inference
+
+::: {#fig-voss2024 layout-ncol="3"}
+
+![A) Development of B-cell receptors and their sequences. In mature naive B cells, during VDJ-recombination N and P nucleotides are added in between the junctions leading to more junctional diversity. Interaction with antigen causes it to proliferate into more clones undergoing somatic hypermutations. B) Overview of the methods and their requirements. We used two types of methods: methods dependent on a reference genome and methods independent of a reference genome. For the independent method, mPTP, we first build a phylogenetic tree of all sequences with RAxML-NG. mPTP then fits two Poisson Processes, one for speciation and one for coalescence, to the data and groups the clones accordingly. The reference-genome-dependent methods first align the sequences to a reference genome to find the used V and J genes. This alignment is either done by the methods themselves (MiXCR) or done through IMGT. MiXCR delimits the clones by the CDR3 region, accounting for PCR and sequencing errors. Change-O delimits the clones by a common V and J gene and an identical CDR3 region. SCOPer uses the common V and J groups provided by Change-O. The hierarchical method then further groups by 85% junction region similarity. The spectral method calculates an adaptive threshold for junction region similarity.](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b70a/11160721/57f203368251/nihpp-2024.05.29.596491v1-f0001.jpg)
+
+![Comparison of tools and features.](assets/voss2024-tools.webp)
+
+![Number of Clonal Families (log scale) discerned by the different tools.](https://cdn.ncbi.nlm.nih.gov/pmc/blobs/b70a/11160721/495ccec4d9c0/nihpp-2024.05.29.596491v1-f0002.jpg)
+
+Figures from the article.
+
+:::
+
+> Our comparative analysis of four state-of-the-art tools revealed SCOPer-H as the optimal choice for delimiting B-cell clones in organisms with reliable reference genomes, such as humans and mice. SCOPer-H effectively accounts for both VDJ-recombination and somatic hypermutation (SHM) utilizing a reference genome, making it well-suited for model organisms.
+
+@voss2024evaluating
+
+- Most CF reconstruction methods perform comparably, with SCOPer (A7, A8) producing distinctly fewer but larger CFs due to its specific similarity measure. 
+- Simple methods like A4 (setting a relative similarity threshold) perform as well as more complex ones like A9 (partis). Simple methods like A4 (setting a relative similarity threshold) perform as well as more complex ones like A9 (partis). 
+- Change-O (A6) seems to perform little better compared to the other methods and is always in agreement with the ground truth.
+- Approaches A1 (unique junction sequences) and A2 (subclones) surprisingly align closely with other methods in experimental data but not in simulations.
+- The alignment-free method (A10) tends to overestimate the number of CFs, particularly noted in single cell datasets.
+- Change-O (A6) generally aligns with ground truth but does not surpass other methods in LC (light chain) concordance analysis.
+
+@balashova2024systematic
+
+### Downstream analyses
 
 - [{{< fa toolbox >}} vdjtools (Java)](https://github.com/mikessh/vdjtools)
 - [{{< fa toolbox >}} conga (Python)](https://github.com/phbradley/conga)
@@ -314,7 +342,7 @@ Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequ
 - [{{< fa toolbox >}} NAIR (R)](https://mlizhangx.github.io/Network-Analysis-for-Repertoire-Sequencing-/articles/NAIR.html) Network Analysis of Immune Repertoire
 - [{{< fa toolbox >}} star-repair (Bash)](https://github.com/almaan/star-repair) Pair heavy and light chains in visium spots
 
-### Immunarch
+#### Immunarch
 
 - Exploratory data analyses
   - Number of clones per sample, filter low quality clones/samples?
