@@ -74,8 +74,9 @@ Identification of spatially variable genes.
   - Uses reference
 
 - [{{< fa toolbox >}} Giotto SpatialDWLS (R)](https://github.com/drieslab/Giotto)
-- [{{< fa toolbox >}} DSTG (Py)](https://github.com/Su-informatics-lab/DSTG)
 - [{{< fa toolbox >}} SpatialDDLS (R)](https://github.com/diegommcc/SpatialDDLS)
+- [{{< fa toolbox >}} DSTG (Py)](https://github.com/Su-informatics-lab/DSTG)
+- [{{< fa toolbox >}} Tangram (Py)](https://github.com/broadinstitute/Tangram)
 
 ### Cell interaction
 
@@ -91,5 +92,6 @@ also referred to as cell-cell communications (CCC), with fewer false positives t
 ## Resources
 
 - [OSTA Book](https://lmweber.org/OSTA-book/)
+- [Elixir Spatial Omics Data Analysis Workshop](https://elixir-europe-training.github.io/ELIXIR-SCO-spatial-omics/schedule.html)
 
 ## References {.unnumbered}
