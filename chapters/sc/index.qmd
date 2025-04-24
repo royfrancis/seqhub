@@ -121,6 +121,22 @@ description: Single-cell RNA-Seq experiments and analyses
 - cellxgene matrix
 - [{{< fa toolbox >}} nf-core scrnaseq](https://nf-co.re/scrnaseq)
 
+## Background correction
+
+Identification and correction for free RNA background contamination in single-cell RNA-seq data.
+
+![Accuracy of computational background noise estimation. A Estimated background noise levels per cell based on genetic variants (gray) and different computational tools. B Taking the genotype-based estimates as ground truth, Root Mean Squared Logarithmic Error (RMSLE) and Kendall rank correlation serve as evaluation metrics for cell-wise background noise estimates of different methods. Low RMSLE values indicate high similarity between estimated values and the assumed ground truth. High values of Kendall’s correspond to good representation of cell to cell variability in the estimated values](janssen-2023-1.webp)
+
+@janssen2023
+
+**Tools**
+
+- [{{< fa toolbox >}} SoupX](https://github.com/constantAmateur/SoupX) (R)
+- [{{< fa toolbox >}} decontX](https://www.bioconductor.org/packages/release/bioc/html/decontX.html) (R)
+- [{{< fa toolbox >}} CellBender](https://github.com/broadinstitute/CellBender) (Python)
+
+CellBender is slow when using CPU.
+
 ## Doublet detection
 
 ![Summary of doublet detection tools.](https://ars.els-cdn.com/content/image/1-s2.0-S2405471220304592-gr5.jpg)
@@ -145,6 +161,42 @@ Overall Conclusion: DoubletFinder is recommended for its high detection accuracy
 
 @xi2021benchmarking
 
+Doublet rate in [10X GEM platform](https://kb.10xgenomics.com/hc/en-us/articles/360001378811-What-is-the-maximum-number-of-cells-that-can-be-profiled).
+
+```{r}
+#| echo: false
+
+library(ggplot2)
+library(dplyr)
+
+dfr <- data.frame(
+  rate = c(0.4, 0.8, 1.6, 2.4, 3.2, 4.0, 4.8, 5.6, 6.4, 7.2, 8.0),
+  cells_loaded = c(825, 1650, 3300, 4950, 6600, 8250, 9900, 11550, 13200, 14850, 16500),
+  cells_recovered = c(500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000)
+) %>%
+  mutate(doublets_by_count = cells_loaded - cells_recovered) %>%
+  mutate(doublets_by_rate = (rate / 100 * cells_loaded)) %>%
+  mutate(estimated_rate = round(100 - ((cells_recovered / cells_loaded) * 100)))
+
+ggplot(dfr, aes(cells_loaded, cells_recovered)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+| rate| cells_loaded| cells_recovered|
+|----:|------------:|---------------:|
+|  0.4|          825|             500|
+|  0.8|         1650|            1000|
+|  1.6|         3300|            2000|
+|  2.4|         4950|            3000|
+|  3.2|         6600|            4000|
+|  4.0|         8250|            5000|
+|  4.8|         9900|            6000|
+|  5.6|        11550|            7000|
+|  6.4|        13200|            8000|
+|  7.2|        14850|            9000|
+|  8.0|        16500|           10000|
+
 ## Cell type prediction
 
 ![Performance comparison of supervised classifiers for cell identification using different scRNA-seq datasets. Heatmap of the a median F1-scores and b percentage of unlabeled cells across all cell populations per classifier (rows) per dataset (columns). Gray boxes indicate that the corresponding method could not be tested on the corresponding dataset.](assets/abdelaal-2019-1.webp)
@@ -156,6 +208,8 @@ Identification of cell types can be completely automated (by comparing to refere
 ![Summary of performance of the automatic cell-type identification methods. Bar graphs of the automatic cell-type identification methods with six evaluation criteria indicated. For each evaluation criteria, the length of the bars shows the performance of the automatic method: poor, median or good. The automatic methods are sorted based on the mean performance of the evaluation criteria. No bar: not evaluated.](https://ars.els-cdn.com/content/image/1-s2.0-S2001037021004499-gr5_lrg.jpg)
 
 @xie2021automatic, @sun2022comprehensive
+
+It is also important that cell types are labelled with the same labels across datasets and studies. It is useful to refer to a cell type ontology [Cell type ontology](https://cell-ontology.github.io/).
 
 - [{{< fa toolbox >}} SCINA](https://github.com/jcao89757/SCINA) (R)
 - [{{< fa toolbox >}} SingleR](https://bioconductor.org/packages/release/bioc/html/SingleR.html) (R)
@@ -234,9 +288,62 @@ Comparison of Trajectory inference methods.
 
 Metacells are defined as a partition of single-cell data into disjoint homogeneous groups of highly similar cells followed by aggregation of their profiles (Fig. 1). This concept relies on the assumption that most of the variability within metacells corresponds to technical noise and not to biologically relevant heterogeneity. As such, metacells aim at removing some of the noise while preserving the biological information of the single-cell data and improving interpretability.
 
+- Choice of graining levels depends on both the complexity and size of the data
+  - For large and low-complexity data, a relatively high graining level may be used.
+  - For higher complexity or lower size, use lower graining levels to preserve the underlying heterogeneity
+- Choose graining levels such that the resulting number of metacells is at least ten times larger than the expected number of cell subtypes.
+- Somewhere between 10 and 50
+- Optimal graining is hard to evaluate using measures such as modularity or silhouette coefficient
+- Number of nearest neighbors
+  - Increasing k results in a more uniform distribution of metacell sizes
+  - Excessively large values of k (e.g., ~100) may lead to the merging of rare cell types
+  - Reasonable range of values 5–30
+
+Metrics
+
+![](https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/7a1aefbc-4b4f-448b-bb04-3e4581e83564/assets/graphic/44320_2024_45_fig3_html.png)
+
+- Purity (m)
+- Fraction of cells from the most abundant cell type in a metacell
+- to check that metacells do not mix cells from different cell types
+
+- Metacell compactness, is a measure of a metacell's homogeneity that helps flag low-quality metacells for review. Its value is dependent on the latent space used.
+- SEACells and SuperCell using PCA space will perform better than MetaCell and MC2 which uses normalized gene space
+
+- Separation: Euclidean distance between centroids of metacells
+- There is also a clear relationship between separation and compactness. Better compactness results in worse separation and vice versa. Metacells from dense regions will have better compactness but worse separation, while metacells from sparse regions will have better separation but worse compactness.
+
+- INV: mean normalized variance of features. Minimal is better
+- INV should be proportional to its mean
+
+- Size: Number of single cells per metacell
+- To ensure balanced downstream analyses, it is better to have a more homogeneous metacell size distribution and avoid significant outliers
+
+- Representativeness: A good metacell partition should reproduce the overall structure (i.e., manifold) of the single-cell data by uniformly representing its latent space
+- a more uniform representativeness of the manifold leads to increased variation in metacell sizes to compensate for inherent over- and under-representation of different cell types.
+
+- Conservation of downstream analysis
+- Clustering assignment obtained at the metacell and single-cell levels can be compared using adjusted rand index (ARI) or adjusted mutual information (AMI).
+
+- metacell concept is used to enhance signal for GRN construction
+
+By aggregating information from several highly similar cells, metacells reduce the size of the dataset while preserving, and possibly even enhancing, the biological signal. This simultaneously addresses two main challenges of single-cell genomics data analysis: the large size of the single-cell data and its excessive sparsity.
+
+Trade-off between topology-preserving downsampling (sketching) and imputation.
+
+Limitations
+- The metacell partition may be considered a very high-resolution clustering.
+- metacells do not guarantee a global convergence.
+- potentially group cells of distinct types within a single metacell (impure metacells)
+- Artifacts can lead to misleading interpretations, including the presence of non-existing intermediate states or spurious gene co-expression
+- rare cell types could be completely missed if entirely aggregated with a more abundant cell type into a single metacell.
+- build metacells in a supervised manner by constructing metacells for each cell type separately
+
+Adding cells per metacell as covariate
+
 @bilous2024building
 
-- [{{< fa toolbox >}} metacell](https://tanaylab.github.io/metacell/index.html) (R) 
+- [{{< fa toolbox >}} metacell](https://tanaylab.github.io/metacell/index.html) (R)
 - [{{< fa toolbox >}} metacells](https://github.com/tanaylab/metacells/tree/master) (Python)
 - [{{< fa toolbox >}} SuperCell](https://github.com/GfellerLab/SuperCell) (R)
 - [{{< fa toolbox >}} SEACells](https://github.com/dpeerlab/SEACells) (Python)
@@ -289,7 +396,7 @@ Curated list of marker genes by organism, tissue and cell type.
 
 @ouyang2021shinycell
 
-![](https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC7391988/bin/lqaa052tbl1.jpg)
+![Overview of the visualization tools and their capabilities](assets/cakir-2020-1.webp)
 
 @cakir2020comparison
 
