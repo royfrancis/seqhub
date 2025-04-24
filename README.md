@@ -15,6 +15,9 @@ git clone https://github.com/royfrancis/seqhub.git
 ```
 
 2. Add content / make changes
+
+:warning: No executable code chunks allowed.
+
 3. Preview documents
 
 ```
