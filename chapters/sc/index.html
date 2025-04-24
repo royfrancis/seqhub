@@ -281,7 +281,11 @@ div.csl-indent {
   <li><a href="#differential-expression" id="toc-differential-expression" class="nav-link" data-scroll-target="#differential-expression"><span class="header-section-number">2.7</span> Differential expression</a></li>
   <li><a href="#data-integration" id="toc-data-integration" class="nav-link" data-scroll-target="#data-integration"><span class="header-section-number">2.8</span> Data Integration</a></li>
   <li><a href="#trajectory" id="toc-trajectory" class="nav-link" data-scroll-target="#trajectory"><span class="header-section-number">2.9</span> Trajectory</a></li>
-  <li><a href="#metacells" id="toc-metacells" class="nav-link" data-scroll-target="#metacells"><span class="header-section-number">2.10</span> Metacells</a></li>
+  <li><a href="#metacells" id="toc-metacells" class="nav-link" data-scroll-target="#metacells"><span class="header-section-number">2.10</span> Metacells</a>
+  <ul class="collapse">
+  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics"><span class="header-section-number">2.10.1</span> Metrics</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">2.10.2</span> Limitations</a></li>
+  </ul></li>
   <li><a href="#cell-communication" id="toc-cell-communication" class="nav-link" data-scroll-target="#cell-communication"><span class="header-section-number">2.11</span> Cell communication</a></li>
   <li><a href="#rna-velocity" id="toc-rna-velocity" class="nav-link" data-scroll-target="#rna-velocity"><span class="header-section-number">2.12</span> RNA velocity</a></li>
   <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="header-section-number">2.13</span> Databases</a>
@@ -704,29 +708,39 @@ div.csl-indent {
 <li>Reasonable range of values 5–30</li>
 </ul></li>
 </ul>
-<p>Metrics</p>
+<section id="metrics" class="level3" data-number="2.10.1">
+<h3 data-number="2.10.1" class="anchored" data-anchor-id="metrics"><span class="header-section-number">2.10.1</span> Metrics</h3>
 <p><a href="https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/7a1aefbc-4b4f-448b-bb04-3e4581e83564/assets/graphic/44320_2024_45_fig3_html.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/7a1aefbc-4b4f-448b-bb04-3e4581e83564/assets/graphic/44320_2024_45_fig3_html.png" class="img-fluid"></a></p>
 <ul>
-<li><p>Purity (m)</p></li>
-<li><p>Fraction of cells from the most abundant cell type in a metacell</p></li>
-<li><p>to check that metacells do not mix cells from different cell types</p></li>
-<li><p>Metacell compactness, is a measure of a metacell’s homogeneity that helps flag low-quality metacells for review. Its value is dependent on the latent space used.</p></li>
-<li><p>SEACells and SuperCell using PCA space will perform better than MetaCell and MC2 which uses normalized gene space</p></li>
-<li><p>Separation: Euclidean distance between centroids of metacells</p></li>
-<li><p>There is also a clear relationship between separation and compactness. Better compactness results in worse separation and vice versa. Metacells from dense regions will have better compactness but worse separation, while metacells from sparse regions will have better separation but worse compactness.</p></li>
-<li><p>INV: mean normalized variance of features. Minimal is better</p></li>
-<li><p>INV should be proportional to its mean</p></li>
-<li><p>Size: Number of single cells per metacell</p></li>
-<li><p>To ensure balanced downstream analyses, it is better to have a more homogeneous metacell size distribution and avoid significant outliers</p></li>
-<li><p>Representativeness: A good metacell partition should reproduce the overall structure (i.e., manifold) of the single-cell data by uniformly representing its latent space</p></li>
-<li><p>a more uniform representativeness of the manifold leads to increased variation in metacell sizes to compensate for inherent over- and under-representation of different cell types.</p></li>
-<li><p>Conservation of downstream analysis</p></li>
-<li><p>Clustering assignment obtained at the metacell and single-cell levels can be compared using adjusted rand index (ARI) or adjusted mutual information (AMI).</p></li>
-<li><p>metacell concept is used to enhance signal for GRN construction</p></li>
+<li><strong>Purity</strong>: Fraction of cells from the most abundant cell type in a metacell</li>
+<li>to check that metacells do not mix cells from different cell types</li>
+<li><strong>Compactness</strong>: A measure of a metacell’s homogeneity that helps flag low-quality metacells for review. Its value is dependent on the latent space used.</li>
+<li>SEACells and SuperCell using PCA space will perform better than MetaCell and MC2 which uses normalized gene space</li>
+<li><strong>Separation</strong>: Euclidean distance between centroids of metacells</li>
+<li>There is also a clear relationship between separation and compactness. Better compactness results in worse separation and vice versa. Metacells from dense regions will have better compactness but worse separation, while metacells from sparse regions will have better separation but worse compactness.</li>
+<li><strong>INV</strong>: mean normalized variance of features. Minimal is better</li>
+<li>INV should be proportional to its mean</li>
+<li><strong>Size</strong>: Number of single cells per metacell</li>
+<li>To ensure balanced downstream analyses, it is better to have a more homogeneous metacell size distribution and avoid significant outliers</li>
+<li><strong>Representativeness</strong>: A good metacell partition should reproduce the overall structure (i.e., manifold) of the single-cell data by uniformly representing its latent space</li>
+<li>a more uniform representativeness of the manifold leads to increased variation in metacell sizes to compensate for inherent over- and under-representation of different cell types.</li>
+<li><strong>Conservation of downstream analysis</strong></li>
+<li>Clustering assignment obtained at the metacell and single-cell levels can be compared using adjusted rand index (ARI) or adjusted mutual information (AMI).</li>
+<li>metacell concept is used to enhance signal for GRN construction</li>
 </ul>
 <p>By aggregating information from several highly similar cells, metacells reduce the size of the dataset while preserving, and possibly even enhancing, the biological signal. This simultaneously addresses two main challenges of single-cell genomics data analysis: the large size of the single-cell data and its excessive sparsity.</p>
 <p>Trade-off between topology-preserving downsampling (sketching) and imputation.</p>
-<p>Limitations - The metacell partition may be considered a very high-resolution clustering. - metacells do not guarantee a global convergence. - potentially group cells of distinct types within a single metacell (impure metacells) - Artifacts can lead to misleading interpretations, including the presence of non-existing intermediate states or spurious gene co-expression - rare cell types could be completely missed if entirely aggregated with a more abundant cell type into a single metacell. - build metacells in a supervised manner by constructing metacells for each cell type separately</p>
+</section>
+<section id="limitations" class="level3" data-number="2.10.2">
+<h3 data-number="2.10.2" class="anchored" data-anchor-id="limitations"><span class="header-section-number">2.10.2</span> Limitations</h3>
+<ul>
+<li>The metacell partition may be considered a very high-resolution clustering.</li>
+<li>metacells do not guarantee a global convergence.</li>
+<li>potentially group cells of distinct types within a single metacell (impure metacells)</li>
+<li>Artifacts can lead to misleading interpretations, including the presence of non-existing intermediate states or spurious gene co-expression</li>
+<li>rare cell types could be completely missed if entirely aggregated with a more abundant cell type into a single metacell.</li>
+<li>build metacells in a supervised manner by constructing metacells for each cell type separately</li>
+</ul>
 <p>Adding cells per metacell as covariate</p>
 <p><span class="citation" data-cites="bilous2024building">Bilous et al. (<a href="#ref-bilous2024building" role="doc-biblioref">2024</a>)</span></p>
 <ul>
@@ -738,6 +752,7 @@ div.csl-indent {
 </ul>
 <p>Gfeller Lab <a href="https://gfellerlab.github.io/MetacellAnalysisTutorial/index.html">tutorial</a></p>
 </section>
+</section>
 <section id="cell-communication" class="level2" data-number="2.11">
 <h2 data-number="2.11" class="anchored" data-anchor-id="cell-communication"><span class="header-section-number">2.11</span> Cell communication</h2>
 <p>Cell-cell communication and interaction.</p>
@@ -745,6 +760,7 @@ div.csl-indent {
 </section>
 <section id="rna-velocity" class="level2" data-number="2.12">
 <h2 data-number="2.12" class="anchored" data-anchor-id="rna-velocity"><span class="header-section-number">2.12</span> RNA velocity</h2>
+<p>[Content to be added]</p>
 </section>
 <section id="databases" class="level2" data-number="2.13">
 <h2 data-number="2.13" class="anchored" data-anchor-id="databases"><span class="header-section-number">2.13</span> Databases</h2>
