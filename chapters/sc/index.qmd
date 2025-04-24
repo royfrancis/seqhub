@@ -163,9 +163,9 @@ Overall Conclusion: DoubletFinder is recommended for its high detection accuracy
 
 Doublet rate in [10X GEM platform](https://kb.10xgenomics.com/hc/en-us/articles/360001378811-What-is-the-maximum-number-of-cells-that-can-be-profiled).
 
-```{r}
-#| echo: false
+::: {.content-hidden}
 
+```
 library(ggplot2)
 library(dplyr)
 
@@ -182,6 +182,8 @@ ggplot(dfr, aes(cells_loaded, cells_recovered)) +
   geom_point() +
   geom_smooth(method = "lm")
 ```
+
+:::
 
 | rate| cells_loaded| cells_recovered|
 |----:|------------:|---------------:|
