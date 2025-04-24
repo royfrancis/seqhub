@@ -301,39 +301,32 @@ Metacells are defined as a partition of single-cell data into disjoint homogeneo
   - Excessively large values of k (e.g., ~100) may lead to the merging of rare cell types
   - Reasonable range of values 5–30
 
-Metrics
+### Metrics
 
 ![](https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/7a1aefbc-4b4f-448b-bb04-3e4581e83564/assets/graphic/44320_2024_45_fig3_html.png)
 
-- Purity (m)
-- Fraction of cells from the most abundant cell type in a metacell
+- **Purity**: Fraction of cells from the most abundant cell type in a metacell
 - to check that metacells do not mix cells from different cell types
-
-- Metacell compactness, is a measure of a metacell's homogeneity that helps flag low-quality metacells for review. Its value is dependent on the latent space used.
+- **Compactness**: A measure of a metacell's homogeneity that helps flag low-quality metacells for review. Its value is dependent on the latent space used.
 - SEACells and SuperCell using PCA space will perform better than MetaCell and MC2 which uses normalized gene space
-
-- Separation: Euclidean distance between centroids of metacells
+- **Separation**: Euclidean distance between centroids of metacells
 - There is also a clear relationship between separation and compactness. Better compactness results in worse separation and vice versa. Metacells from dense regions will have better compactness but worse separation, while metacells from sparse regions will have better separation but worse compactness.
-
-- INV: mean normalized variance of features. Minimal is better
+- **INV**: mean normalized variance of features. Minimal is better
 - INV should be proportional to its mean
-
-- Size: Number of single cells per metacell
+- **Size**: Number of single cells per metacell
 - To ensure balanced downstream analyses, it is better to have a more homogeneous metacell size distribution and avoid significant outliers
-
-- Representativeness: A good metacell partition should reproduce the overall structure (i.e., manifold) of the single-cell data by uniformly representing its latent space
+- **Representativeness**: A good metacell partition should reproduce the overall structure (i.e., manifold) of the single-cell data by uniformly representing its latent space
 - a more uniform representativeness of the manifold leads to increased variation in metacell sizes to compensate for inherent over- and under-representation of different cell types.
-
-- Conservation of downstream analysis
+- **Conservation of downstream analysis**
 - Clustering assignment obtained at the metacell and single-cell levels can be compared using adjusted rand index (ARI) or adjusted mutual information (AMI).
-
 - metacell concept is used to enhance signal for GRN construction
 
 By aggregating information from several highly similar cells, metacells reduce the size of the dataset while preserving, and possibly even enhancing, the biological signal. This simultaneously addresses two main challenges of single-cell genomics data analysis: the large size of the single-cell data and its excessive sparsity.
 
 Trade-off between topology-preserving downsampling (sketching) and imputation.
 
-Limitations
+### Limitations
+
 - The metacell partition may be considered a very high-resolution clustering.
 - metacells do not guarantee a global convergence.
 - potentially group cells of distinct types within a single metacell (impure metacells)
@@ -360,6 +353,8 @@ Cell-cell communication and interaction.
 Review of tools @almet2021landscape
 
 ## RNA velocity
+
+[Content to be added]
 
 ## Databases
 
