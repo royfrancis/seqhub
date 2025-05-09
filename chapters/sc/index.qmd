@@ -257,6 +257,8 @@ It is also important that cell types are labelled with the same labels across da
 
 > We tested 14 state-of-the-art batch correction algorithms designed to handle single-cell transcriptomic data. We found that each batch-effect removal method has its advantages and limitations, with no clearly superior method. Based on our results, we found LIGER, Harmony, and Seurat 3 to be the top batch mixing methods. Harmony performed well on datasets with common cell types, and also different technologies. The comparatively low runtime of Harmony also makes it suitable for initial data exploration of large datasets. Likewise, LIGER performed well, especially on datasets with non-identical cell types. The main drawback of LIGER is its longer runtime than Harmony, though it is acceptable for its performance. Seurat 3 is also able to handle large datasets, however with 20–50% longer runtime than LIGER. Due to its good batch mixing results with multiple batches, it is also recommended for such scenarios. To improve recovery of DEGs in batch-corrected data, we recommend scMerge for batch correction.
 
+Feature selection methods affects the performance of integration. @zappia2025feature
+
 @tran2020benchmark
 
 - [{{< fa toolbox >}} Seurat](https://satijalab.org/seurat/articles/integration_introduction.html) (R)
@@ -283,6 +285,7 @@ Comparison of Trajectory inference methods.
 @saelens2019comparison
 
 - [{{< fa toolbox >}} Tempora](https://github.com/BaderLab/Tempora) Trajectory inference for time-series data
+- [{{< fa toolbox >}} TFvelo](https://github.com/xiaoyeye/TFvelo) Gene regulation inspired RNA velocity estimation
 
 ## Metacells
 
@@ -403,5 +406,7 @@ Curated list of marker genes by organism, tissue and cell type.
 - [NBIS workshop](https://nbisweden.github.io/workshop-scRNAseq)
 - [Seurat tutorials](https://satijalab.org/seurat/index.html)
 - [DoubletFinder using Seurat tutorial](https://rpubs.com/kenneditodd/doublet_finder_example)
+- [Single-cell analysis with Bioconductor](https://bioconductor.org/books/3.14/OSCA/)
+- [Single-cell analysis with Bioconductor Advanced](https://bioconductor.org/books/3.14/OSCA.multisample/)
 
 ## References {.unnumbered}
