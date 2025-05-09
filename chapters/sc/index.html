@@ -62,7 +62,7 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-39489dca9ddd9247a1c53ef4381789db.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-8e48e98f8fe796fa821c11eda57d2af4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-16340d54b49cc0cf51dc9a3c5e794146.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -652,6 +652,7 @@ div.csl-indent {
 <blockquote class="blockquote">
 <p>We tested 14 state-of-the-art batch correction algorithms designed to handle single-cell transcriptomic data. We found that each batch-effect removal method has its advantages and limitations, with no clearly superior method. Based on our results, we found LIGER, Harmony, and Seurat 3 to be the top batch mixing methods. Harmony performed well on datasets with common cell types, and also different technologies. The comparatively low runtime of Harmony also makes it suitable for initial data exploration of large datasets. Likewise, LIGER performed well, especially on datasets with non-identical cell types. The main drawback of LIGER is its longer runtime than Harmony, though it is acceptable for its performance. Seurat 3 is also able to handle large datasets, however with 20–50% longer runtime than LIGER. Due to its good batch mixing results with multiple batches, it is also recommended for such scenarios. To improve recovery of DEGs in batch-corrected data, we recommend scMerge for batch correction.</p>
 </blockquote>
+<p>Feature selection methods affects the performance of integration. <span class="citation" data-cites="zappia2025feature">Zappia et al. (<a href="#ref-zappia2025feature" role="doc-biblioref">2025</a>)</span></p>
 <p><span class="citation" data-cites="tran2020benchmark">Tran et al. (<a href="#ref-tran2020benchmark" role="doc-biblioref">2020</a>)</span></p>
 <ul>
 <li><a href="https://satijalab.org/seurat/articles/integration_introduction.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Seurat</a> (R)</li>
@@ -686,6 +687,7 @@ div.csl-indent {
 <p><span class="citation" data-cites="saelens2019comparison">Saelens et al. (<a href="#ref-saelens2019comparison" role="doc-biblioref">2019</a>)</span></p>
 <ul>
 <li><a href="https://github.com/BaderLab/Tempora"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Tempora</a> Trajectory inference for time-series data</li>
+<li><a href="https://github.com/xiaoyeye/TFvelo"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> TFvelo</a> Gene regulation inspired RNA velocity estimation</li>
 </ul>
 </section>
 <section id="metacells" class="level2" data-number="2.10">
@@ -816,6 +818,8 @@ div.csl-indent {
 <li><a href="https://nbisweden.github.io/workshop-scRNAseq">NBIS workshop</a></li>
 <li><a href="https://satijalab.org/seurat/index.html">Seurat tutorials</a></li>
 <li><a href="https://rpubs.com/kenneditodd/doublet_finder_example">DoubletFinder using Seurat tutorial</a></li>
+<li><a href="https://bioconductor.org/books/3.14/OSCA/">Single-cell analysis with Bioconductor</a></li>
+<li><a href="https://bioconductor.org/books/3.14/OSCA.multisample/">Single-cell analysis with Bioconductor Advanced</a></li>
 </ul>
 </section>
 <section id="references" class="level2 unnumbered">
@@ -885,6 +889,9 @@ Xi, N. M., &amp; Li, J. J. (2021). Benchmarking computational doublet-detection 
 </div>
 <div id="ref-xie2021automatic" class="csl-entry" role="listitem">
 Xie, B., Jiang, Q., Mora, A., &amp; Li, X. (2021). Automatic cell type identification methods for single-cell RNA sequencing. <em>Computational and Structural Biotechnology Journal</em>, <em>19</em>, 5874–5887. <a href="https://www.sciencedirect.com/science/article/pii/S2001037021004499">https://www.sciencedirect.com/science/article/pii/S2001037021004499</a>
+</div>
+<div id="ref-zappia2025feature" class="csl-entry" role="listitem">
+Zappia, L., Richter, S., Ramı́rez-Suástegui, C., Kfuri-Rubens, R., Vornholz, L., Wang, W., Dietrich, O., Frishberg, A., Luecken, M. D., &amp; Theis, F. J. (2025). Feature selection methods affect the performance of scRNA-seq data integration and querying. <em>Nature Methods</em>, 1–11. <a href="https://doi.org/10.1038/s41592-025-02624-3">https://doi.org/10.1038/s41592-025-02624-3</a>
 </div>
 <div id="ref-zhang2020determining" class="csl-entry" role="listitem">
 Zhang, M. J., Ntranos, V., &amp; Tse, D. (2020). Determining sequencing depth in a single-cell RNA-seq experiment. <em>Nature Communications</em>, <em>11</em>(1), 774. <a href="https://doi.org/10.1038/s41467-020-14482-y">https://doi.org/10.1038/s41467-020-14482-y</a>
