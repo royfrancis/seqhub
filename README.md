@@ -1,6 +1,6 @@
 # SeqHub • RNA-Seq Knowledgebase
 
-[![ci_badge](https://github.com/royfrancis/seqhub/workflows/deploy/badge.svg)](https://github.com/royfrancis/seqhub/actions?workflow=deploy)  [![linkcheck_badge](https://github.com/royfrancis/seqhub/workflows/linkcheck/badge.svg)](https://github.com/royfrancis/seqhub/actions?workflow=linkcheck)  
+[![ci_badge](https://github.com/royfrancis/seqhub/workflows/build-deploy/badge.svg)](https://github.com/royfrancis/seqhub/actions?workflow=build-deploy)  [![linkcheck_badge](https://github.com/royfrancis/seqhub/workflows/linkcheck/badge.svg)](https://github.com/royfrancis/seqhub/actions?workflow=linkcheck)  
 
 A high level guide and collection of links related to RNA-Seq experiments and data analyses.
 
