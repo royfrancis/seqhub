@@ -259,6 +259,8 @@ It is also important that cell types are labelled with the same labels across da
 
 Feature selection methods affects the performance of integration. @zappia2025feature
 
+Comparison of Multiomic integration @xiao2024benchmarking
+
 @tran2020benchmark
 
 - [{{< fa toolbox >}} Seurat](https://satijalab.org/seurat/articles/integration_introduction.html) (R)
@@ -284,8 +286,35 @@ Comparison of Trajectory inference methods.
 
 @saelens2019comparison
 
+Standard trajectory tools
+
+- [{{< fa toolbox >}} Monocle](https://cole-trapnell-lab.github.io/monocle3/docs/trajectories/) (R)
+- [{{< fa toolbox >}} Slingshot](https://bioconductor.org/packages/devel/bioc/vignettes/slingshot/inst/doc/vignette.html) (R)
+- [{{< fa toolbox >}} TSCAN](https://camplab.net/sctk/current/articles/trajectoryAnalysis.html) (R)
+- [{{< fa toolbox >}} PAGA](https://github.com/theislab/paga) (Python)
+
+Multiomic trajectory tools
+
 - [{{< fa toolbox >}} Tempora](https://github.com/BaderLab/Tempora) Trajectory inference for time-series data
+- [{{< fa toolbox >}} VITAE](https://github.com/jaydu1/VITAE) (Python) Joint Trajectory Inference for Single-cell Genomics Using Deep Learning with a Mixture Prior
+- [{{< fa toolbox >}} CellRank2](https://cellrank.readthedocs.io/en/stable/) (Python) Multimodal trajectory inference
+- [{{< fa toolbox >}} Moscot](https://github.com/theislab/moscot) (Python) Multimodal spatial trajectory inference
+
+## RNA velocity
+
+[Content to be added]
+
+- [{{< fa toolbox >}} Velocyto](https://velocyto.org/) (Python,R)
+- [{{< fa toolbox >}} scVelo](https://scvelo.readthedocs.io/en/stable/) (Python)
+- [{{< fa toolbox >}} SDEvelo](https://github.com/Liao-Xu/SDEvelo) (Python) Multivariate stochastic modeling
+- [{{< fa toolbox >}} MultiVelo](https://github.com/welch-lab/MultiVelo) (Python) Velocity Inference from Single-Cell Multi-Omic Data
+- [{{< fa toolbox >}} UniTVelo](https://github.com/StatBiomed/UniTVelo) (Python) Temporally Unified RNA Velocity
+- [{{< fa toolbox >}} DeepVelo](https://github.com/bowang-lab/DeepVelo) (Python) Deep learning for RNA velocity
+- [{{< fa toolbox >}} VeloAE](https://github.com/qiaochen/VeloAE) (Python) Low-dimensional Projection of Single Cell Velocity 
+- [{{< fa toolbox >}} GeneTrajectory](https://github.com/KlugerLab/GeneTrajectory) (R) R implementation of GeneTrajectory 
 - [{{< fa toolbox >}} TFvelo](https://github.com/xiaoyeye/TFvelo) Gene regulation inspired RNA velocity estimation
+- [{{< fa toolbox >}} DeepCycle](https://github.com/andreariba/DeepCycle) (Python) Cell cycle inference in single-cell RNA-seq 
+- [{{< fa toolbox >}} velocycle](https://github.com/lamanno-epfl/velocycle) (Python) Bayesian model for RNA velocity estimation of periodic manifolds
 
 ## Metacells
 
@@ -354,10 +383,6 @@ Gfeller Lab [tutorial](https://gfellerlab.github.io/MetacellAnalysisTutorial/ind
 Cell-cell communication and interaction.
 
 Review of tools @almet2021landscape
-
-## RNA velocity
-
-[Content to be added]
 
 ## Databases
 
