@@ -62,7 +62,7 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-39489dca9ddd9247a1c53ef4381789db.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-16340d54b49cc0cf51dc9a3c5e794146.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3d9ea01a5de0f98e0776051558484512.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
@@ -281,13 +281,13 @@ div.csl-indent {
   <li><a href="#differential-expression" id="toc-differential-expression" class="nav-link" data-scroll-target="#differential-expression"><span class="header-section-number">2.7</span> Differential expression</a></li>
   <li><a href="#data-integration" id="toc-data-integration" class="nav-link" data-scroll-target="#data-integration"><span class="header-section-number">2.8</span> Data Integration</a></li>
   <li><a href="#trajectory" id="toc-trajectory" class="nav-link" data-scroll-target="#trajectory"><span class="header-section-number">2.9</span> Trajectory</a></li>
-  <li><a href="#metacells" id="toc-metacells" class="nav-link" data-scroll-target="#metacells"><span class="header-section-number">2.10</span> Metacells</a>
+  <li><a href="#rna-velocity" id="toc-rna-velocity" class="nav-link" data-scroll-target="#rna-velocity"><span class="header-section-number">2.10</span> RNA velocity</a></li>
+  <li><a href="#metacells" id="toc-metacells" class="nav-link" data-scroll-target="#metacells"><span class="header-section-number">2.11</span> Metacells</a>
   <ul class="collapse">
-  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics"><span class="header-section-number">2.10.1</span> Metrics</a></li>
-  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">2.10.2</span> Limitations</a></li>
+  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics"><span class="header-section-number">2.11.1</span> Metrics</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations"><span class="header-section-number">2.11.2</span> Limitations</a></li>
   </ul></li>
-  <li><a href="#cell-communication" id="toc-cell-communication" class="nav-link" data-scroll-target="#cell-communication"><span class="header-section-number">2.11</span> Cell communication</a></li>
-  <li><a href="#rna-velocity" id="toc-rna-velocity" class="nav-link" data-scroll-target="#rna-velocity"><span class="header-section-number">2.12</span> RNA velocity</a></li>
+  <li><a href="#cell-communication" id="toc-cell-communication" class="nav-link" data-scroll-target="#cell-communication"><span class="header-section-number">2.12</span> Cell communication</a></li>
   <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases"><span class="header-section-number">2.13</span> Databases</a>
   <ul class="collapse">
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2.13.1</span> Data</a></li>
@@ -653,6 +653,7 @@ div.csl-indent {
 <p>We tested 14 state-of-the-art batch correction algorithms designed to handle single-cell transcriptomic data. We found that each batch-effect removal method has its advantages and limitations, with no clearly superior method. Based on our results, we found LIGER, Harmony, and Seurat 3 to be the top batch mixing methods. Harmony performed well on datasets with common cell types, and also different technologies. The comparatively low runtime of Harmony also makes it suitable for initial data exploration of large datasets. Likewise, LIGER performed well, especially on datasets with non-identical cell types. The main drawback of LIGER is its longer runtime than Harmony, though it is acceptable for its performance. Seurat 3 is also able to handle large datasets, however with 20–50% longer runtime than LIGER. Due to its good batch mixing results with multiple batches, it is also recommended for such scenarios. To improve recovery of DEGs in batch-corrected data, we recommend scMerge for batch correction.</p>
 </blockquote>
 <p>Feature selection methods affects the performance of integration. <span class="citation" data-cites="zappia2025feature">Zappia et al. (<a href="#ref-zappia2025feature" role="doc-biblioref">2025</a>)</span></p>
+<p>Comparison of Multiomic integration <span class="citation" data-cites="xiao2024benchmarking">Xiao et al. (<a href="#ref-xiao2024benchmarking" role="doc-biblioref">2024</a>)</span></p>
 <p><span class="citation" data-cites="tran2020benchmark">Tran et al. (<a href="#ref-tran2020benchmark" role="doc-biblioref">2020</a>)</span></p>
 <ul>
 <li><a href="https://satijalab.org/seurat/articles/integration_introduction.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Seurat</a> (R)</li>
@@ -685,13 +686,40 @@ div.csl-indent {
 </figure>
 </div>
 <p><span class="citation" data-cites="saelens2019comparison">Saelens et al. (<a href="#ref-saelens2019comparison" role="doc-biblioref">2019</a>)</span></p>
+<p>Standard trajectory tools</p>
+<ul>
+<li><a href="https://cole-trapnell-lab.github.io/monocle3/docs/trajectories/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Monocle</a> (R)</li>
+<li><a href="https://bioconductor.org/packages/devel/bioc/vignettes/slingshot/inst/doc/vignette.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Slingshot</a> (R)</li>
+<li><a href="https://camplab.net/sctk/current/articles/trajectoryAnalysis.html"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> TSCAN</a> (R)</li>
+<li><a href="https://github.com/theislab/paga"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> PAGA</a> (Python)</li>
+</ul>
+<p>Multiomic trajectory tools</p>
 <ul>
 <li><a href="https://github.com/BaderLab/Tempora"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Tempora</a> Trajectory inference for time-series data</li>
-<li><a href="https://github.com/xiaoyeye/TFvelo"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> TFvelo</a> Gene regulation inspired RNA velocity estimation</li>
+<li><a href="https://github.com/jaydu1/VITAE"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> VITAE</a> (Python) Joint Trajectory Inference for Single-cell Genomics Using Deep Learning with a Mixture Prior</li>
+<li><a href="https://cellrank.readthedocs.io/en/stable/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> CellRank2</a> (Python) Multimodal trajectory inference</li>
+<li><a href="https://github.com/theislab/moscot"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Moscot</a> (Python) Multimodal spatial trajectory inference</li>
 </ul>
 </section>
-<section id="metacells" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="metacells"><span class="header-section-number">2.10</span> Metacells</h2>
+<section id="rna-velocity" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="rna-velocity"><span class="header-section-number">2.10</span> RNA velocity</h2>
+<p>[Content to be added]</p>
+<ul>
+<li><a href="https://velocyto.org/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> Velocyto</a> (Python,R)</li>
+<li><a href="https://scvelo.readthedocs.io/en/stable/"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> scVelo</a> (Python)</li>
+<li><a href="https://github.com/Liao-Xu/SDEvelo"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> SDEvelo</a> (Python) Multivariate stochastic modeling</li>
+<li><a href="https://github.com/welch-lab/MultiVelo"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> MultiVelo</a> (Python) Velocity Inference from Single-Cell Multi-Omic Data</li>
+<li><a href="https://github.com/StatBiomed/UniTVelo"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> UniTVelo</a> (Python) Temporally Unified RNA Velocity</li>
+<li><a href="https://github.com/bowang-lab/DeepVelo"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> DeepVelo</a> (Python) Deep learning for RNA velocity</li>
+<li><a href="https://github.com/qiaochen/VeloAE"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> VeloAE</a> (Python) Low-dimensional Projection of Single Cell Velocity</li>
+<li><a href="https://github.com/KlugerLab/GeneTrajectory"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> GeneTrajectory</a> (R) R implementation of GeneTrajectory</li>
+<li><a href="https://github.com/xiaoyeye/TFvelo"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> TFvelo</a> Gene regulation inspired RNA velocity estimation</li>
+<li><a href="https://github.com/andreariba/DeepCycle"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> DeepCycle</a> (Python) Cell cycle inference in single-cell RNA-seq</li>
+<li><a href="https://github.com/lamanno-epfl/velocycle"><i class="fa-solid fa-toolbox" aria-label="toolbox"></i> velocycle</a> (Python) Bayesian model for RNA velocity estimation of periodic manifolds</li>
+</ul>
+</section>
+<section id="metacells" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="metacells"><span class="header-section-number">2.11</span> Metacells</h2>
 <p><a href="https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/0950e5e3-eaf9-4448-9016-290de5c5ecc9/assets/graphic/44320_2024_45_fig1_html.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/0950e5e3-eaf9-4448-9016-290de5c5ecc9/assets/graphic/44320_2024_45_fig1_html.png" class="img-fluid"></a></p>
 <p>Metacells are defined as a partition of single-cell data into disjoint homogeneous groups of highly similar cells followed by aggregation of their profiles (Fig. 1). This concept relies on the assumption that most of the variability within metacells corresponds to technical noise and not to biologically relevant heterogeneity. As such, metacells aim at removing some of the noise while preserving the biological information of the single-cell data and improving interpretability.</p>
 <ul>
@@ -710,8 +738,8 @@ div.csl-indent {
 <li>Reasonable range of values 5–30</li>
 </ul></li>
 </ul>
-<section id="metrics" class="level3" data-number="2.10.1">
-<h3 data-number="2.10.1" class="anchored" data-anchor-id="metrics"><span class="header-section-number">2.10.1</span> Metrics</h3>
+<section id="metrics" class="level3" data-number="2.11.1">
+<h3 data-number="2.11.1" class="anchored" data-anchor-id="metrics"><span class="header-section-number">2.11.1</span> Metrics</h3>
 <p><a href="https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/7a1aefbc-4b4f-448b-bb04-3e4581e83564/assets/graphic/44320_2024_45_fig3_html.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/7a1aefbc-4b4f-448b-bb04-3e4581e83564/assets/graphic/44320_2024_45_fig3_html.png" class="img-fluid"></a></p>
 <ul>
 <li><strong>Purity</strong>: Fraction of cells from the most abundant cell type in a metacell</li>
@@ -733,8 +761,8 @@ div.csl-indent {
 <p>By aggregating information from several highly similar cells, metacells reduce the size of the dataset while preserving, and possibly even enhancing, the biological signal. This simultaneously addresses two main challenges of single-cell genomics data analysis: the large size of the single-cell data and its excessive sparsity.</p>
 <p>Trade-off between topology-preserving downsampling (sketching) and imputation.</p>
 </section>
-<section id="limitations" class="level3" data-number="2.10.2">
-<h3 data-number="2.10.2" class="anchored" data-anchor-id="limitations"><span class="header-section-number">2.10.2</span> Limitations</h3>
+<section id="limitations" class="level3" data-number="2.11.2">
+<h3 data-number="2.11.2" class="anchored" data-anchor-id="limitations"><span class="header-section-number">2.11.2</span> Limitations</h3>
 <ul>
 <li>The metacell partition may be considered a very high-resolution clustering.</li>
 <li>metacells do not guarantee a global convergence.</li>
@@ -755,14 +783,10 @@ div.csl-indent {
 <p>Gfeller Lab <a href="https://gfellerlab.github.io/MetacellAnalysisTutorial/index.html">tutorial</a></p>
 </section>
 </section>
-<section id="cell-communication" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="cell-communication"><span class="header-section-number">2.11</span> Cell communication</h2>
+<section id="cell-communication" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="cell-communication"><span class="header-section-number">2.12</span> Cell communication</h2>
 <p>Cell-cell communication and interaction.</p>
 <p>Review of tools <span class="citation" data-cites="almet2021landscape">Almet et al. (<a href="#ref-almet2021landscape" role="doc-biblioref">2021</a>)</span></p>
-</section>
-<section id="rna-velocity" class="level2" data-number="2.12">
-<h2 data-number="2.12" class="anchored" data-anchor-id="rna-velocity"><span class="header-section-number">2.12</span> RNA velocity</h2>
-<p>[Content to be added]</p>
 </section>
 <section id="databases" class="level2" data-number="2.13">
 <h2 data-number="2.13" class="anchored" data-anchor-id="databases"><span class="header-section-number">2.13</span> Databases</h2>
@@ -886,6 +910,9 @@ Wang, T., Li, B., Nelson, C. E., &amp; Nabavi, S. (2019). Comparative analysis o
 </div>
 <div id="ref-xi2021benchmarking" class="csl-entry" role="listitem">
 Xi, N. M., &amp; Li, J. J. (2021). Benchmarking computational doublet-detection methods for single-cell RNA sequencing data. <em>Cell Systems</em>, <em>12</em>(2), 176–194. <a href="https://doi.org/10.1016/j.cels.2020.11.008">https://doi.org/10.1016/j.cels.2020.11.008</a>
+</div>
+<div id="ref-xiao2024benchmarking" class="csl-entry" role="listitem">
+Xiao, C., Chen, Y., Meng, Q., Wei, L., &amp; Zhang, X. (2024). Benchmarking multi-omics integration algorithms across single-cell RNA and ATAC data. <em>Briefings in Bioinformatics</em>, <em>25</em>(2), bbae095. <a href="https://doi.org/10.1093/bib/bbae095">https://doi.org/10.1093/bib/bbae095</a>
 </div>
 <div id="ref-xie2021automatic" class="csl-entry" role="listitem">
 Xie, B., Jiang, Q., Mora, A., &amp; Li, X. (2021). Automatic cell type identification methods for single-cell RNA sequencing. <em>Computational and Structural Biotechnology Journal</em>, <em>19</em>, 5874–5887. <a href="https://www.sciencedirect.com/science/article/pii/S2001037021004499">https://www.sciencedirect.com/science/article/pii/S2001037021004499</a>
