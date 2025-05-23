@@ -1,6 +1,6 @@
 # SeqHub • RNA-Seq Knowledgebase
 
-[![ci_badge](https://github.com/royfrancis/seqhub/workflows/deploy/badge.svg)](https://github.com/royfrancis/seqhub/actions?workflow=deploy)
+[![ci_badge](https://github.com/royfrancis/seqhub/workflows/deploy/badge.svg)](https://github.com/royfrancis/seqhub/actions?workflow=deploy)  [![linkcheck_badge](https://github.com/royfrancis/seqhub/workflows/linkcheck/badge.svg)](https://github.com/royfrancis/seqhub/actions?workflow=linkcheck)  
 
 A high level guide and collection of links related to RNA-Seq experiments and data analyses.
 
@@ -16,7 +16,7 @@ git clone https://github.com/royfrancis/seqhub.git
 
 2. Add content / make changes
 
-:warning: No executable code chunks allowed.
+    :warning: No executable code chunks allowed.
 
 3. Preview documents
 
@@ -26,7 +26,7 @@ quarto preview document.qmd
 
 4. Commit changes and push.  
 
-:warning: Only push source materials. Do NOT push rendered HTML files.  
+    :warning: Only push source materials. Do NOT push rendered HTML files.  
 
 5. The contents are rendered automatically
 
