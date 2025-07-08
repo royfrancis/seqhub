@@ -13,6 +13,8 @@ There are three major resolution scales in ST data:
 
 @walker2022deciphering, @yue2023guidebook, @moses2022museum
 
+For a practical guide to choosing spatial methods, see @lim2025practical.
+
 ## Techniques
 ### [10X Visium](https://www.10xgenomics.com/platforms/visium)
 

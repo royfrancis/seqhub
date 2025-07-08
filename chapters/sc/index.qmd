@@ -47,6 +47,10 @@ description: Single-cell RNA-Seq experiments and analyses
 
 @fullgrabe2020guidelines
 
+**Open problems in single-cell analysis**
+
+@luecken2025defining
+
 ## Experimental design {#sc-exp-design}
 
 **Experimental Considerations for Single-Cell RNA Sequencing Approaches**
