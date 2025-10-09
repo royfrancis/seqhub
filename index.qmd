@@ -23,7 +23,7 @@ AIRR-Seq, Rep-Seq, Repertoire, VDJ and immune profiling.
 #### [Spatial RNA-seq](chapters/spatial/index.html)
 Gene expression with spatial information. 10X Visium etc.
 
-#### [ATAC-Seq](chapters/atacseq/index.html)  
+#### [ATAC-Seq](chapters/atac/index.html)  
 Genome wide chromatin accessibility.
 
 #### [Meta transcriptomics](chapters/spatial/index.html)  

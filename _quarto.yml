@@ -23,7 +23,7 @@ book:
         - chapters/sc/index.qmd
         - chapters/spatial/index.qmd
         - chapters/airr/index.qmd
-        - chapters/atacseq/index.qmd
+        - chapters/atac/index.qmd
     - part: "**Meta Transcriptomics**"
       chapters:
         - chapters/meta/index.qmd
