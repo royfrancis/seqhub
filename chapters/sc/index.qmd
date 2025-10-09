@@ -129,9 +129,9 @@ description: Single-cell RNA-Seq experiments and analyses
 
 Identification and correction for free RNA background contamination in single-cell RNA-seq data.
 
-![Accuracy of computational background noise estimation. A Estimated background noise levels per cell based on genetic variants (gray) and different computational tools. B Taking the genotype-based estimates as ground truth, Root Mean Squared Logarithmic Error (RMSLE) and Kendall rank correlation serve as evaluation metrics for cell-wise background noise estimates of different methods. Low RMSLE values indicate high similarity between estimated values and the assumed ground truth. High values of Kendall’s correspond to good representation of cell to cell variability in the estimated values](janssen-2023-1.webp)
+![Accuracy of computational background noise estimation. A Estimated background noise levels per cell based on genetic variants (gray) and different computational tools. B Taking the genotype-based estimates as ground truth, Root Mean Squared Logarithmic Error (RMSLE) and Kendall rank correlation serve as evaluation metrics for cell-wise background noise estimates of different methods. Low RMSLE values indicate high similarity between estimated values and the assumed ground truth. High values of Kendall’s correspond to good representation of cell to cell variability in the estimated values](assets/janssen-2023-1.webp)
 
-@janssen2023
+@janssen2023effect
 
 **Tools**
 
