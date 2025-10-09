@@ -28,7 +28,13 @@ book:
       chapters:
         - chapters/meta/index.qmd
 
-bibliography: references.bib
+bibliography: 
+  - references_bulk.bib
+  - references_sc.bib
+  - references_spatial.bib
+  - references_airr.bib
+  - references_atac.bib
+  - references_meta.bib
 csl: apa.csl
 #reference-section-title: References
 #citeproc: false
