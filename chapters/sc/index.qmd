@@ -223,10 +223,11 @@ Identification of cell types can be completely automated (by comparing to refere
 
 It is also important that cell types are labelled with the same labels across datasets and studies. It is useful to refer to a cell type ontology [Cell type ontology](https://cell-ontology.github.io/).
 
-- [{{< fa toolbox >}} SCINA](https://github.com/jcao89757/SCINA) (R)
 - [{{< fa toolbox >}} SingleR](https://bioconductor.org/packages/release/bioc/html/SingleR.html) (R)
 - [{{< fa toolbox >}} scPred](https://github.com/powellgenomicslab/scPred) (R)
 - [{{< fa toolbox >}} celltypist](https://github.com/Teichlab/celltypist) (Python)
+- [{{< fa toolbox >}} easybio](https://github.com/person-c/easybio) (R) R access to CellMarker 2.0 database
+- [{{< fa toolbox >}} SCINA](https://github.com/jcao89757/SCINA) (R)
 
 ## Differential expression
 
@@ -277,10 +278,15 @@ Comparison of Multiomic integration @xiao2024benchmarking
 - [{{< fa toolbox >}} Harmony](https://github.com/immunogenomics/harmony) (R)
 - [{{< fa toolbox >}} Liger](https://github.com/welch-lab/liger) (R)
 - [{{< fa toolbox >}} FastMNN](https://github.com/LTLA/batchelor) (R)
+- [{{< fa toolbox >}} scVI](https://scvi-tools.org/) (Python) Variational autoencoder framework for single-cell omics data analysis
+- [{{< fa toolbox >}} scANVI](https://scvi-tools.org/) (Python) Semi-supervised version of scVI
 - [{{< fa toolbox >}} Scanorama](https://scanpy.readthedocs.io/en/stable/generated/scanpy.external.pp.scanorama_integrate.html) (Python)
 - [{{< fa toolbox >}} STACAS](https://github.com/carmonalab/STACAS) (R) @andreatta2024semi
+- [{{< fa toolbox >}} BBKNN]()
 - [{{< fa toolbox >}} scIntegrationMetrics](https://github.com/carmonalab/scIntegrationMetrics) (R) Metrics to evaluate batch effects and correction @andreatta2024semi
+- [{{< fa toolbox >}} SCIB]()
 - [{{< fa toolbox >}} GLUE](https://github.com/gao-lab/GLUE) (R,Python) Diagonal integration
+
 
 ## Trajectory
 
@@ -313,6 +319,8 @@ Multiomic trajectory tools
 ## RNA velocity
 
 [Content to be added]
+
+Preprocessing choices affect RNA velocity results for droplet scRNA-seq data @soneson2021preprocessing
 
 - [{{< fa toolbox >}} Velocyto](https://velocyto.org/) (Python,R)
 - [{{< fa toolbox >}} scVelo](https://scvelo.readthedocs.io/en/stable/) (Python)
@@ -417,8 +425,14 @@ Curated list of marker genes by organism, tissue and cell type.
 - [PanglaoDB](https://panglaodb.se/)
 - [CellMarker](http://biocc.hrbmu.edu.cn/CellMarker/browse.jsp)
 
-## Interactive visualisation frameworks
+## Interactive analysis/visualisation frameworks
 
+### Open source
+
+- [{{< fa toolbox >}} Galaxy](https://singlecell.usegalaxy.eu/) (GUI)
+- [{{< fa toolbox >}} Kana](https://www.kanaverse.org/kana/) (GUI)
+- [{{< fa toolbox >}} UCSC Cell Browser](https://cellbrowser.ucsc.edu/) (GUI)
+- [{{< fa toolbox >}} cellxgene](https://cellxgene.cziscience.com/) (GUI)
 - [{{< fa toolbox >}} ShinyCell](https://github.com/SGDDNB/ShinyCell)(R Shiny)
 - [{{< fa toolbox >}} Cerebro](https://github.com/romanhaa/Cerebro)(R Shiny)
 - [{{< fa toolbox >}} Vitessce](http://vitessce.io/)(R, Python)
@@ -434,6 +448,14 @@ Curated list of marker genes by organism, tissue and cell type.
 ![Overview of the visualization tools and their capabilities](assets/cakir-2020-1.webp)
 
 @cakir2020comparison
+
+### Commercial
+
+Enterprise GUI solutions for single-cell data analysis.
+
+- [{{< fa toolbox >}} Parktek Flow](https://www.illumina.com/products/by-type/informatics-products/partek-flow.html)
+- [{{< fa toolbox >}} Qiagen CLC Genomics](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/qiagen-clc-genomics/)
+- [{{< fa toolbox >}} Parse Trailmaker](https://www.parsebiosciences.com/data-analysis/) (Free for Academia and Parse users)
 
 ## Learning
 
