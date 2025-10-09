@@ -165,7 +165,9 @@ Overall Conclusion: DoubletFinder is recommended for its high detection accuracy
 
 @xi2021benchmarking
 
-Doublet rate in [10X GEM platform](https://kb.10xgenomics.com/hc/en-us/articles/360001378811-What-is-the-maximum-number-of-cells-that-can-be-profiled).
+For 10X data, the expected odublet rate is 0.8% per 1000 cells for 10x 3’ CellPlex kit and 0.4% per 1000 cells for high-throughput (HT) 3' v3.1 assay [a](https://kb.10xgenomics.com/hc/en-us/articles/360001378811-What-is-the-maximum-number-of-cells-that-can-be-profiled), [b](https://kb.10xgenomics.com/hc/en-us/articles/360054599512-What-is-the-cell-multiplet-rate-when-using-the-3-CellPlex-Kit-for-Cell-Multiplexing).
+
+The doublet rate is 3% per 100,000 cells for Parse WT kit as mentioned [here](https://support.parsebiosciences.com/hc/en-us/articles/360053107311-What-is-the-expected-doublet-rate).
 
 ::: {.content-hidden}
 
@@ -202,6 +204,10 @@ ggplot(dfr, aes(cells_loaded, cells_recovered)) +
 |  6.4|        13200|            8000|
 |  7.2|        14850|            9000|
 |  8.0|        16500|           10000|
+
+- [{{< fa toolbox >}} scDBlFinder](https://bioconductor.org/packages/release/bioc/vignettes/scDblFinder/inst/doc/scDblFinder.html) (R)
+- [{{< fa toolbox >}} DoubletFinder](https://github.com/chris-mcginnis-ucsf/DoubletFinder) (R)
+- [{{< fa toolbox >}} Scrublet](https://github.com/swolock/scrublet) (Python)
 
 ## Cell type prediction
 
