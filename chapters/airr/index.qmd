@@ -118,13 +118,15 @@ Source: Kuby immunology
 
 ::: {#fig-vdj layout-ncol="2"}
 
-![](assets/vdj.webp){group="vdj"}
+![BCR locus and structure](assets/vdj.webp){group="vdj"}
 
-![](assets/joshi-2014.webp){group="vdj"}
+![Antibody structure](assets/joshi-2014.webp){group="vdj"}
 
-![](assets/antigen-receptor-loci.webp){group="vdj"}
+![TCR structure](assets/tcr.webp){group="vdj"}
 
-Fig 1 and 2 shows BCR/antibody structure and the V(D)J locus. Fig 3 shows the genomic structure of BCR and TCR chains. Image references: [1](https://bsse.ethz.ch/lsi/research/systems-immunology.html), [2](hhttps://doi.org/10.1128/microbiolspec.aid-0017-2014), [3](https://digitalworldbiology.com/blog/immunoprofiling-how-it-works)
+![Genomic structure of BCR and TCR chains](assets/antigen-receptor-loci.webp){group="vdj"}
+
+Image references: [1](https://bsse.ethz.ch/lsi/research/systems-immunology.html), [2](hhttps://doi.org/10.1128/microbiolspec.aid-0017-2014), [3](https://blog.crownbio.com/t-cell-profiling), [4](https://digitalworldbiology.com/blog/immunoprofiling-how-it-works)
 
 :::
 
@@ -148,6 +150,8 @@ Germline organisation of the Ig locus
 
 #### TCR review
 
+![Somatic V(D)J arrangement in the alpha and beta chains. (A) Genomic organization and somatic recombination of TCRB and TCRA loci. Antigen repertoire diversity is guaranteed by a recombination step that progressively rearranges V, D, and J segments for T cell receptor (TCR) beta chains and V and J segments for TCR alpha chains. This variability (combinatorial diversity) is further increased by addition or deletion of nucleotides at the junction sites (junctional diversity). (B) Productive arrangements of beta and alpha transcripts. (C) Organization of TCR. TCR is composed by two subunits TCR alpha and TCR beta each organized in a constant region and a variable region responsible for antigen recognition.](https://www.frontiersin.org/files/Articles/384005/fimmu-09-01638-HTML/image_m/fimmu-09-01638-g001.jpg){#fig-vdj-}
+
 - Human T cells develop in the thymus and they acquire the ability to recognize foreign antigens and provide protection against many different pathogens.
 - This functional flexibility is guaranteed by the expression of highly polymorphic surface receptors called T cell receptors (TCRs).
 - TCR is composed of two different protein chains. The vast majority of human T cells express TCRs composed of α (alpha) and β (beta) chains.
@@ -158,8 +162,6 @@ Germline organisation of the Ig locus
 - The diversity of naïve T cells is the T cell repertoire
 - Exposure to an antigen drives a rapid clonal expansion of cells carrying identical TCRs to generate a population of "effector cells."
 - After antigen clearance, a reduced number of these cells remain in the blood as "memory cells."
-
-![Somatic V(D)J arrangement in the alpha and beta chains. (A) Genomic organization and somatic recombination of TCRB and TCRA loci. Antigen repertoire diversity is guaranteed by a recombination step that progressively rearranges V, D, and J segments for T cell receptor (TCR) beta chains and V and J segments for TCR alpha chains. This variability (combinatorial diversity) is further increased by addition or deletion of nucleotides at the junction sites (junctional diversity). (B) Productive arrangements of beta and alpha transcripts. (C) Organization of TCR. TCR is composed by two subunits TCR alpha and TCR beta each organized in a constant region and a variable region responsible for antigen recognition.](https://www.frontiersin.org/files/Articles/384005/fimmu-09-01638-HTML/image_m/fimmu-09-01638-g001.jpg){#fig-vdj-}
 
 ![Differences between BCR and TCR receptors.](assets/bcrvtcr.webp){#fig-tcrvsbcr width=50%}
 
@@ -334,7 +336,8 @@ Figures from the article.
 - [{{< fa toolbox >}} scRepertoire (R)](https://github.com/ncborcherding/scRepertoire) 10X VDJ cellranger input
 - [{{< fa toolbox >}} djvdj (R)](https://github.com/rnabioco/djvdj)  10X VDJ cellranger input
 - [{{< fa toolbox >}} immunarch (R)](https://immunarch.com/) 10X, MIXCR input
-- [{{< fa toolbox >}} scirpy (Python)](https://scirpy.scverse.org/en/latest/)
+- [{{< fa toolbox >}} scirpy (Python)](https://scirpy.scverse.org/en/latest/) Toolkit
+- [{{< fa toolbox >}} Dandelion (Python)](https://sc-dandelion.readthedocs.io/en/latest/) Toolkit
 - [{{< fa toolbox >}} alakazam (R)](https://alakazam.readthedocs.io/en/stable/) Repertoire analysis on output from pRESTO and ChangeO (Part of Immcantation)
 - [{{< fa toolbox >}} dowser (R)](https://dowser.readthedocs.io/en/stable/) Phylogenetic analysis of B cells (Part of Immcantation)
 - [{{< fa toolbox >}} melange (R)](https://github.com/rahuldhodapkar/melange) Read MIXCR, Annovar, RSEM data into Seurat
