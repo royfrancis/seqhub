@@ -89,8 +89,35 @@ description: Single-cell RNA-Seq experiments and analyses
 - [{{< fa toolbox >}} Compare 10X QC reports](https://10xqc.com/)
 - SatijaLab [{{< fa toolbox >}} Cost Per Cell Calculator](https://satijalab.org/costpercell/)
 
-## Mapping and Quantification
+## Methods and kits {#methods-kits}
 
+Common methods for single-cell RNA-seq are based on microfluidics, droplets, microwells, or FACS sorting into plates. The most popular platforms are 10X Genomics Chromium, Drop-seq, inDrop, Seq-Well, and SMART-seq2/3. Parse has recently emerged as a new droplet-based platform.
+
+Droplet based methods are high-throughput and cost-effective, but they typically capture only the 3' or 5' end of transcripts and have lower sensitivity per cell. Plate-based methods like SMART-seq2/3 provide full-length transcript coverage and higher sensitivity but are lower throughput and more expensive per cell.
+
+How do 10X Genomics and Parse compare?
+
+- Hardware/cost: 10x needs a Chromium Controller; Parse doesn’t (lower setup cost) but is more hands‑on. 10x prone to GEM wetting/clogging; Parse avoids this.
+- Workflow: 10x ≈3 days and more flexible; Parse ≥4 days with a long uninterrupted day. Parse supports fixation/storage without extra hardware; 10x fixation needs another instrument.
+- Multiplexing: Built‑in with Parse; 10x requires add‑on reagents/steps (e.g., hashing).
+- Input/recovery: Parse needs ≥100k cells/sample; 10x can run ~800 cells. 10x generally higher, more consistent recovery—better for rare populations.
+- Read composition/ambient RNA: Parse slightly higher mitochondrial %; 10x much higher ribosomal/lncRNA (more ambient RNA). Parse washes reduce ambient RNA.
+- Doublets: This study—10x with hashing ~14%; Parse ~31% (WT) and ~21% (mini); literature mixed by tissue.
+- Sensitivity/reproducibility: Parse detects ~2× more genes at similar depth but shows higher variability and batch effects; 10x more reproducible and simpler downstream (less batch correction).
+- Cell‑type resolution (thymus): 10x cleanly resolves major subsets and DP subtypes; Parse struggled (aberrant Cd3d/Cd3g, missed DP‑A, poor SP‑CD4 vs SP‑CD8 separation).
+- Bottom line: Choose 10x for reliability, recovery, and annotation with low input; choose Parse for no instrument, integrated multiplexing, fixation flexibility, and higher gene detection at the cost of longer workflow and variable data.
+
+@filippov2024comparative
+
+- Overall: Both produced high-quality PBMC data with consistent replicates.
+- Efficiency: 10x ≈2× higher cell recovery and ~13% more valid reads; Parse needs more input and deeper sequencing (more invalid barcodes).
+- Multiplets/QC: Parse had lower multiplet rates → fewer cells discarded than 10x.
+- Sensitivity (20k reads/cell): Parse detected ~1.2× more genes in T/NK/B; no advantage in monocytes.
+- Biases: 10x enriched for ribosomal protein-coding genes; 10x GC bias varies by chemistry.
+- Downstream: Parse improved clustering/rare-cell detection but showed weaker marker-gene expression—reference-based annotation recommended.
+- Use-cases: Parse for high-throughput multiplexing and low-expression genes; 10x for higher recovery/valid reads and robust marker quantification; overall quality comparable.
+
+## Mapping and Quantification {#mapping}
 ### CellRanger
 
 - Process chromium data
