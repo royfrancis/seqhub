@@ -452,9 +452,17 @@ Curated list of marker genes by organism, tissue and cell type.
 - [PanglaoDB](https://panglaodb.se/)
 - [CellMarker](http://biocc.hrbmu.edu.cn/CellMarker/browse.jsp)
 
-## Interactive analysis/visualisation frameworks
+## Tools
+### CLI frameworks
 
-### Open source
+- [{{< fa toolbox >}} Scanpy](https://scanpy.readthedocs.io/en/stable/) (Python)
+- [{{< fa toolbox >}} Seurat](https://satijalab.org/seurat/) (R)
+- [{{< fa toolbox >}} Bioconductor](https://www.bioconductor.org/) (R)
+- [{{< fa toolbox >}} Scarf](https://github.com/parashardhapola/scarf) (Python) Atlas scale analysis
+- [{{< fa toolbox >}} Cumulus](https://cumulus.readthedocs.io/en/stable/) Cloud computing
+
+### Interactive analysis/visualisation {#interactive-analysis-visualisation}
+#### Open source
 
 - [{{< fa toolbox >}} Galaxy](https://singlecell.usegalaxy.eu/) (GUI)
 - [{{< fa toolbox >}} Kana](https://www.kanaverse.org/kana/) (GUI)
@@ -476,13 +484,17 @@ Curated list of marker genes by organism, tissue and cell type.
 
 @cakir2020comparison
 
-### Commercial
+#### Commercial
 
 Enterprise GUI solutions for single-cell data analysis.
 
 - [{{< fa toolbox >}} Parktek Flow](https://www.illumina.com/products/by-type/informatics-products/partek-flow.html)
 - [{{< fa toolbox >}} Qiagen CLC Genomics](https://digitalinsights.qiagen.com/products-overview/discovery-insights-portfolio/qiagen-clc-genomics/)
 - [{{< fa toolbox >}} Parse Trailmaker](https://www.parsebiosciences.com/data-analysis/) (Free for Academia and Parse users)
+- [{{< fa toolbox >}} Nygen](https://www.nygen.io/)
+- [{{< fa toolbox >}} Rosalind.Bio](https://www.rosalind.bio/)
+- [{{< fa toolbox >}} BioTuring](https://bioturing.com/)
+- [{{< fa toolbox >}} BioInfoRx](https://www.bioinforx.com/)
 
 ## Learning
 
