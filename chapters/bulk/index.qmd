@@ -134,6 +134,27 @@ Issues with RPKM and suggestion for use of TPM.
 
 @law2020guide, @soneson2020exploremodelmatrix, @law2016rna
 
+## Celltype deconvolution {#bulk-deconv}
+
+Nine methods were used to deconvolve celltypes from bulk PBMC RNA-seq data and simulated bulk data using single cell RNA-seq as reference. 
+
+Recommendations on reference data:
+
+-	Balanced sampling of single-cell data improves accuracy
+-	Enlarging reference datasets does not necessarily enhance accuracy and may introduce noise if expression patterns are already well captured
+-	Mismatch in cell types between reference and bulk samples significantly reduces accuracy. Best performance occurs when reference and bulk cell types are fully aligned
+-	Adding extra, irrelevant cell types to the reference can introduce confusion and worsen deconvolution performance
+
+Performance insights:
+
+- SVR-based methods outperform OLS-based methods overall
+-	AutoGeneS and CPM show strong predictive performance; AutoGeneS is also runtime-efficient
+-	DWLS performs best among OLS-based approaches and is particularly effective when gene expression collinearity is high
+-	ADAPTS (DCQ algorithm) and CPM are most robust when reference and bulk cell types are inconsistent
+-	Cell type subdivision improves performance for some tools (notably DWLS), highlighting sensitivity to gene co-expression structures
+
+@xu2025cell
+
 ## Other
 
 A benchmark for quantification pipelines
