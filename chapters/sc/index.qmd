@@ -65,6 +65,8 @@ description: Single-cell RNA-Seq experiments and analyses
 
 @zhang2020determining
 
+- [{{< fa toolbox >}} scDesign (R)](https://github.com/Vivianstats/scDesign) @li2019statistical
+
 ### Batch design, number of cells
 
 **Avoid technical biases.**
@@ -78,6 +80,7 @@ description: Single-cell RNA-Seq experiments and analyses
 @baran2018experimental
 
 - [{{< fa toolbox >}} SatijaLab Cells Calculator](https://satijalab.org/howmanycells/)
+- [{{< fa toolbox >}} SCOPIT](https://alexdavisscs.shinyapps.io/scs_power_multinomial/) (Shiny app)
 - [{{< fa toolbox >}} powsimR (R)](https://github.com/bvieth/powsimR)
 
 ### Sequencing depth
