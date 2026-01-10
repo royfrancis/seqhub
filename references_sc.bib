@@ -1,5 +1,7 @@
 ## sc gene expression ----------------------------------------------------------
 
+### general / best practices / guide -------------------------------------------
+
 @article{luecken2019current,
   title={Current best practices in single-cell RNA-seq analysis: a tutorial},
   author={Luecken, Malte D and Theis, Fabian J},
@@ -32,6 +34,28 @@
   publisher={Nature Publishing Group US New York},
   url={https://doi.org/10.1038/s41587-020-00744-z}
 }
+
+@article{melsted2019modular,
+  title={Modular and efficient pre-processing of single-cell RNA-seq},
+  author={Melsted, P{\'a}ll and Booeshaghi, A Sina and Gao, Fan and Beltrame, Eduardo and Lu, Lambda and Hjorleifsson, Kristj{\'a}n Eldj{\'a}rn and Gehring, Jase and Pachter, Lior},
+  journal={BioRxiv},
+  pages={673285},
+  year={2019},
+  publisher={Cold Spring Harbor Laboratory},
+  url={http://dx.doi.org/10.1038/s41587-021-00870-2}
+}
+
+@article{luecken2025defining,
+  title={Defining and benchmarking open problems in single-cell analysis},
+  author={Luecken, Malte D and Gigante, Scott and Burkhardt, Daniel B and Cannoodt, Robrecht and Strobl, Daniel C and Markov, Nikolay S and Zappia, Luke and Palla, Giovanni and Lewis, Wesley and Dimitrov, Daniel and others},
+  journal={Nature Biotechnology},
+  pages={1--6},
+  year={2025},
+  publisher={Nature Publishing Group US New York},
+  url={https://doi.org/10.1038/s41587-025-02694-w}
+}
+
+### experimental design --------------------------------------------------------
 
 @article{nguyen2018experimental,
   title={Experimental considerations for single-cell RNA sequencing approaches},
@@ -80,15 +104,33 @@
   url={https://doi.org/10.1038/nmeth.4220}
 }
 
-@article{melsted2019modular,
-  title={Modular and efficient pre-processing of single-cell RNA-seq},
-  author={Melsted, P{\'a}ll and Booeshaghi, A Sina and Gao, Fan and Beltrame, Eduardo and Lu, Lambda and Hjorleifsson, Kristj{\'a}n Eldj{\'a}rn and Gehring, Jase and Pachter, Lior},
-  journal={BioRxiv},
-  pages={673285},
+@article{li2019statistical,
+  title={A statistical simulator scDesign for rational scRNA-seq experimental design},
+  author={Li, Wei Vivian and Li, Jingyi Jessica},
+  journal={Bioinformatics},
+  volume={35},
+  number={14},
+  pages={i41--i50},
   year={2019},
-  publisher={Cold Spring Harbor Laboratory},
-  url={http://dx.doi.org/10.1038/s41587-021-00870-2}
+  publisher={Oxford University Press},
+  url={https://doi.org/10.1093/bioinformatics/btz321}
 }
+
+### background noise detection -------------------------------------------------
+
+@article{janssen2023effect,
+  title={The effect of background noise and its removal on the analysis of single-cell expression data},
+  author={Janssen, Philipp and Kliesmete, Zane and Vieth, Beate and Adiconis, Xian and Simmons, Sean and Marshall, Jamie and McCabe, Cristin and Heyn, Holger and Levin, Joshua Z and Enard, Wolfgang and others},
+  journal={Genome biology},
+  volume={24},
+  number={1},
+  pages={140},
+  year={2023},
+  publisher={Springer},
+  url={https://link.springer.com/article/10.1186/s13059-023-02978-x}
+}
+
+### doublet detection ----------------------------------------------------------
 
 @article{xi2021benchmarking,
   title={Benchmarking computational doublet-detection methods for single-cell RNA sequencing data},
@@ -101,6 +143,8 @@
   publisher={Elsevier},
   url={https://doi.org/10.1016/j.cels.2020.11.008}
 }
+
+### cell type identification ---------------------------------------------------
 
 @article{xie2021automatic,
   title={Automatic cell type identification methods for single-cell RNA sequencing},
@@ -125,6 +169,31 @@
   url={https://academic.oup.com/bib/article/23/2/bbab567/6502554}
 }
 
+@article{abdelaal2019comparison,
+  title={A comparison of automatic cell identification methods for single-cell RNA sequencing data},
+  author={Abdelaal, Tamim and Michielsen, Lieke and Cats, Davy and Hoogduin, Dylan and Mei, Hailiang and Reinders, Marcel JT and Mahfouz, Ahmed},
+  journal={Genome biology},
+  volume={20},
+  pages={1--19},
+  year={2019},
+  publisher={Springer},
+  url={https://link.springer.com/article/10.1186/s13059-019-1795-z}
+}
+
+@article{huang2021evaluation,
+  title={Evaluation of cell type annotation R packages on single-cell RNA-seq data},
+  author={Huang, Qianhui and Liu, Yu and Du, Yuheng and Garmire, Lana X},
+  journal={Genomics, proteomics \& bioinformatics},
+  volume={19},
+  number={2},
+  pages={267--281},
+  year={2021},
+  publisher={Oxford University Press},
+  url={https://doi.org/10.1016/j.gpb.2020.07.004}
+}
+
+### differential expression ----------------------------------------------------
+
 @article{wang2019comparative,
   title={Comparative analysis of differential gene expression analysis tools for single-cell RNA sequencing data},
   author={Wang, Tianyu and Li, Boyang and Nelson, Craig E and Nabavi, Sheida},
@@ -136,6 +205,8 @@
   publisher={BioMed Central},
   url={https://academic.oup.com/bib/article/20/1/288/4364840}
 }
+
+### data integration -----------------------------------------------------------
 
 @article{argelaguet2021computational,
   title={Computational principles and challenges in single-cell data integration},
@@ -161,30 +232,6 @@
   url={https://www.nature.com/articles/s41592-021-01336-8}
 }
 
-@article{ouyang2021shinycell,
-  title={ShinyCell: simple and sharable visualization of single-cell gene expression data},
-  author={Ouyang, John F and Kamaraj, Uma S and Cao, Elaine Y and Rackham, Owen JL},
-  journal={Bioinformatics},
-  volume={37},
-  number={19},
-  pages={3374--3376},
-  year={2021},
-  publisher={Oxford Academic},
-  url={https://academic.oup.com/bioinformatics/article/37/19/3374/6198103}
-}
-
-@article{cakir2020comparison,
-  title={Comparison of visualization tools for single-cell RNAseq data},
-  author={Cakir, Batuhan and Prete, Martin and Huang, Ni and Van Dongen, Stijn and Pir, Pinar and Kiselev, Vladimir Yu},
-  journal={NAR Genomics and Bioinformatics},
-  volume={2},
-  number={3},
-  pages={lqaa052},
-  year={2020},
-  publisher={Oxford University Press},
-  url={https://pmc.ncbi.nlm.nih.gov/articles/PMC7391988/}
-}
-
 @article{tran2020benchmark,
   title={A benchmark of batch-effect correction methods for single-cell RNA sequencing data},
   author={Tran, Hoa Thi Nhu and Ang, Kok Siong and Chevrier, Marion and Zhang, Xiaomeng and Lee, Nicole Yee Shin and Goh, Michelle and Chen, Jinmiao},
@@ -194,29 +241,6 @@
   year={2020},
   publisher={Springer},
   url={https://link.springer.com/article/10.1186/s13059-019-1850-9}
-}
-
-@article{saelens2019comparison,
-  title={A comparison of single-cell trajectory inference methods},
-  author={Saelens, Wouter and Cannoodt, Robrecht and Todorov, Helena and Saeys, Yvan},
-  journal={Nature biotechnology},
-  volume={37},
-  number={5},
-  pages={547--554},
-  year={2019},
-  publisher={Nature Publishing Group US New York},
-  url={https://www.nature.com/articles/s42003-022-03175-5}
-}
-
-@article{abdelaal2019comparison,
-  title={A comparison of automatic cell identification methods for single-cell RNA sequencing data},
-  author={Abdelaal, Tamim and Michielsen, Lieke and Cats, Davy and Hoogduin, Dylan and Mei, Hailiang and Reinders, Marcel JT and Mahfouz, Ahmed},
-  journal={Genome biology},
-  volume={20},
-  pages={1--19},
-  year={2019},
-  publisher={Springer},
-  url={https://link.springer.com/article/10.1186/s13059-019-1795-z}
 }
 
 @article{andreatta2024semi,
@@ -229,39 +253,6 @@
   year={2024},
   publisher={Nature Publishing Group UK London},
   url={https://www.nature.com/articles/s41467-024-45240-z}
-}
-
-@article{almet2021landscape,
-  title={The landscape of cell--cell communication through single-cell transcriptomics},
-  author={Almet, Axel A and Cang, Zixuan and Jin, Suoqin and Nie, Qing},
-  journal={Current opinion in systems biology},
-  volume={26},
-  pages={12--23},
-  year={2021},
-  publisher={Elsevier},
-  url={https://www.sciencedirect.com/science/article/pii/S2452310021000081}
-}
-
-@article{bilous2024building,
-  title={Building and analyzing metacells in single-cell genomics data},
-  author={Bilous, Mariia and H{\'e}rault, L{\'e}onard and Gabriel, Aur{\'e}lie AG and Teleman, Matei and Gfeller, David},
-  journal={Molecular Systems Biology},
-  pages={1--23},
-  year={2024},
-  publisher={Nature Publishing Group UK London},
-  url={https://doi.org/10.1038/s44320-024-00045-6}
-}
-
-@article{janssen2023effect,
-  title={The effect of background noise and its removal on the analysis of single-cell expression data},
-  author={Janssen, Philipp and Kliesmete, Zane and Vieth, Beate and Adiconis, Xian and Simmons, Sean and Marshall, Jamie and McCabe, Cristin and Heyn, Holger and Levin, Joshua Z and Enard, Wolfgang and others},
-  journal={Genome biology},
-  volume={24},
-  number={1},
-  pages={140},
-  year={2023},
-  publisher={Springer},
-  url={https://link.springer.com/article/10.1186/s13059-023-02978-x}
 }
 
 @article{zappia2025feature,
@@ -298,14 +289,81 @@
   url = {https://doi.org/10.1002/qub2.91}
 }
 
-@article{luecken2025defining,
-  title={Defining and benchmarking open problems in single-cell analysis},
-  author={Luecken, Malte D and Gigante, Scott and Burkhardt, Daniel B and Cannoodt, Robrecht and Strobl, Daniel C and Markov, Nikolay S and Zappia, Luke and Palla, Giovanni and Lewis, Wesley and Dimitrov, Daniel and others},
-  journal={Nature Biotechnology},
-  pages={1--6},
-  year={2025},
+### visualization tools --------------------------------------------------------
+
+@article{ouyang2021shinycell,
+  title={ShinyCell: simple and sharable visualization of single-cell gene expression data},
+  author={Ouyang, John F and Kamaraj, Uma S and Cao, Elaine Y and Rackham, Owen JL},
+  journal={Bioinformatics},
+  volume={37},
+  number={19},
+  pages={3374--3376},
+  year={2021},
+  publisher={Oxford Academic},
+  url={https://academic.oup.com/bioinformatics/article/37/19/3374/6198103}
+}
+
+@article{cakir2020comparison,
+  title={Comparison of visualization tools for single-cell RNAseq data},
+  author={Cakir, Batuhan and Prete, Martin and Huang, Ni and Van Dongen, Stijn and Pir, Pinar and Kiselev, Vladimir Yu},
+  journal={NAR Genomics and Bioinformatics},
+  volume={2},
+  number={3},
+  pages={lqaa052},
+  year={2020},
+  publisher={Oxford University Press},
+  url={https://pmc.ncbi.nlm.nih.gov/articles/PMC7391988/}
+}
+
+### trajectory inference -------------------------------------------------------
+
+@article{saelens2019comparison,
+  title={A comparison of single-cell trajectory inference methods},
+  author={Saelens, Wouter and Cannoodt, Robrecht and Todorov, Helena and Saeys, Yvan},
+  journal={Nature biotechnology},
+  volume={37},
+  number={5},
+  pages={547--554},
+  year={2019},
   publisher={Nature Publishing Group US New York},
-  url={https://doi.org/10.1038/s41587-025-02694-w}
+  url={https://www.nature.com/articles/s42003-022-03175-5}
+}
+
+### velocity -------------------------------------------------------------------
+
+@article{bergen2021rna,
+  title={RNA velocity—current challenges and future perspectives},
+  author={Bergen, Volker and Soldatov, Ruslan A and Kharchenko, Peter V and Theis, Fabian J},
+  journal={Molecular systems biology},
+  volume={17},
+  number={8},
+  pages={e10282},
+  year={2021},
+  url={https://doi.org/10.15252/msb.202110282}
+}
+
+@article{wang2025paradigms,
+  title={Paradigms, innovations, and biological applications of RNA velocity: a comprehensive review},
+  author={Wang, Yajunzi and Li, Jing and Zha, Haoruo and Liu, Shuhe and Huang, Daiyun and Fu, Lei and Liu, Xin},
+  journal={Briefings in Bioinformatics},
+  volume={26},
+  number={4},
+  pages={bbaf339},
+  year={2025},
+  publisher={Oxford University Press},
+  url={https://doi.org/10.1093/bib/bbaf339}
+}
+
+@article{gorin2022rna,
+  title={RNA velocity unraveled},
+  author={Gorin, Gennady and Fang, Meichen and Chari, Tara and Pachter, Lior},
+  journal={PLOS Computational Biology},
+  volume={18},
+  number={9},
+  pages={e1010492},
+  year={2022},
+  publisher={Public Library of Science San Francisco, CA USA},
+  url={https://doi.org/10.1371/journal.pcbi.1010492}
 }
 
 @article{soneson2021preprocessing,
@@ -319,6 +377,33 @@
   publisher={Public Library of Science San Francisco, CA USA},
   url={https://doi.org/10.1371/journal.pcbi.1008585}
 }
+
+### cell-cell communication ----------------------------------------------------
+
+@article{almet2021landscape,
+  title={The landscape of cell--cell communication through single-cell transcriptomics},
+  author={Almet, Axel A and Cang, Zixuan and Jin, Suoqin and Nie, Qing},
+  journal={Current opinion in systems biology},
+  volume={26},
+  pages={12--23},
+  year={2021},
+  publisher={Elsevier},
+  url={https://www.sciencedirect.com/science/article/pii/S2452310021000081}
+}
+
+### metacells ------------------------------------------------------------------
+
+@article{bilous2024building,
+  title={Building and analyzing metacells in single-cell genomics data},
+  author={Bilous, Mariia and H{\'e}rault, L{\'e}onard and Gabriel, Aur{\'e}lie AG and Teleman, Matei and Gfeller, David},
+  journal={Molecular Systems Biology},
+  pages={1--23},
+  year={2024},
+  publisher={Nature Publishing Group UK London},
+  url={https://doi.org/10.1038/s44320-024-00045-6}
+}
+
+### other ----------------------------------------------------------------------
 
 @article{filippov2024comparative,
   title={Comparative transcriptomic analyses of thymocytes using 10x Genomics and Parse scRNA-seq technologies},
@@ -344,14 +429,3 @@
   url={https://doi.org/10.3390/ijms25073828}
 }
 
-@article{li2019statistical,
-  title={A statistical simulator scDesign for rational scRNA-seq experimental design},
-  author={Li, Wei Vivian and Li, Jingyi Jessica},
-  journal={Bioinformatics},
-  volume={35},
-  number={14},
-  pages={i41--i50},
-  year={2019},
-  publisher={Oxford University Press},
-  url={https://doi.org/10.1093/bioinformatics/btz321}
-}

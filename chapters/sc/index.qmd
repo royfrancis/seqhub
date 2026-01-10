@@ -243,21 +243,75 @@ ggplot(dfr, aes(cells_loaded, cells_recovered)) +
 
 ![Performance comparison of supervised classifiers for cell identification using different scRNA-seq datasets. Heatmap of the a median F1-scores and b percentage of unlabeled cells across all cell populations per classifier (rows) per dataset (columns). Gray boxes indicate that the corresponding method could not be tested on the corresponding dataset.](assets/abdelaal-2019-1.webp)
 
+![Summary of the performance of all classifiers during different experiments. For each experiment, the heatmap shows whether a classifier performs good, intermediate, or poor. Light gray indicates that a classifier could not be tested during an experiment. The gray boxes to the right of the heatmap indicate the four different categories of experiments: intra-dataset, inter-dataset, rejection, and timing. Experiments itself are indicated using the row labels.](assets/abdelaal-2019-2.webp)
+
+- Benchmarked **22** supervised classification methods for automatic cell identification in scRNA-seq, including both single-cell-specific tools and general-purpose ML classifiers.
+- Used **27** public scRNA-seq datasets spanning different sizes, technologies, species, and annotation complexity.
+- Evaluated two main scenarios: within-dataset (intra-dataset) and across-dataset (inter-dataset) prediction.
+- Scored methods by accuracy, fraction of unclassified cells, and computation time, and also tested sensitivity to feature selection and number of cells per population.
+- Found most methods perform well broadly, but accuracy drops for complex datasets with overlapping classes or very fine ("deep") annotation levels.
+- Reported that a general-purpose **support vector machine (SVM)** achieved the best overall performance across their experiments.
+- Released code and a Snakemake workflow to reproduce/extend the benchmark (new methods and datasets).
+
 @abdelaal2019comparison
 
 Identification of cell types can be completely automated (by comparing to reference data/databases) or semi-automated (reference data + marker genes).
 
 ![Summary of performance of the automatic cell-type identification methods. Bar graphs of the automatic cell-type identification methods with six evaluation criteria indicated. For each evaluation criteria, the length of the bars shows the performance of the automatic method: poor, median or good. The automatic methods are sorted based on the mean performance of the evaluation criteria. No bar: not evaluated.](https://ars.els-cdn.com/content/image/1-s2.0-S2001037021004499-gr5_lrg.jpg)
 
-@xie2021automatic, @sun2022comprehensive
+- Compares 32 methods using common performance criteria such as prediction accuracy, F1-score, "unlabeling" rate (cells left unassigned), and computational efficiency. 
+- Organizes methods by major strategy families, including marker/gene-set–based approaches, reference-based label transfer, and supervised machine-learning classifiers. 
+- Highlights that method performance is dataset-dependent, with challenges increasing when cell types are highly similar, labels are very fine-grained, or references are incomplete. 
+- Emphasizes practical selection factors beyond accuracy, especially whether a method can leave cells "unknown/unassigned," how sensitive it is to batch effects, and how well it scales to large datasets.
+
+@xie2021automatic
+
+![Overall ranking of methods](assets/sun-2022-1.webp)
+
+- Compared 8 supervised and 10 unsupervised scRNA-seq cell type identification methods across 14 real public datasets (different tissues, protocols, species).
+- Main result: supervised methods usually outperform unsupervised methods, except when the goal is identifying unknown/novel cell types (where unsupervised tends to do better).
+- Supervised methods work best when the reference is high-quality, low-complexity, and similar to the query; performance drops as reference bias increases (different individuals/conditions/batches/species).
+- Dataset complexity is a major driver: when complexity is low, supervised wins clearly; when complexity is high, supervised vs unsupervised performance becomes more similar and can even reverse under strong reference bias.
+- More training cells generally improve supervised performance until a saturation point; unsupervised results can vary strongly with sample size because cluster-number estimation changes with dataset size.
+- Sequencing depth helps both categories up to a saturation point; deeper data improves results most when baseline depth is low.
+- Batch-effect correction was often not necessary and could hurt performance; most supervised methods did not improve after correction, with CHETAH being a notable exception due to fewer "unassigned" calls.
+- Increasing the number of cell types and stronger cell-type similarity makes the task harder; unsupervised methods are particularly sensitive when the inferred cluster number disagrees with the true number.
+- With imbalanced populations, supervised methods are generally more robust if the training set contains enough examples of rare types; unsupervised performance is affected by imbalance and cluster-number errors.
+- Compute/scalability: unsupervised methods are generally faster; among fast methods, several could handle ~50k cells quickly, and experiments on ~600k cells showed similar trends to smaller datasets.
+- Method-level takeaways highlighted in the paper: among supervised methods, Seurat v3 mapping and SingleR were top overall (Seurat mapping favored for large datasets due to speed), and among unsupervised methods, Seurat v3 clustering was strongest overall, with SHARP recommended for ultra-large datasets.
+
+@sun2022comprehensive
 
 It is also important that cell types are labelled with the same labels across datasets and studies. It is useful to refer to a cell type ontology [Cell type ontology](https://cell-ontology.github.io/).
+
+![Summary of the classification performance in each evaluation criteria. Each column is a method and each row is an evaluation criterion from intra-dataset and inter-dataset prediction (intra/inter), cell–cell similarity (DE scale), increased cell type classes, downsampling of gene count, downsampling of read depth, rare cell type detection, unknown cell type detection (rejection option), as well as runtime and memory utilization. The heatmap shows the rank of individual methods based on averaged metrics over overall accuracy, ARI, and V-measure for each evaluation indicated in the left row. Rare cell type detection was ranked by averaged cell type-specific accuracy for classifying cell types < 1.70% in population. Unknown cell type detection was ranked by the averaged accuracy of assigning "unknown" to the leave-out group. Runtime and memory were ranked by utilization efficiency. Gray box indicates that the method was not included in the evaluation. The methods in the heatmap are arranged in ascending order by their average rank over intra-dataset and inter-dataset predictions.](assets/huang-2021-gr6.webp)
+
+- Benchmarked 10 R packages for automated scRNA-seq cell-type annotation: Seurat, scmap, SingleR, CHETAH, SingleCellNet, scID, Garnett, SCINA, plus two repurposed methylation deconvolution methods (CP, RPC).
+- Evaluated accuracy on real datasets (PBMC, pancreas, Tabula Muris full and lung subsets) and multiple simulation suites; metrics included overall accuracy, ARI, and V-measure.
+- Overall top performers were Seurat, SingleR, CP, RPC, and SingleCellNet; Seurat was best at annotating major cell types in both intra-dataset and inter-dataset tests.
+- Inter-dataset annotation is harder and performance is dataset-dependent; PBMC is particularly challenging due to highly similar immune subtypes (e.g., CD4 vs CD8 T cells).
+- For highly similar cell types (low DE simulations), all methods degrade, but SingleR and RPC were most robust; Seurat was weaker under the hardest similarity setting.
+- As the number of cell-type classes increases (10→50), most methods drop in accuracy; SingleR stays extremely robust and RPC is consistently second-best, while Seurat deteriorates faster after ~30 classes.
+- With gene/feature downsampling, Seurat and SingleR remain most stable (high ARI across reduced feature sets), whereas some methods (e.g., Garnett, scID, scmap) are more sensitive.
+- Rare cell types: Seurat and SingleCellNet lose accuracy when rare groups get very small (≤50 cells in their rare-type simulations), while SingleR/CP/RPC are more robust.
+- "Unknown"/rejection option: among methods that can label "unknown" (Garnett, SCINA, scmap, CHETAH, scID), SCINA had a relatively better balance for rejecting absent types, but rejection-enabled tools were not top overall for accuracy/robustness.
+- Compute trade-offs: SingleCellNet and CP were fastest/most memory-efficient among top-accuracy tools; Seurat can be memory-heavy at large scale (reported up to ~100 GB at 50k cells) and RPC can be slow (hours) at large scale.
+- Practical guidance: use Seurat for general annotation of separable major types; prefer SingleR/RPC/CP when expecting rare populations, high similarity, or many labels (given a good reference).
+
+@huang2021evaluation
 
 - [{{< fa toolbox >}} SingleR](https://bioconductor.org/packages/release/bioc/html/SingleR.html) (R)
 - [{{< fa toolbox >}} scPred](https://github.com/powellgenomicslab/scPred) (R)
 - [{{< fa toolbox >}} celltypist](https://github.com/Teichlab/celltypist) (Python)
+- [{{< fa toolbox >}} CHETAH](https://github.com/jdekanter/CHETAH) (R)
 - [{{< fa toolbox >}} easybio](https://github.com/person-c/easybio) (R) R access to CellMarker 2.0 database
 - [{{< fa toolbox >}} SCINA](https://github.com/jcao89757/SCINA) (R)
+- [{{< fa toolbox >}} Garnett](https://cole-trapnell-lab.github.io/garnett/) (R)
+- [{{< fa toolbox >}} scmap](https://github.com/hemberg-lab/scmap) (R)
+- [{{< fa toolbox >}} SingleCellNet](https://github.com/CahanLab/singleCellNet) (R)
+- [{{< fa toolbox >}} scID](https://github.com/BatadaLab/scID) (R)
+- [{{< fa toolbox >}} cellassign](https://github.com/Irrationone/cellassign) (R)
+- [{{< fa toolbox >}} CellFishing](https://github.com/bicycle1885/CellFishing.jl) (Julia)
 
 ## Differential expression
 
@@ -348,7 +402,50 @@ Multiomic trajectory tools
 
 ## RNA velocity
 
-[Content to be added]
+**Core Concepts and Mechanism**
+
+- RNA velocity is a computational method used to predict the future state of individual cells by analyzing the balance between unspliced (nascent) and spliced (mature) mRNA
+- The method exploits the causal relationship between these two species: an abundance of unspliced mRNA suggests a gene is being upregulated, while its depletion suggests downregulation
+- By combining these measurements across thousands of genes, researchers can reconstruct directed differentiation trajectories from "snapshot" single-cell data without needing prior knowledge of cell lineages
+- The primary signal for RNA velocity is derived from the curvature in a "phase portrait," which reflects the temporal delay between transcription, splicing, and degradation
+
+![Workflow for RNA velocity analysis. (A) Raw scRNA-seq data acquisition. (B) Quantification of unspliced and spliced transcript abundances. (C) Count matrices preprocessing, data normalization, and neighborhood smoothing are included in the classic workflow. (D) Estimation of RNA velocities by fitting spliced and unspliced counts to biophysical models, also yielding kinetic parameters and latent variables. (E) Visualization of high-dimensional velocity vectors in low-dimensional space via methods such as streamline plots and grid-averaged vector fields. (F) Downstream analyses.](assets/wang-2025-1.webp)
+
+**Methodological Paradigms**
+
+The sources categorize RNA velocity computational tools into three primary classes based on how they infer transcriptional kinetics:
+
+- Steady-state Methods (e.g., Velocyto): These assume that gene expression reaches an equilibrium between synthesis and degradation; they are often faster and simpler but can be inaccurate if the system has not reached a steady state
+- Trajectory Methods (e.g., scVelo Dynamical, UniTVelo): These fit the full transcriptional cycle using systems of ordinary differential equations (ODEs) to estimate latent time and gene-specific kinetic parameters
+- State Extrapolation Methods (e.g., cellDancer, DeepVelo): These focus on local cell-specific kinetics by leveraging neighboring cell information to capture subtle variations across heterogeneous populations
+
+![RNA velocity methods are categorized into three classes based on their paradigms in learning transcriptional dynamics. (A, B) Steady-state methods, include linear regression based on the steady-state ratio and inference based on minimizing Kullback–Leibler (KL) divergence between observed and predicted distributions. (C, D) Trajectory-based methods, where either cell-shared or cell-specific latent trajectories are used to reconstruct cellular dynamics by minimizing the sum of displacements between observed and estimated states. (E, F) State extrapolation methods, which infer future states by minimizing cosine similarity or distance in phase portrait space or high-dimensional gene space.](assets/wang-2025-2.webp)
+
+**Biological Applications**
+
+RNA velocity has provided quantitative insights across three major biological scenarios:
+
+- Developmental Biology: It helps resolve complex lineage hierarchies and temporal sequences in systems like embryonic development, neural stem cell differentiation, and retinal maturation
+- Diseased and Injured Environments: The technique identifies abnormal cellular transitions in conditions such as Alzheimer’s disease, systemic lupus erythematosus, and impaired tissue regeneration
+- Tumor Microenvironments: Researchers use it to dissect cancer cell plasticity, immune cell exhaustion trajectories, and the dynamic interactions between malignant cells and their surroundings
+
+**Critical Challenges and Limitations**
+
+Despite its utility, the sources highlight significant technical and theoretical hurdles:
+
+- Biophysical Inconsistency: Current binary models (spliced vs. unspliced) oversimplify biology, as most human genes have multiple introns and complex alternative splicing mechanisms
+- Inaccurate Assumptions: Many models rely on constant kinetic rates, which fail to account for "transcriptional boosts" or multi-rate regimes where splicing or degradation speeds vary over time
+- Preprocessing Pitfalls: Common steps like normalization and k-nearest neighbor (KNN) smoothing can introduce distortions, create false signals, or obscure the stochastic nature of gene expression
+- Visualization Artifacts: Projecting high-dimensional velocity vectors onto 2D embeddings (like UMAP or t-SNE) frequently distorts local and global relationships, leading to misleading biological interpretations
+
+**Future Directions and Proposed Solutions**
+
+To improve the reliability of RNA velocity, the sources propose several innovations:
+- Stochastic and Discrete Modeling: Moving away from continuous ODEs toward discrete Markov models (e.g., using the Chemical Master Equation) to better handle low-copy number transcripts and "bursty" transcription
+- Multi-modal Integration: Incorporating other data layers, such as chromatin accessibility (ATAC-seq), metabolic labeling, or protein abundance, to provide a more comprehensive view of cellular dynamics
+- State-Variable Kinetics: Developing models that allow kinetic rates to change as a cell moves through different biological states
+
+@gorin2022rna @bergen2021rna @wang2025paradigms
 
 Preprocessing choices affect RNA velocity results for droplet scRNA-seq data @soneson2021preprocessing
 
@@ -366,9 +463,27 @@ Preprocessing choices affect RNA velocity results for droplet scRNA-seq data @so
 
 ## Metacells
 
-![](https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/0950e5e3-eaf9-4448-9016-290de5c5ecc9/assets/graphic/44320_2024_45_fig1_html.png)
+![Metacells increase profile coverage and save computational resources, while preserving biologically relevant heterogeneity in single-cell genomics data.](assets/bilous-2024-8.webp)
 
-Metacells are defined as a partition of single-cell data into disjoint homogeneous groups of highly similar cells followed by aggregation of their profiles (Fig. 1). This concept relies on the assumption that most of the variability within metacells corresponds to technical noise and not to biologically relevant heterogeneity. As such, metacells aim at removing some of the noise while preserving the biological information of the single-cell data and improving interpretability.
+::: {#fig-metacell-bilous layout-ncol=3}
+
+![**Main conceptual steps in the metacell construction workflow.** Starting from a single-cell profile matrix, space and metrics are first defined for identifying cells displaying high similarity in their profiles (e.g., high transcriptomic similarity in scRNA-seq data). Second, highly similar cells are grouped into metacells. Third, single-cell profiles within each metacell are aggregated to create a metacell profile matrix. Dots represent single cells colored by cell type.](assets/bilous-2024-1.webp){group="metacell-bilous"}
+
+![**Graining level of metacell partition.** (A) tSNE representation of a peripheral blood mononuclear cells (PBMCs) scRNA-seq dataset (see Appendix) at different graining levels. Each dot represents a single cell, a metacell or a cluster, depending on the graining level. Colors represent cell types. (B) Distribution of graining levels in different studies using metacells. Colors represent different metacell construction tools. (C) Graining levels used for datasets of different sizes. Colors represent different metacell construction tools. (D) Example of single-cell RNA-seq datasets with different levels of complexity (T cells, cord blood mononuclear cells (CBMCs) and bone marrow datasets). (E) Number of cell types recovered at different graining levels in the three examples of panel (D). (F) Example of single-cell RNA-seq datasets with different sizes. (G) Number of cell types recovered at different graining levels in the three examples of panel (F).](assets/bilous-2024-2.webp){group="metacell-bilous"}
+
+![**Metacell quality metrics.** (A) Purity is defined as the proportion of cells from the most abundant cell type in a metacell. Higher purity corresponds to higher proportion of cells of the same cell type within a metacell. Purity can also be defined based on other annotations/categories than cell types. (B) Compactness is defined as the average variance of latent space component within a metacell. Better compactness corresponds to lower variance in the latent space components within cells grouped into a metacell. (C) Separation is defined as the distance to the closest metacell. Better separation corresponds to more distant metacells in the latent space. (D) Inner normalized variance is defined as the mean normalized gene variance within a metacell. Better inner normalized variance corresponds to lower variance of the single-cell profiles within a metacell. (E) Metacell size distribution is defined as the distribution of the number of cells in each metacell. Better metacell size distribution corresponds to more homogeneous metacell sizes. (F) Representativeness corresponds to the ability of metacells to faithfully represent the global structure of the single-cell dataset. Better representation corresponds to more uniform coverage of the dataset (black stars represent the centroid of each metacell). (G) Conservation of the downstream analyses at the metacell level is defined as the ability of metacells to preserve the results of the single-cell analysis.](assets/bilous-2024-3.webp){group="metacell-bilous"}
+
+![**Relationships between metacells and sketching or imputation.** Metacells combine the reduction in size of sketching approaches and the reduction in sparsity of imputation strategies.](assets/bilous-2024-4.webp){group="metacell-bilous"}
+
+![**Limitations of metacells.** (A) Example of limitations in metacells when aggregating cells of different cell types (i.e., impure metacell_3 in the example). Such impure metacells can lead to mixed profiles and artifacts in gene co-expression analyses. (B) Correlation between the size of metacells and the number of detected genes. (C) Computational cost of metacell construction (using MC2, SuperCell, and SEACells at a graining level of 75). Time (CPU time) is represented in minutes and memory (max RSS) in GB as a function of the cell numbers contained in the dataset being analyzed. Colors and shapes highlight the tool used for metacells construction. The y-axis is displayed on a log10 scale. All tasks were run on a machine with 500 GB and a time limit of 20 h with 1 CPU except for the run of MC2 with multithreading (10 CPUs). (D) Schematic representation of the integration strategy recommended to analyze large datasets with multiple samples using metacells: (i) constructing the metacells for each sample, (ii) integrating the samples at the metacell level, (iii) performing downstream analyses on the integrated metacell atlas. (E) Computational cost of metacell construction (using MC2, SuperCell, and SEACells at a graining level of 75), metacell construction + downstream analysis, and single-cell analysis (with and without using BPCells in Seurat). Time (CPU time) is represented in minutes and memory (max RSS) in GB as a function of the cell numbers contained in the dataset being analyzed. Following the approach described in panel (D), metacells were built on a per embryo basis and in parallel using 15 CPUs. After samples integration, downstream analyses included dimensionality reduction, clustering, and differential analysis. Colors and shapes highlight the tool used for metacells construction. The y-axis is displayed on a log10 scale.](assets/bilous-2024-5.webp){group="metacell-bilous"}
+
+![**Concepts that share similarities with metacells.** (A) Example of nested communities. (B) Example of graph abstraction. (C) Example of neighborhoods. (D) Example of sample-specific pseudobulks. (E) Example of cell-type-/sample-specific pseudobulks. (F) Example of pseudocells. (G) Example of pseudobulks of pseudoreplicates.](assets/bilous-2024-6.webp){group="metacell-bilous"}
+
+An overview of metacells.
+
+:::
+
+Metacells are defined as a partition of single-cell data into disjoint homogeneous groups of highly similar cells followed by aggregation of their profiles. This concept relies on the assumption that most of the variability within metacells corresponds to technical noise and not to biologically relevant heterogeneity. As such, metacells aim at removing some of the noise while preserving the biological information of the single-cell data and improving interpretability.
 
 - Choice of graining levels depends on both the complexity and size of the data
   - For large and low-complexity data, a relatively high graining level may be used.
@@ -382,8 +497,6 @@ Metacells are defined as a partition of single-cell data into disjoint homogeneo
   - Reasonable range of values 5–30
 
 ### Metrics
-
-![](https://www.embopress.org/cms/10.1038/s44320-024-00045-6/asset/7a1aefbc-4b4f-448b-bb04-3e4581e83564/assets/graphic/44320_2024_45_fig3_html.png)
 
 - **Purity**: Fraction of cells from the most abundant cell type in a metacell
 - to check that metacells do not mix cells from different cell types
