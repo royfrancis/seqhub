@@ -51,6 +51,12 @@ description: Single-cell RNA-Seq experiments and analyses
 
 @luecken2025defining
 
+**Overview of single-cell multiomic technologies**
+
+![Numerous single-cell multiomics sequences have been developed and can be classified into seven types. The blue box represents dual omics technology, and the magenta box represents technology that handles three or more omics simultaneously.](assets/lim-2004-1.webp)
+
+@lim2024advances
+
 ## Experimental design {#sc-exp-design}
 
 **Experimental Considerations for Single-Cell RNA Sequencing Approaches**
@@ -340,6 +346,11 @@ It is also important that cell types are labelled with the same labels across da
 
 @argelaguet2021computational [{{< fa brands youtube >}} Principles and challenges of data integration by Argelaguet](https://www.youtube.com/watch?v=Kkv7fNgBJUY)
 
+
+[Add content]
+
+@baiao2025technical
+
 - Comparison of data integration methods
 
 ![a, Overview of top and bottom ranked methods by overall score for the human immune cell task. Metrics are divided into batch correction (blue) and bio-conservation (pink) categories. Overall scores are computed using a 40/60 weighted mean of these category scores (see Methods for further visualization details and Supplementary Fig. 2 for the full plot). b,c, Visualization of the four best performers on the human immune cell integration task colored by cell identity (b) and batch annotation (c). The plots show uniform manifold approximation and projection layouts for the unintegrated data (left) and the top four performers (right).](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fs41592-021-01336-8/MediaObjects/41592_2021_1336_Fig2_HTML.png?as=webp)
@@ -543,7 +554,8 @@ Gfeller Lab [tutorial](https://gfellerlab.github.io/MetacellAnalysisTutorial/ind
 
 Cell-cell communication and interaction.
 
-Review of tools @almet2021landscape
+Review @cheng2023review @almet2021landscape @armingol2021deciphering  
+Comparison @dimitrov2022comparison
 
 ## Databases
 
