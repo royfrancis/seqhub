@@ -293,6 +293,11 @@ Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequ
 ### Reads to VDJ data
 
 - [{{< fa toolbox >}} CellRanger (Shell)](https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/using/vdj)
+
+  - Description of output from `cellranger vdj` [{{< fa external-link >}}](https://www.10xgenomics.com/support/software/cell-ranger/latest/analysis/outputs/cr-5p-outputs-overview-vdj)
+  - Description of cellranger output annotation files [{{< fa external-link >}}](https://www.10xgenomics.com/support/software/cell-ranger/latest/analysis/outputs/cr-5p-outputs-annotations-vdj)
+  - What is a productive contig? [{{< fa external-link >}}](https://www.10xgenomics.com/support/software/cell-ranger/latest/resources/cr-5p-vdj-algorithm-annotations)
+
 - [{{< fa toolbox >}} ChangeO (Shell)](https://bitbucket.org/kleinstein/changeo/src/master/) Processing the output of V(D)J alignment tools, assigning clonal clusters to immunoglobulin (Ig) sequences, and reconstructing germline sequences (Part of immcantation)
 - [{{< fa toolbox >}} MixCR (Shell)](https://github.com/milaboratory/mixcr) Start from any read data
 
