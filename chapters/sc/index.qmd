@@ -51,9 +51,17 @@ description: Single-cell RNA-Seq experiments and analyses
 
 @luecken2025defining
 
+## Methods {#sc-methods}
+
 **Overview of single-cell multiomic technologies**
 
 ![Numerous single-cell multiomics sequences have been developed and can be classified into seven types. The blue box represents dual omics technology, and the magenta box represents technology that handles three or more omics simultaneously.](assets/lim-2004-1.webp)
+
+A reference list of the different single-cell library prep methods: https://teichlab.github.io/scg_lib_structs/. 
+
+![The structure of molecules in genomic libraries. Sequencing libraries are constructed by combining Atomic Regions to form an adapter-insert-adapter construct. The seqspec for the assay annotates the construct with Regions and meta Regions. @booeshaghi2024machine](assets/booeshaghi-1.webp)
+
+A machine readable schema for genomic assays: https://github.com/pachterlab/seqspec @booeshaghi2024machine
 
 @lim2024advances
 
