@@ -338,9 +338,9 @@ Figures from the article.
 - [{{< fa toolbox >}} vdjtools (Java)](https://github.com/mikessh/vdjtools)
 - [{{< fa toolbox >}} conga (Python)](https://github.com/phbradley/conga)
 - [{{< fa toolbox >}} SONAR (Python)](https://github.com/scharch/SONAR)
-- [{{< fa toolbox >}} scRepertoire (R)](https://github.com/ncborcherding/scRepertoire) 10X VDJ cellranger input
+- [{{< fa toolbox >}} scRepertoire (R)](https://github.com/ncborcherding/scRepertoire) 10X VDJ cellranger input, Single cell only
 - [{{< fa toolbox >}} djvdj (R)](https://github.com/rnabioco/djvdj)  10X VDJ cellranger input
-- [{{< fa toolbox >}} immunarch (R)](https://immunarch.com/) 10X, MIXCR input
+- [{{< fa toolbox >}} immunarch (R)](https://immunarch.com/) 10X, MIXCR input, bulk
 - [{{< fa toolbox >}} scirpy (Python)](https://scirpy.scverse.org/en/latest/) Toolkit
 - [{{< fa toolbox >}} Dandelion (Python)](https://sc-dandelion.readthedocs.io/en/latest/) Toolkit
 - [{{< fa toolbox >}} alakazam (R)](https://alakazam.readthedocs.io/en/stable/) Repertoire analysis on output from pRESTO and ChangeO (Part of Immcantation)
