@@ -236,6 +236,7 @@ Interactive exploration of BAM files, ie; reads aligned to a reference.
 - Plot genes on Kegg pathways in R [{{< fa toolbox >}} Pathview](https://bioconductor.org/packages/release/bioc/html/pathview.html)
 - Cytoscape plugin [{{< fa toolbox >}} ClueGO](http://apps.cytoscape.org/apps/cluego)
 - Semantic reduction of terms [{{< fa toolbox >}} ReviGO](http://revigo.irb.hr)
+- [{{< fa toolbox >}} decoupleR](https://saezlab.github.io/decoupleR/index.html)
 
 ### GUI
 
