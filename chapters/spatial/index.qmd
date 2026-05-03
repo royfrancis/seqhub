@@ -50,7 +50,12 @@ In addition, the Visium slides come in different types depending on the assay an
 - [{{< fa toolbox >}} stLearn (Py)](https://stlearn.readthedocs.io/en/latest/)
 - [{{< fa toolbox >}} Semla](https://ludvigla.github.io/semla/)
 
-### SVG
+### Dimensionality reduction
+
+- [{{< fa toolbox >}} Spatial PCA (R)](https://github.com/shangll123/SpatialPCA)
+- [{{< fa toolbox >}} Randomized Spatial PCA (Python)](https://pmc.ncbi.nlm.nih.gov/articles/PMC11703158/)
+
+### Spatially variable genes
 
 Identification of spatially variable genes.
 

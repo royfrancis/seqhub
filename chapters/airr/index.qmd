@@ -305,6 +305,7 @@ Benchmarking immunoinformatic tools for the analysis of antibody repertoire sequ
 
 - [{{< fa toolbox >}} TRUST4 (Shell)](https://github.com/liulab-dfci/TRUST4) TCR and BCR assembly from RNA-seq data
 - [{{< fa toolbox >}} Partis (Shell)](https://github.com/psathyrella/partis) HMM-based framework for B- and T-cell receptor sequence annotation, simulation, clonal family and germline inference, and affinity prediction.
+- [{{< fa toolbox >}} VDJ Insights (Python)](https://github.com/BPRC-Bioinfo/VDJ-Insightshttps://github.com/BPRC-Bioinfo/VDJ-Insights) VDJ annotation
 
 #### Clonal family inference
 
@@ -324,8 +325,8 @@ Figures from the article.
 
 @voss2024evaluating
 
-- Most CF reconstruction methods perform comparably, with SCOPer (A7, A8) producing distinctly fewer but larger CFs due to its specific similarity measure. 
-- Simple methods like A4 (setting a relative similarity threshold) perform as well as more complex ones like A9 (partis). Simple methods like A4 (setting a relative similarity threshold) perform as well as more complex ones like A9 (partis). 
+- Most CF reconstruction methods perform comparably, with SCOPer (A7, A8) producing distinctly fewer but larger CFs due to its specific similarity measure.
+- Simple methods like A4 (setting a relative similarity threshold) perform as well as more complex ones like A9 (partis). Simple methods like A4 (setting a relative similarity threshold) perform as well as more complex ones like A9 (partis).
 - Change-O (A6) seems to perform little better compared to the other methods and is always in agreement with the ground truth.
 - Approaches A1 (unique junction sequences) and A2 (subclones) surprisingly align closely with other methods in experimental data but not in simulations.
 - The alignment-free method (A10) tends to overestimate the number of CFs, particularly noted in single cell datasets.
@@ -346,9 +347,10 @@ Figures from the article.
 - [{{< fa toolbox >}} alakazam (R)](https://alakazam.readthedocs.io/en/stable/) Repertoire analysis on output from pRESTO and ChangeO (Part of Immcantation)
 - [{{< fa toolbox >}} dowser (R)](https://dowser.readthedocs.io/en/stable/) Phylogenetic analysis of B cells (Part of Immcantation)
 - [{{< fa toolbox >}} melange (R)](https://github.com/rahuldhodapkar/melange) Read MIXCR, Annovar, RSEM data into Seurat
-- [{{< fa toolbox >}} Partis (R)](https://github.com/psathyrella/partis) B and T-cell receptor sequence annotation, simulation, clonal family and germline inference, and affinity prediction 
+- [{{< fa toolbox >}} Partis (R)](https://github.com/psathyrella/partis) B and T-cell receptor sequence annotation, simulation, clonal family and germline inference, and affinity prediction
 - [{{< fa toolbox >}} NAIR (R)](https://mlizhangx.github.io/Network-Analysis-for-Repertoire-Sequencing-/articles/NAIR.html) Network Analysis of Immune Repertoire
 - [{{< fa toolbox >}} star-repair (Bash)](https://github.com/almaan/star-repair) Pair heavy and light chains in visium spots
+- [{{< fa toolbox >}} VDJView (R)](https://bitbucket.org/kirbyvisp/vdjview/src/master/) Shiny app
 
 #### Immunarch
 
@@ -378,5 +380,12 @@ Figures from the article.
 - [vdjbase](https://vdjbase.org/) Database of adaptive immune receptor genes, genotypes and haplotypes
 - [AIRR-C IG reference sets](https://ogrdb.airr-community.org/germline_sets/Human) @collins2024airr
 - [IMGT](https://www.imgt.org/): Nucleotide sequences for IG & TR, Human HLA sequences etc
+
+## Community
+
+- [AIRR community forum](https://b-t.cr/)
+- [AIRR community youtube](https://www.youtube.com/c/AIRRCommunity)
+- [AIRR community podcast](https://www.antibodysociety.org/the-airr-community/airr-c-podcast/)
+- [Antibody society](https://www.antibodysociety.org/)
 
 ## References {.unnumbered}

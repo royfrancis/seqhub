@@ -57,7 +57,7 @@ description: Single-cell RNA-Seq experiments and analyses
 
 ![Numerous single-cell multiomics sequences have been developed and can be classified into seven types. The blue box represents dual omics technology, and the magenta box represents technology that handles three or more omics simultaneously.](assets/lim-2004-1.webp)
 
-A reference list of the different single-cell library prep methods: https://teichlab.github.io/scg_lib_structs/. 
+A reference list of the different single-cell library prep methods: https://teichlab.github.io/scg_lib_structs/.
 
 ![The structure of molecules in genomic libraries. Sequencing libraries are constructed by combining Atomic Regions to form an adapter-insert-adapter construct. The seqspec for the assay annotates the construct with Regions and meta Regions. @booeshaghi2024machine](assets/booeshaghi-1.webp)
 
@@ -273,9 +273,9 @@ Identification of cell types can be completely automated (by comparing to refere
 
 ![Summary of performance of the automatic cell-type identification methods. Bar graphs of the automatic cell-type identification methods with six evaluation criteria indicated. For each evaluation criteria, the length of the bars shows the performance of the automatic method: poor, median or good. The automatic methods are sorted based on the mean performance of the evaluation criteria. No bar: not evaluated.](https://ars.els-cdn.com/content/image/1-s2.0-S2001037021004499-gr5_lrg.jpg)
 
-- Compares 32 methods using common performance criteria such as prediction accuracy, F1-score, "unlabeling" rate (cells left unassigned), and computational efficiency. 
-- Organizes methods by major strategy families, including marker/gene-set–based approaches, reference-based label transfer, and supervised machine-learning classifiers. 
-- Highlights that method performance is dataset-dependent, with challenges increasing when cell types are highly similar, labels are very fine-grained, or references are incomplete. 
+- Compares 32 methods using common performance criteria such as prediction accuracy, F1-score, "unlabeling" rate (cells left unassigned), and computational efficiency.
+- Organizes methods by major strategy families, including marker/gene-set–based approaches, reference-based label transfer, and supervised machine-learning classifiers.
+- Highlights that method performance is dataset-dependent, with challenges increasing when cell types are highly similar, labels are very fine-grained, or references are incomplete.
 - Emphasizes practical selection factors beyond accuracy, especially whether a method can leave cells "unknown/unassigned," how sensitive it is to batch effects, and how well it scales to large datasets.
 
 @xie2021automatic
@@ -390,7 +390,6 @@ Comparison of Multiomic integration @xiao2024benchmarking
 - [{{< fa toolbox >}} SCIB]()
 - [{{< fa toolbox >}} GLUE](https://github.com/gao-lab/GLUE) (R,Python) Diagonal integration
 
-
 ## Trajectory
 
 ::: {#fig-sc-trajectory-comparison layout-ncol="2"}
@@ -474,10 +473,10 @@ Preprocessing choices affect RNA velocity results for droplet scRNA-seq data @so
 - [{{< fa toolbox >}} MultiVelo](https://github.com/welch-lab/MultiVelo) (Python) Velocity Inference from Single-Cell Multi-Omic Data
 - [{{< fa toolbox >}} UniTVelo](https://github.com/StatBiomed/UniTVelo) (Python) Temporally Unified RNA Velocity
 - [{{< fa toolbox >}} DeepVelo](https://github.com/bowang-lab/DeepVelo) (Python) Deep learning for RNA velocity
-- [{{< fa toolbox >}} VeloAE](https://github.com/qiaochen/VeloAE) (Python) Low-dimensional Projection of Single Cell Velocity 
-- [{{< fa toolbox >}} GeneTrajectory](https://github.com/KlugerLab/GeneTrajectory) (R) R implementation of GeneTrajectory 
+- [{{< fa toolbox >}} VeloAE](https://github.com/qiaochen/VeloAE) (Python) Low-dimensional Projection of Single Cell Velocity
+- [{{< fa toolbox >}} GeneTrajectory](https://github.com/KlugerLab/GeneTrajectory) (R) R implementation of GeneTrajectory
 - [{{< fa toolbox >}} TFvelo](https://github.com/xiaoyeye/TFvelo) Gene regulation inspired RNA velocity estimation
-- [{{< fa toolbox >}} DeepCycle](https://github.com/andreariba/DeepCycle) (Python) Cell cycle inference in single-cell RNA-seq 
+- [{{< fa toolbox >}} DeepCycle](https://github.com/andreariba/DeepCycle) (Python) Cell cycle inference in single-cell RNA-seq
 - [{{< fa toolbox >}} velocycle](https://github.com/lamanno-epfl/velocycle) (Python) Bayesian model for RNA velocity estimation of periodic manifolds
 
 ## Metacells
@@ -562,7 +561,7 @@ Gfeller Lab [tutorial](https://gfellerlab.github.io/MetacellAnalysisTutorial/ind
 
 Cell-cell communication and interaction.
 
-Review @cheng2023review @almet2021landscape @armingol2021deciphering  
+Review @cheng2023review @almet2021landscape @armingol2021deciphering
 Comparison @dimitrov2022comparison
 
 ## Databases
